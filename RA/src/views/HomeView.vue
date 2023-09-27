@@ -1,6 +1,9 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
 
+
+
+
 </script>
 <template>
   <main>
@@ -11,10 +14,10 @@ import TheWelcome from '../components/TheWelcome.vue'
                 <img src ="../assets/mainlogo.svg">
             </logo >
             <ul id="menulist">
-              <li id ="notice" v-on:click="notice">공지사항</li>
-              <li id ="search" @click="search()">조회</li>
-              <li id ="reunion" @click="reunion()">동창회</li>
-              <li id ="mypage" @click="mypage()">내정보</li>
+              <RouterLink to="/notice"><li id ="notice" >공지사항</li></RouterLink>
+              <li id ="search" >조회</li>
+              <li id ="reunion" >동창회</li>
+              <li id ="mypage" >내정보</li>
             </ul>
         </header >
     <div id ="main">
@@ -53,7 +56,7 @@ import TheWelcome from '../components/TheWelcome.vue'
         </div >
         <div id="shbar">
           <input id ="school" type ="text" placeholder ="유치원 이름을 입력하세요">
-          <svg @click="school()" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#BEC1FF" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#BEC1FF" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
   <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
 </svg>
         </div >
@@ -61,12 +64,12 @@ import TheWelcome from '../components/TheWelcome.vue'
               <div class="input"><p><b>ID</b></p><input id ="id" type ="text" placeholder ="abc@gmail.com"></div>
               <div class="input"><p><b>PW</b></p><input id ="pw" type ="password"></div>
               <div id ="bt">
-                <button id ="join" @click="join()">회원가입 </button >
-                <button id ="login" @click="login()">로그인 </button >
+                <button id ="join">회원가입 </button >
+                <button id ="login">로그인 </button >
               </div >
               <div id="sns">
-                <img @click="google()" src="../assets/google.png" style="width: 50px;">
-                <img @click="kakao()" src="../assets/kakao.png" style="width: 50px;">
+                <img src="../assets/google.png" style="width: 50px;">
+                <img src="../assets/kakao.png" style="width: 50px;">
               </div>
               <p id="not">회원이 아닐시 일부 서비스를 이용하실수 없습니다. <br>서비스 이용 원할시 회원가입을 해주세요</p>
         </div >
@@ -78,7 +81,7 @@ import TheWelcome from '../components/TheWelcome.vue'
             <div><b>상호: 라온아리아</b></div>
             <div><b>주소: 대전광역시 중구 중앙로 121번길 20</b></div>
         </div >
-        <div id ="page"><a >이용약관 </a > | <a >개인정보 처리방침 </a > | <a >찾아오시는 길 </a > | <a @click="master()">관리자 </a > | <a @click="sitemap()">사이트맵 </a ></div >
+        <div id ="page"><a >이용약관 </a > | <a >개인정보 처리방침 </a > | <a >찾아오시는 길 </a > | <a >관리자 </a > | <a >사이트맵 </a ></div >
     </footer >
     <TheWelcome />
   </main>
@@ -131,6 +134,10 @@ main{
     font-size : 20px;
     padding-top :30px;
     margin-bottom : 10px;
+    color: black;
+}
+a{
+  text-decoration:none;
 }
 #mainbox {
     text-align :center;
@@ -142,6 +149,7 @@ main{
     padding-right: 20px;
     
 }
+
 #main{
   width: 500px;
   position: relative;
@@ -235,4 +243,5 @@ main{
   border-top: 3px solid #aaa;
   padding: 5px;
 }
+
 </style>

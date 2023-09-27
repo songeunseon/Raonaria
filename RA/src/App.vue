@@ -1,73 +1,61 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+
+
 </script>
 
 <template>
-
+  <div id="menuBar">
+    <div id="logo" >
+      <img src="./assets/toplogo.svg" style="width: 200px;">
+    </div>
+    <div id="menu">
+      <ul id="menuList">
+        <li id="notice">공지사항</li>
+        <li id="search">유치원조회</li>
+        <li id="reunion">유치원동창회</li>
+        <li id="mypage">마이페이지</li>
+      </ul>
+    </div>
+  </div>
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  #menuBar{
+    max-width: 1000px;
+    height: 100px;
+    margin: 0 auto;
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    column-gap: 30px;
+    align-items: end;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  #menu{
+    padding-bottom: 20px;
   }
-
-  header .wrapper {
+  #menuList{
+    min-width: 800px;
+    height: 50px;
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-around;
+    font-size: 20px;
+    align-items: end;
+    border-bottom: 3px solid #BEC1FF;
   }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  #menuList li:last-child{
+    border: 0;
   }
-}
+  #menuList li{
+    text-align: center;
+    width: 200px;
+    border-right: 3px solid #BEC1FF;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
 </style>
