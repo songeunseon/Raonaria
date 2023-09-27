@@ -1,20 +1,6 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
 
-import { useRouter } from "vue-router";
-const router = useRouter();
-
-const main = () => {
-  router.push({
-    path: "/",
-  });
-};
-
-const notice = () => {
-  router.push({ path: "/notice" });
-};
-
-
 </script>
 <template>
   <main>
@@ -22,10 +8,10 @@ const notice = () => {
         <header id ="header">
             <logo id ="logo">
 
-                <img @click="main()" src ="../assets/mainlogo.svg">
+                <img src ="../assets/mainlogo.svg">
             </logo >
             <ul id="menulist">
-              <li id ="notice" @click="notice()">공지사항</li>
+              <li id ="notice" v-on:click="notice">공지사항</li>
               <li id ="search" @click="search()">조회</li>
               <li id ="reunion" @click="reunion()">동창회</li>
               <li id ="mypage" @click="mypage()">내정보</li>
