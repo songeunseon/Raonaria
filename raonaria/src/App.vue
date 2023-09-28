@@ -22,10 +22,12 @@ import { RouterView } from 'vue-router'
   </div>
 </div>
 
-  <RouterView />
-
 
 </template>
+
+
+
+
 
 <style scoped>
 
