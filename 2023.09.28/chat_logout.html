@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        
+        #chat{
+            width:800px;
+            height:600px;
+            border:1px solid black;
+            margin:200px auto;
+        }
+
+        .chat_box{
+            margin: 50px 100px;
+        }
+
+        .chat_room{
+            font-size:25px;
+            font-weight:800;
+        }
+
+        .chat_add{
+            padding-top:10px;
+            position:relative;
+            display:flex;
+        }
+
+        .chat_add input{
+            width:350px;
+            height:32px;
+            border:3px solid #4849A1;
+            border-radius: 5px;
+            
+        }
+
+        .icon{
+            position:absolute;
+            top:15px;
+            left:10px;
+        }
+
+        .chat_add .bi-plus-circle{
+            padding-left:30px;
+            font-size:20px;
+        }
+
+        #list1{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        .title{
+            display:flex;
+            width:550px;
+            justify-content: space-between;
+            padding-top:10px;
+        }
+
+        .word_1{
+            padding:14px 25px;
+            font-size:15px;
+        }
+
+        .word_2{
+            font-size:12px;
+        }
+
+        .title2{
+            position:relative;
+        }
+
+        .word3{
+            font-size:15px;
+            padding:0px 15px;
+            
+        }
+
+        .position{
+            width:140px;
+            height:40px;
+            text-align: center;
+            position:relative;
+            left:450px;
+            bottom:40px;
+            text-align: center;
+            border:2px solid #BEC1FF;
+            background-color:white;
+        }
+
+        #list2{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+
+        #list3{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        #list4{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        .info_title{
+            text-align:center;
+            padding-top:45px;
+            margin:5px 0;
+            font-weight:800;
+        }
+
+        .info_line{
+            width:800px;
+            border:2px solid #AAAAAA;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <div class="chat_box">
+            <p class="chat_room">동창회 채팅방</p>
+            <div class="chat_add">
+                <div class="icon">
+                    <i class="bi bi-search"></i>
+                </div>
+                    <input type="text">
+                    <i class="bi bi-plus-circle"></i>
+            </div>
+        <div id="list1">
+            <div class="title">
+                <div class="word_1">서구 유치원<br>새싹반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
+            </div>
+            <div class="title2">
+                <input type="button" value="입장하기" class="position">
+            </div>
+        </div>
+        <div id="list2">
+            <div class="title">
+                <div class="word_1">동구 유치원<br>열매반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
+            </div>
+            <div class="title2">
+                <input type="button" value="입장하기" class="position">
+            </div>
+        </div>
+        <div id="list3">
+            <div class="title">
+                <div class="word_1">중구 유치원<br>참외반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
+            </div>
+            <div class="title2">
+                <input type="button" value="입장하기" class="position">
+            </div>
+        </div>
+        <div id="list4">
+            <div class="title">
+                <div class="word_1" >유성구 유치원<br>딸기반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
+            </div>
+            <div class="title2">
+                <input type="button" value="입장하기" class="position">
+            </div>
+        </div>
+        </div>
+        <div class="info">
+            <div class="info_title">채팅방에 입장가능합니다 반가운 옛 친구들과 소통해보세요 .</div>
+            <div class="info_line"></div>
+        </div>
+    </div>
+</body>
+</html>

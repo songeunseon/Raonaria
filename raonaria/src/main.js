@@ -5,19 +5,14 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import  
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import 'bootstrap/dist/js/bootstrap.esm.min.js'
+// createApp(App).mount('#app')
 
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
 
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-
-app.mount('#app')
+app.mount('#app');
