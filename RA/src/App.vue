@@ -7,14 +7,14 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div id="menuBar">
     <div id="logo" >
-      <img src="./assets/toplogo.svg" style="width: 200px;">
+      <RouterLink to="/"><img src="./assets/toplogo.svg" style="width: 200px;"></RouterLink>
     </div>
     <div id="menu">
       <ul id="menuList">
-        <li id="notice">공지사항</li>
-        <li id="search">유치원조회</li>
-        <li id="reunion">유치원동창회</li>
-        <li id="mypage">마이페이지</li>
+        <RouterLink to="/notice"><li id="notice">공지사항</li></RouterLink>
+        <RouterLink to="/search"><li id="search">유치원조회</li></RouterLink>
+        <RouterLink to="/reunion"><li id="reunion">유치원동창회</li></RouterLink>
+        <RouterLink to="/mypage"><li id="mypage">마이페이지</li></RouterLink>
       </ul>
     </div>
   </div>
