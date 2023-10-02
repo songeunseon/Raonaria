@@ -11,13 +11,13 @@ import TheWelcome from '../components/TheWelcome.vue'
         <header id ="header">
             <logo id ="logo">
 
-                <img src ="../assets/mainlogo.svg">
+              <RouterLink to="/"> <img src ="../assets/mainlogo.svg"> </RouterLink>
             </logo >
             <ul id="menulist">
               <RouterLink to="/notice"><li id ="notice" >공지사항</li></RouterLink>
-              <li id ="search" >조회</li>
-              <li id ="reunion" >동창회</li>
-              <li id ="mypage" >내정보</li>
+              <RouterLink to="/search"><li id ="search" >조회</li></RouterLink>
+              <RouterLink to="/reunion"><li id ="reunion" >동창회</li></RouterLink>
+              <RouterLink to="/mypage"><li id ="mypage" >내정보</li></RouterLink>
             </ul>
         </header >
     <div id ="main">
@@ -64,8 +64,8 @@ import TheWelcome from '../components/TheWelcome.vue'
               <div class="input"><p><b>ID</b></p><input id ="id" type ="text" placeholder ="abc@gmail.com"></div>
               <div class="input"><p><b>PW</b></p><input id ="pw" type ="password"></div>
               <div id ="bt">
-                <button id ="join">회원가입 </button >
-                <button id ="login">로그인 </button >
+                <RouterLink to="/join"><button id ="join">회원가입 </button ></RouterLink>
+                <RouterLink to="/login"><button id ="login">로그인 </button ></RouterLink>
               </div >
               <div id="sns">
                 <img src="../assets/google.png" style="width: 50px;">

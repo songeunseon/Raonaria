@@ -47,9 +47,8 @@ import { RouterLink, RouterView } from "vue-router";
     font-size: 20px;
     align-items: end;
     border-bottom: 3px solid #BEC1FF;
-  }
-  #menuList li:last-child{
-    border: 0;
+    text-decoration: none;
+    
   }
   #menuList li{
     text-align: center;
@@ -57,5 +56,12 @@ import { RouterLink, RouterView } from "vue-router";
     border-right: 3px solid #BEC1FF;
     line-height: 30px;
     margin-bottom: 10px;
+    color:black;
+  }
+  #menuList #mypage{
+    border: 0;
+  }
+  a{
+    text-decoration: none;
   }
 </style>
