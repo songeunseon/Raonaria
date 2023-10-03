@@ -76,6 +76,67 @@ const router = useRouter();
       </tr>
     </table>
   </div>
+  <div id="buttonbox">
+  <button id="comparison">유치원 비교하기</button>
+  </div>
+  <div>
+    <div>
+      <div id="infomation">
+        <table id="infoTable">
+          <tr class="infoTr">
+            <td>유치원명</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">개원일자</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">원장명</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">주소</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">전화번호</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">설립유형</td>
+            <td></td>
+          </tr>
+          <tr class="infoTr">
+            <td class="infolist">운영시간</td>
+            <td></td>
+          </tr>
+        </table>
+        <div id="check">
+          <div>
+            <b>차량운행</b>
+            <input type="checkbox">
+          </div>
+          <div>
+            <b>특수학급</b>
+            <input type="checkbox">
+          </div>
+          <div>
+            <b>방과후돌봄</b>
+            <input type="checkbox">
+          </div>
+        </div>
+        <div id="infoBt">
+          <button>상담신청</button>
+          <button>입학신청</button>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+    <div>
+      <!--차트-->
+    </div>
+  </div>
 </template>
 
 <style>
@@ -153,5 +214,19 @@ const router = useRouter();
   }
   #resultTable tr td:nth-child(5){
     width: 35%;
+  }
+  #buttonbox{
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #comparison{
+    width: 20%;
+    height: 40px;
+    background: 0;
+    border: 3px solid #BEC1FF;
+    border-radius: 5px;
+    font-size: 20px;
   }
 </style>

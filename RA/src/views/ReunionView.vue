@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import login_Alert from '../components/login_Alert.vue'
+import login_Alert from '../components/login_Alert.vue';
 import makeRoom from '../components/makeRoom.vue'
 import {ref, provide} from 'vue';
 export default{

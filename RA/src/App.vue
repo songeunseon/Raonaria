@@ -18,6 +18,10 @@ import { RouterLink, RouterView } from "vue-router";
       </ul>
     </div>
   </div>
+  <div id ="bt">
+    <RouterLink to="/join"><button id ="mjoin">회원가입 </button></RouterLink>
+    <RouterLink to="/login"><button id ="mlogin">로그인 </button></RouterLink>
+  </div>
   <RouterView />
 </template>
 
@@ -63,5 +67,19 @@ import { RouterLink, RouterView } from "vue-router";
   }
   a{
     text-decoration: none;
+  }
+  #bt{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+  }
+  #bt button{
+    width: 100px;
+    height: 40px;
+    background: 0;
+    border: 3px solid #BEC1FF;
+    border-radius: 5px;
+    margin-left: 10px;
   }
 </style>
