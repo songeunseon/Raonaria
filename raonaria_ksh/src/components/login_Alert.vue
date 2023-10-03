@@ -15,9 +15,9 @@ export default{
     setup(){
         const isAlert = inject('isAlert');
         const close = () => isAlert.value= false;
-         return{
+        return{
             isAlert, close
-         }
+        }
     }
 }
 </script>

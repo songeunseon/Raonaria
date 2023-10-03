@@ -130,8 +130,10 @@ export default{
         provide('isForm',isForm);
         provide('formOpen',formOpen);
 
+        
+
         return{
-            isCancel, cancelOpen, isForm, formOpen
+            isCancel, cancelOpen, isForm, formOpen, 
         }
     }
 }

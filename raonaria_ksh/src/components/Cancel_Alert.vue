@@ -1,16 +1,26 @@
 <template>
-    <div class="wrap">
+    <div v-if="CheckCancle" class="wrap">
         <div class="words">정말 취소하시겠습니까?</div>
         <div class="button_wrap">
             <button class="bt">확인</button>
-            <button class="bt">취소</button>
+            <button @click='CheckAgain()' class="bt" value="취소">취소</button>
         </div>
     </div>
 </template>
 
 <script>
+import {ref, provide} from 'vue';
 export default{
-    name:'Cancel_Alert'
+    name:'Cancel_Alert',
+    setup(){
+        const CheckCancle = ref(true);
+        const CheckAgain = () => CheckCancle.value = !CheckCancle;
+        return{
+            CheckCancle,CheckAgain
+        }
+    }
+
+
 }
 </script>
 
