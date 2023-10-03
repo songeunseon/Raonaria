@@ -1,94 +1,214 @@
 <template>
     <div id="chat">
-        <p>동창회 채팅방</p>
-        <input type="text" placeholder="검색어 입력">
-        <i class="bi bi-plus-circle"></i>
+        <div class="chat_box">
+            <p class="chat_room">동창회 채팅방</p>
+            <div class="chat_add">
+                <div class="icon">
+                    <i class="bi bi-search"></i>
+                </div>
+                    <input type="text">
+                    <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
+            </div>
         <div id="list1">
             <div class="title">
-                <p class="word_1">서구 유치원</p>
-                <p class="word_2">오픈채팅방</p>
+                <div class="word_1">서구 유치원<br>새싹반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
             </div>
             <div class="title2">
-                <p class="word3">새싹반 유치원 채팅방</p>
                 <input type="button" value="입장하기" class="position">
             </div>
         </div>
         <div id="list2">
             <div class="title">
-                <p class="word_1">00 유치원</p>
-                <p class="word_2">오픈채팅방</p>
+                <div class="word_1">동구 유치원<br>열매반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
             </div>
             <div class="title2">
-                <p class="word3">새싹반 유치원 채팅방</p>
                 <input type="button" value="입장하기" class="position">
             </div>
         </div>
         <div id="list3">
             <div class="title">
-                <p class="word_1">00 유치원</p>
-                <p class="word_2">오픈채팅방</p>
+                <div class="word_1">중구 유치원<br>참외반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
             </div>
             <div class="title2">
-                <p class="word3">새싹반 유치원 채팅방</p>
                 <input type="button" value="입장하기" class="position">
             </div>
         </div>
         <div id="list4">
             <div class="title">
-                <p class="word_1" >00 유치원</p>
-                <p class="word_2">오픈채팅방</p>
+                <div class="word_1" >유성구 유치원<br>딸기반 유치원 채팅방</div>
+                <div class="word_2">오픈채팅방</div>
             </div>
             <div class="title2">
-                <p class="word3">새싹반 유치원 채팅방</p>
                 <input type="button" value="입장하기" class="position">
             </div>
         </div>
+        </div>
+        <div class="info">
+            <div class="info_title">로그인을 하시면 채팅방 입장이 가능합니다.</div>
+            <div class="info_line"></div>
+        </div>
     </div>
+
+    <login_Alert v-if="isAlert"/>
+    <makeRoom v-if="isMakeRoom"/>
+
 </template>
 
-
-
 <script>
+import login_Alert from '../components/login_Alert.vue'
+import makeRoom from '../components/makeRoom.vue'
+import {ref, provide} from 'vue';
 export default{
-    name:'chatView',
-    setup() {
-        
+    name: 'chatRoom',
+    components:{
+        login_Alert,makeRoom
     },
+    
+    setup(){
+        const isAlert = ref(false);
+        provide('isAlert', isAlert);
+        const alertOpen = () => isAlert.value = true;
+
+        const isMakeRoom = ref(false);
+        provide('isMakeRoom', isMakeRoom);
+        const makeRoomOpen = () => isMakeRoom.value = !isMakeRoom.value;
+        
+
+        return{
+            isAlert, alertOpen,makeRoomOpen,isMakeRoom
+        }
+    }
 }
 </script>
 
 <style scoped>
-#chat{
-    width:1000px;
-    border:1px solid black;
-}
+*{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        
+        #chat{
+            width:800px;
+            height:600px;
+            border:1px solid black;
+            margin:100px auto;
+        }
 
-.list1{
-    display:flex;
-}
+        .chat_box{
+            margin: 50px 100px;
+        }
 
-.word1{
-    font-size:18px;
-    
-}
+        .chat_room{
+            font-size:25px;
+            font-weight:800;
+        }
 
-.word2{
-    font-size:12px;
-    font-weight:800;
-}
+        .chat_add{
+            padding-top:10px;
+            position:relative;
+            display:flex;
+        }
 
-.word3{
-    font-size:18px;
-    font-weight:800;
-}
+        .chat_add input{
+            width:350px;
+            height:32px;
+            border:3px solid #4849A1;
+            border-radius: 5px;
+            
+        }
 
-.position{
-    border:2px solid #BEC1FF;
-    background:white;
-    font-size:18px;
-    font-weight:800;
-    
-}
+        .icon{
+            position:absolute;
+            top:15px;
+            left:10px;
+            font-size:15px;
+        }
+
+        .chat_add .bi-plus-circle{
+            padding-left:30px;
+            font-size:20px;
+        }
+
+        #list1{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        .title{
+            display:flex;
+            width:550px;
+            justify-content: space-between;
+            padding-top:10px;
+        }
+
+        .word_1{
+            padding:14px 25px;
+            font-size:15px;
+        }
+
+        .word_2{
+            font-size:12px;
+        }
+
+        .title2{
+            position:relative;
+        }
+
+        .word3{
+            font-size:15px;
+            padding:0px 15px;
+            
+        }
+
+        .position{
+            width:140px;
+            height:40px;
+            text-align: center;
+            position:relative;
+            left:450px;
+            bottom:40px;
+            text-align: center;
+            border:2px solid #BEC1FF;
+            background-color:white;
+        }
+
+        #list2{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
 
 
+        #list3{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        #list4{
+            width:600px;
+            height:90px;
+            border:1px solid black;
+            margin:15px 0;
+        }
+
+        .info_title{
+            text-align:center;
+            padding-top:45px;
+            margin:5px 0;
+            font-weight:800;
+        }
+
+        .info_line{
+            width:800px;
+            border:2px solid #AAAAAA;
+        }
 </style>

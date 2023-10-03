@@ -38,10 +38,15 @@ const router = createRouter({
       component: () => import('../views/JoinView.vue')
     },
     {
-      path: '/reunion',
-      name: 'reunion',
-      component: () => import('../views/ReunionView.vue')
-    }
+      path: '/mypage',
+      name: 'mypage',
+      component: () => import('../views/MypageView.vue')
+    },
+    {
+      path:'/chatWindow',
+      name:'chatWindow',
+      component:() => import('../views/chatWindow.vue')
+    },
   ]
 })
 
