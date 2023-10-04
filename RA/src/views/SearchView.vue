@@ -1,8 +1,4 @@
-<script>
-import {RouterLink, useRouter} from 'vue-router'
-const router = useRouter();
 
-</script>
 
 
 
@@ -127,7 +123,7 @@ const router = useRouter();
           </div>
         </div>
         <div id="infoBt">
-          <button>상담신청</button>
+          <button @click="reqOpen()" class="req_bt">상담신청</button>
           <RouterLink to="/school"><button>입학신청</button></RouterLink>
         </div>
       </div>
@@ -137,7 +133,36 @@ const router = useRouter();
       <!--차트-->
     </div>
   </div>
+  <Consulting_Req v-if="isReq"/>
 </template>
+
+<script>
+import { RouterLink, RouterView } from "vue-router";
+import Consulting_Req from '../components/Consulting_Req.vue'
+import { ref } from "vue";
+export default{
+  name:'searchView',
+    components:
+    {Consulting_Req},
+  Setup(){
+    const isReq = ref(false);
+    const reqOpen = () => {
+      isReq.value = true;
+    }
+
+    // onMounted(()=>{
+    //   const req_bt = document.querySelector('.req_bt');
+    //   req_bt.addEventListener('click',function(){
+    //     req_open();
+    //   })
+    // })
+    
+    return{
+      isReq, reqOpen
+    }
+  }
+}
+</script>
 
 <style>
   #box{
