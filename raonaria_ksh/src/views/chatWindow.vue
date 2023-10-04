@@ -1,5 +1,5 @@
 <template>
-  <div id="chat_room">
+<div id="chat_room">
         <div class="header">
             <div class="chat_name">새싹반 유치원 채팅방</div>
             <div class="icon">
