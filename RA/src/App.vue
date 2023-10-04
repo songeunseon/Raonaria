@@ -9,7 +9,9 @@ export default{
 
 
     const isLoginModal = ref(false);
-    const loginOpen = () => isLoginModal.value = !isLoginModal.value;
+    const loginOpen = () => {
+      isLoginModal.value = !isLoginModal.value;
+    }
     
     provide('isLoginModal', isLoginModal);
     provide('loginOpen', loginOpen);
@@ -40,9 +42,9 @@ export default{
   </div>
   <div id ="bt">
     <RouterLink to="/join"><button id ="mjoin">회원가입 </button></RouterLink>
-    <button id ="mlogin">로그인 </button>
+    <button @click="loginOpen()" id ="mlogin">로그인 </button>
   </div>
-  <Login_Modal/>
+  <Login_Modal v-if="isLoginModal"/>
   <RouterView />
 </template>
 
