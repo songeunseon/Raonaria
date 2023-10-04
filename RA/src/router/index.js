@@ -52,6 +52,11 @@ const router = createRouter({
       name:'school',
       component:() => import('../views/schoolView.vue')
     },
+    {
+      path:'/comparison',
+      name:'comparison',
+      component:() => import('../views/ComparisonView.vue')
+    },
   ]
 })
 

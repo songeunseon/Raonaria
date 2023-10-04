@@ -95,7 +95,7 @@ export default{
             width:800px;
             height:600px;
             border:1px solid black;
-            margin:100px auto;
+            margin:20px auto;
         }
 
         .chat_box{

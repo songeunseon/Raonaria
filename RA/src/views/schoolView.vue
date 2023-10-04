@@ -15,8 +15,8 @@
                     </div>
                     <div id="sonGender">
                         <b>자녀 성별</b>
-                        <section><b>남아</b><input type="radio"></section>
-                        <section><b>여아</b><input type="radio"></section>
+                        <section><b>남아</b><input type="radio" name="gender"></section>
+                        <section><b>여아</b><input type="radio" name="gender"></section>
                     </div>
                 </div>
                 <div class="schoolBox">
@@ -61,10 +61,10 @@
                 </svg>
             </div>
             <div id="soncheck">
-                <div><input type="radio"><b>알러지 주의</b></div>
-                <div><input type="radio"><b>선천적 질병</b></div>
-                <div><input type="radio"><b>특별학급 희망</b></div>
-                <div><input type="radio"><b>없음</b></div>
+                <div><input type="radio" name="point"><b>알러지 주의</b></div>
+                <div><input type="radio" name="point"><b>선천적 질병</b></div>
+                <div><input type="radio" name="point"><b>특별학급 희망</b></div>
+                <div><input type="radio" name="point"><b>없음</b></div>
             </div>
             <div id="sontext">
                 <textarea id="textarea" rows="5" cols="50" placeholder="전달사항을 입력해주세요"></textarea>

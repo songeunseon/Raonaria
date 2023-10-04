@@ -144,7 +144,6 @@ a{
     align-items : center;
     row-gap: 20px;
     background: #fff;
-    padding-right: 20px;
     
 }
 
@@ -163,12 +162,14 @@ a{
   font-weight: 900;
 }
 #sh{
+  width: 60%;
+  margin: 0 auto;
   display: flex;
   font-size: 20px;
-  column-gap: 60px;
-  padding-top: 50px;
-  padding-left: 50px;
-  justify-content:start;
+  column-gap: 30px;
+  padding: 30px 0 10px 0;
+  justify-content:center;
+  border-bottom: 3px solid #aaa;
 }
 #shbar svg{
   margin: 20px 0 100px 0;
@@ -222,12 +223,12 @@ a{
   padding: 10px;
   margin-top: 60px;
 }
-#addr{
+#haddr{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
-#addr{
+#haddr{
   column-gap: 50px;
 }
 #sns{

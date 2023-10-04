@@ -77,7 +77,7 @@ const router = useRouter();
     </table>
   </div>
   <div id="buttonbox">
-  <button id="comparison">유치원 비교하기</button>
+    <RouterLink to="/comparison"><button id="comparison">유치원 비교하기</button></RouterLink> 
   </div>
   <div id="info">
     <div id="harf">
@@ -222,7 +222,7 @@ const router = useRouter();
     justify-content: center;
   }
   #comparison{
-    width: 20%;
+    width: 100%;
     height: 40px;
     background: 0;
     border: 3px solid #BEC1FF;
