@@ -118,7 +118,7 @@
 
 .sign_bt{
     width:100px;
-    h
+    
     border:2px solid #BEC1FF;
 }
 
