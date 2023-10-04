@@ -1,7 +1,7 @@
 <template>
 <div class="Login_modal">
     <div class="modal_header">
-        <i class="bi bi-x-circle"></i>
+        <i  @click="loginOpen()" class="bi bi-x-circle"></i>
         <div class="modal_title">Sign_in</div>
         <div class="modal_line"></div>
     </div>
@@ -30,12 +30,14 @@
 
 <script>
 
- import {ref} from 'vue'
+ import {inject} from 'vue';
  export default{
     name:'Login_Modal',
     setup(){
+        const isLoginModal = inject('isLoginModal');
+        const loginOpen = inject('loginOpen');
         return{
-
+            isLoginModal, loginOpen
         }
     }
  }
