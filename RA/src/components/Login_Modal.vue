@@ -14,7 +14,7 @@
         <button class="login_bt">로그인</button>
     </div>
     <div class="sns_line">
-        <img src="../assets/google.png" style="width: 50px;" class="google">
+        <img src="../assets/google.png" style="width: 50px;"  class="google">
         <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
     </div>
     <footer>
@@ -45,10 +45,14 @@
 
 <style scoped>
 .Login_modal{
+position:fixed;
  width:500px;
  height:300px;
  border:1px solid black;
  background:white;
+ z-index:100;
+ right:280px;
+ top:160px;
 }
 
 .modal_header{
@@ -69,7 +73,7 @@
 }
 
 .login{
-    margin:0 auto;
+    margin:10px auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -115,8 +119,7 @@
     display:flex;
     justify-content:space-between;
     /* align-items: center; */
-    padding-top:5px;
-    margin:10px auto;
+    margin:5px auto;
     /* row-gap: 30px;  */
 
     
@@ -152,6 +155,7 @@
 
 .google{
     margin-left:190px;
+    
 }
 
 .kakao{
