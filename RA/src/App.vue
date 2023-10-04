@@ -1,6 +1,23 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router";
 import  Login_Modal from './components/Login_Modal.vue';
+import {ref, provide} from 'vue'
+
+export default{
+  components:{Login_Modal},
+  setup(){
+    const isLoginModal = ref(false);
+    const loginOpen = () => isLoginModal.value = !isLoginModal.value;
+    
+    provide('isLoginModal', isLoginModal);
+    provide('loginOpen', loginOpen);
+
+    return{
+      isLoginModal, loginOpen
+    }
+
+  }
+}
 
 
 </script>

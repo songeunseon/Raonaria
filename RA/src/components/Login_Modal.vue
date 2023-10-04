@@ -1,7 +1,7 @@
 <template>
 <div class="Login_modal">
     <div class="modal_header">
-        <i class="bi bi-x-circle"></i>
+        <i  @click="loginOpen()" class="bi bi-x-circle"></i>
         <div class="modal_title">Sign_in</div>
         <div class="modal_line"></div>
     </div>
@@ -11,11 +11,11 @@
     </div>
     <div class="login_button">
         <button class="sign_bt">회원가입</button>
-        <button type="login_bt">로그인</button>
+        <button class="login_bt">로그인</button>
     </div>
     <div class="sns_line">
-        <img src="../assets/google.png" style="width: 50px;">
-        <img src="../assets/kakao.png" style="width: 50px;">
+        <img src="../assets/google.png" style="width: 50px;" class="google">
+        <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
     </div>
     <footer>
         <div class="line2"></div>
@@ -30,12 +30,14 @@
 
 <script>
 
- import {ref} from 'vue'
+ import {inject} from 'vue';
  export default{
     name:'Login_Modal',
     setup(){
+        const isLoginModal = inject('isLoginModal');
+        const loginOpen = inject('loginOpen');
         return{
-
+            isLoginModal, loginOpen
         }
     }
  }
@@ -111,15 +113,66 @@
 
 .login_button{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     /* align-items: center; */
     padding-top:5px;
+    margin:10px auto;
+    /* row-gap: 30px;  */
+
+    
 }
 
 .sign_bt{
     width:100px;
+    height:40px;
+    border:4px solid #BEC1FF;
+    border-radius: 3px;
+    margin-left:125px;
+    background:white;
+    font-size:20px;
+}
+
+.login_bt{
+    width:100px;
+    height:40px;
+    border:4px solid #BEC1FF;
+    border-radius: 3px;
+    margin-right:126px;
+    background:white;
+    font-size:20px;
     
-    border:2px solid #BEC1FF;
+}
+
+.sns_line{
+    display:flex;
+    justify-content: space-around;
+    padding-top:10px;
+    
+}
+
+.google{
+    margin-left:190px;
+}
+
+.kakao{
+    margin-right:190px;
+}
+
+.line2{
+    border-top:2px solid #AAAAAA;
+    margin-top:15px;
+    width:60%;
+    margin-left:100px;
+}
+
+.coment{
+    width: 80%;
+    text-align:center;
+    font-size:10px;
+    margin-top:20px;
+    margin:0 auto;
+    padding-top:3px;
+    font-weight: 800;
 }
 
 
