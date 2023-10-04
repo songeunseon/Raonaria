@@ -39,7 +39,7 @@
                 <div></div>
                 <div class="CpBt">
                     <button>상담신청</button>
-                    <button>입학신청</button>
+                    <RouterLink to="/school"><button>입학신청</button></RouterLink>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <div></div>
                 <div class="CpBt">
                     <button>상담신청</button>
-                    <button>입학신청</button>
+                    <RouterLink to="/school"><button>입학신청</button></RouterLink>
                 </div>
             </div>
         </div>
@@ -111,6 +111,9 @@
         flex-direction: column;
         justify-content: space-between;
         font-size: 20px;
+    }
+    .cpTable tr{
+        height: 40px;
     }
     .CpInput{
         width: 80%;

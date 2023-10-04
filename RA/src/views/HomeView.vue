@@ -112,7 +112,9 @@ main{
   display : flex;
   flex-direction : column ;
   background : #fff ;
-  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  /* padding-left: 10px; */
 }
 #logo img {
     width : 100px ;
@@ -152,7 +154,7 @@ a{
   position: relative;
   top:-50px;
 }
-#listSearch{
+#listSearch, #logo{
   width: 100%;
   padding-bottom: 30px;
   border-bottom: 1px solid #aaa;
