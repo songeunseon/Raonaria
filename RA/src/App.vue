@@ -6,6 +6,8 @@ import {ref, provide} from 'vue'
 export default{
   components:{Login_Modal},
   setup(){
+
+
     const isLoginModal = ref(false);
     const loginOpen = () => {
       isLoginModal.value = !isLoginModal.value;
