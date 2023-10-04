@@ -59,18 +59,19 @@ export default{
     height: 100px;
     margin: 0 auto;
     display: flex;
-    column-gap: 30px;
+    /* column-gap: 30px; */
     align-items: end;
   }
   #menu{
     padding-bottom: 20px;
+
   }
   #menuList{
-    min-width: 800px;
+    width: 96.2%;
     height: 50px;
     display: flex;
     list-style: none;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     font-size: 20px;
     align-items: end;
     border-bottom: 3px solid #BEC1FF;
@@ -93,9 +94,9 @@ export default{
   }
   #bt{
     max-width: 1000px;
-    margin: 0 auto;
     display: flex;
     justify-content: end;
+    margin: 0 auto;
   }
   #bt button{
     width: 100px;

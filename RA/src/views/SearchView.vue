@@ -2,6 +2,8 @@
 import {RouterLink, useRouter} from 'vue-router'
 const router = useRouter();
 
+//json파일 불러오기
+
 </script>
 
 
@@ -140,6 +142,11 @@ const router = useRouter();
 </template>
 
 <style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
   #box{
     width: 1000px;
     height: 300px;
@@ -220,6 +227,8 @@ const router = useRouter();
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    text-align: center;
   }
   #comparison{
     width: 100%;
