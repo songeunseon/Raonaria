@@ -51,7 +51,7 @@ position:fixed;
  border:1px solid black;
  background:white;
  z-index:100;
- right:280px;
+ left:500px;
  top:160px;
 }
 
@@ -149,7 +149,7 @@ position:fixed;
 .sns_line{
     display:flex;
     justify-content: space-around;
-    padding-top:10px;
+    padding-top:5px;
     
 }
 
