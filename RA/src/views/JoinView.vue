@@ -106,7 +106,7 @@
         height: 50px;
         font-size: 30px;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 50px;
         border-radius: 10px;
         background: 0;
         border: 3px solid #BEC1FF;

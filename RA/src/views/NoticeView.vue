@@ -40,7 +40,7 @@ const router = useRouter();
     #noticeBox{
         max-width: 1000px;
         border: 1px solid black;
-        margin: 0 auto;
+        margin: 20px auto;
         
     }
     #noticeBox h1{

@@ -79,8 +79,8 @@ const router = useRouter();
   <div id="buttonbox">
   <button id="comparison">유치원 비교하기</button>
   </div>
-  <div>
-    <div>
+  <div id="info">
+    <div id="harf">
       <div id="infomation">
         <table id="infoTable">
           <tr class="infoTr">
@@ -114,11 +114,11 @@ const router = useRouter();
         </table>
         <div id="check">
           <div>
-            <b>차량운행</b>
+            <b>차량운행여부</b>
             <input type="checkbox">
           </div>
           <div>
-            <b>특수학급</b>
+            <b>특수학급여부</b>
             <input type="checkbox">
           </div>
           <div>
@@ -128,7 +128,7 @@ const router = useRouter();
         </div>
         <div id="infoBt">
           <button>상담신청</button>
-          <button>입학신청</button>
+          <RouterLink to="/school"><button>입학신청</button></RouterLink>
         </div>
       </div>
       <div id="map"></div>
@@ -228,5 +228,47 @@ const router = useRouter();
     border: 3px solid #BEC1FF;
     border-radius: 5px;
     font-size: 20px;
+  }
+  #info{
+    max-width: 1000px;
+  }
+  #harf{
+    margin: 20px auto;
+    width: 85%;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  #infomation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #infoTable tr{
+    height: 30px;
+  }
+  #check{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #map{
+    width: 400px;
+    height: 300px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  #infoBt{
+    display: flex;
+    justify-content: space-between;
+  }
+  #infoBt button{
+    width: 150px;
+    height: 40px;
+    background: 0;
+    border: 3px solid #BEC1FF;
+    border-radius: 5px;
   }
 </style>
