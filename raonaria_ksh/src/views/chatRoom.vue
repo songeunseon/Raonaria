@@ -92,14 +92,15 @@ export default{
         }
         
         #chat{
-            width:800px;
+            width:1000px;
             height:600px;
             border:1px solid black;
-            margin:100px auto;
+            margin: 20px auto;
+            
         }
 
         .chat_box{
-            margin: 50px 100px;
+            margin: 50px 200px;
         }
 
         .chat_room{
@@ -200,15 +201,20 @@ export default{
             margin:15px 0;
         }
 
+        .info{
+            margin:0 auto;
+        }
+
         .info_title{
             text-align:center;
             padding-top:45px;
-            margin:5px 0;
+            margin:5px auto;
             font-weight:800;
         }
 
         .info_line{
             width:800px;
             border:2px solid #AAAAAA;
+            margin:0 auto;
         }
 </style>

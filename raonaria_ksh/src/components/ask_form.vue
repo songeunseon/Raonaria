@@ -34,8 +34,8 @@ export default{
     gap:10px;
     align-items: center;
     position: fixed;
-    top:-1%;
-    left:60%;
+    top:25%;
+    left:55%;
     transform: translate(-50%);
     background: white;
 }
