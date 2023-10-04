@@ -1,6 +1,23 @@
-<script setup>
+<script>
 import TheWelcome from '../components/TheWelcome.vue'
+import { RouterLink, RouterView } from "vue-router";
+import  EasySearch from '../components/EasySearch.vue';
+import {ref, provide} from 'vue'
 
+export default{
+  components:{EasySearch},
+  setup(){
+    const isEasySearch = ref(false);
+    const easySearch = () => {
+      isEasySearch.value = !isEasySearch.value;
+    }
+    provide('isEasySearch', isEasySearch);
+    provide('easySearch', easySearch);
+    return{
+      isEasySearch, easySearch
+    }
+  }
+}
 </script>
 <template>
   <main>
@@ -53,10 +70,10 @@ import TheWelcome from '../components/TheWelcome.vue'
         </div >
         <div id="shbar">
           <input id ="school" type ="text" placeholder ="유치원 이름을 입력하세요">
-          <svg @click="easysearch()" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#BEC1FF" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
-  <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-</svg>
-        </div >
+          <svg @click="easySearch()" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#BEC1FF" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+          </svg>
+          </div >
             <div id ="signin">
               <div class="input"><p><b>ID</b></p><input id ="hid" type ="text" placeholder ="abc@gmail.com"></div>
               <div class="input"><p><b>PW</b></p><input id ="hpw" type ="password"></div>
@@ -82,7 +99,6 @@ import TheWelcome from '../components/TheWelcome.vue'
     </footer >
     <TheWelcome />
   </main>
-
 </template>
 
 <style scoped>
@@ -112,7 +128,9 @@ main{
   display : flex;
   flex-direction : column ;
   background : #fff ;
-  padding-left: 10px;
+  text-align: center;
+  align-items: center;
+  /* padding-left: 10px; */
 }
 #logo img {
     width : 100px ;
@@ -152,7 +170,7 @@ a{
   position: relative;
   top:-50px;
 }
-#listSearch{
+#listSearch, #logo{
   width: 100%;
   padding-bottom: 30px;
   border-bottom: 1px solid #aaa;

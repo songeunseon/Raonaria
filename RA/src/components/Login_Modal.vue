@@ -51,7 +51,7 @@ position:fixed;
  border:1px solid black;
  background:white;
  z-index:100;
- left:500px;
+ left:700px;
  top:160px;
 }
 
@@ -117,11 +117,11 @@ position:fixed;
 
 .login_button{
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     /* align-items: center; */
     margin:5px auto;
     /* row-gap: 30px;  */
-
+    column-gap: 50px;
     
 }
 
@@ -130,7 +130,7 @@ position:fixed;
     height:40px;
     border:4px solid #BEC1FF;
     border-radius: 3px;
-    margin-left:125px;
+    /* margin-left:125px; */
     background:white;
     font-size:20px;
 }
@@ -140,7 +140,7 @@ position:fixed;
     height:40px;
     border:4px solid #BEC1FF;
     border-radius: 3px;
-    margin-right:126px;
+    /* margin-right:126px; */
     background:white;
     font-size:20px;
     
@@ -148,19 +148,20 @@ position:fixed;
 
 .sns_line{
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-top:5px;
+    column-gap: 30px;
     
 }
 
-.google{
+/* .google{
     margin-left:190px;
     
 }
 
 .kakao{
     margin-right:190px;
-}
+} */
 
 .line2{
     border-top:2px solid #AAAAAA;
