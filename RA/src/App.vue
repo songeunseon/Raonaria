@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import  Login_Modal from './components/Login_Modal.vue';
 
 
 </script>
@@ -20,8 +21,9 @@ import { RouterLink, RouterView } from "vue-router";
   </div>
   <div id ="bt">
     <RouterLink to="/join"><button id ="mjoin">회원가입 </button></RouterLink>
-    <RouterLink to="/login"><button id ="mlogin">로그인 </button></RouterLink>
+    <button id ="mlogin">로그인 </button>
   </div>
+  <Login_Modal/>
   <RouterView />
 </template>
 

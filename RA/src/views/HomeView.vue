@@ -1,9 +1,6 @@
 <script setup>
 import TheWelcome from '../components/TheWelcome.vue'
 
-
-
-
 </script>
 <template>
   <main>
@@ -85,6 +82,7 @@ import TheWelcome from '../components/TheWelcome.vue'
     </footer >
     <TheWelcome />
   </main>
+
 </template>
 
 <style scoped>
