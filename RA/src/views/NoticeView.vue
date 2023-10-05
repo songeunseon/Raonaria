@@ -1,12 +1,14 @@
 <script setup>
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
+import TopMenu_Login from '../components/TopMenu_Login.vue';
 const router = useRouter();
 
 </script>
 
 <template>
     <TopMenu/>
+    <TopMenu_Login/>
     <div id="noticeBox">
         <h1>공지사항</h1>
         <div id="searchBox">
@@ -32,6 +34,7 @@ const router = useRouter();
             </tr>
         </table>
     </div>
+
 <RouterView />
 </template>
 <style>
