@@ -45,14 +45,15 @@
 
 <style scoped>
 .Login_modal{
-position:fixed;
- width:500px;
- height:300px;
- border:1px solid black;
- background:white;
- z-index:100;
- left:700px;
- top:160px;
+position:absolute;
+width:500px;
+height:300px;
+border:1px solid black;
+background:white;
+z-index:100;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
 }
 
 .modal_header{

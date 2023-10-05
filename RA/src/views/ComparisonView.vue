@@ -1,7 +1,12 @@
-<script>
+<script setup>
+import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import TopMenu from '../components/TopMenu.vue'
+
 
 </script>
+
 <template>
+    <TopMenu/>
     <div id="CP">
         <div id="left">
             <div class="CpInput">
@@ -87,12 +92,14 @@
     <div id="CpText"> 
         <b>로그인을 하시면 상담신청과 입학신청을 이용하실 수 있습니다</b>
     </div>
+    <RouterView />
 </template>
 <style>
     #CP{
         max-width: 1000px;
         display: flex;
         justify-content: space-between;
+        margin: 10px auto;
     }
     #left, #right{
         width: 45%;

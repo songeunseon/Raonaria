@@ -1,7 +1,8 @@
 <script>
-
+import TopMenu from '../components/TopMenu.vue'
 </script>
 <template>
+    <TopMenu/>
     <div id="schoolpage">
         <div id="schoolTitle">
             <h1>입학신청</h1>
