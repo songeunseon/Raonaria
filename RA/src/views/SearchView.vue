@@ -1,9 +1,35 @@
-<script setup>
+<script>
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 const router = useRouter();
 
 //json파일 불러오기
+
+import Consulting_Req from '../components/Consulting_Req.vue'
+import { ref, provide } from "vue";
+export default{
+  name:'SearchView',
+    components:
+    {Consulting_Req,TopMenu},
+  setup(){
+    const isReq = ref(false);
+    const reqOpen = () => {isReq.value = !isReq.value;}
+    
+    provide('isReq', isReq);
+    provide('reqOpen', reqOpen);
+
+    // onMounted(()=>{
+    //   const req_bt = document.querySelector('.req_bt');
+    //   req_bt.addEventListener('click',function(){
+    //     req_open();
+    //   })
+    // })
+    
+    return{
+      isReq, reqOpen,
+    }
+  }
+}
 
 </script>
 
@@ -145,34 +171,7 @@ const router = useRouter();
   <RouterView />
 </template>
 
-<script>
-import { RouterLink, RouterView } from "vue-router";
-import Consulting_Req from '../components/Consulting_Req.vue'
-import { ref, provide } from "vue";
-export default{
-  name:'SearchView',
-    components:
-    {Consulting_Req},
-  Setup(){
-    const isReq = ref(false);
-    const reqOpen = () => {isReq.value = !isReq.value;}
-    
-    provide('isReq', isReq);
-    provide('reqOpen', reqOpen);
 
-    // onMounted(()=>{
-    //   const req_bt = document.querySelector('.req_bt');
-    //   req_bt.addEventListener('click',function(){
-    //     req_open();
-    //   })
-    // })
-    
-    return{
-      isReq, reqOpen,
-    }
-  }
-}
-</script>
 
 <style>
 *{

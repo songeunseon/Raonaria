@@ -139,10 +139,13 @@ main{
 }
 #logo img {
     width : 100px ;
-    margin-top: 10px;
-}
+    
+
+  }
 #logo{
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+
 }
 
 #menulist li{
@@ -154,7 +157,7 @@ main{
     text-align : center;
     font-size : 20px;
     padding-top :30px;
-    margin-bottom : 10px;
+    margin-top : 10px;
     color: black;
 }
 a{
@@ -177,7 +180,7 @@ a{
 }
 #listSearch, #logo{
   width: 100%;
-  padding-bottom: 30px;
+  padding: 20px 0;
   border-bottom: 1px solid #aaa;
   
 }
