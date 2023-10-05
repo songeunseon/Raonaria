@@ -1,9 +1,12 @@
-<script>
-import {RouterLink, useRouter} from 'vue-router'
+<script setup>
+import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import TopMenu from '../components/TopMenu.vue'
 const router = useRouter();
 
 </script>
+
 <template>
+    <TopMenu/>
     <div id="noticeBox">
         <h1>공지사항</h1>
         <div id="searchBox">
@@ -29,7 +32,7 @@ const router = useRouter();
             </tr>
         </table>
     </div>
-
+<RouterView />
 </template>
 <style>
     *{
@@ -39,7 +42,6 @@ const router = useRouter();
     }
     #noticeBox{
         max-width: 1000px;
-        border: 1px solid black;
         margin: 20px auto;
         
     }

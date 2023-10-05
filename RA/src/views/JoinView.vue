@@ -1,5 +1,6 @@
-<script>
-
+<script setup>
+import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import TopMenu from '../components/TopMenu.vue'
 </script>
 <template>
     <div id="joinmain">

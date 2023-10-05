@@ -1,4 +1,5 @@
 <template>
+    <TopMenu />
     <div id="chat">
         <div class="chat_box">
             <p class="chat_room">동창회 채팅방</p>
@@ -90,10 +91,12 @@
 import login_Alert from '../components/login_Alert.vue';
 import makeRoom from '../components/makeRoom.vue'
 import {ref, provide} from 'vue';
+import TopMenu from '../components/TopMenu.vue'
+
 export default{
     name: 'chatRoom',
     components:{
-        login_Alert,makeRoom
+        login_Alert,makeRoom,TopMenu
     },
     
     setup(){

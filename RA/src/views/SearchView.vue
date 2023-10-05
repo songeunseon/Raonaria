@@ -1,15 +1,18 @@
+<script setup>
+import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import TopMenu from '../components/TopMenu.vue'
+const router = useRouter();
 
-<!-- <<<<<<< HEAD
-=======
 //json파일 불러오기
 
 </script>
->>>>>>> 57655ed0bf669612117116a54f442267b4bf502e -->
+
 
 
 
 
 <template>
+  <TopMenu/>
   <div id="box">
   <div id="searchInput">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -139,7 +142,7 @@
       <!--차트-->
     </div>
   </div>
-  <Consulting_Req v-if="isReq"/>
+  <RouterView />
 </template>
 
 <script>
@@ -181,6 +184,8 @@ export default{
     width: 1000px;
     height: 300px;
     border-bottom: 3px solid #BEC1FF;
+    margin: 0 auto;
+    
   }
   #searchInput{
     width: 500px;
@@ -224,6 +229,7 @@ export default{
     width: 1000px;
     font-size: 20px;
     text-align: center;
+    margin: 0 auto;
   }
   #resultTable{
     width: 700px;
@@ -270,6 +276,7 @@ export default{
   }
   #info{
     max-width: 1000px;
+    margin: 0 auto;
   }
   #harf{
     margin: 20px auto;
