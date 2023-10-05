@@ -3,9 +3,12 @@ import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 const router = useRouter();
 
+<!-- <<<<<<< HEAD
+=======
 //json파일 불러오기
 
 </script>
+>>>>>>> 57655ed0bf669612117116a54f442267b4bf502e -->
 
 
 
@@ -131,7 +134,7 @@ const router = useRouter();
           </div>
         </div>
         <div id="infoBt">
-          <button>상담신청</button>
+          <button @click="reqOpen()" class="req_bt">상담신청</button>
           <RouterLink to="/school"><button>입학신청</button></RouterLink>
         </div>
       </div>
@@ -143,6 +146,34 @@ const router = useRouter();
   </div>
   <RouterView />
 </template>
+
+<script>
+import { RouterLink, RouterView } from "vue-router";
+import Consulting_Req from '../components/Consulting_Req.vue'
+import { ref, provide } from "vue";
+export default{
+  name:'SearchView',
+    components:
+    {Consulting_Req},
+  Setup(){
+    const isReq = ref(false);
+    const reqOpen = () => isReq.value = !isReq.value;
+    provide('isReq', isReq);
+    provide('reqOpen', reqOpen);
+
+    // onMounted(()=>{
+    //   const req_bt = document.querySelector('.req_bt');
+    //   req_bt.addEventListener('click',function(){
+    //     req_open();
+    //   })
+    // })
+    
+    return{
+      isReq, reqOpen,
+    }
+  }
+}
+</script>
 
 <style>
 *{
