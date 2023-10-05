@@ -1,6 +1,7 @@
 <template>
-<div class="make_room_modal">
+<div  class="make_room_modal">
     <div class="room_title">방개설하기</div>
+    <i  @click="makeRoomOpen()" class="bi bi-x-circle" style="cursor:pointer"></i>
     <div class="room_box">
         <p>채팅방이름</p>
         <input id="name" type="text">
@@ -15,7 +16,7 @@
 
 <div v-if="isAgainCheck" class="input_check">
     <span>입력창을 다시 확인해주세요</span>
-    <div class="check_detail">입력창을 다 작성해야<br>  채팅방에 개설이 가능합니다.</div>
+    <div class="check_detail">입력창을 다 작성해야<br> 채팅방에 개설이 가능합니다.</div>
     <div class="check_button">
         <button @click="blankCheckClose()" class="check_bt" value="확인">확인</button>
     </div>
@@ -45,9 +46,12 @@ export default{
         
         const blankCheckClose = () => isAgainCheck.value = false;
 
+        const makeRoomOpen = inject('makeRoomOpen');
+        
+        
+
         return{
-            isMakeRoom, done, isAgainCheck, blankCheck, blankCheckClose
-        }
+            isMakeRoom, done, isAgainCheck, blankCheck, blankCheckClose, makeRoomOpen}
     }
 }
 </script>
@@ -93,6 +97,12 @@ export default{
     background:#d9d9d9;
     border:none;
     
+}
+
+.bi-x-circle{
+    position:absolute;
+    top:9px;
+    left:15px;
 }
 
 .done_button{

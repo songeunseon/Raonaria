@@ -99,15 +99,20 @@ export default{
     setup(){
         const isAlert = ref(false);
         provide('isAlert', isAlert);
-        const alertOpen = () => isAlert.value = true;
+        const alertOpen = () => {isAlert.value = true;}
 
         const isMakeRoom = ref(false);
+        const makeRoomOpen = () => {isMakeRoom.value = !isMakeRoom.value;}
+
+        const isCancle = ref(false);
+        const XbtOpen = () => {isCancle.value = !isCancle.value;}
+        
         provide('isMakeRoom', isMakeRoom);
-        const makeRoomOpen = () => isMakeRoom.value = !isMakeRoom.value;
+        provide('makeRoomOpen',makeRoomOpen)
         
 
         return{
-            isAlert, alertOpen,makeRoomOpen,isMakeRoom
+            isAlert, alertOpen,makeRoomOpen,isMakeRoom, 
         }
     }
 }
