@@ -2,7 +2,7 @@
     <TopMenu />
     <div id="chat">
         <div class="chat_box">
-            <p class="chat_room">동창회 채팅방</p>
+            <p class="chat_room">온라인 동창회</p>
             <div class="chat_add">
                 <div class="icon">
                     <i class="bi bi-search"></i>
@@ -74,7 +74,7 @@ export default{
 
         .chat_room{
             text-align:center;
-            font-size:40px;
+            font-size:30px;
             font-weight:800;
         }
 
