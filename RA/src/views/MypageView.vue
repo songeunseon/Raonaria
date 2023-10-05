@@ -131,9 +131,7 @@ export default{
         const formOpen = () => isForm.value = !isForm.value;
         provide('isForm',isForm);
         provide('formOpen',formOpen);
-
         
-
         return{
             isCancel, cancelOpen, isForm, formOpen, 
         }
