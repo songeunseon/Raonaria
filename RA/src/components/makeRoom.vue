@@ -68,10 +68,11 @@ export default{
     height:330px;
     background:white;
     border:1px solid black;
-    position:relative;
+    position:absolute;
     left:50%;
-    transform: translate(-50%);
-    bottom:550px;
+    top:50%;
+    transform: translate(-50%, -50%);
+    /* bottom:550px; */
 } 
 
 .room_title{

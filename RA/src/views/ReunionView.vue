@@ -181,9 +181,7 @@ export default{
 
 
         .chat_add .bi-plus-circle{
-            position:relative;
-            right:50px;
-            top:5px;
+            
             font-size:28px;
         }
 
