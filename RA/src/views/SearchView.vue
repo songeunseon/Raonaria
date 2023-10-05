@@ -3,12 +3,10 @@ import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 const router = useRouter();
 
-<!-- <<<<<<< HEAD
-=======
 //json파일 불러오기
 
 </script>
->>>>>>> 57655ed0bf669612117116a54f442267b4bf502e -->
+
 
 
 
