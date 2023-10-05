@@ -41,15 +41,19 @@
 </template>
 
 <script>
+import {inject} from 'vue';
 export default{
     name:"Consulting_Req",
     setup(){
+        const isReq = inject('isReq');
+        const reqOpen = inject('reqOpen');
 
+        return{isReq, reqOpen}
     }
 }
- </script>
+</script>
 
-<style>
+<style scoped>
     .request_box{
         position:fixed;
         left:50%;

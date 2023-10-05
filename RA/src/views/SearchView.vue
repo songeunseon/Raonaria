@@ -1,4 +1,10 @@
 
+<!-- <<<<<<< HEAD
+=======
+//json파일 불러오기
+
+</script>
+>>>>>>> 57655ed0bf669612117116a54f442267b4bf502e -->
 
 
 
@@ -139,16 +145,16 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 import Consulting_Req from '../components/Consulting_Req.vue'
-import { ref } from "vue";
+import { ref, provide } from "vue";
 export default{
-  name:'searchView',
+  name:'SearchView',
     components:
     {Consulting_Req},
   Setup(){
     const isReq = ref(false);
-    const reqOpen = () => {
-      isReq.value = true;
-    }
+    const reqOpen = () => isReq.value = !isReq.value;
+    provide('isReq', isReq);
+    provide('reqOpen', reqOpen);
 
     // onMounted(()=>{
     //   const req_bt = document.querySelector('.req_bt');
@@ -158,13 +164,18 @@ export default{
     // })
     
     return{
-      isReq, reqOpen
+      isReq, reqOpen,
     }
   }
 }
 </script>
 
 <style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
   #box{
     width: 1000px;
     height: 300px;
@@ -245,6 +256,8 @@ export default{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+    text-align: center;
   }
   #comparison{
     width: 100%;

@@ -6,50 +6,79 @@
                 <div class="icon">
                     <i class="bi bi-search"></i>
                 </div>
-                    <input type="text">
+                    <input type="text" class="search_input">
                     <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
             </div>
-        <div id="list1">
+        </div>
+        <div id="chat_info">
+            <div class="list">
             <div class="title">
-                <div class="word_1">서구 유치원<br>새싹반 유치원 채팅방</div>
-                <div class="word_2">오픈채팅방</div>
+                <div class="word">서구 유치원<br>새싹반 유치원 채팅방</div>
+                
             </div>
-            <div class="title2">
-                <input type="button" value="입장하기" class="position">
-            </div>
-        </div>
-        <div id="list2">
             <div class="title">
-                <div class="word_1">동구 유치원<br>열매반 유치원 채팅방</div>
-                <div class="word_2">오픈채팅방</div>
-            </div>
-            <div class="title2">
-                <input type="button" value="입장하기" class="position">
+                <RouterLink to="/chatWindow">
+                <input type="button" value="입장" class="position">
+            </RouterLink>
             </div>
         </div>
-        <div id="list3">
+        <div class="list">
             <div class="title">
-                <div class="word_1">중구 유치원<br>참외반 유치원 채팅방</div>
-                <div class="word_2">오픈채팅방</div>
+                <div class="word">동구 유치원<br>열매반 유치원 채팅방</div>
+                
             </div>
-            <div class="title2">
-                <input type="button" value="입장하기" class="position">
-            </div>
-        </div>
-        <div id="list4">
             <div class="title">
-                <div class="word_1" >유성구 유치원<br>딸기반 유치원 채팅방</div>
-                <div class="word_2">오픈채팅방</div>
-            </div>
-            <div class="title2">
-                <input type="button" value="입장하기" class="position">
+                <RouterLink to="/chatWindow">
+                <input type="button" value="입장" class="position">
+            </RouterLink>
             </div>
         </div>
+        <div class="list">
+            <div class="title">
+                <div class="word">중구 유치원<br>참외반 유치원 채팅방</div>
+                
+            </div>
+            <div class="title">
+                <RouterLink to="/chatWindow">
+                    <input type="button" value="입장" class="position">
+                </RouterLink>
+            </div>
         </div>
+        <div class="list">
+            <div class="title">
+                <div class="word">유성구 유치원<br>딸기반 유치원 채팅방</div>
+            </div>
+            <div class="title">
+                <RouterLink to="/chatWindow">
+                    <input type="button" value="입장" class="position">
+                </RouterLink>
+            </div>
+        </div>
+        <div class="list">
+            <div class="title">
+                <div class="word">동구 유치원<br>예쁜나 유치원 채팅방</div>
+            </div>
+            <div class="title">
+                <RouterLink to="/chatWindow">
+                    <input type="button" value="입장" class="position">
+                </RouterLink>
+            </div>
+        </div>
+        <div class="list">
+            <div class="title">
+                <div class="word">중구 유치원<br>수박반 유치원 채팅방</div>
+            </div>
+            <div class="title">
+                <RouterLink to="/chatWindow">
+                    <input type="button" value="입장" class="position">
+                </RouterLink>
+            </div>
+        </div>
+        </div>    
         <div class="info">
             <div class="info_title">로그인을 하시면 채팅방 입장이 가능합니다.</div>
-            <div class="info_line"></div>
         </div>
+        
     </div>
 
     <login_Alert v-if="isAlert"/>
@@ -94,7 +123,7 @@ export default{
         #chat{
             width:800px;
             height:600px;
-            border:1px solid black;
+            /* border:1px solid black; */
             margin:20px auto;
         }
 
@@ -103,7 +132,8 @@ export default{
         }
 
         .chat_room{
-            font-size:25px;
+            text-align:center;
+            font-size:40px;
             font-weight:800;
         }
 
@@ -111,104 +141,95 @@ export default{
             padding-top:10px;
             position:relative;
             display:flex;
+            align-items: center;
+            
         }
 
         .chat_add input{
-            width:350px;
+            width:440px;
             height:32px;
-            border:3px solid #4849A1;
-            border-radius: 5px;
+            border:none;
+            outline: none;
+            border-bottom:3px solid #4849A1;
+            /* border-radius: 5px; */
+            text-align:center;
+            
             
         }
 
         .icon{
             position:absolute;
-            top:15px;
-            left:10px;
-            font-size:15px;
+            top:5px;
+            left:0px;
+            font-size:25px;
         }
+
+        .bi-search{
+            position:absolute;
+            left:80px;
+            top:-5px;
+            font-size:30px;
+        }
+
+        .search_input{
+            margin:0 auto;
+        }
+
+
 
         .chat_add .bi-plus-circle{
-            padding-left:30px;
-            font-size:20px;
+            position:relative;
+            right:50px;
+            top:5px;
+            font-size:28px;
         }
 
-        #list1{
-            width:600px;
-            height:90px;
-            border:1px solid black;
-            margin:15px 0;
-        }
-
-        .title{
+        #chat_info{
+            margin:0 auto;
             display:flex;
-            width:550px;
-            justify-content: space-between;
-            padding-top:10px;
-        }
-
-        .word_1{
-            padding:14px 25px;
-            font-size:15px;
-        }
-
-        .word_2{
-            font-size:12px;
-        }
-
-        .title2{
-            position:relative;
-        }
-
-        .word3{
-            font-size:15px;
-            padding:0px 15px;
-            
-        }
-
-        .position{
-            width:140px;
-            height:40px;
-            text-align: center;
-            position:relative;
-            left:450px;
-            bottom:40px;
-            text-align: center;
-            border:2px solid #BEC1FF;
-            background-color:white;
-        }
-
-        #list2{
-            width:600px;
-            height:90px;
-            border:1px solid black;
-            margin:15px 0;
-        }
-
-
-        #list3{
-            width:600px;
-            height:90px;
-            border:1px solid black;
-            margin:15px 0;
-        }
-
-        #list4{
-            width:600px;
-            height:90px;
-            border:1px solid black;
-            margin:15px 0;
+            flex-wrap:wrap;
+            column-gap:20px;
+            row-gap:20px;
         }
 
         .info_title{
+            width:800px;
             text-align:center;
-            padding-top:45px;
-            margin:5px 0;
-            font-weight:800;
+            padding-top:20px;
+            padding-bottom:5px;
+            border-bottom:4px solid #AAAA;
+            font-weight:700;
         }
 
-        .info_line{
-            width:800px;
-            border:2px solid #AAAAAA;
+        .list{
+            width:250px;
+            height:200px;
+            border:2px solid #BEC1FF;
+            /* display:flex; */
+            border-radius: 8px;
+        }
+
+        .word{
+            position:relative;
+            top:130px;
+            left:20px;
+            font-weight:700;
+        }
+
+        .position{
+            width:54px;
+            height:53px;
+            border-radius: 50px;
+            border:2px solid #BEC1FF;
+            background:white;
+            position:relative;
+            left:188px;
+            bottom:40px;
+            
+        }
+
+        .position:hover{
+            background: #BEC1FF;
+            color:white;
         }
 </style>
