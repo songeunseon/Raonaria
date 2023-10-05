@@ -47,7 +47,6 @@ export default{
     setup(){
         const isReq = inject('isReq');
         const reqOpen = inject('reqOpen');
-
         return{isReq, reqOpen}
     }
 }

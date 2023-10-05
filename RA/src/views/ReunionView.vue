@@ -107,9 +107,7 @@ export default{
         const isMakeRoom = ref(false);
         const makeRoomOpen = () => {isMakeRoom.value = !isMakeRoom.value;}
 
-        const isCancle = ref(false);
-        const XbtOpen = () => {isCancle.value = !isCancle.value;}
-        
+                
         provide('isMakeRoom', isMakeRoom);
         provide('makeRoomOpen',makeRoomOpen)
         
