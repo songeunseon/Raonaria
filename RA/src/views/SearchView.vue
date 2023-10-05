@@ -152,7 +152,8 @@ export default{
     {Consulting_Req},
   Setup(){
     const isReq = ref(false);
-    const reqOpen = () => isReq.value = !isReq.value;
+    const reqOpen = () => {isReq.value = !isReq.value;}
+    
     provide('isReq', isReq);
     provide('reqOpen', reqOpen);
 
