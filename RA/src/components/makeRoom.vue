@@ -73,6 +73,7 @@ export default{
     top:50%;
     transform: translate(-50%, -50%);
     /* bottom:550px; */
+    z-index:20;
 } 
 
 .room_title{
@@ -130,6 +131,7 @@ export default{
     left:50%;
     top:50%;
     transform: translate(-50%);
+    z-index: 30;
 }
 
 .input_check span{

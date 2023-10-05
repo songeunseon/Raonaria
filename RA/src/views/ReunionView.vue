@@ -11,79 +11,12 @@
                     <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
             </div>
         </div>
-        <div id="chat_info">
-            <div class="list">
-            <div class="title">
-                <div class="word">서구 유치원<br>새싹반 유치원 채팅방</div>
-                
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                <input type="button" value="입장" class="position">
-            </RouterLink>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="word">동구 유치원<br>열매반 유치원 채팅방</div>
-                
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                <input type="button" value="입장" class="position">
-            </RouterLink>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="word">중구 유치원<br>참외반 유치원 채팅방</div>
-                
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="word">유성구 유치원<br>딸기반 유치원 채팅방</div>
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="word">동구 유치원<br>예쁜나 유치원 채팅방</div>
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="word">중구 유치원<br>수박반 유치원 채팅방</div>
-            </div>
-            <div class="title">
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-        </div>
-        </div>    
-        <div class="info">
-            <div class="info_title">로그인을 하시면 채팅방 입장이 가능합니다.</div>
-        </div>
-        
     </div>
 
     <login_Alert v-if="isAlert"/>
     <makeRoom v-if="isMakeRoom"/>
+    <chat_List/>
+    <chat_Footer/>
 
 </template>
 
@@ -92,11 +25,13 @@ import login_Alert from '../components/login_Alert.vue';
 import makeRoom from '../components/makeRoom.vue'
 import {ref, provide} from 'vue';
 import TopMenu from '../components/TopMenu.vue'
+import chat_List from '../components/chat_List.vue';
+import chat_Footer from '../components/chat_Footer.vue';
 
 export default{
     name: 'chatRoom',
     components:{
-        login_Alert,makeRoom,TopMenu
+        login_Alert,makeRoom,TopMenu,chat_List,chat_Footer
     },
     
     setup(){
@@ -128,7 +63,7 @@ export default{
         
         #chat{
             width:800px;
-            height:600px;
+            /* height:600px; */
             /* border:1px solid black; */
             margin:20px auto;
         }
@@ -186,54 +121,5 @@ export default{
         .chat_add .bi-plus-circle{
             
             font-size:28px;
-        }
-
-        #chat_info{
-            margin:0 auto;
-            display:flex;
-            flex-wrap:wrap;
-            column-gap:20px;
-            row-gap:20px;
-        }
-
-        .info_title{
-            width:800px;
-            text-align:center;
-            padding-top:20px;
-            padding-bottom:5px;
-            border-bottom:4px solid #AAAA;
-            font-weight:700;
-        }
-
-        .list{
-            width:250px;
-            height:200px;
-            border:2px solid #BEC1FF;
-            /* display:flex; */
-            border-radius: 8px;
-        }
-
-        .word{
-            position:relative;
-            top:130px;
-            left:20px;
-            font-weight:700;
-        }
-
-        .position{
-            width:54px;
-            height:53px;
-            border-radius: 50px;
-            border:2px solid #BEC1FF;
-            background:white;
-            position:relative;
-            left:188px;
-            bottom:40px;
-            
-        }
-
-        .position:hover{
-            background: #BEC1FF;
-            color:white;
         }
 </style>

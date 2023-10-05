@@ -36,6 +36,54 @@
                     <div class="Participant5">김선향 여</div>
                     <div class="comment">옛추억이 떠오르는 구나</div>
                 </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
+                <div class="basic_info">
+                    <div class="Participant5">김선향 여</div>
+                    <div class="comment">옛추억이 떠오르는 구나</div>
+                </div>
             </div>
             <div class="chat_input">
                 <input type="text">
