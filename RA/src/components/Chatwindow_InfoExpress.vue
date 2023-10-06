@@ -34,6 +34,5 @@ import chatWindowVue from '../views/chatWindow.vue';
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gothic+A1:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100&display=swap');
-*{font-family: 'Gamja Flower', cursive;}
+
 </style>
