@@ -6,7 +6,9 @@
             <p class="chat_room">온라인 동창회</p>
             <div class="chat_add">
                 <div class="icon">
-                    <i class="bi bi-search"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
                 </div>
                     <input type="text" class="search_input">
                     <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
@@ -81,7 +83,7 @@ export default{
         }
 
         .chat_add{
-            padding-top:10px;
+            padding-top:45px;
             position:relative;
             display:flex;
             align-items: center;
@@ -102,7 +104,7 @@ export default{
 
         .icon{
             position:absolute;
-            top:5px;
+            top:50px;
             left:0px;
             font-size:25px;
         }
@@ -111,7 +113,7 @@ export default{
             position:absolute;
             left:80px;
             top:-5px;
-            font-size:30px;
+            font-size:20px;
         }
 
         .search_input{
