@@ -1,24 +1,18 @@
 <template>
 <div id="chat_room">
-        <div class="header">
-            <div class="chat_name">새싹반 유치원 채팅방</div>
-            <div class="icon">
-                <i @click="menuOpen()" class="bi bi-list"></i>
-                <i @click="exitOpen()" class="bi bi-door-open"></i>
-            </div>
-        </div>
-        <div id="chat">
-            <div id="chat_subject">
-                <div class="line1"></div>
-                <div class="chat_info">2023년 9월 17일</div>
-            </div>
+        
+        <d
             <div class="chat_window">
                 <div class="basic_info">
                     <div class="Participant1">김선향 여</div>
                     <div class="comment">애들아 방가워 참외반 최고</div>
                 </div>
                 <div class="basic_info">
-                    <div class="Participant2">
+                    <div class="Participant2">iv id="chat">
+            <div id="chat_subject">
+                <div class="line1"></div>
+                <div class="chat_info">2023년 9월 17일</div>
+            </div>
                         <i class="bi bi-award"></i>
                         김선향 남
                     </div>
@@ -165,8 +159,9 @@
             <div class="button_wrap">
                 <RouterLink to="/chatRoom"><button class="modal_bt" value="예">예</button></RouterLink>
                 <button @click="exitOpen()" class="modal_bt" value="아니오">아니오</button>
-            </div>  
-        </div>
+            </div>
+            
+            </div>
 
         
         
@@ -178,10 +173,11 @@
 
 <script>
 import menu_modal from '../components/menu_modal.vue'
+import Chatwindow_Menubar from '../components/Chatwindow_Menubar.vue'
 import {ref, provide} from 'vue';
 export  default{
     components:{
-        menu_modal
+        menu_modal,Chatwindow_Menubar
     },
     setup(){
         const isBan = ref(false);
@@ -191,11 +187,11 @@ export  default{
 
         const banOff = () => isBan.value = false;
 
-        const isMenu = ref(false);  
-        const menuOpen = () => isMenu.value = !isMenu.value;
-        
         const isDel = ref(false);
         const delOpen = () => isDel.value = !isDel.value;
+
+        const isMenu = ref(false);  
+        const menuOpen = () => isMenu.value = !isMenu.value;
 
         const isExit = ref(false);
         const exitOpen = () => isExit.value = !isExit.value;
@@ -210,5 +206,5 @@ export  default{
 </script>
 
 <style scoped>
-@import url(./chatWindow.css);
+@import url(../assets/chatWindow.css);
 </style>

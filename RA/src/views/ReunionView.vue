@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import login_Alert from '../components/login_Alert.vue';
-import makeRoom from '../components/makeRoom.vue'
+import login_Alert from '../components/Reunion_loginAlert.vue';
+import makeRoom from '../components/Reunion_makeRoom.vue'
 import {ref, provide} from 'vue';
 import TopMenu from '../components/TopMenu.vue'
-import chat_List from '../components/chat_List.vue';
-import chat_Footer from '../components/chat_Footer.vue';
+import chat_List from '../components/Reunion_chatList.vue';
+import chat_Footer from '../components/Reunion_chatFooter.vue';
 
 export default{
     name: 'chatRoom',
