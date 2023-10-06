@@ -1,7 +1,7 @@
 <template>
 <div id="chat_room">
         
-        <d
+    <div>
             <div class="chat_window">
                 <div class="basic_info">
                     <div class="Participant1">김선향 여</div>
