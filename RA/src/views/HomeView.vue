@@ -3,9 +3,11 @@ import TheWelcome from '../components/TheWelcome.vue'
 import { RouterLink, RouterView } from "vue-router";
 import  EasySearch from '../components/EasySearch.vue';
 import {ref, provide} from 'vue'
+import Home_Login from '../components/Home_Login.vue';
+import Home_Easy from '../components/Home_Easy.vue';
 
 export default{
-  components:{EasySearch},
+  components:{ EasySearch,Home_Easy, Home_Login },
   setup(){
     const isEasySearch = ref(false);
     const easySearch = () => {
@@ -69,26 +71,9 @@ export default{
                 <div id ="listTitle">유치원 간단 조회 </div >
             </div >
         </div >
-        <div id="shbar">
-          <input id ="school" type ="text" placeholder ="유치원 이름을 입력하세요">
-          <svg @click="easySearch()" xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#BEC1FF" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16" >
-            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-          </svg>
-          </div >
-            <div id ="signin">
-              <div class="input"><p><b>ID</b></p><input id ="hid" type ="text" placeholder ="abc@gmail.com"></div>
-              <div class="input"><p><b>PW</b></p><input id ="hpw" type ="password"></div>
-              <div id ="bt">
-                <RouterLink to="/join"><button id ="hjoin">회원가입 </button ></RouterLink>
-                <button @click="login()" id ="hlogin">로그인 </button >
-              </div>
-              <div id="sns">
-                <img src="../assets/google.png" style="width: 50px;">
-                <img src="../assets/kakao.png" style="width: 50px;">
-              </div>
-              <p id="not">회원이 아닐시 일부 서비스를 이용하실수 없습니다. <br>서비스 이용 원할시 회원가입을 해주세요</p>
-        </div >
-      <EasySearch v-if="isEasySearch"/>
+        <Home_Easy/>
+        <Home_Login/>
+
     </search >
     </div >
     <footer id ="footer">
@@ -208,39 +193,7 @@ a{
     border-radius : 5px;
     outline : none;
 }
-#signin {
-    width : 250px;
-    display : flex;
-    flex-direction : column;
-}
-#signin input {
-    outline : none;
-    border : 0;
-    width : 250px;
-    font-size : 20px;
-    background: 0;
-    text-align: center;
-}
-#signin .input{
-  display: flex;
-  border-bottom : 5px solid #BEC1FF;
-  margin: 10px;
-}
 
-#bt {
-    display : flex;
-    width : 100%;
-    justify-content : space-around;
-    border: 0;
-}
-#hjoin , #hlogin {
-    margin-top : 5px;
-    width : 100px;
-    height : 40px;
-    border : 3px solid #BEC1FF;
-    border-radius : 5px;
-    background: 0;
-}
 #footer{
   min-width: 1000px;
   margin: 0 auto;
@@ -257,16 +210,6 @@ a{
 #haddr{
   column-gap: 50px;
 }
-#sns{
-  width: 150px;
-  display: flex;
-  justify-content: space-between;
-  margin: 10px auto;
-}
-#not{
-  font-size: 10px;
-  border-top: 3px solid #aaa;
-  padding: 5px;
-}
+
 
 </style>

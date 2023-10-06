@@ -50,7 +50,7 @@ export default{
     margin-left: 10px;
 }
 #CpText{
-        position: fixed;
+        position:fixed;
         bottom: 0;
         width: 100%;
         margin: 0 auto;
