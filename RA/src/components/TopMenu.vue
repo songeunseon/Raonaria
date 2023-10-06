@@ -48,7 +48,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     display: flex;
     list-style: none;
     /* justify-content: space-around; */
-    font-size: 20px;
+    font-size: 17px;
     align-items: end;
     border-bottom: 3px solid #BEC1FF;
     text-decoration: none;

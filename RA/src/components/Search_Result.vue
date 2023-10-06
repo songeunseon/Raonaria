@@ -28,8 +28,10 @@ const router = useRouter();
 
   }
   #resultTable tr td{
-    border: 1px solid black;
+    background: seashell;
+    border-bottom:3px double #aaa;
   }
+
   #resultTable tr{
     height: 40px;
     background: #d9d9d9;
@@ -49,4 +51,5 @@ const router = useRouter();
   #resultTable tr td:nth-child(5){
     width: 35%;
   }
+
 </style>

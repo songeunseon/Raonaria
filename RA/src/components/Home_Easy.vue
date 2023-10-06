@@ -33,6 +33,7 @@ export default{
 #shbar svg{
   margin: 20px 0 100px 0;
 }
+
 #school {
     width : 340px;
     height : 55px;

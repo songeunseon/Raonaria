@@ -66,9 +66,8 @@ const router = useRouter();
   #box{
     width: 1000px;
     height: 300px;
-    border-bottom: 3px solid #BEC1FF;
+    /* border-bottom: 3px solid #BEC1FF; */
     margin: 0 auto;
-    
   }
   #searchInput{
     width: 500px;
@@ -93,8 +92,11 @@ const router = useRouter();
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    padding-top: 20px;
+    padding: 20px;
     border: 1px solid black;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 10px;
     font-size: 15px;
   }
   .searchList{
@@ -107,5 +109,6 @@ const router = useRouter();
   .optiontag{
     background: #BEC1FF;
     border: 0;
+    text-align: center;
   }
 </style>
