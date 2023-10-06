@@ -1,5 +1,6 @@
 <template>
     <TopMenu />
+    <TopMenu_Login/>
     <div id="chat">
         <div class="chat_box">
             <p class="chat_room">온라인 동창회</p>
@@ -15,8 +16,9 @@
 
     <login_Alert v-if="isAlert"/>
     <makeRoom v-if="isMakeRoom"/>
-    <chat_List/>
-    <chat_Footer/>
+    <Reunion_chatList/>
+    
+    
 
 </template>
 
@@ -25,13 +27,13 @@ import login_Alert from '../components/Reunion_loginAlert.vue';
 import makeRoom from '../components/Reunion_makeRoom.vue'
 import {ref, provide} from 'vue';
 import TopMenu from '../components/TopMenu.vue'
-import chat_List from '../components/Reunion_chatList.vue';
-import chat_Footer from '../components/Reunion_chatFooter.vue';
+import Reunion_chatList from '../components/Reunion_chatList.vue';
+import TopMenu_Login from '../components/TopMenu_Login.vue';
 
 export default{
     name: 'chatRoom',
     components:{
-        login_Alert,makeRoom,TopMenu,chat_List,chat_Footer
+        login_Alert,makeRoom,TopMenu,Reunion_chatList,TopMenu_Login
     },
     
     setup(){

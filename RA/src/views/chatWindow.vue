@@ -1,91 +1,7 @@
 <template>
-<div id="chat_room">
-        
-        <d
-            <div class="chat_window">
-                <div class="basic_info">
-                    <div class="Participant1">김선향 여</div>
-                    <div class="comment">애들아 방가워 참외반 최고</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant2">iv id="chat">
-            <div id="chat_subject">
-                <div class="line1"></div>
-                <div class="chat_info">2023년 9월 17일</div>
-            </div>
-                        <i class="bi bi-award"></i>
-                        김선향 남
-                    </div>
-                    <div class="comment">애들아 방가워</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant3">김선향 여</div>
-                    <div class="comment">방가</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant4">김선향 남</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-                <div class="basic_info">
-                    <div class="Participant5">김선향 여</div>
-                    <div class="comment">옛추억이 떠오르는 구나</div>
-                </div>
-            </div>
-            <div class="chat_input">
-                <input type="text">
-                <div class="icon3">
-                    <i class="bi bi-send"></i>
-                </div>
-            </div>
-        </div>
+    <Chatwindow_Menubar/>
+    <Chatwindow_ChatContent/>
+     <Chatwindow_ChatInput/>     
         <div id="announcement">
             <div class="main_title1">공지사항</div>
             <div class="info_box">
@@ -161,23 +77,26 @@
                 <button @click="exitOpen()" class="modal_bt" value="아니오">아니오</button>
             </div>
             
-            </div>
+        </div>
+
+       
 
         
         
 
         
 
-    </div>
 </template>
 
 <script>
 import menu_modal from '../components/menu_modal.vue'
 import Chatwindow_Menubar from '../components/Chatwindow_Menubar.vue'
+import Chatwindow_ChatContent from '../components/Chatwindow_ChatContent.vue'
+import Chatwindow_ChatInput from '../components/Chatwindow_ChatInput.vue'
 import {ref, provide} from 'vue';
 export  default{
     components:{
-        menu_modal,Chatwindow_Menubar
+        menu_modal,Chatwindow_Menubar,Chatwindow_ChatContent,Chatwindow_ChatInput
     },
     setup(){
         const isBan = ref(false);

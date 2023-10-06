@@ -1,5 +1,6 @@
 <template>
 <TopMenu/>
+<TopMenu_Login/>
 <div class="page">
     <div class="info">
         <div class="profile">
@@ -115,13 +116,14 @@
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import Cancel_Alert from '../components/Cancel_Alert.vue'
+import TopMenu_Login from '../components/TopMenu_Login.vue'
 import ask_form from '../components/ask_form.vue'
 import {ref, provide} from 'vue'
 
 export default{
     name:'MyPage',
     components:{
-        Cancel_Alert, ask_form, TopMenu
+        Cancel_Alert, ask_form, TopMenu, TopMenu_Login
     },
     setup(){
         const isCancel = ref(false);
@@ -140,5 +142,5 @@ export default{
 </script>
 
 <style scoped>
-@import url(./MyPage.css);
+@import url(../assets/MyPage.css);
 </style>

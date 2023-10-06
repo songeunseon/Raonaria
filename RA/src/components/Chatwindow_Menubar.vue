@@ -38,6 +38,8 @@ export default{
     width:800px;
     height:200px;
     position: absolute;
+    top:0;
+    left:0;
 }
 
 .chat_name{
