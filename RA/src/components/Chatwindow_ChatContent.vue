@@ -77,6 +77,12 @@
                 </div>
             </div>
         </div>
+        <div class="chat_input">
+            <input type="text">
+            <div class="icon3">
+                <i class="bi bi-send"></i>
+            </div>
+        </div>    
 </template>
 
 <script>
