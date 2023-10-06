@@ -73,12 +73,12 @@ export default{
     text-align: center;
   }
   #comparison{
-    width: 100%;
+    width: 200px;
     height: 40px;
     background: 0;
     border: 3px solid #BEC1FF;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
   }
   
 </style>

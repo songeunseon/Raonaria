@@ -71,10 +71,22 @@ const router = useRouter();
         width: 450px;
         height: 40px;
         padding: 10px;
+        border: 0;
+        outline: none;
     }
     #Bt{
         width: 120px;
         height: 40px;
+        border: 0;
+        border-right: 3px solid #aaa;
+        border-bottom: 3px solid #aaa;
+    }
+    #Bt:hover{
+        width: 120px;
+        height: 40px;
+        border: 0;
+        border-left: 3px solid #aaa;
+        border-top: 3px solid #aaa;
     }
     #noticeTable{
         min-width: 800px;

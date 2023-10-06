@@ -47,12 +47,14 @@ export default{
     /* flex-direction : column; */
     align-items: center;
     justify-content: center;
+    position: fixed;
+    bottom: 150px;
 }
 #signin input {
     outline : none;
     border : 0;
     width : 250px;
-    font-size : 20px;
+    font-size : 15px;
     background: 0;
     text-align: center;
 }
