@@ -35,7 +35,8 @@ export default{
 </template>
 <style>
 *{padding: 0;margin: 0;box-sizing: border-box;}
-  #TopMenuBt{
+
+#TopMenuBt{
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
@@ -50,8 +51,6 @@ export default{
     margin-left: 10px;
 }
 #CpText{
-        position:fixed;
-        bottom: 0;
         width: 100%;
         margin: 0 auto;
         text-align: center;

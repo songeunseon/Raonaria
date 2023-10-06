@@ -47,8 +47,8 @@ export default{
     /* flex-direction : column; */
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 150px;
+    position: relative;
+    bottom: 0;
 }
 #signin input {
     outline : none;
@@ -79,12 +79,14 @@ export default{
     border : 3px solid #BEC1FF;
     border-radius : 5px;
     background: 0;
+    cursor: pointer;
 }
 #sns{
     width: 150px;
     display: flex;
     justify-content: space-between;
     margin: 10px auto;
+    cursor: pointer;
 }
 #not{
     font-size: 10px;

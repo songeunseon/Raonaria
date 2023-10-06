@@ -32,6 +32,7 @@ export default{
 <style>
 #shbar svg{
   margin: 20px 0 100px 0;
+  cursor: pointer;
 }
 
 #school {

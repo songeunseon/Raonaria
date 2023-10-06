@@ -144,6 +144,7 @@ main{
     padding-top :30px;
     margin-top : 10px;
     color: black;
+    cursor: pointer;
 }
 a{
   text-decoration:none;
@@ -181,9 +182,6 @@ a{
   padding: 30px 0 10px 0;
   justify-content:center;
   border-bottom: 3px solid #aaa;
-}
-#shbar svg{
-  margin: 20px 0 100px 0;
 }
 #school {
     width : 340px;
