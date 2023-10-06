@@ -7,10 +7,11 @@ const router = useRouter();
 
 import Consulting_Req from '../components/Consulting_Req.vue'
 import { ref, provide } from "vue";
+import TopMenu_Login from '../components/TopMenu_Login.vue';
 export default{
   name:'SearchView',
     components:
-    {Consulting_Req,TopMenu},
+    { Consulting_Req, TopMenu, TopMenu_Login },
   setup(){
     const isReq = ref(false);
     const reqOpen = () => {isReq.value = !isReq.value;}
@@ -39,6 +40,7 @@ export default{
 
 <template>
   <TopMenu/>
+  <TopMenu_Login/>
   <div id="box">
   <div id="searchInput">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
