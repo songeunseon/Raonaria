@@ -51,8 +51,8 @@ export default{
     width:170px;
     height:250px;
     background:white;
-    padding-top:15px;
-    padding-right:40px;
+    padding-top:35px;
+    padding-right:50px;
     margin-left:15px;
     margin-bottom:10px;
     border-radius: 10px;
