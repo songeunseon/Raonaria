@@ -1,9 +1,12 @@
 <template>
     <Chatwindow_Menubar/>
-    <Chatwindow_ChatContent/>
-    <Chatwindow_InfoExpress/>
-    <Chatwindow_Chatpartner/>
-      
+    <div class="chat_layout">
+        <Chatwindow_ChatContent/>
+        <div class="content_wrap">
+              <Chatwindow_InfoExpress/>
+              <Chatwindow_Chatpartner/>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -49,4 +52,12 @@ export  default{
 @import url(../assets/chatWindow.css);
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gothic+A1:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100&display=swap');
 *{font-family: 'Gamja Flower', cursive;}
+.chat_layout{
+    width:fit-content;
+    margin:40px auto;
+}
+.content_wrap{
+    width:1000px;
+    height:fit-content;
+}
 </style>

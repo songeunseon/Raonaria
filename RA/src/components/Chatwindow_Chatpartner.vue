@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="partner_wrap">
     <div class="chat_partner">채팅상대</div>
     <div class="info_box2">
         <div class="room_manager1">
@@ -24,6 +24,11 @@ export default{
 </script>
 
 <style scoped>
+
+.partner_wrap{
+    width:fit-content;
+}
+
 .info_line{
     width:180px;
     border:1px solid #BEC1FF;
@@ -32,6 +37,7 @@ export default{
 
 .chat_partner{
     text-align: center;
+    width:180px;
 }
 
 .info_box2{
