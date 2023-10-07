@@ -1,5 +1,5 @@
 <template>
- <div id="announcement">
+    <div id="announcement">
             <div class="main_title1">공지사항</div>
             <div class="info_box">
                 <div class="info1">오고싶은 사람은 와라</div>
@@ -21,11 +21,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
-            
-            
-        
-    
+    </div> 
 </template>
 
 <script>
@@ -34,5 +30,42 @@ import chatWindowVue from '../views/chatWindow.vue';
 </script>
 
 <style>
+#announcement{
+    width:200px;
+    height:350px;
+    border:1px solid #f4f4fa;
+    background: #f4f4fa;
+    /* margin:-665px 745px; */
+    border-radius: 10px;
+    /* display:flex;  */
+    position:relative;
+}
 
+.main_title1{
+    text-align:center;
+    margin:10px 0px 2px 0px;
+    font-size:18px;
+}
+
+.info_box{
+    width:170px;
+    height:250px;
+    background:white;
+    margin-left:15px;
+    margin-bottom:15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.info1{
+    padding:30px 0 10px 0;
+    text-align:center;
+    font-size:15px;
+}
+
+.info2{
+    text-align:center;
+    padding:-20px 0;
+    font-size:15px;
+}
 </style>

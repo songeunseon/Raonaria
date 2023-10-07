@@ -107,7 +107,7 @@ export default {
 }
 
 .chat_wrap {
-    width: 700px;
+    width: 770px;
     /* padding:50px 0; */
     height: 660px;
     overflow-y: scroll;
@@ -115,13 +115,13 @@ export default {
 }
 
 #chat {
-    width: 700px;
+    width: 770px;
     height: 500px;
     border: 1px solid black;
 }
 
 #chat_subject {
-    width: 600px;
+    width: 670px;
     margin: 10px auto;
     padding-left: 30px;
     position: relative;
@@ -224,7 +224,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width:700px;
+    width:770px;
     height:50px;
     gap:10px;
     margin-top:20px;

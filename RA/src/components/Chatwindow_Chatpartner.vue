@@ -6,7 +6,7 @@
             <div class="icon4">
                         <i class="bi bi-award"></i>
             </div>
-                    <div class="name1">김선향</div>
+        <div class="name1">김선향</div>
         </div>
         <div class="name2">김선향</div>
         <div class="name3">김선향</div>
@@ -26,7 +26,11 @@ export default{
 <style scoped>
 
 .partner_wrap{
-    width:fit-content;
+    width:200px;
+    height:350px;
+    background:#f4f4fa;
+    margin-top:30px;
+
 }
 
 .info_line{
@@ -38,6 +42,9 @@ export default{
 .chat_partner{
     text-align: center;
     width:180px;
+    padding-top:10px;
+    font-size:18px;
+    padding-left:15px;
 }
 
 .info_box2{
@@ -45,14 +52,16 @@ export default{
     height:250px;
     background:white;
     padding-top:15px;
+    padding-right:40px;
     margin-left:15px;
     margin-bottom:10px;
     border-radius: 10px;
     display:flex;
-    align-items: center;
+    align-items: end;
     flex-direction:column;
     row-gap:10px;
     overflow-y: scroll;
+    text-align: right;
     
 }
 
