@@ -67,8 +67,6 @@ export default{
         
         #chat{
             width:800px;
-            /* height:600px; */
-            /* border:1px solid black; */
             margin:20px auto;
         }
 
