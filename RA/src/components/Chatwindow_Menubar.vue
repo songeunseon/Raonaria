@@ -1,10 +1,11 @@
 <template>
     
 <div class="header">
-            <div class="chat_name">새싹반 유치원 채팅방</div>
+            <div class="chat_name">새싹반 유치원 채팅방
             <div class="icon">
                 <i class="bi bi-list"></i>
                 <i  class="bi bi-door-open"></i>
+            </div>
             </div>
 </div>
 
@@ -55,23 +56,31 @@ export default{
 
 
 .header{
-    width:800px;
-    height:200px;
-    position: absolute;
+    width:1000px;
+    height:30px;
+    border:none;
+    /* position: absolute; */
+    margin:0 auto;
     top:0;
-    left:0;
+    left:10%;
+    font-size:18px;
+    background-color:#F4F4FA;
 }
 
 .chat_name{
-    padding:0 30px;
+    padding:2px 10px;
     font-weight: 800;
+    display:flex;
+    justify-content: space-between;
 }
 
 .icon{
-    padding:0 20px;
+    /* padding:0 20px; */
     display:flex;
     column-gap: 25px;
-    font-size:25px;
+    font-size:20px;
+    position:relative;
+    top:0px;
 }
 
 .ban_modal{
