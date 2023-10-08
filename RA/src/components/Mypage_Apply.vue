@@ -1,0 +1,152 @@
+<template>
+<div class="right_wrap">
+        <div class="apply_header">
+            <div class="apply">신청내역</div>
+            <button @click="cancelOpen()" class="cancel">신청취소</button>
+        </div>
+        <div class="apply_Zone">
+            <i class="bi bi-arrow-left-square"></i>
+            <div class="apply_box">
+                <div>
+                    <input class="text" type="text">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
+                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+            </div>
+            <div class="apply_box">
+                <div>
+                    <input class="text" type="text">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
+                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+            </div>
+            <div class="apply_box">
+                <div>
+                    <input class="text" type="text">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
+                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+            </div>
+            <div class="apply_box">
+                <div>
+                    <input class="text" type="text">
+                    <input class="checkbox" type="checkbox">
+                </div>
+                <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
+                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+            </div>
+            <i class="bi bi-arrow-right-square"></i>
+        </div>
+        <div class="apply_header question">
+            <div class="question_zone">나의문의</div>
+            <button @click="cancelOpen()" class="question_bt">문의취소</button>
+        </div>
+    </div>
+
+</template>
+
+<script>
+import MypageViewVue from '../views/MypageView.vue';
+export default{
+    name:"Mypage_Apply",
+    setup(){
+
+        return{}
+    }
+}
+</script>
+
+<style scoped>
+.right_wrap{
+    width:100%;
+}
+
+.apply_header{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:15px auto;
+    position:relative;
+    width:660px;
+}
+
+.apply{
+    font-size:20px;
+    font-weight:900;
+}
+
+.cancel{
+    position: absolute;
+    right:0;
+    font-size:15px;
+    border:3px solid #bec1ff;
+    border-radius: 5px;
+    width:80px;
+    height:30px;
+    background:white;
+}
+
+.apply_Zone{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0px 20px;
+    position:relative;
+}
+
+.bi-arrow-left-square, .bi-arrow-right-square{
+    font-size:25px;
+}
+
+.apply_box{
+    border:1px solid black;
+    background:#d9d9d9;
+    padding:5px;
+    gap:20px;
+    display:flex;
+    flex-direction: column;
+}
+
+.apply_box > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apply_box .text{
+    width:90px;
+    height:30px;
+}
+
+.apply_box .checkbox{
+    width:20px;
+    height:20px;
+}
+
+
+.question_zone{
+    font-size:20px;
+    text-align: center;
+    font-weight: 900;
+    width:660px;
+}
+
+.question{
+    margin-top :100px;
+}
+
+.question_bt{
+    width:80px;
+    height:30px;
+    border:3px solid #BEC1FF;
+    background:white;
+    position:relative;
+    right:0;
+    border-radius: 3px;
+}
+
+
+</style>
