@@ -7,7 +7,8 @@
                 <div v-if="isDel" @click="checkOpen()" class="delete_title">
                     삭제하기
                 <i class="bi bi-trash"></i>
-                </div> 
+                </div>
+                
                 <div  v-if="isCheck" class="check_del">
                     <div class="inform_delete">
                         공지사항 삭제
@@ -16,8 +17,8 @@
                         모든 사람이 볼 수 없게 됩니다.
                     </div>
                     <div class="delete_button">
-                        <button class="notice_del_bt" value="아니오">아니오</button>
-                        <button class="notice_del_bt" value="삭제">삭제</button>
+                        <button  @click="delCancel()" class="notice_del_bt" value="아니오">아니오</button>
+                        <RouterLink to="/ReunionView"><button class="notice_del_bt" value="삭제">삭제</button></RouterLink>
                     </div>
                 </div>
             </div>
@@ -36,7 +37,13 @@ export default{
         const isCheck =ref(false);
         const checkOpen = () => isCheck.value = !isCheck.value;
 
-        return {isDel, delOpen, isCheck, checkOpen}
+        const delCancel = () => {
+            isCheck.value = !isCheck.value;
+            isDel.value = !isDel.value;
+        }
+
+
+        return {isDel, delOpen, isCheck, checkOpen, delCancel}
     }
 }
 </script>
