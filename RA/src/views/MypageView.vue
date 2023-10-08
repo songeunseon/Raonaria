@@ -56,7 +56,7 @@ export default{
 .page_wrap{
     display:flex;
     width:1000px;
-    margin:0 auto;
+    margin:45px auto;
     gap:20px;
 }
 .page_Zone{

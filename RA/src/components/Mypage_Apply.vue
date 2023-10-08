@@ -76,6 +76,7 @@ export default{
     margin:0px auto 15px auto;
     position:relative;
     width:100%;
+    padding:10px 0;
 }
 
 .apply{
@@ -106,7 +107,7 @@ export default{
 }
 
 .apply_box{
-    background-color:teal;
+    background-color:#F1EFEF;
     padding:8px;
     gap:20px;
     display:flex;

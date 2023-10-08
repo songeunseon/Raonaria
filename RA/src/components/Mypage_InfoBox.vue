@@ -109,6 +109,9 @@ export default{
     flex-direction: column;
     gap:10px;
     background:#F1EFEF;
+    /* margin:60px 0; */
+    position:relative;
+    top:89px;
 
 }
 
