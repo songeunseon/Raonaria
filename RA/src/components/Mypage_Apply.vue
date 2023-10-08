@@ -41,20 +41,25 @@
             <i class="bi bi-arrow-right-square"></i>
         </div>
         <div class="apply_header question">
+            <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
-            <button @click="cancelOpen()" class="question_bt">문의취소</button>
+            <button @click="cancelOpen()" class="cancel">문의취소</button>
         </div>
     </div>
 
 </template>
 
 <script>
+import {inject} from 'vue'
 import MypageViewVue from '../views/MypageView.vue';
 export default{
     name:"Mypage_Apply",
     setup(){
-
-        return{}
+        const isCancel = inject('isCancel');
+        const cancelOpen = inject('cancelOpen');
+        const isForm = inject('isForm')
+        const formOpen = inject('formOpen')
+        return{isCancel, cancelOpen, isForm, formOpen}
     }
 }
 </script>
@@ -68,9 +73,9 @@ export default{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin:15px auto;
+    margin:0px auto 15px auto;
     position:relative;
-    width:660px;
+    width:100%;
 }
 
 .apply{
@@ -93,7 +98,6 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:0px 20px;
     position:relative;
 }
 
@@ -102,9 +106,8 @@ export default{
 }
 
 .apply_box{
-    border:1px solid black;
-    background:#d9d9d9;
-    padding:5px;
+    background:#E5CFF7;
+    padding:8px;
     gap:20px;
     display:flex;
     flex-direction: column;
@@ -148,5 +151,15 @@ export default{
     border-radius: 3px;
 }
 
+.manager_bt{
+    position: absolute;
+    left:0;
+    font-size:15px;
+    border:3px solid #bec1ff;
+    border-radius: 5px;
+    height:30px;
+    background:white;
+    padding:0 5px;
+}
 
 </style>

@@ -46,9 +46,9 @@ export default{
 
 table{
     border:2px solid #d9d9d9;
-    width:700px;
+    width:100%;
     height:180px;
-    margin:20px 40px;
+    margin:20px 0px;
     border-collapse: collapse;
 }
 

@@ -1,6 +1,5 @@
 <template>
     <div v-if="isExit" class="exit_modal">
-       
         <div class="exit_title">
             <i @click="exitOpen()" class="bi bi-x-circle"></i>
             <span>채팅방을 나가시겠습니까?</span>
