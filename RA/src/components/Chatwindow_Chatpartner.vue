@@ -30,6 +30,7 @@ export default{
     height:350px;
     background:#f4f4fa;
     margin-top:30px;
+    border-radius:10px;
 
 }
 
@@ -55,7 +56,7 @@ export default{
     padding-right:50px;
     margin-left:15px;
     margin-bottom:10px;
-    border-radius: 10px;
+    border-radius: 15px;
     display:flex;
     align-items: end;
     flex-direction:column;

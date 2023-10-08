@@ -1,6 +1,8 @@
 <template>
     <div v-if="isExit" class="exit_modal">
+       
         <div class="exit_title">
+            <i @click="exitOpen()" class="bi bi-x-circle"></i>
             <span>채팅방을 나가시겠습니까?</span>
         </div>
         <div class="warning_window">이 방이 사라지고, 참여자는<br>
@@ -22,7 +24,7 @@ export default{
         const isExit = inject('isExit')
         const exitOpen = inject('exitOpen')
 
-        return{isExit, exitOpen}
+        return{isExit, exitOpen, isCancle,CancleOpen}
     }
 }
 </script>
@@ -32,5 +34,7 @@ export default{
 .exit_modal{
     text-align:center;
 }
-
+.bi-x-circle{
+    position:absolute;
+    left:20px;}
 </style>

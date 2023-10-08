@@ -1,6 +1,7 @@
 <template>
     <div class="menu_modal">
             <div class="menu">
+                <i @click="menuOpen()" class="bi bi-x-circle"></i>
                 <div class="menu_bar">
                     <span>채팅방 관리</span>
                     <i class="bi bi-chevron-compact-down"></i>
@@ -61,7 +62,10 @@ export default{
     setup(){
         const banOn = inject('banOn');
 
-        return{ banOn };
+        const isMenu = inject('isMenu');
+        const menuOpen = inject('menuOpen')
+
+        return{ banOn, isMenu, menuOpen };
     }
 }
 </script>
@@ -82,6 +86,12 @@ export default{
 .menu{
     width:300px;
     height:fit-content;
+}
+
+.bi-x-circle{
+    position:absolute;
+    left:15px;
+    top:10px;
 }
 
 .menu_bar{
@@ -107,6 +117,10 @@ export default{
 
 .content_change{
     padding:0 30px;
+}
+
+.write{
+    text-align:center;
 }
 
 .content_change input{
@@ -147,10 +161,12 @@ export default{
 }
 
 .notice_write input{
-    width:250px;
+    width:220px;
     border:none;
+    outline:none;
     margin-top:25px;
-    padding-left:50px;
+    margin-left:50px;
+    text-align:left;
 }
 
 .notice_info_bt{

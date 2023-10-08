@@ -3,8 +3,8 @@
     <div class="chat_layout">
         <Chatwindow_ChatContent/>
         <div class="content_wrap">
-              <Chatwindow_InfoExpress/>
-              <Chatwindow_Chatpartner/>
+            <Chatwindow_InfoExpress/>
+            <Chatwindow_Chatpartner/>
         </div>
     </div>
 
@@ -20,6 +20,7 @@ import Chatwindow_InfoExpress from '../components/Chatwindow_InfoExpress.vue'
 import Chatwindow_Chatpartner from '../components/Chatwindow_Chatpartner.vue'
 import menu_modal from '../components/menu_modal.vue'
 import Exit_Modal from '../components/Exit_Modal.vue'
+
 
 import {ref, provide} from 'vue';
 export  default{
