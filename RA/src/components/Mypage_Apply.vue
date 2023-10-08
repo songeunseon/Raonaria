@@ -106,7 +106,7 @@ export default{
 }
 
 .apply_box{
-    background:#E5CFF7;
+    background-color:teal;
     padding:8px;
     gap:20px;
     display:flex;

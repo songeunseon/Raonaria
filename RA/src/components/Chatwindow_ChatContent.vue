@@ -81,9 +81,7 @@
         </div>
         <div class="chat_input">
             <input type="text" class="text_input">
-            <div class="icon3">
-                <i class="bi bi-send"></i>
-            </div>
+            <button class="text_output">Enter</button>
         </div>
     </div>
 </template>
@@ -244,22 +242,14 @@ export default {
     border:none;
     background:#F4F4FA;
 }
-
-.icon3 {
-    background: #f4f4fa;
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    cursor:pointer;
-}
-
-.bi-send {
-    color: purple;
-    position:relative;
-    top:5px;
+.text_output{
+    width:90px;
+    height:30px;
+    font-size:20px;
+    color:#928F8F;
+    outline:none;
+    border:none;
+    margin-right:15px;
+    background:none;
 }
 </style>

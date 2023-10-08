@@ -72,7 +72,8 @@ body::-webkit-scrollbar-vertical{
     display:flex;
     justify-content: space-between;
     width:1000px;
-    margin:40px auto;
+    margin:50px auto;
+
 }
 .content_wrap{
     height:fit-content;

@@ -75,6 +75,7 @@ input[type="checkbox"]{cursor:pointer;}
     left: 10%;
     font-size: 18px;
     background-color: #F4F4FA;
+    margin:30px auto;
 }
 
 .chat_name {
