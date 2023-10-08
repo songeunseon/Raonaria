@@ -1,9 +1,14 @@
 <template>
 <TopMenu/>
 <TopMenu_Login/>
+    
+<div class="page_wrap">
     <Mypage_InfoBox/>
-    <Mypage_Apply/>
-    <Mypage_Question/>
+    <div class="page_Zone">
+        <Mypage_Apply/>
+        <Mypage_Question/>
+    </div>
+</div>
 
 <Cancel_Alert v-if="isCancel"/>
 <ask_form v-if="isForm"/>
@@ -15,7 +20,7 @@ import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import Cancel_Alert from '../components/Cancel_Alert.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue'
-import ask_form from '../components/ask_form.vue'
+import ask_form from '../components/Mypage_askform.vue'
 import {ref, provide} from 'vue'
 import Mypage_InfoBox from '../components/MyPage_InfoBox.vue'
 import Mypage_Apply from '../components/Mypage_Apply.vue'
@@ -29,6 +34,8 @@ export default{
     setup(){
         const isCancel = ref(false);
         const cancelOpen = () => isCancel.value = !isCancel.value;
+        provide('isCancel', isCancel);
+        provide('cancelOpen', cancelOpen);
         
         const isForm = ref(false);
         const formOpen = () => isForm.value = !isForm.value;
@@ -43,5 +50,20 @@ export default{
 </script>
 
 <style scoped>
-@import url(../assets/MyPage.css);
+/* @import url(../assets/MyPage.css); */
+
+.page_wrap{
+    display:flex;
+    width:1000px;
+    margin:0 auto;
+    gap:20px;
+}
+.page_Zone{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items:start ;
+    margin: 20px auto;
+    height:620px;
+}
 </style>

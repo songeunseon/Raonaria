@@ -82,4 +82,33 @@ export default{
     font-size:15px;
     cursor:pointer;
 }
+
+.delete_title{
+    display:flex;
+    justify-content: center;
+}
+
+.check_del{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border:1px solid black;
+    border-radius: 10px;
+    padding:10px;
+}
+
+.delete_button{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    gap:15px;
+}
+
+.notice_del_bt{
+    padding:0 5px;
+    border:none;
+    border-radius: 5px;
+    background:#d9d9d9;
+}
 </style>

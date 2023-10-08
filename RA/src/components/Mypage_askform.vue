@@ -52,6 +52,7 @@ export default{
     font-size:25px;
     position:relative;
     left:20px;
+    cursor:pointer;
 }
 
 b{
@@ -75,5 +76,6 @@ b{
 }
 .bi-cursor{
     font-size:40px;
+    cursor:pointer;
 }
 </style>
