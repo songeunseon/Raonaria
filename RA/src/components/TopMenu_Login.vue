@@ -53,8 +53,11 @@ export default{
 #CpText{
         width: 100%;
         margin: 0 auto;
+        position: fixed;
+        bottom: 0;
         text-align: center;
         padding: 10px 0;
         border-bottom: 3px solid #aaa;
+        z-index: 1020;
     }
 </style>

@@ -16,8 +16,10 @@ import TopMenu from '../components/TopMenu.vue'
                     </div>
                     <div id="sonGender">
                         <b>자녀 성별</b>
-                        <section><b>남아</b><input type="radio" name="gender"></section>
-                        <section><b>여아</b><input type="radio" name="gender"></section>
+                        <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" checked>
+                        <label class="btn" for="genderM">남아</label>
+                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off" checked>
+                        <label class="btn" for="genderW">여아</label>
                     </div>
                 </div>
                 <div class="schoolBox">
@@ -126,10 +128,17 @@ import TopMenu from '../components/TopMenu.vue'
 #sonGender{
     padding-right: 50px;
 }
-#sonGender section{
-    width: 100px;
+
+#sonGender .btn{
+    width: 70px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 13px;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: 0.1rem;
+    border-radius: 100px;
 }
 .boxlist{
     height: 34px;
