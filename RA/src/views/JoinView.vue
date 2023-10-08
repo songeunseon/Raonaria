@@ -22,8 +22,10 @@ import TopMenu from '../components/TopMenu.vue'
             <div id="sonGender">
                 <div><b>자녀 성별</b></div>
                 <div id="genderinput">
-                <div><b>남아</b><input type="radio" name="gender" value="남아"></div>
-                <div><b>여아</b><input type="radio" name="gender" value="여아"></div>
+                    <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" checked>
+                        <label class="btn" for="genderM">남아</label>
+                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off" checked>
+                        <label class="btn" for="genderW">여아</label>
                 </div>
             </div>
         </div>

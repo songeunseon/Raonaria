@@ -72,14 +72,15 @@ const router = useRouter();
   }
   #searchInput{
     width: 500px;
-    height: 50px;
-    font-size: 30px;
+    height: 40px;
+    font-size: 20px;
     margin: 10px auto;
-    border: 0;
-    border-bottom: 3px solid #60baaf;
-    text-align: center;
+    border: 3px solid #60baaf;
     display: flex;
     align-items: center;
+    column-gap: 50px;
+    padding: 10px;
+
   }
   #searchText{
     border: 0;

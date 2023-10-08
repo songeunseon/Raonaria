@@ -1,7 +1,7 @@
 <template>
 <div class="Login_modal">
     <div class="modal_header">
-        <i  @click="loginOpen()" class="bi bi-x-circle"></i>
+        <i  @click="loginOpen()" class="bi bi-x-circle" style="cursor: pointer;"></i>
         <div class="modal_title">Sign_in</div>
         <div class="modal_line"></div>
     </div>
@@ -63,9 +63,10 @@ transform: translate(-50%, -50%);
 }
 
 .modal_title{
+    width: 100%;
     font-size:30px;
-    padding-left:130px;
     text-align: center;
+    margin-right: 60px;
 }
 
 .Login_modal i{
@@ -74,12 +75,11 @@ transform: translate(-50%, -50%);
 }
 
 .login{
-    margin:10px auto;
+    margin:5px auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 15px;
 }
 
 .input{
@@ -95,23 +95,18 @@ transform: translate(-50%, -50%);
 .input b{
     font-size:20px;
     padding-left:15px;
+    padding-bottom:10px;
     font-weight:800;
 }
 
 
 
-#hid{
+#hid, #hpw{
     outline:none;
     border:none;
     text-align: center;
     
     
-}
-
-#hpw{
-    outline:none;
-    border:none;
-    text-align: center;
 }
 
 .login_button{
@@ -124,27 +119,15 @@ transform: translate(-50%, -50%);
     
 }
 
-.sign_bt{
-    width:100px;
-    height:40px;
-    border:4px solid #BEC1FF;
-    border-radius: 3px;
+.sign_bt, .login_bt{
+    width:80px;
+    height:30px;
+    border:2px solid #BEC1FF;
+    border-radius: 5px;
     /* margin-left:125px; */
-    background:white;
-    font-size:20px;
+    background: 0;
+    font-size:15px;
 }
-
-.login_bt{
-    width:100px;
-    height:40px;
-    border:4px solid #BEC1FF;
-    border-radius: 3px;
-    /* margin-right:126px; */
-    background:white;
-    font-size:20px;
-    
-}
-
 .sns_line{
     display:flex;
     justify-content: center;
@@ -164,18 +147,16 @@ transform: translate(-50%, -50%);
 
 .line2{
     border-top:2px solid #AAAAAA;
-    margin-top:15px;
     width:60%;
-    margin-left:100px;
+    margin: 5px auto;
 }
 
 .coment{
     width: 80%;
     text-align:center;
     font-size:10px;
-    margin-top:20px;
+    margin-top:10px;
     margin:0 auto;
-    padding-top:3px;
     font-weight: 800;
 }
 

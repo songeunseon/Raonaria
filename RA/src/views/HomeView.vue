@@ -28,7 +28,7 @@ export default{
         <header id ="header">
             <logo id ="logo">
 
-              <RouterLink to="/"> <img src ="../assets/mainlogo.svg"> </RouterLink>
+              <img src ="../assets/mainlogo.svg">
             </logo >
             <ul id="menulist">
               <RouterLink to="/notice"><li id ="notice" >공지사항</li></RouterLink>
@@ -41,13 +41,13 @@ export default{
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../assets/ex.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+            <img src="../assets/HOME.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
         </div>
     <div class="carousel-item">
-        <img src="../assets/ex.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+        <img src="../assets/SEARCH.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
     </div>
         <div class="carousel-item">
-            <img src="../assets/ex.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+            <img src="../assets/REUNION.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -133,6 +133,18 @@ main{
   justify-content: center;
 
 }
+@keyframes popup {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#logo {
+  animation: popup 2s ease-in-out 1;
+}
 
 #menulist li{
     list-style: none;
@@ -146,8 +158,13 @@ main{
     margin-top : 10px;
     color: black;
     cursor: pointer;
-
-
+    transition: transform 0.3s;
+}
+#menulist li:hover{
+  transform: rotate(20deg);
+}
+#menulist li:active {
+  transform: rotate(0deg);
 }
 a{
   text-decoration:none;

@@ -61,6 +61,11 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     line-height: 30px;
     margin-bottom: 10px;
     color:black;
+    font-size: 15px;
+    transition: font-size 0.3s;
+  }
+  #menuList li:hover{
+    font-size: 20px;
   }
   #menuList #mypage{
     border: 0;
