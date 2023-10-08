@@ -38,9 +38,7 @@ const router = useRouter();
 <RouterView />
 </template>
 <style>
-body::-webkit-scrollbar-vertical{
-  display: none;
-  }
+
     *{
         padding: 0;
         margin: 0;

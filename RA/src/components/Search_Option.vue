@@ -13,7 +13,7 @@ const router = useRouter();
   </div>
     <div id="optionBox">
       <div class="searchList">
-        <p>지역</p>
+        <b class="optionText">지역</b>
         <div class="optionList">
           <select class="optiontag" aria-label="option1">
             <option selected>구분</option>
@@ -26,7 +26,7 @@ const router = useRouter();
         </div>
       </div>
       <div class="searchList">
-        <p>운영항목</p>
+        <b class="optionText">운영항목</b>
         <div class="optionList">
           <select class="optiontag" aria-label="option2">
             <option selected>구분</option>
@@ -37,7 +37,7 @@ const router = useRouter();
         </div>
       </div>
       <div class="searchList">
-        <p>설립유형</p>
+        <b class="optionText">설립유형</b>
         <div class="optionList">
           <select class="optiontag" aria-label="option3">
             <option selected>구분</option>
@@ -47,7 +47,7 @@ const router = useRouter();
         </div>
       </div>
       <div class="searchList">
-        <p>학급</p>
+        <b class="optionText">학급</b>
         <div class="optionList">
           <select class="optiontag" aria-label="option4">
             <option selected>구분</option>
@@ -66,16 +66,17 @@ const router = useRouter();
   #box{
     width: 1000px;
     height: 300px;
-    /* border-bottom: 3px solid #BEC1FF; */
-    margin: 0 auto;
+    margin: 20px auto;
+    background: #F4F4FA;
+    padding: 10px;
   }
   #searchInput{
     width: 500px;
     height: 50px;
     font-size: 30px;
-    margin: 20px auto;
+    margin: 10px auto;
     border: 0;
-    border-bottom: 3px solid #BEC1FF;
+    border-bottom: 3px solid #60baaf;
     text-align: center;
     display: flex;
     align-items: center;
@@ -85,30 +86,40 @@ const router = useRouter();
     outline: none;
     text-align: center;
     padding-left: 50px;
+    background: 0;
   }
   #optionBox{
-    width: 700px;
+    width: 80%;
     height: 200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    border: 1px solid black;
-    border-top: 0;
-    border-bottom: 0;
-    border-radius: 10px;
+    padding: 10px;
     font-size: 15px;
   }
   .searchList{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .optionText{
+    margin-bottom:0.5rem;
+    font-size: 20px;
+    font-weight: 700;
   }
   .optionList{
     font-size: 15px;
-    padding-left: 5px;
   }
   .optiontag{
-    background: #BEC1FF;
     border: 0;
-    text-align: center;
+    background: 0;
+    border-bottom:2px solid #000;
+    padding: 5px;
+    outline: none;
+    width: 100px;
+  }
+  option{
+    text-align: left;
+
   }
 </style>

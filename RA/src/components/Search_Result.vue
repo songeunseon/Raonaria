@@ -23,18 +23,17 @@ const router = useRouter();
     margin: 0 auto;
   }
   #resultTable{
-    width: 700px;
+    width: 1000px;
     margin: 20px auto;
 
   }
   #resultTable tr td{
-    background: seashell;
-    border-bottom:3px double #aaa;
+    border-bottom:3px double #60baaf;
+    color: #000;
   }
 
   #resultTable tr{
     height: 40px;
-    background: #d9d9d9;
   }
   #resultTable tr td:nth-child(1){
     width: 20%;

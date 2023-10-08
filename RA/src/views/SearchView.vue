@@ -57,7 +57,8 @@ export default{
 
 
 <style>
-body::-webkit-scrollbar-vertical {
+
+*::-webkit-scrollbar{
   display: none;
 }
 *{
@@ -65,7 +66,6 @@ body::-webkit-scrollbar-vertical {
   margin: 0;
   box-sizing: border-box;
 }
-
 
   #buttonbox{
     max-width: 1000px;
