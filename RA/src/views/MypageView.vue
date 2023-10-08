@@ -51,6 +51,9 @@ export default{
 
 <style scoped>
 /* @import url(../assets/MyPage.css); */
+body::-webkit-scrollbar-vertical{
+  display: none;
+  }
 
 .page_wrap{
     display:flex;
