@@ -99,7 +99,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 .chat_content_wrap{
     width:fit-content;
@@ -254,6 +254,7 @@ export default {
     justify-content: center;
     align-items: center;
     border-radius: 50px;
+    cursor:pointer;
 }
 
 .bi-send {

@@ -26,7 +26,19 @@
 
 <script>
 import chatWindowVue from '../views/chatWindow.vue';
+import {ref} from 'vue';
+export default{
+    name: 'Chatwindow_InfoExpress',
+    setup(){
+        const isDel = ref(false);
+        const delOpen = () => isDel.value = !isDel.value;
 
+        const isCheck =ref(false);
+        const checkOpen = () => isCheck.value = !isCheck.value;
+
+        return {isDel, delOpen, isCheck, checkOpen}
+    }
+}
 </script>
 
 <style>
@@ -61,11 +73,13 @@ import chatWindowVue from '../views/chatWindow.vue';
     padding:30px 0 10px 0;
     text-align:center;
     font-size:15px;
+    cursor:pointer;
 }
 
 .info2{
     text-align:center;
     padding:-20px 0;
     font-size:15px;
+    cursor:pointer;
 }
 </style>

@@ -45,6 +45,11 @@ const router = createRouter({
       component:() => import('../views/chatWindow.vue')
     },
     {
+      path:'/ReunionView',
+      name:'ReunionView',
+      component:() => import('../views/ReunionView.vue')
+    },
+    {
       path:'/school',
       name:'school',
       component:() => import('../views/schoolView.vue')
