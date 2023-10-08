@@ -50,6 +50,9 @@ export default{
 </script>
 
 <style scoped>
+body::-webkit-scrollbar-vertical{
+  display: none;
+  }
 /* @import url(../assets/MyPage.css); */
 
 .page_wrap{

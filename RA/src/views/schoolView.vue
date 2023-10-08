@@ -82,6 +82,9 @@ import TopMenu from '../components/TopMenu.vue'
     </div>
 </template>
 <style>
+body::-webkit-scrollbar-vertical{
+  display: none;
+  }
 #schoolpage{
     max-width: 1000px;
     margin: 0 auto;

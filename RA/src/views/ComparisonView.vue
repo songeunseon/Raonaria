@@ -94,6 +94,9 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
     <RouterView />
 </template>
 <style>
+body::-webkit-scrollbar-vertical{
+  display: none;
+  }
     #CP{
         max-width: 1000px;
         display: flex;

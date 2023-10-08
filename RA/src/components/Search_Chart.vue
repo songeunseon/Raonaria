@@ -64,10 +64,11 @@ const router = useRouter();
   </div>
 </template>
 <style>
+
+
 #info{
     max-width: 1000px;
-    margin: 50px auto;
-    
+    margin: 100px auto;
   }
   #harf{
     margin: 20px auto;

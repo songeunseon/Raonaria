@@ -59,6 +59,9 @@ export default{
 </script>
 
 <style scoped>
+body::-webkit-scrollbar-vertical{
+  display: none;
+  }
 *{
             padding:0;
             margin:0;

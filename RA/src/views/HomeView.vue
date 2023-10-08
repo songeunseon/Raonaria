@@ -120,6 +120,7 @@ main{
   background : #fff ;
   text-align: center;
   align-items: center;
+
   /* padding-left: 10px; */
 }
 #logo img {
@@ -136,7 +137,7 @@ main{
 #menulist li{
     list-style: none;
     border : 5px solid #BEC1FF;
-    border-radius : 5px;
+    border-radius : 100px;
     width : 100px;
     height : 100px;
     text-align : center;
@@ -145,6 +146,8 @@ main{
     margin-top : 10px;
     color: black;
     cursor: pointer;
+
+
 }
 a{
   text-decoration:none;
@@ -156,6 +159,7 @@ a{
     align-items : center;
     row-gap: 20px;
     background: #fff;
+
     
 }
 
@@ -167,7 +171,6 @@ a{
 #listSearch, #logo{
   width: 100%;
   padding: 20px 0;
-  border-bottom: 1px solid #aaa;
   
 }
 #listTitle{
