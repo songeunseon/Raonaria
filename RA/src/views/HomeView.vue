@@ -27,7 +27,6 @@ export default{
     <div id ="box">
         <header id ="header">
             <logo id ="logo">
-
               <img src ="../assets/mainlogo.svg">
             </logo >
             <ul id="menulist">
@@ -129,6 +128,8 @@ main{
 
   }
 #logo{
+  width: 100px;
+  height: 113px;
   display: flex;
   justify-content: center;
 
@@ -142,7 +143,7 @@ main{
   }
 }
 
-#logo {
+#logo img {
   animation: popup 2s ease-in-out 1;
 }
 
