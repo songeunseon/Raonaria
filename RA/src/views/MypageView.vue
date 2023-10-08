@@ -50,10 +50,10 @@ export default{
 </script>
 
 <style scoped>
+/* @import url(../assets/MyPage.css); */
 body::-webkit-scrollbar-vertical{
   display: none;
   }
-/* @import url(../assets/MyPage.css); */
 
 .page_wrap{
     display:flex;
