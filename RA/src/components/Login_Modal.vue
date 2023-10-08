@@ -6,8 +6,8 @@
         <div class="modal_line"></div>
     </div>
     <div class="login">
-        <div class="input"><p><b>ID</b></p><input id ="hid" type ="text" ></div>
-        <div class="input"><p><b>PW</b></p><input id ="hpw" type ="password"></div>
+        <div class="input"><b>ID</b><input id ="hid" type ="text" ></div>
+        <div class="input"><b>PW</b><input id ="hpw" type ="password"></div>
     </div>
     <div class="login_button">
         <button class="sign_bt">회원가입</button>
@@ -86,13 +86,13 @@ transform: translate(-50%, -50%);
     width:250px;
     height:30px;
     display:flex;
-    border-bottom: 4px solid #BEC1FF;
+    border-bottom: 3px solid #BEC1FF;
     text-align: center;
-    
+
     
 }
 
-.input p{
+.input b{
     font-size:20px;
     padding-left:15px;
     font-weight:800;
@@ -101,7 +101,6 @@ transform: translate(-50%, -50%);
 
 
 #hid{
-    padding-top:5px;
     outline:none;
     border:none;
     text-align: center;
@@ -110,7 +109,6 @@ transform: translate(-50%, -50%);
 }
 
 #hpw{
-    padding-top:5px;
     outline:none;
     border:none;
     text-align: center;
