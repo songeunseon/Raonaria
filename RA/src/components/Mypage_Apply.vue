@@ -107,11 +107,15 @@ export default{
 }
 
 .apply_box{
-    background-color:#F1EFEF;
+    background-color:#60baaf;
+    color:white;
     padding:8px;
     gap:20px;
     display:flex;
     flex-direction: column;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
 }
 
 .apply_box > div{
@@ -123,11 +127,18 @@ export default{
 .apply_box .text{
     width:90px;
     height:30px;
+    border:none;
+    border-bottom:3px solid #d9d9d9;
+    outline:none;
+    background:none;
+    margin:15px 10px;
 }
 
 .apply_box .checkbox{
-    width:20px;
-    height:20px;
+    width:15px;
+    height:15px;
+    margin-top:20px;
+    margin-right:8px;
 }
 
 
