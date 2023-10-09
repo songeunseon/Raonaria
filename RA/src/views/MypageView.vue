@@ -11,7 +11,9 @@
 </div>
 
 <Cancel_Alert v-if="isCancel"/>
-<ask_form v-if="isForm"/>
+<transition name="fade">
+    <ask_form v-if="isForm"/>
+</transition>
 
 </template>
 

@@ -85,7 +85,7 @@ export default{
 }
 
 .menu{
-    width:300px;
+    width:325px;
     height:fit-content;
 }
 
@@ -96,14 +96,14 @@ export default{
 }
 
 .menu_bar{
-    width:300px;
+    width:325px;
     border-bottom: 1px solid black;
     padding:10px 0;
     
 }
 
 .menu_bar span{
-   margin-left:100px;
+   margin-left:125px;
    font-weight:800;
 }
 
@@ -153,7 +153,7 @@ export default{
 }
 
 .notice span{
-    margin-left:80px;
+    margin-left:97px;
     font-weight:800;
 }
 
