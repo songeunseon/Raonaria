@@ -8,8 +8,14 @@
         </div>
     </div>
 
-    <menu_modal v-if="isMenu"/>
-    <Exit_Modal v-if="isExit"/>
+    <transition name="fade">
+        <menu_modal v-if="isMenu"/>
+    </transition>
+
+    <transition name="animation">
+        <Exit_Modal v-if="isExit"/>
+    </transition>
+    
 
 </template>
 
@@ -77,4 +83,58 @@ export  default{
 .content_wrap{
     height:fit-content;
 }
+
+.fade-enter-from{
+    opacity: 0;
+}
+
+.fade-enter-active{
+    transition: all 1s;
+}
+
+.fade-enter-to{
+    opacity:1;
+}
+
+
+.fade-leave-from {
+    opacity: 1;
+}
+
+.fade-leave-active {
+    transition: all 1s;
+}
+
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+.animation-enter-from{
+    opacity: 0;
+}
+
+.animation-enter-active{
+    transition: all 1s;
+}
+
+.animation-enter-to{
+    opacity:1;
+}
+
+
+.animation-leave-from {
+    opacity: 1;
+}
+
+.animation-leave-active {
+    transition: all 1s;
+}
+
+.animation-leave-to {
+    opacity: 0;
+}
+
+
+
 </style>
