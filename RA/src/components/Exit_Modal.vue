@@ -23,7 +23,7 @@ export default{
         const isExit = inject('isExit')
         const exitOpen = inject('exitOpen')
 
-        return{isExit, exitOpen, isCancle,CancleOpen}
+        return{isExit, exitOpen}
     }
 }
 </script>

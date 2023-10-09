@@ -53,7 +53,7 @@ export default{
     height:250px;
     background:white;
     padding-top:35px;
-    padding-right:50px;
+    padding-right:62px;
     margin-left:15px;
     margin-bottom:10px;
     border-radius: 15px;

@@ -49,6 +49,7 @@ export  default{
 
         const isExit = ref(false);
         provide('isExit', isExit);
+        
         const exitOpen = () => isExit.value = !isExit.value;
         provide('exitOpen', exitOpen);
 

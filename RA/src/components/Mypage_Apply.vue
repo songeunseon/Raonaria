@@ -11,8 +11,8 @@
                     <input class="text" type="text">
                     <input class="checkbox" type="checkbox">
                 </div>
-                <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
             </div>
             <div class="apply_box">
                 <div>
@@ -76,7 +76,7 @@ export default{
     margin:0px auto 15px auto;
     position:relative;
     width:100%;
-    padding:10px 0;
+    /* padding:10px 0; */
 }
 
 .apply{
@@ -109,36 +109,44 @@ export default{
 .apply_box{
     background-color:#60baaf;
     color:white;
-    padding:8px;
-    gap:20px;
+    padding:10px;
+    gap:15px;
     display:flex;
     flex-direction: column;
+    align-items:center;
     width:150px;
     height:150px;
-    border-radius: 50%;
+    border-radius:100px;
 }
+
 
 .apply_box > div{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
+    justify-content: center;
+} 
 
 .apply_box .text{
-    width:90px;
-    height:30px;
-    border:none;
-    border-bottom:3px solid #d9d9d9;
+    width:80px;
+    /* height:30px; */
+    border:0;
+    border-bottom:3px solid #aaa;
     outline:none;
     background:none;
-    margin:15px 10px;
+    margin-top:1px;
 }
 
 .apply_box .checkbox{
     width:15px;
     height:15px;
-    margin-top:20px;
+    margin-top:3px;
     margin-right:8px;
+}
+
+.apply{
+    /* display:flex; */
+    font-size:15px;
+    padding-bottom:20px;
 }
 
 
