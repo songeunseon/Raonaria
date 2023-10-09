@@ -81,6 +81,7 @@ export default{
     background:white;
     border:1px solid black;
     overflow-y:scroll;
+    
 }
 
 .menu{
