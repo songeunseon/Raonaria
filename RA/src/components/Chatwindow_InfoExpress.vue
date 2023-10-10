@@ -18,7 +18,7 @@
                     </div>
                     <div class="delete_button">
                         <button  @click="delCancel()" class="notice_del_bt" value="아니오">아니오</button>
-                        <RouterLink to="/ReunionView"><button class="notice_del_bt" value="삭제">삭제</button></RouterLink>
+                        <button  v-on:click="deletePosting(index)" class="notice_del_bt" value="삭제">삭제</button>
                     </div>
                 </div>
             </div>

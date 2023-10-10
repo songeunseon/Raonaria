@@ -8,13 +8,11 @@
         </div>
     </div>
 
-    <transition name="slide">
-        <menu_modal v-if="isMenu"/>
-    </transition>
-
-    <transition name="animation">
+        <transition>
+            <menu_modal v-if="isMenu"/>
+        </transition>
         <Exit_Modal v-if="isExit"/>
-    </transition>
+
     
 
 </template>
@@ -70,8 +68,9 @@ export  default{
 
 <style scoped>
 @import url(../assets/chatWindow.css);
-@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Gothic+A1:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Noto+Sans+KR:wght@100;300&family=Roboto+Slab:wght@300&display=swap');
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Roboto Slab', serif;
 *{font-family: 'Gamja Flower', cursive;}
 .chat_layout{
     display:flex;
@@ -84,16 +83,6 @@ export  default{
     height:fit-content;
 }
 
-/* .slide-enter-active{
-    transition: opacity 0.5s;
-    /* right:100px; */
-
-
-/* .slide-leave-active{
-    animation: all 0.1s ease-out forwards;
-    transition: opacity 0.5s;
-    opacity:0;
-}  */
 
 
 

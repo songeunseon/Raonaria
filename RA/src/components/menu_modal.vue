@@ -56,16 +56,29 @@
 </template>
 
 <script>
-import {inject} from 'vue';
+import {inject,watch,onMounted} from 'vue';
 export default{
-    name: 'menu_modal',
+    name: 'menu_modal', 
     setup(){
         const banOn = inject('banOn');
 
         const isMenu = inject('isMenu');
         const menuOpen = inject('menuOpen')
 
-        return{ banOn, isMenu, menuOpen };
+        onMounted(() =>{
+            const menu_modal = document.querySelector('.menu_window');
+        }
+
+        )
+
+        watch(isMenu,(newVal,oldVal) =>{
+            menu_modal.classList.toggle('slideIn');
+            menu_modal.classList.toggle('slideOut');
+        })
+
+
+
+        return{ banOn, isMenu, menuOpen,watch,onMounted };
     }
 }
 </script>
@@ -73,14 +86,14 @@ export default{
 <style scoped>
 .menu_modal{
     position:absolute;
-    /* top:31.2%; */
-    /* left:55%; */
-    /* transform: translate(-50%, -23%); */
+    top:26%;
+    left:68%;
+    /* transform: translate(-50%, -20%);  */
     width:325px;
     height:700px;
     background:white;
     border:1px solid black;
-    overflow-y:scroll;
+    
     
 }
 
@@ -103,8 +116,8 @@ export default{
 }
 
 .menu_bar span{
-   margin-left:125px;
-   font-weight:800;
+margin-left:125px;
+font-weight:800;
 }
 
 .menu_bar i{
@@ -133,8 +146,29 @@ export default{
     padding:5px 3px;
     width:150px;
     text-align:center;
-
 }
+
+.menu_modal{display:none;}
+
+.slideIn{
+    animation:slideIn 0.5s ease-in-out forwards;
+}
+
+.slideOut{
+    animation:slideOut 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0%{weight:0px; opacity:0;}
+    100%{weight:325px; opacity:1;}
+}
+
+@keyframes slideOut{
+    0%{weight:325px; opacity:1;}
+    100%{weight:0px; opacity:0;}
+}
+
+
 
 .save_bt{
     padding:10px 100px;

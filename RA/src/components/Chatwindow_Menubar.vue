@@ -98,7 +98,7 @@ input[type="checkbox"]{cursor:pointer;}
     position: fixed;
     top: 23%;
     left: 50%;
-    transform: translate(-50%, -23%);
+    transform: translate(-50%, -50%); 
     width: 300px;
     height: 260px;
     background: white;
