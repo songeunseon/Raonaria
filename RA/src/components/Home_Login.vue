@@ -93,4 +93,20 @@ export default{
     border-top: 3px solid #aaa;
     padding: 5px;
 }
+@media(max-width:490px){
+    #signin{
+    width: 80%;
+    }
+    #signin input {
+    font-size : 10px;
+}
+#bt{
+    margin: 10px 0;
+}
+#hjoin , #hlogin{
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+}
+}
 </style>
