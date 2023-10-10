@@ -67,7 +67,7 @@ input[type="checkbox"]{cursor:pointer;}
 
 .header {
     width: 1000px;
-    height: 30px;
+    height: 60px;
     border: none;
     /* position: absolute; */
     margin: 0 auto;
@@ -79,19 +79,24 @@ input[type="checkbox"]{cursor:pointer;}
 }
 
 .chat_name {
-    padding: 2px 10px;
+    padding: 9px 10px;
     font-weight: 800;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+    text-align:center;
+    line-height:45px;
 }
 
 .icon {
     /* padding:0 20px; */
     display: flex;
+    justify-content:right;
     column-gap: 25px;
     font-size: 20px;
     position: relative;
-    top: 0px;
+    top: -45px;
+    font-size:30px;
+    color:blueviolet;
 }
 
 .ban_modal {

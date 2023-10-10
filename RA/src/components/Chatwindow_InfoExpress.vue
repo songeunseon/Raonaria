@@ -45,6 +45,8 @@ export default{
 
         return {isDel, delOpen, isCheck, checkOpen, delCancel}
     }
+
+    
 }
 </script>
 
