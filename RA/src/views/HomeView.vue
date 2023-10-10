@@ -188,14 +188,14 @@ a{
   
 
 }
-@keyframes spin {
-  0% { transform: rotateY(0deg); }
-  100% { transform: rotateY(360deg); }
-}
+/* @keyframes flip {
+  from{ transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
+} */
 .w-100{
   width: 500px;
   height: 800px;
-  animation: spin 0.1s infinite linear;
+  /* animation: flip 3s ease-in-out infinite; */
 
 }
 #listSearch, #logo{
