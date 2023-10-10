@@ -185,10 +185,18 @@ a{
   width: 500px;
   position: relative;
   top:-50px;
+  
+
+}
+@keyframes spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
 }
 .w-100{
   width: 500px;
   height: 800px;
+  animation: spin 0.1s infinite linear;
+
 }
 #listSearch, #logo{
   width: 100%;
