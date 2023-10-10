@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <transition name="fade">
+    <transition name="slide">
         <menu_modal v-if="isMenu"/>
     </transition>
 
@@ -84,56 +84,21 @@ export  default{
     height:fit-content;
 }
 
-.fade-enter-from{
-    opacity: 0;
-}
-
-.fade-enter-active{
-    transition: all 1s;
-}
-
-.fade-enter-to{
-    opacity:1;
-}
+/* .slide-enter-active{
+    transition: opacity 0.5s;
+    /* right:100px; */
 
 
-.fade-leave-from {
-    opacity: 1;
-}
-
-.fade-leave-active {
-    transition: all 1s;
-}
-
-.fade-leave-to {
-    opacity: 0;
-}
+/* .slide-leave-active{
+    animation: all 0.1s ease-out forwards;
+    transition: opacity 0.5s;
+    opacity:0;
+}  */
 
 
-.animation-enter-from{
-    opacity: 0;
-}
-
-.animation-enter-active{
-    transition: all 1s;
-}
-
-.animation-enter-to{
-    opacity:1;
-}
 
 
-.animation-leave-from {
-    opacity: 1;
-}
 
-.animation-leave-active {
-    transition: all 1s;
-}
-
-.animation-leave-to {
-    opacity: 0;
-}
 
 
 
