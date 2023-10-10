@@ -72,10 +72,10 @@ export default{
 
 <style scoped>
 .menu_modal{
-    position:fixed;
-    top:31.2%;
-    left:55%;
-    transform: translate(-50%, -23%);
+    position:absolute;
+    /* top:31.2%; */
+    /* left:55%; */
+    /* transform: translate(-50%, -23%); */
     width:325px;
     height:700px;
     background:white;
@@ -114,11 +114,13 @@ export default{
 .title_change{
     margin:5px 120px;
     font-size:15px;
+    text-align:center;
 }
 
 .content_change{
-    padding:0 30px;
+    padding:5px 30px;
 }
+
 
 .write{
     text-align:center;
@@ -127,8 +129,11 @@ export default{
 .content_change input{
     border:none;
     border-bottom: 1px solid black;
-    margin:10px 0;
+    margin:2px 55px;
     padding:5px 3px;
+    width:150px;
+    text-align:center;
+
 }
 
 .save_bt{
@@ -207,6 +212,7 @@ export default{
     flex-direction: column;
     align-items: center;
 }
+
 
 .manager{
     position:relative;
