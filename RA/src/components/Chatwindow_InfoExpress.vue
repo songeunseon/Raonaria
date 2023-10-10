@@ -18,7 +18,7 @@
                     </div>
                     <div class="delete_button">
                         <button  @click="delCancel()" class="notice_del_bt" value="아니오">아니오</button>
-                        <button  v-on:click="deletePosting(index)" class="notice_del_bt" value="삭제">삭제</button>
+                        <button  v-on:click="eraseNotice()" class="notice_del_bt" value="삭제">삭제</button>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
 
 <script>
 import chatWindowVue from '../views/chatWindow.vue';
-import {ref} from 'vue';
+import {ref, onMounted} from 'vue';
 export default{
     name: 'Chatwindow_InfoExpress',
     setup(){
@@ -42,8 +42,15 @@ export default{
             isDel.value = !isDel.value;
         }
 
+        const eraseNotice = () => {
+            const delete_title = document.querySelector(".delete_title");
+            const check_del = document.querySelector(".check_del");
+            delete_title.remove();
+            check_del.remove();
+        }
 
-        return {isDel, delOpen, isCheck, checkOpen, delCancel}
+
+        return {isDel, delOpen, isCheck, checkOpen, delCancel, eraseNotice}
     }
 
     
@@ -51,6 +58,7 @@ export default{
 </script>
 
 <style>
+
 #announcement{
     width:200px;
     height:350px;

@@ -7,11 +7,8 @@
             <Chatwindow_Chatpartner/>
         </div>
     </div>
-
-        <transition>
-            <menu_modal v-if="isMenu"/>
-        </transition>
-        <Exit_Modal v-if="isExit"/>
+    <menu_modal v-show="isMenu"/>
+    <Exit_Modal v-if="isExit"/>
 
     
 

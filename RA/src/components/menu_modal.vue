@@ -1,5 +1,5 @@
 <template>
-    <div class="menu_modal">
+    <div class="menu_modal slideOut">
             <div class="menu">
                 <i @click="menuOpen()" class="bi bi-x-circle"></i>
                 <div class="menu_bar">
@@ -66,15 +66,13 @@ export default{
         const menuOpen = inject('menuOpen')
 
         onMounted(() =>{
-            const menu_modal = document.querySelector('.menu_window');
-        }
-
-        )
-
-        watch(isMenu,(newVal,oldVal) =>{
-            menu_modal.classList.toggle('slideIn');
-            menu_modal.classList.toggle('slideOut');
+            const menu_modal = document.querySelector('.menu_modal');
+            watch(isMenu,(newVal,oldVal) =>{
+                menu_modal.classList.toggle('slideIn');
+                menu_modal.classList.toggle('slideOut');
+            })
         })
+
 
 
 
@@ -85,16 +83,15 @@ export default{
 
 <style scoped>
 .menu_modal{
-    position:absolute;
-    top:26%;
-    left:68%;
-    /* transform: translate(-50%, -20%);  */
+    position:fixed;
+    top:0%;
+    left:1500px;
+    /* transform: translate(100%, -20%);  */
     width:325px;
     height:700px;
     background:white;
     border:1px solid black;
-    
-    
+    /* display:none; */
 }
 
 .menu{
@@ -148,7 +145,7 @@ font-weight:800;
     text-align:center;
 }
 
-.menu_modal{display:none;}
+/* .menu_modal{display:none;} */
 
 .slideIn{
     animation:slideIn 0.5s ease-in-out forwards;
@@ -159,13 +156,13 @@ font-weight:800;
 }
 
 @keyframes slideIn {
-    0%{weight:0px; opacity:0;}
-    100%{weight:325px; opacity:1;}
+    0%{left:3000px;  display:none;}
+    100%{left:50%;  display:block;}
 }
 
 @keyframes slideOut{
-    0%{weight:325px; opacity:1;}
-    100%{weight:0px; opacity:0;}
+    0%{left:50%;  display:block;}
+    100%{left:3000px;  display:none;}
 }
 
 
