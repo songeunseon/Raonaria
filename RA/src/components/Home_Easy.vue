@@ -56,7 +56,7 @@ export default{
     border-radius : 5px;
     outline : none;
 }
-@media(max-width:1194px){
+@media(min-width:490px) and (max-width:1194px){
   #shbar svg{
     margin: 20px;
   }

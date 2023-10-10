@@ -236,7 +236,7 @@ a{
 
 /* --------------------태블릿 버전------------------- */
 
-@media(max-width:1194px){
+@media(min-width:490px) and (max-width:1194px){
   main{
     width: 100%;
     height: 100%;
@@ -373,7 +373,7 @@ a{
   margin: 0 auto;
   position: relative;
   z-index: 100px;
-  bottom: 50px;
+  top:0;
 }
 .w-100{
   bottom: 0;
