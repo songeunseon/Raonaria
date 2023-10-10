@@ -6,6 +6,7 @@ import {ref, provide} from 'vue'
 import Home_Login from '../components/Home_Login.vue';
 import Home_Easy from '../components/Home_Easy.vue';
 
+
 export default{
   components:{ EasySearch,Home_Easy, Home_Login },
   setup(){
@@ -25,7 +26,7 @@ export default{
 <template>
   <main>
     <div id ="box">
-        <header id ="header">
+        <header id ="header" class="item">
             <logo id ="logo">
               <img src ="../assets/mainlogo.svg">
             </logo >
@@ -36,17 +37,17 @@ export default{
               <RouterLink to="/mypage"><li id ="mypage" >내정보</li></RouterLink>
             </ul>
         </header >
-    <div id ="main">
+    <div id ="main" class="item">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../assets/HOME.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+            <img src="../assets/HOME.png" class="d-block w-100" alt="ex" style=" z-index: 10px;">
         </div>
     <div class="carousel-item">
-        <img src="../assets/SEARCH.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+        <img src="../assets/SEARCH.png" class="d-block w-100" alt="ex" style="z-index: 10px;">
     </div>
         <div class="carousel-item">
-            <img src="../assets/REUNION.png" class="d-block w-100" alt="ex" style="width: 500px; height: 800px; z-index: 10px;">
+            <img src="../assets/REUNION.png" class="d-block w-100" alt="ex" style=" z-index: 10px;">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -59,7 +60,7 @@ export default{
     </button>
 </div>
     </div >
-    <search id ="mainbox">
+    <search id ="mainbox" class="item">
         <div id ="listSearch">
             <div id ="sh">
                 <div id="look">
@@ -87,23 +88,24 @@ export default{
 </template>
 
 <style scoped>
+
 *{
   padding : 0;
   margin : 0;
   box-sizing : border-box;
-
-  
 }
+
 main{
   width: 100vw;
-  display: grid;
+  height: 100vh;
+  display: grid; 
   padding: 0;
   margin: 0;
   background : #DBDBDB;
 }
 
 #box{
-    max-width : 1000px;
+    width : 1000px;
     margin : 0 auto;
     height : 700px;
     display : flex;
@@ -177,14 +179,16 @@ a{
     align-items : center;
     row-gap: 20px;
     background: #fff;
-
-    
 }
 
 #main{
   width: 500px;
   position: relative;
   top:-50px;
+}
+.w-100{
+  width: 500px;
+  height: 800px;
 }
 #listSearch, #logo{
   width: 100%;
@@ -214,7 +218,7 @@ a{
 }
 
 #footer{
-  min-width: 1000px;
+  width: 1000px;
   margin: 0 auto;
   background: #fff;
   text-align: center;
@@ -228,6 +232,172 @@ a{
 }
 #haddr{
   column-gap: 50px;
+}
+
+/* --------------------태블릿 버전------------------- */
+
+@media(max-width:1194px){
+  main{
+    width: 100%;
+    height: 100%;
+    background: #dbdbdb;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  #box{
+  width : 100%;
+  height: fit-content;
+  display : flex;
+  flex-direction: column;
+  margin-top : 0px;
+  /* position: relative; */
+  
+  }
+  #header{
+  width: 80%;
+  display : flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+#logo img {
+  width : 100px;
+  }
+#logo{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+#menulist{
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+}
+#mainbox {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    
+}
+#main{
+  width: 90%;
+  margin: 0 auto;
+  top:0;
+}
+.w-100{
+  width: 100%;
+  height: 350px;
+}
+#footer{
+  width: 80%;
+  position:relative;
+  bottom: 0;
+  margin-top: 5px;
+}
+}
+
+@media(max-width:490px){
+  /* 1194px 이상일 때의 모습 */
+  #box{
+  width : 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  margin-top : 0px;
+  /* position: relative; */
+  }
+  .item:nth-child(2){
+    grid-row:3;
+}
+  .item:nth-child(3){
+    grid-row:2;
+  }
+  #header{
+  width: 100%;
+  height: 200px;
+  display : flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  margin: 0;
+}
+#logo img {
+  width : 200px;
+  padding: 0;
+  }
+#logo{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: -30px;
+  padding: 0;
+  top:-30px
+}
+#menulist{
+  width: 90%;
+  display: flex;
+  justify-content: end;
+  column-gap: 10px;
+  z-index: 30px;
+  position: absolute;
+  top:140px;
+}
+#menulist li{
+  list-style: none;
+  border : 2px solid #BEC1FF;
+  border-radius: 10px;
+    width : 50px;
+    height : 30px;
+    text-align : center;
+    font-size : 10px;
+    padding-top: 5px;
+    margin:0;
+    color: black;
+    cursor: pointer;
+}
+#mainbox {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0;
+    
+}
+#main{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 100px;
+  bottom: 50px;
+}
+.w-100{
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#footer{
+  width: 100%;
+  position:relative;
+  bottom: 0;
+  margin-top: 5px;
+  font-size: 10px;
+}
+#sh, #listSearch{
+  padding: 0;
+  margin-top: 10px;
+}
+#sh{
+  width: 80%;
+  justify-content: start;
+  column-gap: 60px;
+  padding-bottom: 5px;
+}
 }
 
 

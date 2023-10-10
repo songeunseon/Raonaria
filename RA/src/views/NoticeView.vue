@@ -55,7 +55,7 @@ const router = useRouter();
         padding: 30px;
     }
     #searchBox{
-        max-width: 800px;
+        width: 800px;
         height: 70px;
         margin: 0 auto;
         display: flex;
