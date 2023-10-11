@@ -69,7 +69,7 @@ export default{
     height:520px;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
-    background:#DFCCFB;
+    background:#c1d7e5;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -80,12 +80,13 @@ export default{
     width:120px;
     height:120px;
     display:flex;
-    background:#FFF8C9;
+    background:#c1d7e5;
     flex-direction: column;
     /* justify-content:center; */
     align-items: center;
     border-radius: 100%;
     margin:10px 46px;
+    border:2px solid black;
 }
 
 
