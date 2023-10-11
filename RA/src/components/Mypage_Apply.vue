@@ -1,6 +1,21 @@
 <template>
 <div class="right_wrap">
         <div class="apply_header">
+            <div id="chat_alert_box">
+        <div class="chat_alert">채팅방 알림</div>
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
+        </div>
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
+        </div>
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
+        </div>
+    </div>
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
@@ -244,6 +259,46 @@ export default{
     height:30px;
     background:white;
     padding:0 5px;
+}
+
+#chat_alert_box{
+    text-align: center;
+    padding:10px 0;
+    font-weight:900;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    background:#F1EFEF;
+    /* margin:60px 0; */
+    position:relative;
+    top:89px;
+
+}
+
+.circle{
+    width:10px;
+    height:10px;
+    background:greenyellow;
+    border-radius: 100%;
+}
+
+.textWrap{
+    text-align: left;
+}
+
+.alert_box{
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    padding: 5px 15px;
+    /* border:1px solid black; */
+    font-size:15px;
+    display:flex;
+    align-items: center;
+    gap:0 10px;
+    background:white;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 </style>
