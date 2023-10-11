@@ -6,7 +6,7 @@
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
-            <img src="../assets/sch.png" class="date">
+            <img src="../assets/date.png" class="date">
             <img src="../assets/childern.png" class="kids">
         </div>
         <div class="name">김선향</div>
@@ -95,9 +95,9 @@ export default{
 }*/
 
 .date{
-    width:200px;
+    width:220px;
     position:relative;
-    top:15px;
+    top:40px;
 }
 
 .kids{
