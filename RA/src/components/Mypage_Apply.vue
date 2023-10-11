@@ -1,21 +1,7 @@
 <template>
 <div class="right_wrap">
         <div class="apply_header">
-            <div id="chat_alert_box">
-        <div class="chat_alert">채팅방 알림</div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-    </div>
+            
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
@@ -144,6 +130,8 @@ export default{
 .apply{
     font-size:20px;
     font-weight:900;
+    position:relative;
+    top:80px;
 }
 
 .cancel{
@@ -163,7 +151,9 @@ export default{
     justify-content: space-between;
     position:relative;
     overflow-x:scroll;
-    width:1000px;
+    width:645px;
+    top:73px;
+    left:62px;
     scroll-behavior: smooth;
 }
 
@@ -177,7 +167,7 @@ export default{
     position: absolute; top:33%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
-    background: white;
+    /* background: white; */
     cursor:pointer; border-radius: 5px;
 }
 .bi::before{position:absolute;}
@@ -228,6 +218,11 @@ export default{
     padding-bottom:20px;
 }
 
+.chat_alert{
+    font-size:30px;
+
+}
+
 
 .question_zone{
     font-size:20px;
@@ -266,7 +261,7 @@ export default{
     padding:10px 0;
     font-weight:900;
     display:flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap:10px;
     background:#F1EFEF;
     /* margin:60px 0; */
@@ -300,5 +295,10 @@ export default{
     border-radius: 2px;
     cursor: pointer;
 }
+
+.chat_alert{
+
+}
+
 
 </style>

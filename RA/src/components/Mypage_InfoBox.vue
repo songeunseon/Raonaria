@@ -3,15 +3,31 @@
     <div class="info">
         <div class="profile">
             <i class="bi bi-person-circle"></i>
+            <div class="name">김선향</div>
+            <div class="chat_alert">채팅방 알림</div>
+            <div id="chat_alert_box">
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+        </div>
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+        </div>
+        <div class="alert_box">
+            <div class="circle"></div>
+            <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+        </div>
+    </div>
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
-            <img src="../assets/date.png" class="date">
+            <!-- <img src="../assets/date.png" class="date"> -->
             <img src="../assets/childern.png" class="kids">
         </div>
-        <div class="name">김선향</div>
-        <div class="add_info">로그인 성공 시 아이디를 화면에
-            확인할 수 있습니다.</div>
+        
+        <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
+            확인할 수 있습니다.</div> -->
    
     <!-- <div @click="formOpen()" class="manager_ask">
         관리자 문의하기
@@ -75,13 +91,13 @@ export default{
 
 .profile i{
     font-size:50px;
-    padding:25px 0;
+    padding:12px 0;
     font-size:40px;
     
 }
 
 .name{
-    padding:1px 0;
+    /* padding:1px 0; */
     font-weight:900;
     text-align:center;
 }
@@ -94,17 +110,17 @@ export default{
     top:86px;
 }*/
 
-.date{
+/* .date{
     width:220px;
     position:relative;
-    top:40px;
-}
+    top:42px;
+} */
 
 .kids{
-    width:250px;
+    width:228px;
     position:relative;
     left:5px;
-    bottom:60px;
+    top:166px;
 }
 
 .id{
