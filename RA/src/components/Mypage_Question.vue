@@ -73,8 +73,8 @@ tbody tr td input{
     width:20px;
     height:20px;
     position:relative;
-    left:50%;
-    transform: translate(-60%);
+    left:55%;
+    transform: translate(-60%, 20%);
 }
 
 

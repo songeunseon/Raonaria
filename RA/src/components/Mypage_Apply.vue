@@ -75,7 +75,7 @@
             </div>
         </div>
         <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
-        <div class="apply_header question">
+        <div class="apply_header_question">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
             <button @click="cancelOpen()" class="cancel">문의취소</button>
@@ -138,14 +138,14 @@ export default{
 
 .cancel{
     position: absolute;
-    right:0;
+    right:8px;
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;
     width:80px;
     height:30px;
     background:white;
-    bottom:25px;
+    bottom:4px;
 }
 
 .apply_Zone{
@@ -167,7 +167,7 @@ export default{
 }
 
 .bi-arrow-left-square, .bi-arrow-right-square{
-    position: absolute; top:33%;
+    position: absolute; top:40%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
     /* background: white; */
@@ -216,14 +216,13 @@ export default{
 }
 
 
-
-
-
 .question_zone{
     font-size:20px;
     text-align: center;
     font-weight: 900;
     width:660px;
+    margin-top:95px;
+    padding-left:104px;
 }
 
 .question{
@@ -242,7 +241,7 @@ export default{
 
 .manager_bt{
     position: absolute;
-    left:0;
+    left:1px;
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;

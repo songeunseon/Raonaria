@@ -194,14 +194,16 @@ export default{
 
 .textWrap{
     text-align: left;
+    font-size:15px;
+    
 }
 
 .alert_box{
     box-sizing: border-box;
-    width:200px;
+    width:220px;
     /* height:100%; */
-    padding: 5px 15px;
-    /* border:1px solid black; */
+    padding: 5px 10px;
+    border:1px solid #c1d7e5;
     font-size:15px;
     display:flex;
     align-items: center;
