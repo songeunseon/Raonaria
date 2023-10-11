@@ -80,27 +80,29 @@ b{
 }
 
 .fade-enter-from{
-    opacity: 0;
+    margin-top:1000px;
 }
 
 .fade-enter-active{
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .fade-enter-to{
-    opacity:1;
+    margin-top:0px;
 }
 
 
 .fade-leave-from {
-    opacity: 1;
+   
+    margin-top:0px;
 }
 
 .fade-leave-active {
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .fade-leave-to {
-    opacity: 0;
-}
+    
+    margin-top:1000px;
+} 
 </style>

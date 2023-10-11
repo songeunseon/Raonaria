@@ -131,9 +131,9 @@ export default{
     font-size:20px;
     font-weight:900;
     position:relative;
-    bottom:28px;
+    bottom:16px;
     font-size:20px;
-    padding-bottom:20px;
+    /* padding-bottom:20px; */
 }
 
 .cancel{
@@ -145,7 +145,7 @@ export default{
     width:80px;
     height:30px;
     background:white;
-    bottom:38px;
+    bottom:25px;
 }
 
 .apply_Zone{
