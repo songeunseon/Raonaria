@@ -90,10 +90,50 @@ const router = useRouter();
         border-top: 3px solid #aaa;
     }
     #noticeTable{
-        min-width: 800px;
+        width: 800px;
         text-align: center;
         border-bottom: 3px solid #aaa;
         margin: 30px auto;
     }
-
+    @media(max-width:490px){
+        #noticeBox{
+        width: 350px;
+        margin: 5px auto;
+    }
+    #noticeBox h1{
+        width: 350px;
+        padding: 10px;
+    }
+    #searchBox{
+        width: 350px;
+        height: 50px;
+        margin: 0 auto;
+        display: flex;
+        background: #F4F4FA;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+    }
+    .select{
+        width: 50px;
+        height: 30px;
+    }
+    #searchIp input{
+        width: 200px;
+        height: 30px;
+        padding: 5px;
+    }
+    #Bt{
+        width: 50px;
+        height: 30px;
+        border: 3px solid #aaa;
+    }
+    #noticeTable{
+        width: 350px;
+        text-align: center;
+        border-bottom: 3px solid #aaa;
+        margin: 30px auto;
+        font-size: 10px;
+    }
+    }
 </style>
