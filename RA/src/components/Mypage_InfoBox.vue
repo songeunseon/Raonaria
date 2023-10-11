@@ -3,26 +3,16 @@
     <div class="info">
         <div class="profile">
             <i class="bi bi-person-circle"></i>
-            <div class="name">김선향</div>
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
+            <img src="../assets/sch.png" class="date">
+            <img src="../assets/childern.png" class="kids">
         </div>
-    <div id="chat_alert_box">
-        <div class="chat_alert">채팅방 알림</div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에<br>활동 중 입니다.</div>
-        </div>
-    </div>
+        <div class="name">김선향</div>
+        <div class="add_info">로그인 성공 시 아이디를 화면에
+            확인할 수 있습니다.</div>
+   
     <!-- <div @click="formOpen()" class="manager_ask">
         관리자 문의하기
     </div> -->
@@ -59,11 +49,11 @@ export default{
 }
 
 .info{
-    width:200px;
-    height:100%;
-    /* border-right: 1px solid black; */
+    width:220px;
+    height:520px;
+    /* border: 1px solid black; */
     /* margin-left:-200px; */
-    /* background:#F1EFEF; */
+    background:#DFCCFB;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -71,24 +61,50 @@ export default{
 }
 
 .profile{
-    width:200px;
-    height:200px;
+    width:120px;
+    height:120px;
     display:flex;
-    background:#F1EFEF;
+    background:#FFF8C9;
     flex-direction: column;
-    justify-content:center;
+    /* justify-content:center; */
     align-items: center;
     border-radius: 100%;
+    margin:10px 46px;
 }
 
 
 .profile i{
     font-size:50px;
+    padding:25px 0;
+    font-size:40px;
+    
 }
 
 .name{
-    padding:10px 0;
-    font-weight:800;
+    padding:1px 0;
+    font-weight:900;
+    text-align:center;
+}
+
+/* .book{
+    width:140px;
+    /* height:150px; 
+    position:relative;
+    left:5px;
+    top:86px;
+}*/
+
+.date{
+    width:200px;
+    position:relative;
+    top:15px;
+}
+
+.kids{
+    width:250px;
+    position:relative;
+    left:5px;
+    bottom:60px;
 }
 
 .id{
@@ -101,45 +117,7 @@ export default{
     font-size:30px;
 }
 
-#chat_alert_box{
-    text-align: center;
-    padding:10px 0;
-    font-weight:900;
-    display:flex;
-    flex-direction: column;
-    gap:10px;
-    background:#F1EFEF;
-    /* margin:60px 0; */
-    position:relative;
-    top:89px;
 
-}
-
-.circle{
-    width:10px;
-    height:10px;
-    background:greenyellow;
-    border-radius: 100%;
-}
-
-.textWrap{
-    text-align: left;
-}
-
-.alert_box{
-    box-sizing: border-box;
-    width:100%;
-    height:100%;
-    padding: 5px 15px;
-    /* border:1px solid black; */
-    font-size:15px;
-    display:flex;
-    align-items: center;
-    gap:0 10px;
-    background:white;
-    border-radius: 2px;
-    cursor: pointer;
-}
 
 .manager_ask{
     
@@ -168,6 +146,11 @@ export default{
     border-top:3px solid #F1EFEF;
     cursor: pointer;
 
+}
+
+.add_info{
+    text-align:center;
+    padding-bottom:5px;
 }
 
 </style>

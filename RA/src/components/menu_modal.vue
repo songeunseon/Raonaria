@@ -182,7 +182,7 @@ font-weight:800;
 }
 
 .kick{
-    width:100px;
+width:100px;
  height:25px;
  border:none;
  font-weight:800;
