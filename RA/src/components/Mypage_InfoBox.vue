@@ -6,10 +6,13 @@
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
-            <img src="../assets/book.png" class="book">
+            <!-- <img src="../assets/book.png" class="book"> -->
+            <!-- <img src="../assets/playch.png" class="play"> -->
             <img src="../assets/childern.png" class="kids">
         </div>
         <div class="name">김선향</div>
+        <div class="add_info">로그인 성공 시 아이디를 화면에
+            확인할 수 있습니다.</div>
    
     <!-- <div @click="formOpen()" class="manager_ask">
         관리자 문의하기
@@ -84,19 +87,25 @@ export default{
     text-align:center;
 }
 
-.book{
+/* .book{
     width:140px;
-    /* height:150px; */
+    /* height:150px; 
     position:relative;
     left:5px;
     top:86px;
+}*/
+
+.play{
+    width:200px;
+    position:relative;
+    top:15px;
 }
 
 .kids{
     width:250px;
     position:relative;
     left:5px;
-    top:80px;
+    bottom:60px;
 }
 
 .id{
@@ -138,6 +147,11 @@ export default{
     border-top:3px solid #F1EFEF;
     cursor: pointer;
 
+}
+
+.add_info{
+    text-align:center;
+    padding-bottom:5px;
 }
 
 </style>
