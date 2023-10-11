@@ -78,6 +78,8 @@ export default{
   @media(max-width:490px){
     #TopMenuBt{
       width: 350px;
+      height: 80px;
+      align-items: end;
     }
     #mjoin, #mlogin{
     width: 50px;

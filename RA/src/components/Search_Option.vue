@@ -51,7 +51,7 @@ const router = useRouter();
         <div class="optionList">
           <select class="optiontag" aria-label="option4">
             <option selected>구분</option>
-            <option value="1">만1세</option>
+            <option value="1" >만1세</option>
             <option value="2">만2세</option>
             <option value="3">만3세</option>
             <option value="4">만4세</option>
@@ -131,6 +131,9 @@ const router = useRouter();
       width: 100%; 
  
     }
+    .optiontag option{
+      font-size: 10px;
+    }
   }
   @media(max-width:490px){
     #SHbox{
@@ -171,7 +174,7 @@ const router = useRouter();
   }
   .optiontag{
     width: 100%;
-      font-size: 10px;
+    font-size: 10px;
   }
   }
 </style>
