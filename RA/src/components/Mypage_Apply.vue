@@ -131,8 +131,9 @@ export default{
     font-size:20px;
     font-weight:900;
     position:relative;
-    top:30px;
-    /* padding-bottom: 20px; */
+    bottom:28px;
+    font-size:20px;
+    padding-bottom:20px;
 }
 
 .cancel{
@@ -144,6 +145,7 @@ export default{
     width:80px;
     height:30px;
     background:white;
+    bottom:38px;
 }
 
 .apply_Zone{
@@ -153,7 +155,7 @@ export default{
     position:relative;
     overflow-x:scroll;
     width:645px;
-    top:73px;
+    top:12px;
     left:62px;
     scroll-behavior: smooth;
 }
@@ -213,11 +215,6 @@ export default{
     margin-right:8px;
 }
 
-.apply{
-    /* display:flex; */
-    font-size:15px;
-    padding-bottom:20px;
-}
 
 
 

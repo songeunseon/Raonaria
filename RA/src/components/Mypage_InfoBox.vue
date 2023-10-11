@@ -86,7 +86,7 @@ export default{
     align-items: center;
     border-radius: 100%;
     margin:10px 46px;
-    border:2px solid black;
+    border:1px double black;
 }
 
 
