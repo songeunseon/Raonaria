@@ -93,7 +93,7 @@ export default{
 #CpText{
         width: 100%;
         margin: 0 auto;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         text-align: center;
         padding: 5px 0;
