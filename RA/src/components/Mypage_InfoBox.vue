@@ -6,8 +6,7 @@
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
-            <!-- <img src="../assets/book.png" class="book"> -->
-            <!-- <img src="../assets/playch.png" class="play"> -->
+            <img src="../assets/sch.png" class="date">
             <img src="../assets/childern.png" class="kids">
         </div>
         <div class="name">김선향</div>
@@ -95,7 +94,7 @@ export default{
     top:86px;
 }*/
 
-.play{
+.date{
     width:200px;
     position:relative;
     top:15px;
