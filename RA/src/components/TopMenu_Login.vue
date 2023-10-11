@@ -37,7 +37,7 @@ export default{
 *{padding: 0;margin: 0;box-sizing: border-box;}
 
 #TopMenuBt{
-    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
     display: flex;
     justify-content: end;
@@ -59,5 +59,35 @@ export default{
         padding: 10px 0;
         border-bottom: 3px solid #aaa;
         z-index: 1020;
+    }
+  @media(min-width:490px) and (max-width:1194px){
+    #TopMenuBt{
+      width: 780px;
+    }
+  }
+  @media(max-width:490px){
+    #TopMenuBt{
+      width: 350px;
+    }
+    #mjoin, #mlogin{
+    width: 50px;
+    height: 30px;
+    background: 0;
+    border: 3px solid #BEC1FF;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 10px;
+}
+#CpText{
+        width: 100%;
+        margin: 0 auto;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        padding: 5px 0;
+        border-bottom: 3px solid #aaa;
+        z-index: 1020;
+        font-size: 10px;
+    }
     }
 </style>

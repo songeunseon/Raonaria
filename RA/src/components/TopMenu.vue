@@ -9,14 +9,14 @@ import TopMenu_Login from "./TopMenu_Login.vue";
 <template>
   <div id="menuBar">
     <div id="logo" >
-      <RouterLink to="/"><img src="../assets/toplogo.svg" style="width: 200px;"></RouterLink>
+      <RouterLink to="/"><img src="../assets/toplogo.svg"></RouterLink>
     </div>
     <div id="menu">
       <ul id="menuList">
         <RouterLink to="/notice"><li id="notice">공지사항</li></RouterLink>
-        <RouterLink to="/search"><li id="search">유치원조회</li></RouterLink>
-        <RouterLink to="/reunion"><li id="reunion">유치원동창회</li></RouterLink>
-        <RouterLink to="/mypage"><li id="mypage">마이페이지</li></RouterLink>
+        <RouterLink to="/search"><li id="search">조회</li></RouterLink>
+        <RouterLink to="/reunion"><li id="reunion">동창회</li></RouterLink>
+        <RouterLink to="/mypage"><li id="mypage">내정보</li></RouterLink>
       </ul>
     </div>
   </div>
@@ -30,12 +30,15 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     padding: 0;
     box-sizing: border-box;
   }
+  #logo img{
+    width: 200px;
+  }
   #menuBar{
-    max-width: 1000px;
+    width: 1000px;
     height: 100px;
     margin: 0 auto;
     display: flex;
-    /* column-gap: 30px; */
+    /* column-gap: 30px; */ 
     align-items: end;
   }
   #menu{
@@ -73,5 +76,39 @@ import TopMenu_Login from "./TopMenu_Login.vue";
   a{
     text-decoration: none;
   }
+  @media(min-width:490px) and (max-width:1194px){
 
+    #menuList li{
+      width: 150px;
+    }
+  }
+  @media(max-width:490px){
+    *{margin: 0 auto;}
+    #logo img{
+    width: 200px;
+  }
+    #menuBar{
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+    #menuList{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    font-size: 10px;
+    align-items: end;
+    border-bottom: 0;
+  }
+    #menuList li{
+      width: 50px;
+      border: 3px solid #BEC1FF;
+      font-size: 10px;
+      transition: none;
+    }
+    #menuList #mypage{
+      border: 3px solid #BEC1FF;
+  }
+  }
 </style>
