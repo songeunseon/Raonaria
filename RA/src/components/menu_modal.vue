@@ -48,7 +48,7 @@
                         <div class="check_name">김선향<input type="checkbox" name="name" value="김선향"></div>
                     </div>
                     <div class="kick_out_bt">
-                    <button @click="banOn()" class="save">강퇴하기</button>
+                    <button @click="banOn()" class="kick">강퇴하기</button>
                     </div>
                 </div>
             </div>
@@ -134,6 +134,7 @@ font-weight:800;
 
 .write{
     text-align:center;
+    font-size:13px;
 }
 
 .content_change input{
@@ -172,11 +173,21 @@ font-weight:800;
 }
 
 .save{
- width:100%;
+ width:100px;
  height:25px;
  border:none;
  font-weight:800;
  background:#D9D9D9;
+ margin:0 10px;
+}
+
+.kick{
+    width:100px;
+ height:25px;
+ border:none;
+ font-weight:800;
+ background:#D9D9D9;
+ margin:0 25px;
 }
 
 .notice{
@@ -213,7 +224,7 @@ font-weight:800;
 .notice_info{
     width:100px;
     height:25px; 
-    margin:10px 10px;
+    margin:10px 20px;
     font-weight:800;
     border:none;
     background:#d9d9d9;
