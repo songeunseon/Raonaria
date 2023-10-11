@@ -4,7 +4,7 @@
                 <i @click="menuOpen()" class="bi bi-x-circle"></i>
                 <div class="menu_bar">
                     <span>채팅방 관리</span>
-                    <i class="bi bi-chevron-compact-down"></i>
+                    <!-- <i class="bi bi-chevron-compact-down"></i> -->
                 </div>
                 <div class="title_change">
                     정보변경
@@ -144,6 +144,7 @@ font-weight:800;
     padding:5px 3px;
     width:150px;
     text-align:center;
+    outline:none;
 }
 
 /* .menu_modal{display:none;} */

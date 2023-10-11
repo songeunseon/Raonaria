@@ -131,7 +131,8 @@ export default{
     font-size:20px;
     font-weight:900;
     position:relative;
-    top:80px;
+    top:30px;
+    /* padding-bottom: 20px; */
 }
 
 .cancel{
