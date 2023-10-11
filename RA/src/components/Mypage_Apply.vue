@@ -218,10 +218,7 @@ export default{
     padding-bottom:20px;
 }
 
-.chat_alert{
-    font-size:30px;
 
-}
 
 
 .question_zone{
@@ -256,49 +253,6 @@ export default{
     padding:0 5px;
 }
 
-#chat_alert_box{
-    text-align: center;
-    padding:10px 0;
-    font-weight:900;
-    display:flex;
-    /* flex-direction: column; */
-    gap:10px;
-    background:#F1EFEF;
-    /* margin:60px 0; */
-    position:relative;
-    top:89px;
-
-}
-
-.circle{
-    width:10px;
-    height:10px;
-    background:greenyellow;
-    border-radius: 100%;
-}
-
-.textWrap{
-    text-align: left;
-}
-
-.alert_box{
-    box-sizing: border-box;
-    width:100%;
-    height:100%;
-    padding: 5px 15px;
-    /* border:1px solid black; */
-    font-size:15px;
-    display:flex;
-    align-items: center;
-    gap:0 10px;
-    background:white;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.chat_alert{
-
-}
 
 
 </style>
