@@ -3,6 +3,7 @@
 <TopMenu_Login/>
     
 <div class="page_wrap">
+    <img src="../assets/">
     <Mypage_InfoBox/>
     <div class="page_Zone">
         <Mypage_Apply/>
