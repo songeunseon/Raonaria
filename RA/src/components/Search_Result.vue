@@ -50,5 +50,15 @@ const router = useRouter();
   #resultTable tr td:nth-child(5){
     width: 35%;
   }
-
+  @media(min-width:490px) and (max-width:1194px){
+    #result,#resultTable{
+      width: 100%;
+    }
+  }
+  @media(max-width:490px){
+    #result,#resultTable{
+      width: 100%;
+      font-size: 10px;
+    }
+  }
 </style>

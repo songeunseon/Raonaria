@@ -81,6 +81,10 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     #menuList li{
       width: 150px;
     }
+    #menuBar{
+      width: 650px;
+      justify-content: center;
+    }
   }
   @media(max-width:490px){
     *{margin: 0 auto;}

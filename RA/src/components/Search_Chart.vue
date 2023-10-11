@@ -67,7 +67,7 @@ const router = useRouter();
 
 
 #info{
-    max-width: 1000px;
+    width: 1000px;
     margin: 100px auto;
   }
   #harf{
@@ -108,5 +108,26 @@ const router = useRouter();
     background: 0;
     border: 3px solid #BEC1FF;
     border-radius: 5px;
+  }
+  @media(min-width:490px) and (max-width:1194px){
+    #info{
+      width: 100%;
+    }
+    #check{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+  }
+    #infoBt{
+    display: flex;
+    justify-content: space-around;
+  }
+  }
+  @media(max-width:490px){
+    #info{
+      width: 100%;
+      font-size: 10px;
+
+    }
   }
 </style>
