@@ -110,6 +110,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       border: 3px solid #BEC1FF;
       font-size: 10px;
       transition: none;
+      column-gap: 10px;
     }
     #menuList #mypage{
       border: 3px solid #BEC1FF;
