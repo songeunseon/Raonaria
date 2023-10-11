@@ -7,7 +7,7 @@
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
             <img src="../assets/book.png" class="book">
-            <img src="../assets/.png" class="kids">
+            <img src="../assets/childern.png" class="kids">
         </div>
         <div class="name">김선향</div>
    
@@ -93,10 +93,10 @@ export default{
 }
 
 .kids{
-    width:200px;
+    width:250px;
     position:relative;
     left:5px;
-    top:140px;
+    top:80px;
 }
 
 .id{
