@@ -18,7 +18,7 @@
             <div class="circle"></div>
             <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
         </div> -->
-    </div>
+            </div>
         </div>
         <div class="image">
             <img src="../assets/childern.png" class="kids">

@@ -1,19 +1,19 @@
 <template>
 <div class="Login_modal">
-    <div class="modal_header">
+    <div class="modal_header mb" >
         <i  @click="loginOpen()" class="bi bi-x-circle" style="cursor: pointer;"></i>
         <div class="modal_title">Sign_in</div>
         <div class="modal_line"></div>
     </div>
-    <div class="login">
+    <div class="login mb">
         <div class="input"><b>ID</b><input id ="hid" type ="text" ></div>
         <div class="input"><b>PW</b><input id ="hpw" type ="password"></div>
     </div>
-    <div class="login_button">
+    <div class="login_button mb">
         <button class="sign_bt">회원가입</button>
         <button class="login_bt">로그인</button>
     </div>
-    <div class="sns_line">
+    <div class="sns_line mb">
         <img src="../assets/google.png" style="width: 50px;"  class="google">
         <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
     </div>
@@ -48,7 +48,8 @@
 position:absolute;
 width:500px;
 height:300px;
-border:1px solid black;
+border: 1px solid #aaa;
+border-radius: 20px;
 background:white;
 z-index:100;
 left: 50%;
@@ -160,7 +161,66 @@ transform: translate(-50%, -50%);
     font-weight: 800;
 }
 @media(max-width:490px){
-    .Login_modal{width: 300px;}
+    .Login_modal{
+        width: 300px;
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        align-items: center;
+        justify-content: center;
+    }
+    .mb:nth-child(1){
+        grid-row: 1;
+        grid-column: 1/3;
+    }
+    .mb:nth-child(2){
+        grid-row: 2;
+    }
+    .mb:nth-child(3){
+        grid-row: 3;
+        grid-column: 1;
+
+    }
+    .mb:nth-child(4){
+        grid-row: 3;
+        grid-column: 2;
+    }
+    .modal_title{
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .input{
+        width: 200px;
+        border: 2px solid #BEC1FF;
+        border-radius: 5px;
+    }
+    .input b{
+        font-size: 15px;
+        padding:5px;
+        font-weight:800;
+    }
+    .login_button{
+    display:flex;
+    justify-content:center;
+    margin:5px;
+    column-gap: 10px;
+    
+}
+    .sign_bt, .login_bt{
+    width:50px;
+    height:50px;
+    border:2px solid #BEC1FF;
+    border-radius: 100px;
+    font-size:10px;
+}
+.sns_line{
+    display:flex;
+    justify-content: center;
+    padding-top: 0;
+    column-gap: 10px;
+    
+}
 }
 
 
