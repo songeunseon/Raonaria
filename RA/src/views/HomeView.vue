@@ -41,13 +41,13 @@ export default{
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="../assets/HOME.png" class="d-block w-100" alt="ex" style=" z-index: 10px;">
+            <img src="../assets/HOME.png" id="a" class="d-block w-100" alt="ex" style=" z-index: 20px;" >
         </div>
     <div class="carousel-item">
-        <img src="../assets/SEARCH.png" class="d-block w-100" alt="ex" style="z-index: 10px;">
+        <img src="../assets/SEARCH.png" id="b" class="d-block w-100" alt="ex" style="z-index: 20px;">
     </div>
         <div class="carousel-item">
-            <img src="../assets/REUNION.png" class="d-block w-100" alt="ex" style=" z-index: 10px;">
+            <img src="../assets/REUNION.png" id="c" class="d-block w-100" alt="ex" style="z-index: 20px;">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -246,6 +246,7 @@ a{
 /* --------------------태블릿 버전------------------- */
 
 @media(min-width:490px) and (max-width:1194px){
+
   main{
     width: 100%;
     height: 100%;

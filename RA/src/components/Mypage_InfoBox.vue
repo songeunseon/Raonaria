@@ -6,10 +6,10 @@
             <div class="name">김선향</div>
             <div class="chat_alert">채팅방 알림</div>
             <div id="chat_alert_box">
-        <div class="alert_box">
-            <div class="circle"></div>
-            <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
-        </div>
+                <div class="alert_box">
+                    <div class="circle"></div>
+                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                </div>
         <!-- <div class="alert_box">
             <div class="circle"></div>
             <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
@@ -18,7 +18,7 @@
             <div class="circle"></div>
             <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
         </div> -->
-    </div>
+            </div>
             <!-- <div class="id">
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
