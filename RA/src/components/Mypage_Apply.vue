@@ -5,20 +5,53 @@
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
-        <!-- <i @click="slideLeft()" class="bi bi-arrow-left-square"></i> -->
+        <i @click="slideLeft()" class="bi bi-arrow-left-square"></i>
         <div class="apply_Zone">
             <div class="slider_wrap">
                 <div class="apply_box">
-                    <!-- <div>
+                    <div>
                         <input class="text" type="text">
                         <input class="checkbox" type="checkbox">
-                    </div> -->
-                    <!-- <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>    -->
+                    </div> 
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
                 </div>
-            </div>
+                <!-- <div class="apply_box">
+                    <div>
+                        <input class="text" type="text">
+                        <input class="checkbox" type="checkbox">
+                    </div> 
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <input class="text" type="text">
+                        <input class="checkbox" type="checkbox">
+                    </div> 
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <input class="text" type="text">
+                        <input class="checkbox" type="checkbox">
+                    </div> 
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <input class="text" type="text">
+                        <input class="checkbox" type="checkbox">
+                    </div> 
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
+                </div> -->
+            </div> 
         </div>
-        <!-- <i @click="slideRight()" class="bi bi-arrow-right-square"></i> -->
+        
+        <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
         <div class="apply_header_question">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
@@ -111,7 +144,7 @@ export default{
     column-gap:15px;
 }
 
-/* .bi-arrow-left-square, .bi-arrow-right-square{
+.bi-arrow-left-square, .bi-arrow-right-square{
     position: absolute; top:40%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
@@ -120,11 +153,11 @@ export default{
 }
 .bi::before{position:absolute;}
 .bi-arrow-left-square{left:0;}
-.bi-arrow-right-square{right:0;} */
+.bi-arrow-right-square{right:0;} 
 
 
 .apply_box{
-    /* background-color:#60baaf;
+background-color:#60baaf;
     color:white;
     padding:10px;
     gap:15px;
@@ -133,10 +166,11 @@ export default{
     align-items:center;
     width:150px;
     height:150px;
-    border-radius:100px; */
-    width:650px;
+    border-radius:100px; 
+    /* width:700px;
     height:150px;
-    background:#60BAAF
+    background:#60BAAF;
+    margin-left:20px; */
 
 }
 
@@ -198,6 +232,7 @@ export default{
     background:white;
     padding:0 5px;
 }
+
 
 
 

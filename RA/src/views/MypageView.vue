@@ -5,10 +5,14 @@
 <div class="page_wrap">
     <Mypage_InfoBox/>
     <div class="page_Zone">
-        <Mypage_Apply/>
+        <Mypage_Apply v-if="!isApply"/>
+        <Mypage_NoApply v-if="isApply"/>
         <Mypage_New_Member/>
         <Mypage_Question/>
+        
+        
     </div>
+    <button style="position:fixed; top:10%; left:10%;" @click="test" >테스트</button>
 </div>
 
 <Cancel_Alert v-if="isCancel"/>
@@ -28,12 +32,14 @@ import {ref, provide} from 'vue'
 import Mypage_InfoBox from '../components/MyPage_InfoBox.vue'
 import Mypage_Apply from '../components/Mypage_Apply.vue'
 import Mypage_Question from '../components/Mypage_Question.vue'
+import Mypage_NoApply from '../components/Mypage_NoApply.vue'
+import Mypage_NoinfoBox from '../components/Mypage_NoinfoBox.vue'
 
 
 export default{
     name:'MyPage',
     components:{
-        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question
+        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question,Mypage_NoApply,Mypage_NoinfoBox
     },
     setup(){
         const isCancel = ref(false);
@@ -45,9 +51,13 @@ export default{
         const formOpen = () => isForm.value = !isForm.value;
         provide('isForm',isForm);
         provide('formOpen',formOpen);
+
+        const isApply = ref(false);
+        provide('isApply', isApply);
+        const test = () => isApply.value = !isApply.value;
         
         return{
-            isCancel, cancelOpen, isForm, formOpen, 
+            isCancel, cancelOpen, isForm, formOpen, isApply, test
         }
     }
 }
@@ -62,6 +72,14 @@ export default{
     width:1000px;
     margin:45px auto;
     gap:20px;
+}
+@media(max-width:1194px){
+    .page_wrap{
+        width:650px;
+    }
+}
+@media(max-width:490px){
+    
 }
 .page_Zone{
     width:100%;
