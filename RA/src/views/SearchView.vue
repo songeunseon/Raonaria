@@ -18,10 +18,16 @@ export default{
     { Consulting_Req, TopMenu, TopMenu_Login, Search_Option, Search_Result, Search_Chart},
   setup(){
     const isReq = ref(false);
-    const reqOpen = () => {isReq.value = !isReq.value;}
+    const reqOpen = () => isReq.value = !isReq.value;
+
+    const showReq = ref(false);
+    const reqClose = () => showReq.value =!showReq.value;
     
     provide('isReq', isReq);
+    provide('showReq', showReq);
     provide('reqOpen', reqOpen);
+    provide('reqClose',reqClose);
+
 
     // onMounted(()=>{
     //   const req_bt = document.querySelector('.req_bt');
@@ -31,7 +37,7 @@ export default{
     // })
     
     return{
-      isReq, reqOpen,
+      isReq, reqOpen, reqClose, showReq
     }
   }
 }
@@ -51,6 +57,7 @@ export default{
     <RouterLink to="/comparison"><button id="comparison">유치원 비교하기</button></RouterLink> 
   </div>
   <Search_Chart />
+  <consulting_Req v-show="isReq"/>
   <RouterView />
 </template>
 
