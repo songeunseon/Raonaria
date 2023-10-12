@@ -159,7 +159,9 @@ transform: translate(-50%, -50%);
     margin:0 auto;
     font-weight: 800;
 }
-
+@media(max-width:490px){
+    .Login_modal{width: 300px;}
+}
 
 
 

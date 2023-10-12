@@ -284,6 +284,9 @@ a{
   display: flex;
   justify-content: space-around;
 }
+#menulist li{
+  transform: none;
+}
 #mainbox {
     width: 80%;
     margin: 0 auto;
@@ -327,7 +330,7 @@ a{
  
   #header{
   width: 100%;
-  height: 200px;
+  height: 180px;
   display : flex;
   flex-direction: column;
   padding-bottom: 0;
@@ -368,6 +371,7 @@ a{
     margin:0;
     color: black;
     cursor: pointer;
+  transform: none;
 }
 #mainbox {
     width: 100%;
@@ -401,7 +405,7 @@ a{
 }
 #sh, #listSearch{
   padding: 0;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 #sh{
   width: 80%;
