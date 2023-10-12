@@ -145,7 +145,7 @@ export default{
     width:80px;
     height:30px;
     background:white;
-    bottom:4px;
+    bottom:0;
 }
 
 .apply_Zone{

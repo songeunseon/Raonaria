@@ -86,7 +86,7 @@ export default{
     align-items: center;
     border-radius: 100%;
     margin:10px 46px;
-    border:1px double black;
+    border:7px double white;
 }
 
 
@@ -101,6 +101,8 @@ export default{
     /* padding:1px 0; */
     font-weight:900;
     text-align:center;
+    position:relative;
+    bottom:12px;
 }
 
 /* .book{
@@ -210,11 +212,12 @@ export default{
     gap:0 10px;
     background:white;
     border-radius: 2px;
-    cursor: pointer;}
+    /* cursor: pointer;} */
+}
 
     
 .chat_alert{
-    font-size:18px;
+    font-size:15px;
     position:relative;
     top:30px;
 
