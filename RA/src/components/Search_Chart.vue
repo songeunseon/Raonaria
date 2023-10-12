@@ -127,7 +127,47 @@ const router = useRouter();
     #info{
       width: 100%;
       font-size: 10px;
-
     }
+    #harf{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 0;
+  }
+  #infomation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 20px 0 20px;
+  }
+  #map{
+    width: 100%;
+    height: 300px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+  }
+  #check{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  #check div{
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+  }
+  #infoBt button{
+    width: 60px;
+    height: 25px;
+    background: 0;
+    border: 2px solid #BEC1FF;
+    border-radius: 5px;
+    
+  }
+  #infoBt{
+    justify-content: center;
+    column-gap: 30px;
+    margin: 10px;
+  }
   }
 </style>

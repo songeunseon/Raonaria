@@ -77,10 +77,13 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     text-decoration: none;
   }
   @media(min-width:490px) and (max-width:1194px){
-
+    #menuList{
+      transition: none;
+    }
     #menuList li{
       width: 150px;
     }
+  
     #menuBar{
       width: 650px;
       justify-content: center;
@@ -107,16 +110,26 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     font-size: 10px;
     align-items: end;
     border-bottom: 0;
+    column-gap: 5px;
+    transition: none;
   }
     #menuList li{
-      width: 50px;
-      border: 3px solid #BEC1FF;
+      width: 60px;
+      height: 30px;
+      border: 2px solid #BEC1FF;
+      border-radius: 5px;
       font-size: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: none;
-      column-gap: 10px;
+      column-gap: 5px;
     }
+      #menuList li:hover{
+    font-size: 10px;
+  }
     #menuList #mypage{
-      border: 3px solid #BEC1FF;
+      border: 2px solid #BEC1FF;
   }
   }
 </style>

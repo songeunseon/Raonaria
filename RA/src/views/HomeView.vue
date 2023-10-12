@@ -203,6 +203,7 @@ a{
   padding: 20px 0;
   
 }
+
 #listTitle{
   font-weight: 900;
 }
@@ -323,6 +324,7 @@ a{
   .item:nth-child(3){
     grid-row:2;
   }
+ 
   #header{
   width: 100%;
   height: 200px;
@@ -373,9 +375,10 @@ a{
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     row-gap: 0;
-    
 }
+
 #main{
   width: 100%;
   margin: 0 auto;
