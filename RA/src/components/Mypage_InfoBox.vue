@@ -23,7 +23,7 @@
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
             <!-- <img src="../assets/date.png" class="date"> -->
-            <img src="../assets/childern.png" class="kids">
+            <img src="../assets/.png" class="kids">
         </div>
         
         <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
