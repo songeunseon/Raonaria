@@ -85,7 +85,7 @@ export default{
   }
   @media(max-width:490px){
     #comparison{
-      width: 150px;
+      display: none;
     }
   }
 </style>

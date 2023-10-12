@@ -110,14 +110,14 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     font-size: 10px;
     align-items: end;
     border-bottom: 0;
-    column-gap: 5px;
+    column-gap: 10px;
     transition: none;
   }
     #menuList li{
-      width: 60px;
+      width: 50px;
       height: 30px;
       border: 2px solid #BEC1FF;
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 10px;
       display: flex;
       align-items: center;

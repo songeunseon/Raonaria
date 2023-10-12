@@ -70,16 +70,17 @@ export default{
   #shbar{
     width: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
   }
   #shbar svg{
     width: 50px;
-    margin:20px 0 20px 10px;
+    margin:0;
   }
   #school{
-    width: 200px;
+    width: 250px;
     height: 40px;
+    margin-top: 20px;
   }
 }
 
