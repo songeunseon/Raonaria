@@ -34,7 +34,7 @@ export default{
     gap:10px;
     align-items: center;
     position: fixed;
-    top:20px;
+    top:105px;
     left:55%;
     transform: translate(-50%);
     background: white;
@@ -80,7 +80,7 @@ b{
 }
 
 .fade-enter-from{
-    margin-top:1000px;
+    margin-top:300px;
 }
 
 .fade-enter-active{
