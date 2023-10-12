@@ -83,5 +83,9 @@ export default{
     border-radius: 5px;
     font-size: 15px;
   }
-  
+  @media(max-width:490px){
+    #comparison{
+      width: 150px;
+    }
+  }
 </style>

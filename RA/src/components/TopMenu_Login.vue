@@ -82,12 +82,12 @@ export default{
       align-items: end;
     }
     #mjoin, #mlogin{
-    width: 50px;
+    width: 70px;
     height: 30px;
     background: 0;
-    border: 3px solid #BEC1FF;
-    border-radius: 5px;
-    margin-left: 10px;
+    border: 1px solid #aaa;
+    border-radius: 100px;
+    margin-left: 5px;
     font-size: 10px;
 }
 #CpText{
