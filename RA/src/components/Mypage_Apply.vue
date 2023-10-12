@@ -9,69 +9,13 @@
         <div class="apply_Zone">
             <div class="slider_wrap">
                 <div class="apply_box">
-                    <div>
+                    <!-- <div>
                         <input class="text" type="text">
                         <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
+                    </div> -->
+                    <!-- <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>    -->
                 </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div> 
             </div>
         </div>
         <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
