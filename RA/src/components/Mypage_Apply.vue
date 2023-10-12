@@ -5,7 +5,7 @@
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
-        <i @click="slideLeft()" class="bi bi-arrow-left-square"></i>
+        <!-- <i @click="slideLeft()" class="bi bi-arrow-left-square"></i> -->
         <div class="apply_Zone">
             <div class="slider_wrap">
                 <div class="apply_box">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
+        <!-- <i @click="slideRight()" class="bi bi-arrow-right-square"></i> -->
         <div class="apply_header_question">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
@@ -40,8 +40,8 @@ export default{
         const formOpen = inject('formOpen')
 
          const slideRight = () => {
-             const apply_Zone = document.querySelector(".apply_Zone");
-             apply_Zone.scrollLeft += 10000;
+            const apply_Zone = document.querySelector(".apply_Zone");
+            apply_Zone.scrollLeft += 10000;
          }
 
         const slideLeft = () => {
@@ -111,20 +111,20 @@ export default{
     column-gap:15px;
 }
 
-.bi-arrow-left-square, .bi-arrow-right-square{
+/* .bi-arrow-left-square, .bi-arrow-right-square{
     position: absolute; top:40%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
-    /* background: white; */
+    background: white; 
     cursor:pointer; border-radius: 5px;
 }
 .bi::before{position:absolute;}
 .bi-arrow-left-square{left:0;}
-.bi-arrow-right-square{right:0;}
+.bi-arrow-right-square{right:0;} */
 
 
 .apply_box{
-    background-color:#60baaf;
+    /* background-color:#60baaf;
     color:white;
     padding:10px;
     gap:15px;
@@ -133,7 +133,11 @@ export default{
     align-items:center;
     width:150px;
     height:150px;
-    border-radius:100px;
+    border-radius:100px; */
+    width:650px;
+    height:150px;
+    background:#60BAAF
+
 }
 
 

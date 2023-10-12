@@ -19,11 +19,9 @@
             <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
         </div> -->
     </div>
-            <!-- <div class="id">
-                <i class="bi bi-shield-lock"></i>gygid27
-            </div> -->
-            <!-- <img src="../assets/date.png" class="date"> -->
-            <img src="../assets/.png" class="kids">
+        </div>
+        <div class="image">
+            <img src="../assets/childern.png" class="kids">
         </div>
         
         <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
@@ -122,8 +120,8 @@ export default{
 .kids{
     width:228px;
     position:relative;
-    /* left:3px; */
-    top:78px;
+    right:3px;
+    top:121px;
 }
 
 .id{
@@ -197,13 +195,14 @@ export default{
 .textWrap{
     text-align:center;
     font-size:12px;
+    padding-left:10px;
     
 }
 
 .alert_box{
     box-sizing: border-box;
-    width:195px;
-    /* height:100%; */
+    width:200px;
+    height:50px;
     padding: 5px 10px;
     border:1px solid #c1d7e5;
     font-size:15px;
