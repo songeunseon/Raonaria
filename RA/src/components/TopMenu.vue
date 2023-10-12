@@ -87,10 +87,13 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     }
   }
   @media(max-width:490px){
-    *{margin: 0 auto;}
     #logo img{
     width: 200px;
   }
+  #logo{
+      margin: 0 auto;
+
+    }
     #menuBar{
       width: 350px;
       display: flex;
