@@ -33,7 +33,7 @@ import Mypage_Question from '../components/Mypage_Question.vue'
 export default{
     name:'MyPage',
     components:{
-        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question,MyPage_New_Member
+        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question
     },
     setup(){
         const isCancel = ref(false);

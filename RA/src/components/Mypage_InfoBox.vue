@@ -6,10 +6,10 @@
             <div class="name">김선향</div>
             <div class="chat_alert">채팅방 알림</div>
             <div id="chat_alert_box">
-                <div class="alert_box">
-                    <div class="circle"></div>
-                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
-                </div>
+        <div class="alert_box">
+            <!-- <div class="circle"></div> -->
+            <div class="textWrap">활동 중인 채팅방이 없습니다.</div>
+        </div>
         <!-- <div class="alert_box">
             <div class="circle"></div>
             <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
@@ -23,7 +23,7 @@
                 <i class="bi bi-shield-lock"></i>gygid27
             </div> -->
             <!-- <img src="../assets/date.png" class="date"> -->
-            <img src="../assets/childern.png" class="kids">
+            <img src="../assets/.png" class="kids">
         </div>
         
         <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
@@ -122,8 +122,8 @@ export default{
 .kids{
     width:228px;
     position:relative;
-    left:3px;
-    bottom:53px;
+    /* left:3px; */
+    top:78px;
 }
 
 .id{
@@ -195,8 +195,8 @@ export default{
 }
 
 .textWrap{
-    text-align: left;
-    font-size:15px;
+    text-align:center;
+    font-size:12px;
     
 }
 
