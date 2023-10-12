@@ -17,7 +17,7 @@
         <img src="../assets/google.png" style="width: 50px;"  class="google">
         <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
     </div>
-    <footer>
+    <footer class="mb">
         <div class="line2"></div>
         <div class="coment">
             회원이 아닐시 일부 서비스를 이용할실 수 없습니다.<br>
@@ -184,6 +184,11 @@ transform: translate(-50%, -50%);
         grid-row: 3;
         grid-column: 2;
     }
+    .mb:nth-child(5){
+        grid-row: 4;
+        grid-column: 1/3;
+        justify-content: center;
+    }
     .modal_title{
         font-size: 20px;
         display: flex;
@@ -201,6 +206,7 @@ transform: translate(-50%, -50%);
         font-weight:800;
     }
     .login_button{
+        width: 130px;
     display:flex;
     justify-content:center;
     margin:5px;
@@ -220,6 +226,12 @@ transform: translate(-50%, -50%);
     padding-top: 0;
     column-gap: 10px;
     
+}
+.line2{
+    width: 100%;
+}
+.coment{
+   width: 100%;
 }
 }
 
