@@ -16,14 +16,6 @@
                     <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
                     <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
                 </div>
-                <!-- <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div>
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div>
                 <div class="apply_box">
                     <div>
                         <input class="text" type="text">
@@ -71,7 +63,15 @@
                     </div>
                     <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
                     <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
-                </div> -->
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <input class="text" type="text">
+                        <input class="checkbox" type="checkbox">
+                    </div>
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료</div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                </div> 
             </div>
         </div>
         <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
@@ -95,20 +95,21 @@ export default{
         const isForm = inject('isForm')
         const formOpen = inject('formOpen')
 
-        const slideRight = () => {
-            const apply_Zone = document.querySelector(".apply_Zone");
-            apply_Zone.scrollLeft += 10000;
-        }
+         const slideRight = () => {
+             const apply_Zone = document.querySelector(".apply_Zone");
+             apply_Zone.scrollLeft += 10000;
+         }
 
         const slideLeft = () => {
-            const apply_Zone = document.querySelector(".apply_Zone");
+             const apply_Zone = document.querySelector(".apply_Zone");
             apply_Zone.scrollLeft -= 10000;
         }
 
         return{isCancel, cancelOpen, isForm, formOpen,
-            slideRight, slideLeft}
+             slideRight, slideLeft}
     }
 }
+
 </script>
 
 <style scoped>
