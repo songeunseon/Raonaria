@@ -1,7 +1,7 @@
 <template>
 <div class="request_box">
     <div class="modal_header">
-        <i class="bi bi-x-circle"></i>
+        <i @click="reqOpen()" class="bi bi-x-circle"></i>
         <div class="modal_title">상담신청</div>
         <!-- <div class="modal_line"></div> -->
     </div>
@@ -31,7 +31,7 @@
     </div>
     </div>
     <div class="button_box">
-        <button class="request">상담신청 완료</button>
+        <button @click="reqOpen()" class="request">상담신청 완료</button>
     </div>
 
     
@@ -47,7 +47,11 @@ export default{
     setup(){
         const isReq = inject('isReq');
         const reqOpen = inject('reqOpen');
-        return{isReq, reqOpen}
+
+        const showReq = inject('showReq');
+        const reqClose = inject('reqClose');
+
+        return{isReq, reqOpen,showReq,reqClose }
     }
 }
 </script>

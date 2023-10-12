@@ -1,6 +1,19 @@
 <script>
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import {inject} from 'vue'
 const router = useRouter();
+export default{
+  name:"Search_chart",
+  setup(){
+    const isReq = inject('isReq');
+    const reqOpen = inject('reqOpen');
+
+    return{isReq, reqOpen}
+  }
+}
+
+
+
 
 </script>
 <template>
