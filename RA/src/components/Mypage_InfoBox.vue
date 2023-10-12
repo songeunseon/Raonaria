@@ -186,8 +186,8 @@ export default{
 }
 
 .circle{
-    width:10px;
-    height:10px;
+    width:15px;
+    height:15px;
     background:greenyellow;
     border-radius: 100%;
 }
@@ -200,7 +200,7 @@ export default{
 
 .alert_box{
     box-sizing: border-box;
-    width:220px;
+    width:195px;
     /* height:100%; */
     padding: 5px 10px;
     border:1px solid #c1d7e5;
