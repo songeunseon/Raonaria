@@ -6,6 +6,7 @@
     <Mypage_InfoBox/>
     <div class="page_Zone">
         <Mypage_Apply/>
+        <Mypage_New_Member/>
         <Mypage_Question/>
     </div>
 </div>
@@ -27,11 +28,12 @@ import {ref, provide} from 'vue'
 import Mypage_InfoBox from '../components/MyPage_InfoBox.vue'
 import Mypage_Apply from '../components/Mypage_Apply.vue'
 import Mypage_Question from '../components/Mypage_Question.vue'
+import MyPage_New_Member from '../components/Mypage_New_Member.vue'
 
 export default{
     name:'MyPage',
     components:{
-        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question
+        Cancel_Alert, ask_form, TopMenu, TopMenu_Login,Mypage_InfoBox,Mypage_Apply,Mypage_Question,MyPage_New_Member
     },
     setup(){
         const isCancel = ref(false);
