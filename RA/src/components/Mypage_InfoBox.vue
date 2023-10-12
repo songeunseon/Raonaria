@@ -28,7 +28,7 @@
         
         <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
             확인할 수 있습니다.</div> -->
-   
+            
     <!-- <div @click="formOpen()" class="manager_ask">
         관리자 문의하기
     </div> -->

@@ -28,7 +28,7 @@ import {ref, provide} from 'vue'
 import Mypage_InfoBox from '../components/MyPage_InfoBox.vue'
 import Mypage_Apply from '../components/Mypage_Apply.vue'
 import Mypage_Question from '../components/Mypage_Question.vue'
-import MyPage_New_Member from '../components/Mypage_New_Member.vue'
+
 
 export default{
     name:'MyPage',
