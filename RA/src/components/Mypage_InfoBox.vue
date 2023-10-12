@@ -79,6 +79,11 @@ export default {
     flex-direction: column;
     row-gap: 20px;
 }
+@media(max-width:1194px){
+    .info{
+        width:200px;
+    }
+}
 
 .profile {
     width: 120px;
