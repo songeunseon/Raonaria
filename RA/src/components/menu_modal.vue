@@ -20,7 +20,6 @@
             <div class="menu">
                 <div class="notice">
                     <span>공지사항 작성하기</span>
-                    <i class="bi bi-chevron-compact-down"></i>
                 </div>
                 <div class="notice_write">
                     <input type="text" class="write" placeholder="올리고 싶은 공지사항을 작성하세요.">
@@ -32,7 +31,6 @@
             <div class="menu">
                 <div class="kick_out">
                     <span>강퇴관리</span>
-                    <i class="bi bi-chevron-compact-down"></i>
                 </div>
                 <div class="kick_out_detail">
                     <div class="Participants_list">강퇴관리 채팅상대</div>

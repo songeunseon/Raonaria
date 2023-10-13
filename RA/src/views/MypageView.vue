@@ -73,7 +73,7 @@ export default{
     margin:45px auto;
     gap:20px;
 }
-@media(max-width:1194px){
+@media(max-width:490px){
     .page_wrap{
         width:650px;
     }

@@ -94,7 +94,7 @@ b{
 
 
 .fade-leave-from {
-   
+
     margin-top:0px;
 }
 

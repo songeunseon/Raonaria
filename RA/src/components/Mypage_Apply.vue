@@ -116,7 +116,7 @@ export default{
 
 .cancel{
     position: absolute;
-    right:8px;
+    right:5px;
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;

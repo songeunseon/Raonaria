@@ -79,9 +79,13 @@ export default {
     flex-direction: column;
     row-gap: 20px;
 }
-@media(max-width:1194px){
+@media(max-width:490px){
     .info{
-        width:200px;
+        width:250px;
+        height:84px;
+        margin-left:110px;
+        border-radius: 0;
+
     }
 }
 
@@ -98,10 +102,16 @@ export default {
     border: 7px double white;
 }
 
-@media(max-width:1194px){
+@media(max-width:490px){
+}
+
+@media(max-width:490px){
     .profile{
-        max-width:50px;
+        width:50px;
         height:50px;
+        padding-left:5px;
+        border:none;
+        
     }
 }
 
@@ -111,6 +121,14 @@ export default {
     padding: 12px 0;
     font-size: 40px;
 
+}
+
+@media(max-width:490px){
+    .profile i{
+        margin-bottom:10px;
+        padding:0px 0;
+        font-size:20px;
+    }
 }
 
 
@@ -123,6 +141,13 @@ export default {
     bottom: 12px;
 }
 
+@media(max-width:490px){
+.name{
+    font-size:10px;
+}
+    }
+
+
 
 .kids {
     width: 228px;
@@ -130,9 +155,9 @@ export default {
     right: 3px;
     top: 121px;
 }
-@media(max-width:1194){
+@media(max-width:490px){
     .kids{
-        max-width:
+        
     }
 }
 
@@ -225,6 +250,12 @@ export default {
     background: white;
     border-radius: 2px;
     /* cursor: pointer;} */
+}
+
+@media(max-width:490px){
+    .alert_box{
+        width:150px;
+    }
 }
 
 
