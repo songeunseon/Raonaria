@@ -105,7 +105,7 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background : #F1C93B;
+  background : #2cb4d6;
 }
 
 #box{
