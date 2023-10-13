@@ -3,7 +3,7 @@
 <TopMenu_Login/>
     
 <div class="page_wrap">
-    <Mypage_InfoBox/>
+    <Mypage_infoBox/>
     <div class="page_Zone">
         <Mypage_Apply v-if="!isApply"/>
         <Mypage_NoApply v-if="isApply"/>
@@ -30,8 +30,8 @@ import Mypage_Cancel from '../components/Mypage_Cancel.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue'
 import Mypage_askform from '../components/Mypage_askform.vue'
 import {ref, provide} from 'vue'
-import Mypage_Apply from '../components/Mypage_Apply.vue'
-import Mypage_infoBox from '../components/Mypage_infoBox.vue'
+import Mypage_Apply from '../components/MypageApply.vue'
+import Mypage_infoBox from '../components/MypageinfoBox.vue'
 import Mypage_Question from '../components/Mypage_Question.vue'
 import Mypage_NoApply from '../components/Mypage_NoApply.vue'
 import Mypage_NoinfoBox from '../components/Mypage_NoinfoBox.vue'
