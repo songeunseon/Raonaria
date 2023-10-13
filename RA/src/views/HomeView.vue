@@ -28,7 +28,8 @@ export default{
     <div id ="box">
         <header id ="header" class="item">
             <logo id ="logo">
-              <img src ="../assets/mainlogo.svg">
+              <img id="logoimg" src="../assets/logoimg.svg">
+              
             </logo >
             <ul id="menulist">
               <RouterLink to="/notice"><li id ="notice" >공지사항</li></RouterLink>
@@ -61,14 +62,17 @@ export default{
 </div>
     </div >
     <search id ="mainbox" class="item">
+      <div id ="logotext">
+        <img src="../assets/logotext.png">
+      </div >
         <div id ="listSearch">
             <div id ="sh">
-                <div id="look">
+                <!-- <div id="look">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
   </svg>
-                </div>
-                <div id ="listTitle">유치원 간단 조회 </div >
+                </div> -->
+                
             </div >
         </div >
         <Home_Easy/>
@@ -101,7 +105,8 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background : #F1C93B}
+  background : #F1C93B;
+}
 
 #box{
     width : 1000px;
@@ -123,42 +128,59 @@ main{
 
   /* padding-left: 10px; */
 }
-#logo img {
-    width : 100px ;
-    
 
-  }
 #logo{
   width: 100px;
   height: 113px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
 }
-@keyframes popup {
-  0% {
-    transform: scale(0.3);
-  }
-  100% {
-    transform: scale(1);
-  }
+#logoimg{
+  width: 100px;
+}
+#logotext img{
+  width: 300px;
+}
+@keyframes shake  {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-10deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(-20deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
 }
 
 #logo img {
-  animation: popup 2s ease-in-out 1;
+  animation: shake  5s ease infinite;
 }
+/* f9e6d6 베이지?
+2669aa 다크블루?
+518562 쑥색? 
+a0a06e 풀색
+f19482 살구색
+e6c8c8 베이비핑크
+e3da75 다크레몬
+6499c5 그레이블루
+b39283 코토리베이지
+9dc7da
 
+
+
+*/
 #menulist li{
     list-style: none;
-    border : 5px solid #BEC1FF;
+    background: #6499c5;
+    color: #fff;
+    font-weight: 900;
     border-radius : 100px;
     width : 100px;
     height : 100px;
     text-align : center;
     font-size : 20px;
-    padding-top :30px;
+    padding-top :35px;
     margin-top : 10px;
-    color: black;
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -327,7 +349,7 @@ a{
   .item:nth-child(3){
     grid-row:2;
   }
- 
+
   #header{
   width: 100%;
   height: 180px;
