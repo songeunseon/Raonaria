@@ -102,8 +102,6 @@ export default {
     border: 7px double white;
 }
 
-@media(max-width:490px){
-}
 
 @media(max-width:490px){
     .profile{
@@ -154,11 +152,6 @@ export default {
     position: relative;
     right: 3px;
     top: 121px;
-}
-@media(max-width:490px){
-    .kids{
-        
-    }
 }
 
 .id {
