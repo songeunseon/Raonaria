@@ -17,7 +17,7 @@
         <img src="../assets/google.png" style="width: 50px;"  class="google">
         <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
     </div>
-    <footer>
+    <footer class="mb">
         <div class="line2"></div>
         <div class="coment">
             회원이 아닐시 일부 서비스를 이용할실 수 없습니다.<br>
@@ -47,8 +47,8 @@
 .Login_modal{
 position:absolute;
 width:500px;
-height:300px;
-border: 1px solid #aaa;
+height:350px;
+border: 5px solid #aaa;
 border-radius: 20px;
 background:white;
 z-index:100;
@@ -76,7 +76,7 @@ transform: translate(-50%, -50%);
 }
 
 .login{
-    margin:5px auto;
+    margin:10px auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -133,7 +133,7 @@ transform: translate(-50%, -50%);
     display:flex;
     justify-content: center;
     padding-top:5px;
-    column-gap: 30px;
+    column-gap: 50px;
     
 }
 
@@ -149,7 +149,7 @@ transform: translate(-50%, -50%);
 .line2{
     border-top:2px solid #AAAAAA;
     width:60%;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 .coment{
@@ -184,6 +184,11 @@ transform: translate(-50%, -50%);
         grid-row: 3;
         grid-column: 2;
     }
+    .mb:nth-child(5){
+        grid-row: 4;
+        grid-column: 1/3;
+        justify-content: center;
+    }
     .modal_title{
         font-size: 20px;
         display: flex;
@@ -201,6 +206,7 @@ transform: translate(-50%, -50%);
         font-weight:800;
     }
     .login_button{
+        width: 130px;
     display:flex;
     justify-content:center;
     margin:5px;
@@ -220,6 +226,12 @@ transform: translate(-50%, -50%);
     padding-top: 0;
     column-gap: 10px;
     
+}
+.line2{
+    width: 100%;
+}
+.coment{
+   width: 100%;
 }
 }
 

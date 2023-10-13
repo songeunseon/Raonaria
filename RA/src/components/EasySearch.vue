@@ -116,4 +116,52 @@
 
     border: 1px solid #aaa;
 }
+@media(max-width:490px){
+    #easyBody{
+        width: 350px;
+        height: 500px;
+    }
+    #easyTitle{
+        width: 100%;
+        display: flex;
+        margin: 10px;
+        justify-content: start;
+        align-items: center;
+        column-gap: 100px;
+    }
+    #easyMain{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        row-gap: 10px;
+    }
+    .left table tr td{
+        font-weight: 700;
+        height: 40px;
+
+    }
+    #easyCheck{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        row-gap: 0px;
+    } 
+    #easyCheck div{
+        display: flex;
+        column-gap: 2px;
+    }
+    .section{
+        width: 250px;
+        height: 200px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
 </style>
