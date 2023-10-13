@@ -3,10 +3,14 @@
     <div class="room_title">방개설하기</div>
     <i  @click="makeRoomOpen()" class="bi bi-x-circle" style="cursor:pointer"></i>
     <div class="room_box">
-        <p>채팅방이름</p>
-        <input id="name" type="text">
-        <p>채팅방 소개</p>
-        <input id="intro" type="text">
+        <div class="chat_name">
+            <p>채팅방이름</p>
+            <input id="name" type="text">
+        </div>
+        <div class="chat_intro">
+            <p>채팅방 소개</p>
+            <input id="intro" type="text">
+        </div>
     </div>
     <div class="done_button">
         <button @click='blankCheck()' class="done_bt" value="완료">완료</button>
@@ -86,11 +90,12 @@ export default{
 }
 
 .room_box{
-    padding:20px 50px;
+    padding:35px 50px;
 }
 
 .room_box p{
     text-align: center;
+    padding-bottom:5px;
 }
 
 .room_box input{
@@ -107,6 +112,11 @@ export default{
     left:15px;
 }
 
+
+#intro{
+    width:150px;
+    height:30px;
+}
 .done_button{
     margin:30px 80px;
 }
@@ -114,10 +124,14 @@ export default{
 .done_bt{
     width:100px;
     height:30px;
+    border:none;
 }
 
 #name{
+    width:150px;
+    height:30px;
     margin-bottom:20px;
+    border-bottom:none;
 }
 
 .input_check{
@@ -154,6 +168,12 @@ export default{
     height:40px;
     background:#d9d9d9;
 }
+
+.chat_intro{
+    padding-top:10px;
+}
+
+
 
 
 

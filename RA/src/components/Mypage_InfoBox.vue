@@ -21,9 +21,9 @@
                 </div>
                 <Mypage_NoinfoBox v-if="isApply" />
             </div>
-            <div class="image">
+            <!-- <div class="image"> -->
                 <img src="../assets/childern.png" class="kids">
-            </div>
+            <!-- </div> -->
 
             <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
             확인할 수 있습니다.</div> -->
@@ -98,6 +98,13 @@ export default {
     border: 7px double white;
 }
 
+@media(max-width:1194px){
+    .profile{
+        max-width:50px;
+        height:50px;
+    }
+}
+
 
 .profile i {
     font-size: 50px;
@@ -105,6 +112,8 @@ export default {
     font-size: 40px;
 
 }
+
+
 
 .name {
     /* padding:1px 0; */
@@ -120,6 +129,11 @@ export default {
     position: relative;
     right: 3px;
     top: 121px;
+}
+@media(max-width:1194){
+    .kids{
+        max-width:
+    }
 }
 
 .id {
@@ -178,7 +192,7 @@ export default {
     /* background:#F1EFEF; */
     /* margin:60px 0; */
     position: relative;
-    top: 53px;
+    top: 15px;
     left: 3px;
 
 }
@@ -202,6 +216,7 @@ export default {
     width: 200px;
     height: 50px;
     padding: 5px 10px;
+    margin:5px 0;
     border: 1px solid #c1d7e5;
     font-size: 15px;
     display: flex;

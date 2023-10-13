@@ -1,5 +1,5 @@
 <template>
-        <div class="alert_box">
+        <div id="alert_window">
             <div class="textWrap">활동 중인 채팅방이 없습니다.</div>
         </div>
         
@@ -20,21 +20,26 @@ export default{
 .textWrap{
     text-align:center;
     font-size:12px;
-    padding-left:10px;
+    /* padding:8px 15px; */
+    padding-bottom:8px;
+    padding-left:20px;
+    font-weight:800;
 }
 
-.alert_box{
+#alert_window{
     box-sizing: border-box;
     width:200px;
     height:50px;
-    padding: 5px 10px;
-    border:1px solid #c1d7e5;
+    /* padding: 30px 10px; */
+    margin:30px 0;
+    border-bottom:3px solid #fff;
     font-size:15px;
     display:flex;
     align-items: center;
     gap:0 10px;
-    background:white;
+    /* background:white; */
     border-radius: 2px;
+
     /* cursor: pointer;} */
 }
 

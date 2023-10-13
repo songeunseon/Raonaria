@@ -30,7 +30,8 @@ export default{
     height:600px;
     display:flex;
     flex-direction: column;
-    border:1px solid black;
+    border:5px solid #AAA;
+    border-radius:20px;
     gap:10px;
     align-items: center;
     position: fixed;
