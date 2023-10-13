@@ -10,12 +10,12 @@
             <div class="slider_wrap">
                 <div class="apply_box">
                     <div>
-                        <input class="text" type="text">
+                        <div class="apply_line"></div>
                         <input class="checkbox" type="checkbox">
-                    </div> 
+                    </div>  
                     <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
-                </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                </div> 
                 <!-- <div class="apply_box">
                     <div>
                         <input class="text" type="text">
@@ -55,7 +55,7 @@
         <div class="apply_header_question">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
-            <button @click="cancelOpen()" class="cancel">문의취소</button>
+            <button @click="askOpen()" class="cancel">문의취소</button>
         </div>
     </div>
 
@@ -69,6 +69,8 @@ export default{
     setup(){
         const isCancel = inject('isCancel');
         const cancelOpen = inject('cancelOpen');
+        const isAsk =inject('isAsk');
+        const askOpen = inject('askOpen')
         const isForm = inject('isForm')
         const formOpen = inject('formOpen')
 
@@ -82,7 +84,7 @@ export default{
             apply_Zone.scrollLeft -= 10000;
         }
 
-        return{isCancel, cancelOpen, isForm, formOpen,
+        return{isCancel, cancelOpen, isForm, formOpen,isAsk, askOpen,
              slideRight, slideLeft}
     }
 }
@@ -157,16 +159,17 @@ export default{
 
 
 .apply_box{
-background-color:#60baaf;
-    color:white;
+background-color:hwb(203 56% 9%);
+    color:black;
     padding:10px;
-    gap:15px;
+    gap:13px;
     display:flex;
     flex-direction: column;
     align-items:center;
-    width:150px;
+    width:185px;
     height:150px;
-    border-radius:100px; 
+    border-radius:20px; 
+    justify-content:center;
     /* width:700px;
     height:150px;
     background:#60BAAF;
@@ -178,14 +181,17 @@ background-color:#60baaf;
 .apply_box > div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width:100%;
+    padding:0 15px;
+
 } 
 
-.apply_box .text{
-    width:80px;
+.apply_line{
+    width:100px;
     /* height:30px; */
     border:0;
-    border-bottom:3px solid #aaa;
+    border-bottom:3px solid #fff;
     outline:none;
     background:none;
     margin-top:1px;

@@ -1,6 +1,6 @@
 <template>
     <div v-if="isCancel" class="wrap">
-        <div class="words">정말 취소하시겠습니까?</div>
+        <div class="words">정말 신청을 취소하시겠습니까?</div>
         <div class="button_wrap">
             <button class="check_bt">확인</button>
             <button @click='cancelOpen()' class="cancle_bt" value="취소">취소</button>
@@ -11,7 +11,7 @@
 <script>
 import {ref, inject} from 'vue';
 export default{
-    name:'Cancel_Alert',
+    name:'Mypage_Cancel',
     setup(){
         // const CheckCancle = ref(true);
         // const CheckAgain = () => CheckCancle.value = !CheckCancle;
