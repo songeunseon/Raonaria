@@ -45,7 +45,7 @@ import Mypage_NoinfoBox from "./Mypage_NoinfoBox.vue"
 import MypageView from '../views/MypageView.vue'
 import { inject } from 'vue'
 export default {
-    name: "Mypage_InfoBox",
+    name: "MypageInfoBox",
     components: {
         Mypage_NoinfoBox
     },
