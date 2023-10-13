@@ -53,17 +53,19 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     /* justify-content: space-around; */
     font-size: 17px;
     align-items: end;
-    border-bottom: 3px solid #BEC1FF;
+  
+    
+    border-bottom: 3px solid #f9e6d6;
     text-decoration: none;
     
   }
   #menuList li{
+    color: #2669aa;
     text-align: center;
+    font-weight: 900;
     width: 200px;
-    border-right: 3px solid #BEC1FF;
     line-height: 30px;
     margin-bottom: 10px;
-    color:black;
     font-size: 15px;
     transition: font-size 0.3s;
   }
