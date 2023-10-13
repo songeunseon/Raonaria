@@ -49,7 +49,7 @@ export default{
 }
 
 .info_box2{
-    width:170px;
+    /* width:170px;
     height:250px;
     background:white;
     padding-top:35px;
@@ -62,7 +62,16 @@ export default{
     flex-direction:column;
     row-gap:10px;
     overflow-y: scroll;
-    text-align: right;
+    text-align: right; */
+
+    display:flex;
+    flex-wrap:wrap;
+    background:white;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    max-width:250px;
+
     
 }
 

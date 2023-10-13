@@ -101,8 +101,7 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background : #DBDBDB;
-}
+  background : #F1C93B}
 
 #box{
     width : 1000px;
