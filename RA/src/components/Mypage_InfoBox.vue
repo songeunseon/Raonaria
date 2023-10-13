@@ -131,9 +131,7 @@ export default {
     top: 121px;
 }
 @media(max-width:1194){
-    .kids{
-        max-width:
-    }
+    
 }
 
 .id {
