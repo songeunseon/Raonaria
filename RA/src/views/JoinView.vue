@@ -8,14 +8,14 @@ import TopMenu from '../components/TopMenu.vue'
             <h1>SIGN-UP</h1>
         </div>
         <div id="prerequisite">
-            <div id="prertitle"><b>필수 작성 항목</b></div>
+            <div id="prertitle"><h3>필수 작성 항목</h3></div>
             <div id="id"><b>ID</b><input type="text"></div>
             <div id="pw"><b>PW</b><input type="password"></div>
             <div id="name"><b>이름</b><input type="text"></div>
             <div id="tel"><b>휴대전화번호</b><input type="tel"></div>
         </div>
         <div id="choice">
-            <div id="choicetitle"><b>선택 작성 항목</b></div>
+            <div id="choicetitle"><h3>선택 작성 항목</h3></div>
             <div id="addr"><b>자택주소</b><input type="text"></div>
             <div id="sonname"><b>자녀 이름</b><input type="text"></div>
             <div id="sonBday"><b>자녀 생년월일</b><input type="date"></div>
@@ -41,7 +41,7 @@ import TopMenu from '../components/TopMenu.vue'
 </template>
 <style>
     #joinmain{
-        max-width: 1000px;
+        width: 1000px;
         margin: 10px auto;
         text-align: center;
     }
@@ -63,6 +63,10 @@ import TopMenu from '../components/TopMenu.vue'
         align-items: center;
         justify-content: center;
         border-bottom: 3px solid #aaa;
+
+    }
+    h3{        
+        margin-bottom: 0;
     }
     #tel, #sonGender, #affiliation{
         height: 40px;
@@ -114,4 +118,87 @@ import TopMenu from '../components/TopMenu.vue'
         background: 0;
         border: 3px solid #BEC1FF;
     }
+    @media(min-width:490px) and (max-width:1194px){
+        b{
+            width: 150px;
+            text-align: left;
+        }
+    }
+    @media(max-width:490px){
+        b{
+            width: 200px;
+            text-align: left;
+        }
+        #joinmain{
+            width: 100%;
+            margin: 10px auto;
+            text-align: center;
+        }
+        h1{
+            font-size: 20px;
+        }
+        h3{
+            font-size: 12px;
+        }
+        #prerequisite, #choice, #affiliation, #agree{
+            width: 300px;
+            margin: 10px auto;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        #prertitle, #choicetitle{
+            font-size: 15px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #aaa;
+        }
+        #tel, #sonGender, #affiliation{
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding:0 10px;
+        }
+        #id, #pw, #name, #addr, #sonname, #sonBday{
+            border-bottom: 1px solid #aaa;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding:0 10px;
+            justify-content: center;
+        }
+        #genderinput{
+            width: 150px;
+            display: flex;
+            column-gap: 20px;
+        }
+        /* #genderinput{
+        width: 200px;
+        column-gap: 50px;
+        font-size: 12px;
+    } */
+        .btn{
+            font-size: 10px;
+            padding: 5px;
+            border-radius: 100px;
+
+        }
+        #agree input{
+            width: 20px;
+            margin-right: 20px;
+        }
+        #join{
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 10px;
+            background: 0;
+            border: 3px solid #BEC1FF;
+        }
+    }
+
 </style>

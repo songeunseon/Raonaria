@@ -14,7 +14,7 @@ import TopMenu from '../components/TopMenu.vue'
                         <b>자녀 이름</b>
                         <input type="text">
                     </div>
-                    <div id="sonGender">
+                    <div id="songender">
                         <b>자녀 성별</b>
                         <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" checked>
                         <label class="btn" for="genderM">남아</label>
@@ -84,7 +84,7 @@ import TopMenu from '../components/TopMenu.vue'
 <style>
 
 #schoolpage{
-    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -126,11 +126,11 @@ import TopMenu from '../components/TopMenu.vue'
     text-align: center;
     width: 60%;
 }
-#sonGender{
+#songender{
     padding-right: 50px;
 }
 
-#sonGender .btn{
+#songender .btn{
     width: 70px;
     display: flex;
     align-items: center;
@@ -177,10 +177,14 @@ import TopMenu from '../components/TopMenu.vue'
 #son h1, #soncheck{
     margin-left: 50px;
 }
-#sontext, #textarea{
-    width: 700px;
+#sontext{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+#textarea{
+    width: 650px;
     height: 200px;
-    margin: 5px auto;
     padding: 10px;
 }
 
@@ -200,5 +204,150 @@ import TopMenu from '../components/TopMenu.vue'
     font-size: 25px;
     background: 0;
     
+}
+@media(min-width:490px) and (max-width:1194px){
+    #sontext{
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+    #textarea{
+        width: 600px;
+        height: 200px;
+        padding: 10px;
+        margin: 5px auto;
+    }
+
+}
+@media(max-width:490px){
+    h1{
+        font-size: 20px;
+    }
+    svg{
+        width: 20px;
+        height: 20px;
+    }
+    b{
+        font-size: 10px;
+    }
+    #schoolpage{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #schoolTitle{
+        width: 300px;
+        margin: 10px auto;
+        border-bottom: 3px solid #BEC1FF;
+    }
+    #bodyBox{
+        flex-direction: column-reverse;
+    }
+    #textBox{
+    width: 300px;
+    height: 200px;
+    margin: 0 auto;
+}
+.schoolBox{
+    height: 50px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 12px;
+    
+}
+.schoolBox div{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.schoolBox input{
+    width: 200px;
+}
+.boxlist{
+    height: 24px;
+    border-bottom: 1px solid #aaa;
+}
+#songender{
+    padding-right: 0px;
+}
+
+#songender .btn{
+    width: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    text-align: center;
+    font-size: 10px;
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+    padding: 0px;
+    border-radius: 100px;
+}
+#son{
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+}
+#soncheck{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    margin-top: 0px;
+    justify-content: center;
+}
+#soncheck div{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+#soncheck input{
+    width: 10px;
+    height: 10px;
+}
+#imgBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#image{
+    width: 150px;
+    height: 200px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+#imgicon{
+    margin: 10px;
+}
+    #sontext{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 10px;
+        font-size: 10px;
+    }
+    #textarea{
+        width: 300px;
+        height: 200px;
+        padding: 10px;
+        margin: 5px auto;
+    }
+    #send{
+    border: 3px solid #BEC1FF;
+    border-radius: 5px;
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#send input{
+    border: 0;
+    font-size: 15px;
+    background: 0;
+    
+}
 }
 </style>
