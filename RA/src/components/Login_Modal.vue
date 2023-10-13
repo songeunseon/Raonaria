@@ -47,8 +47,8 @@
 .Login_modal{
 position:absolute;
 width:500px;
-height:300px;
-border: 1px solid #aaa;
+height:350px;
+border: 5px solid #aaa;
 border-radius: 20px;
 background:white;
 z-index:100;
@@ -76,7 +76,7 @@ transform: translate(-50%, -50%);
 }
 
 .login{
-    margin:5px auto;
+    margin:10px auto;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -133,7 +133,7 @@ transform: translate(-50%, -50%);
     display:flex;
     justify-content: center;
     padding-top:5px;
-    column-gap: 30px;
+    column-gap: 50px;
     
 }
 
@@ -149,7 +149,7 @@ transform: translate(-50%, -50%);
 .line2{
     border-top:2px solid #AAAAAA;
     width:60%;
-    margin: 5px auto;
+    margin: 10px auto;
 }
 
 .coment{
