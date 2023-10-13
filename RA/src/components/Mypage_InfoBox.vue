@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import Mypage_NoinfoBox from "../components/Mypage_NoinfoBox.vue"
+import Mypage_NoinfoBox from "./Mypage_NoinfoBox.vue"
 import MypageView from '../views/MypageView.vue'
 import { inject } from 'vue'
 export default {

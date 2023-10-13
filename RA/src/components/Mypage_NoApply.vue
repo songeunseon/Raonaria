@@ -1,5 +1,5 @@
 <template>
-<div class="empty_data">
+        <div class="empty_data">
             <div class="data_box">
                 <div class="icon">
                     <!-- <i class="bi bi-exclamation-lg"></i> -->
@@ -8,11 +8,11 @@
                 <h5>신청내역이 없습니다.</h5>
                 <p>상담 및 입학 신청 시 내역 확인이 가능합니다.</p>
             </div>
-        </div>
-        <div class="apply_header">
-            <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
-            <div class="question_zone">나의문의</div>
-            <button @click="cancelOpen()" class="cancel">문의취소</button>
+            <div class="apply_header">
+                <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
+                <div class="question_zone">나의문의</div>
+                <button @click="cancelOpen()" class="cancel">문의취소</button>
+            </div>
         </div>
 </template>
 <script>

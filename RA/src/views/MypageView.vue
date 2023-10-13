@@ -7,14 +7,13 @@
     <div class="page_Zone">
         <Mypage_Apply v-if="!isApply"/>
         <Mypage_NoApply v-if="isApply"/>
-        <Mypage_New_Member/>
         <Mypage_Question/>
+        
         
         
     </div>
     <button style="position:fixed; top:10%; left:10%;" @click="test" >테스트</button>
 </div>
-
 <Cancel_Alert v-if="isCancel"/>
 <transition name="fade">
     <Mypage_askform v-if="isForm"/>
@@ -29,8 +28,8 @@ import Cancel_Alert from '../components/Cancel_Alert.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue'
 import Mypage_askform from '../components/Mypage_askform.vue'
 import {ref, provide} from 'vue'
-import Mypage_InfoBox from '../components/MyPage_InfoBox.vue'
 import Mypage_Apply from '../components/Mypage_Apply.vue'
+import Mypage_InfoBox from '../components/Mypage_InfoBox.vue'
 import Mypage_Question from '../components/Mypage_Question.vue'
 import Mypage_NoApply from '../components/Mypage_NoApply.vue'
 import Mypage_NoinfoBox from '../components/Mypage_NoinfoBox.vue'
