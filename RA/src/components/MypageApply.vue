@@ -1,7 +1,7 @@
 <template>
 <div class="right_wrap">
-        <div class="apply_header">
-            
+        <div class="apply_header_question">
+            <button @click="formOpen()" class="apply_bt">관리자 문의하기</button>
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
@@ -52,7 +52,7 @@
         </div>
         
         <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
-        <div class="apply_header_question">
+        <div class="apply_header">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
             <button @click="askOpen()" class="cancel">문의취소</button>
@@ -97,28 +97,38 @@ export default{
     position: relative;
 }
 
+.apply_header_question{
+    display:flex;
+    width:100%;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    bottom:5px; 
+    
+}
+
 .apply_header{
     display:flex;
     align-items: center;
-    justify-content: center;
-    margin:0px auto 15px auto;
+    justify-content: space-between;
+    margin:122px auto 15px auto;
     position:relative;
     width:100%;
+    height:0;
     /* padding:10px 0; */
 }
 
 .apply{
+    /* width:100%; */
     font-size:20px;
     font-weight:900;
-    position:relative;
-    bottom:16px;
-    font-size:20px;
-    /* padding-bottom:20px; */
+    text-align:center;
+    padding:0 20px;
 }
 
 .cancel{
-    position: absolute;
-    right:5px;
+    /* position: absolute;
+    right:5px; */
     font-size:15px;
     border:3px solid #BEC1FF;
     border-radius: 5px;
@@ -197,6 +207,9 @@ background-color:hwb(203 56% 9%);
     margin-top:1px;
 }
 
+.apply_bt{
+    opacity: 0;
+}
 .apply_box .checkbox{
     width:15px;
     height:15px;
@@ -209,9 +222,9 @@ background-color:hwb(203 56% 9%);
     font-size:20px;
     text-align: center;
     font-weight: 900;
-    width:660px;
+    /* width:660px;
     margin-top:95px;
-    padding-left:104px;
+    padding-left:104px; */
 }
 
 .question{
@@ -223,14 +236,14 @@ background-color:hwb(203 56% 9%);
     height:30px;
     border:3px solid #BEC1FF;
     background:white;
-    position:relative;
-    right:0;
+    /* position:relative;
+    right:0; */
     border-radius: 3px;
 }
 
 .manager_bt{
-    position: absolute;
-    left:1px;
+    /* position: absolute;
+    left:1px; */
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;

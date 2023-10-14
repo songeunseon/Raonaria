@@ -7,6 +7,7 @@
                 </div>
                 <h5>신청내역이 없습니다.</h5>
                 <p>상담 및 입학 신청 시 내역 확인이 가능합니다.</p>
+                <router-link to="/search"><button class="goapply">신청하러 가기</button></router-link>
             </div>
             <div class="apply_header">
                 <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
@@ -25,20 +26,21 @@ export default{
 </script>
 <style scoped>
 .empty_data{
-    margin:0px auto;
-    background:#60BAAF
+    width:100%;
+    /* margin:0px auto; */
 
 }
 
 .data_box{
-    width:700px;
-    height:170px;
+    width:100%;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:start;
     align-items:center;
     gap:0;
     font-weight:900;
+    padding:15px 0;
+    background:#ddd;
 
 }
 
@@ -59,9 +61,9 @@ export default{
     font-size:20px;
     text-align: center;
     font-weight: 900;
-    width:660px;
-    margin-top:91px;
-    padding-left:146px;
+    /* width:660px; */
+    /* margin-top:91px; */
+    /* padding-left:146px; */
 }
 
 .question{
@@ -79,9 +81,9 @@ export default{
 }
 
 .manager_bt{
-    position: absolute;
-    left:1px;
-    bottom:-18px;
+    /* position: absolute; */
+    /* left:1px;
+    bottom:-18px; */
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;
@@ -90,19 +92,30 @@ export default{
     padding:0 5px;
 }
 
+.goapply{
+    width:150px;
+    height:30px;
+    font-size:13px;
+    color:black;
+    background:#fff;
+    border:none;
+    border-radius:5px;
+} 
+
 .apply_header{
     display:flex;
     align-items: center;
-    justify-content: center;
-    margin:0px auto 15px auto;
+    justify-content: space-between;
+    margin:108px auto 15px auto;
     position:relative;
     width:100%;
+    height:0;
     /* padding:10px 0; */
 }
 
 .cancel{
-    position: absolute;
-    right:5px;
+    /* position: absolute; */
+    /* right:5px; */
     font-size:15px;
     border:3px solid #bec1ff;
     border-radius: 5px;

@@ -3,7 +3,7 @@
     <thead>
         <th>문의 날짜</th>
         <th>문의 내용</th>
-        <th>체크</th>
+        <th></th>
     </thead>
     <tbody>
         <tr class="weather">
