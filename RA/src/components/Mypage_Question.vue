@@ -3,7 +3,7 @@
     <thead>
         <th>문의 날짜</th>
         <th>문의 내용</th>
-        <th></th>
+        <th><input type="checkbox"></th>
     </thead>
     <tbody>
         <tr class="weather">
@@ -61,6 +61,14 @@ table thead th{
     height:36px;
     text-align: center;
 }
+
+table thead th input{
+    width:20px;
+    height:20px;
+    position:relative;
+    top:3px;
+}
+
 table thead th:nth-child(1){width:20%;}
 table thead th:nth-child(2){width:70%;}
 table thead th:nth-child(3){width:10%;}
@@ -73,7 +81,7 @@ tbody tr td input{
     width:20px;
     height:20px;
     position:relative;
-    left:55%;
+    left:53%;
     transform: translate(-60%, 20%);
 }
 
