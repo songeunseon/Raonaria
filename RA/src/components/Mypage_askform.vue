@@ -6,7 +6,7 @@
         </div>
             <textarea id="ask_area" name="ask_area" rows="5" column="50"  placeholder="문의 내용을 입력해주세요"></textarea>
         <div class="send_wrap"></div>
-        <i class="bi bi-cursor"></i>
+        <i class="bi bi-send-fill"></i>
     </div>
 
 </template>
@@ -30,7 +30,7 @@ export default {
     height: 600px;
     display: flex;
     flex-direction: column;
-    border: 5px solid #AAA;
+    border: 5px solid lightblue;
     border-radius: 20px;
     gap: 10px;
     align-items: center;
@@ -67,19 +67,18 @@ b {
     margin: 0 auto;
 }
 
-.send_wrap {
-    border-radius: 5px;
-    border: 1px solid black;
+/* .send_wrap {
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.bi-cursor {
+.bi-send-fill{
     font-size: 40px;
     cursor: pointer;
+    color:#c1d7e5;
 }
 
 .fade-enter-from {

@@ -120,7 +120,7 @@ export default{
     position: absolute;
     right:5px;
     font-size:15px;
-    border:3px solid #bec1ff;
+    border:3px solid #BEC1FF;
     border-radius: 5px;
     width:80px;
     height:30px;
