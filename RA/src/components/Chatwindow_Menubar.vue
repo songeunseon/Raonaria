@@ -1,6 +1,8 @@
 <template>
     <div class="header">
-        <div class="chat_name">새싹반 유치원 채팅방
+        <div class="chat_name">
+            <router-link to="/ReunionView"><i class="bi bi-arrow-left-circle"></i></router-link>
+            새싹반 유치원 채팅방
             <div class="icon">
                 <i @click="menuOpen()" class="bi bi-list"></i>
                 <i @click="exitOpen()" class="bi bi-door-open"></i>
@@ -51,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* .header{
     width:800px;
     height:200px;
@@ -61,6 +63,7 @@ export default {
     justify-content:space-between;
     align-items:center;
 } */
+a{color:black;}
 input[type="checkbox"]{cursor:pointer;}
 .bi{cursor:pointer;}
 
@@ -68,23 +71,22 @@ input[type="checkbox"]{cursor:pointer;}
     width: 1000px;
     height: 60px;
     border: none;
-    /* position: absolute; */
     margin: 0 auto;
-    top: 0;
-    left: 10%;
     font-size: 18px;
     background-color: #F4F4FA;
     margin:30px auto;
 }
 
 .chat_name {
-    padding: 9px 10px;
     font-weight: 800;
-    /* display: flex;
-    justify-content: space-between; */
-    text-align:center;
-    line-height:45px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height:100%;
+    padding:0 10px;
 }
+
+.bi{font-size:30px;}
 
 .icon {
     /* padding:0 20px; */
@@ -93,7 +95,6 @@ input[type="checkbox"]{cursor:pointer;}
     column-gap: 25px;
     font-size: 20px;
     position: relative;
-    top: -45px;
     font-size:30px;
     color:blueviolet;
 }

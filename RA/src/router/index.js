@@ -50,6 +50,16 @@ const router = createRouter({
       component:() => import('../views/Chatwindow_InfoChange.vue')
     },
     {
+      path:'/noticeWrite',
+      name:'noticeWrite',
+      component:() => import('../views/noticeWrite.vue')
+    },
+    {
+      path:'/kickOut',
+      name:'kickOut',
+      component:() => import('../views/kickOUt.vue')
+    },
+    {
       path:'/ReunionView',
       name:'ReunionView',
       component:() => import('../views/ReunionView.vue')

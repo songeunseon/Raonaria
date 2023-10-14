@@ -16,10 +16,12 @@
                 </div>
             </div>
             <div class="menu">
-                <div class="notice">
-                    <i class="bi bi-arrow-right-square"></i>
-                    <span>공지사항 작성하기</span>
-                </div>
+                <router-link to="/noticeWrite">
+                    <div class="notice">
+                        <i class="bi bi-arrow-right-square"></i>
+                        <span>공지사항 작성하기</span>
+                    </div>
+                </router-link>
                 <!-- <div class="notice_write">
                     <input type="text" class="write" placeholder="올리고 싶은 공지사항을 작성하세요.">
                 </div>
@@ -28,10 +30,12 @@
                 </div> -->
             </div>
             <div class="menu">
-                <div class="kick_out">
-                    <i class="bi bi-arrow-right-square"></i>
-                    <span>강퇴관리</span>
-                </div>
+                <router-link to="/kickOut">
+                    <div class="kick_out">
+                        <i class="bi bi-arrow-right-square"></i>
+                        <span>강퇴관리</span>
+                    </div>
+                </router-link>
                 <!-- <div class="kick_out_detail">
                     <div class="Participants_list">강퇴관리 채팅상대</div>
                     <div class="chat_box">

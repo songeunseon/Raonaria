@@ -3,58 +3,48 @@
     <thead>
         <th>문의 날짜</th>
         <th>문의 내용</th>
-        <th><input type="checkbox" id="allcheck"></th>
+        <th><input type="checkbox" id="allcheck" @change="allCheck"></th>
     </thead>
     <tbody>
         <tr class="weather">
             <td></td>
             <td></td>
-            <td><input type="checkbox" name="check"></td>
+            <td><input type="checkbox" name="check" class="checkBox"></td>
         </tr>
         <tr class="content">
             <td></td>
             <td></td>
-            <td><input type="checkbox" name="check"></td>
+            <td><input type="checkbox" name="check" class="checkBox"></td>
         </tr>
         <tr class="check">
             <td></td>
             <td></td>
-            <td><input type="checkbox" name="check"></td>
+            <td><input type="checkbox" name="check" class="checkBox"></td>
         </tr>
         <tr class="check">
             <td></td>
             <td></td>
-            <td><input type="checkbox" name="check"></td>
+            <td><input type="checkbox" name="check" class="checkBox"></td>
         </tr>
     </tbody>
 </table>
 </template>
 
 <script>
-import MypageView from '../views/MypageView.vue';
 export default{
     name:"Mypage_Question",
     setup(){
-        
-        // var $allcheck =$('#allcheck');
-        // $allcheck.change(function(){
-        //     var $this =$(this);
-        //     var checked = $this.prop('checked');
-        //     $('input[name="check"]').prop('checked',checked)
-        // });
-        
-
-        // var boxes = $('input[name="check"]');
-        // boxes.change(function(){
-        // var boxLength = boxes.length;
-        // var checkedLength = $('input[name="check"]:checked').length;
-        // var selectAll = (boxLength == checkedLength);
-
-        // $allcheck.prop('checked' , selectAll);
-        // });
+        const allCheck = () => {
+            const mainCheck = document.getElementById('allcheck');
+            const checkBox = document.querySelectorAll('.checkBox');
+            checkBox.forEach(function(item){
+                item.checked = mainCheck.checked;
+            });
+        }
+        return{
+            allCheck
+        }
     }
-
-
 }
 
 </script>

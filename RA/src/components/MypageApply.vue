@@ -10,7 +10,7 @@
             <div class="slider_wrap">
                 <div class="apply_box">
                     <div>
-                        <div class="apply_line"></div>
+                        <div class="apply_line">OO 유치원</div>
                         <input class="checkbox" type="checkbox">
                     </div>  
                     <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
@@ -201,10 +201,11 @@ background-color:hwb(203 56% 9%);
     width:100px;
     /* height:30px; */
     border:0;
-    border-bottom:3px solid #fff;
+    /* border-bottom:3px solid #fff; */
     outline:none;
     background:none;
     margin-top:1px;
+    font-weight:900;
 }
 
 .apply_bt{
