@@ -4,14 +4,22 @@
     <div class="info_box2">
         <div class="room_manager1">
             <div class="icon4">
-                        <i class="bi bi-award"></i>
+                <i class="bi bi-award"></i>
+                <div class="name">김선향</div>
             </div>
-        <div class="name1">김선향</div>
-        </div>
-        <div class="name2">김선향</div>
-        <div class="name3">김선향</div>
-        <div class="name4">김선향</div>
-        <div class="name5">김선향</div>
+            </div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
+        <div class="name">김선향</div>
     </div>
 </div>        
 </template>
@@ -49,28 +57,17 @@ export default{
 }
 
 .info_box2{
-    /* width:170px;
-    height:250px;
-    background:white;
-    padding-top:35px;
-    padding-right:62px;
+    width:170px;
+    max-height:290px;
+    display:flex;
+    flex-direction: column;
+    background:#fff;
     margin-left:15px;
-    margin-bottom:10px;
-    border-radius: 15px;
-    display:flex;
-    align-items: end;
-    flex-direction:column;
-    row-gap:10px;
-    overflow-y: scroll;
-    text-align: right; */
-
-    display:flex;
-    flex-wrap:wrap;
-    background:white;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
-    max-width:250px;
+    margin-bottom:15px;
+    text-align:center;
+    overflow-y:scroll;
+    border-radius:10px;
+    
 
     
 }
@@ -82,37 +79,15 @@ export default{
 }
 
 .icon4{
-    position:relative;
+    display:flex;
+    padding-right:11px;
 }
 
 .bi-award{
     right:3px;
 }
 
-.name1{
-    color:green;
-    font-weight:800;
-}
 
-.name2{
-    color:blue;
-    font-weight:800;
-}
-
-.name3{
-    color:brown;
-    font-weight:800;
-}
-
-.name4{
-    color:#B68E29;
-    font-weight:800;
-}
-
-.name5{
-    color:#DE5920;
-    font-weight:800;
-}
 
 
 

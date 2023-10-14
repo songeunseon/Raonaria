@@ -6,11 +6,11 @@
                 <div class="chat_info">2023년 9월 17일</div>
             </div>
             <div class="basic_info">
-                <div class="Participant1">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">애들아 방가워 참외반 최고</div>
             </div>
             <div class="basic_info">
-                <div class="Participant2">
+                <div class="Participant1">
                     <i class="bi bi-award"></i>
                     김선향 남
                 </div>
@@ -19,68 +19,68 @@
             <div>
             </div>
             <div class="basic_info">
-                <div class="Participant3">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">방가</div>
             </div>
             <div class="basic_info">
-                <div class="Participant4">김선향 남</div>
+                <div class="Participant">김선향 남</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
             <div class="basic_info">
-                <div class="Participant5">김선향 여</div>
+                <div class="Participant">김선향 여</div>
                 <div class="comment">옛추억이 떠오르는 구나</div>
             </div>
         </div>
-        <div class="chat_input">
-            <input type="text" class="text_input">
+        <div class="write_wrap">
+            <textarea row="5" col="30" class="word_write"></textarea>
             <button class="text_output">Enter</button>
         </div>
     </div>
@@ -160,6 +160,7 @@ export default {
     margin-left: 0px;
     border: none;
     padding: 2px 0;
+
 }
 
 .basic_info1 {
@@ -178,10 +179,15 @@ export default {
     color: blue;
 }
 
-.Participant1 {
-    color: green;
-    font-weight: 800;
+.Participant{
+    font-weight:900;
 }
+
+.Participant1{
+    font-weight:900;
+}
+
+
 
 .room_manager {
     display: flex;
@@ -189,29 +195,14 @@ export default {
     margin-bottom: 20px;
 }
 
-.Participant2 {
-    color: blue;
-    font-weight: 800;
-}
 
 .bi-award {
     font-size: 20px;
 }
 
-.Participant3 {
-    color: brown;
-    font-weight: 800;
-}
 
-.Participant4 {
-    color: #B68E29;
-    font-weight: 800;
-}
 
-.Participant5 {
-    color: #DE5920;
-    font-weight: 800;
-}
+
 
 .comment {
     font-weight: 500;
@@ -231,6 +222,11 @@ export default {
     
 }
 
+.write_wrap{
+    display:flex;
+    align-items:center;
+}
+
 .text_input {
     flex-grow: 1;
     /* width:650px; */
@@ -241,15 +237,25 @@ export default {
     outline:none;
     border:none;
     background:#F4F4FA;
+    resize:none;
 }
 .text_output{
     width:90px;
     height:30px;
+    line-height: 30px;;
     font-size:20px;
     color:#928F8F;
     outline:none;
     border:none;
-    margin-right:15px;
     background:none;
+}
+
+.word_write{
+    width:88.3%;
+    flex-grow:1;
+    outline:none;
+    border:none;
+    background:#F4F4FA;
+    resize: none;
 }
 </style>

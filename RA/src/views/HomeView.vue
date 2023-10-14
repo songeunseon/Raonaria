@@ -105,7 +105,7 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background : #2cb4d6;
+  background : #9ED2BE;
 }
 
 #box{
@@ -171,7 +171,7 @@ b39283 코토리베이지
 */
 #menulist li{
     list-style: none;
-    background: #6499c5;
+    background:#C8E4B2 ;
     color: #fff;
     font-weight: 900;
     border-radius : 100px;

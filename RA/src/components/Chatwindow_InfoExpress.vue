@@ -2,13 +2,24 @@
     <div id="announcement">
             <div class="main_title1">공지사항</div>
             <div class="info_box">
-                <div class="info1">오고싶은 사람은 와라</div>
-                <div v-if="!isDel" @click="delOpen()" class="info2">30000원</div>
+                    <span class="info">오고싶은 사람은 와라</span>
+                    <span v-if="!isDel" @click="delOpen()" class="info">30000원</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
+                    <span class="info">회식때 고기먹자</span>
                 <div v-if="isDel" @click="checkOpen()" class="delete_title">
                     삭제하기
                 <i class="bi bi-trash"></i>
                 </div>
-                
                 <div  v-if="isCheck" class="check_del">
                     <div class="inform_delete">
                         공지사항 삭제
@@ -78,27 +89,24 @@ export default{
 
 .info_box{
     width:170px;
-    height:250px;
+    max-height:290px;
     background:white;
     margin-left:15px;
     margin-bottom:15px;
     border-radius: 10px;
     overflow-y: scroll;
+    text-align:center;
+    padding:10px 0;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
 }
 
-.info1{
-    padding:30px 0 10px 0;
-    text-align:center;
-    font-size:15px;
-    cursor:pointer;
+.info{
+    cursor: pointer;
 }
 
-.info2{
-    text-align:center;
-    padding:-20px 0;
-    font-size:15px;
-    cursor:pointer;
-}
+
 
 .delete_title{
     display:flex;
