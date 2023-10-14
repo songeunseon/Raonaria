@@ -21,7 +21,7 @@
 
 
 
-.menu_modal{
+/* .menu_modal{
     position:fixed;
     top:31.2%;
     left:55%;
@@ -31,9 +31,9 @@
     background:white;
     border:1px solid black;
     overflow-y:scroll;
-}
+} */
 
-.menu{
+/* .menu{
     width:300px;
     height:fit-content;
 }
@@ -237,5 +237,5 @@
     height:23px;
     border:none;
     background: #d9d9d9;
-}
+} */
 

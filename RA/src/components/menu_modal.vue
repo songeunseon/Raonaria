@@ -1,38 +1,38 @@
 <template>
     <div class="menu_modal slideOut">
             <div class="menu">
-                <i @click="menuOpen()" class="bi bi-x-circle"></i>
+                <i @click="menuOpen()" class="bi bi-chevron-left"></i>
                 <div class="menu_bar">
                     <span>채팅방 관리</span>
                     <!-- <i class="bi bi-chevron-compact-down"></i> -->
                 </div>
-                <div class="title_change">
-                    정보변경
-                </div>
+                <router-link to="/infoChange">
+                    <div class="title_change">
+                        <i class="bi bi-arrow-right-square"></i>   
+                        정보변경
+                    </div>
+                </router-link>
                 <div class="content_change">
-                    <input type="text" class="chat_name" placeholder="유치원 이름">
-                    <input type="text" class="chat_name" placeholder="채팅방 소개">
-                </div>
-                <div class="save_bt">
-                    <button class="save">저장</button>
                 </div>
             </div>
             <div class="menu">
                 <div class="notice">
+                    <i class="bi bi-arrow-right-square"></i>
                     <span>공지사항 작성하기</span>
                 </div>
-                <div class="notice_write">
+                <!-- <div class="notice_write">
                     <input type="text" class="write" placeholder="올리고 싶은 공지사항을 작성하세요.">
                 </div>
                 <div class="notice_info_bt">
                     <button class="notice_info">저장</button>
-                </div>
+                </div> -->
             </div>
             <div class="menu">
                 <div class="kick_out">
+                    <i class="bi bi-arrow-right-square"></i>
                     <span>강퇴관리</span>
                 </div>
-                <div class="kick_out_detail">
+                <!-- <div class="kick_out_detail">
                     <div class="Participants_list">강퇴관리 채팅상대</div>
                     <div class="chat_box">
                         <div class="check_name">
@@ -48,7 +48,7 @@
                     <div class="kick_out_bt">
                     <button @click="banOn()" class="kick">강퇴하기</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 </template>
@@ -80,13 +80,14 @@ export default{
 </script>
 
 <style scoped>
+a{color:black; text-decoration: none;}
 .menu_modal{
     position:fixed;
-    top:0%;
-    left:1500px;
+    top:14%;
+    left:1300px;
     /* transform: translate(100%, -20%);  */
     width:325px;
-    height:700px;
+    height:198px;
     background:white;
     border:1px solid black;
     /* display:none; */
@@ -97,10 +98,16 @@ export default{
     height:fit-content;
 }
 
-.bi-x-circle{
+.bi-chevron-left{
     position:absolute;
     left:15px;
     top:10px;
+}
+
+.bi-arrow-right-square{
+    position:relative;
+    left:280px;
+    top:0px;
 }
 
 .menu_bar{
@@ -120,30 +127,16 @@ font-weight:800;
 }
 
 .title_change{
-    margin:5px 120px;
+    padding:15px 10px;
     font-size:15px;
-    text-align:center;
-}
-
-.content_change{
-    padding:5px 30px;
+    text-align:left;
+    border-bottom:1px solid black;
 }
 
 
-.write{
-    text-align:center;
-    font-size:13px;
-}
 
-.content_change input{
-    border:none;
-    border-bottom: 1px solid black;
-    margin:2px 55px;
-    padding:5px 3px;
-    width:150px;
-    text-align:center;
-    outline:none;
-}
+
+
 
 /* .menu_modal{display:none;} */
 
@@ -191,16 +184,19 @@ width:100px;
 
 .notice{
     border:none;
-    border-top:1px solid black;
     border-bottom:1px solid black;
-    padding:10px 0;
+    padding:15px 1px;
+    text-align:left;
+    font-size:15px;
+
     
 
 }
 
 .notice span{
-    margin-left:97px;
-    font-weight:800;
+    /* margin-left:97px;
+    font-weight:800; */
+    text-align:left;
 }
 
 .notice i{
@@ -231,12 +227,12 @@ width:100px;
 }
 
 .kick_out{
-    font-weight: 900;
-    font-size:18px;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    text-align: center;
-    padding:10px;
+    /* font-weight: 900; */
+    font-size:15px;
+    /* border-bottom: 1px solid black;
+    border-top: 1px solid black; */
+    text-align: left;
+    padding:10px 10px;
 }
 
 .Participants_list{

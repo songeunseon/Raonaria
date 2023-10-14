@@ -66,8 +66,8 @@ export  default{
 <style scoped>
 @import url(../assets/chatWindow.css);
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Noto+Sans+KR:wght@100;300&family=Roboto+Slab:wght@300&display=swap');
-font-family: 'Noto Sans KR', sans-serif;
-font-family: 'Roboto Slab', serif;
+font-family:Noto Sans KR, sans-serif
+font-family:Roboto Slab, serif
 *{font-family: 'Gamja Flower', cursive;}
 .chat_layout{
     display:flex;
