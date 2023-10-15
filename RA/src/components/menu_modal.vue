@@ -106,6 +106,7 @@ a{color:black; text-decoration: none;}
     position:absolute;
     left:15px;
     top:10px;
+    cursor: pointer;
 }
 
 .bi-arrow-right-square{

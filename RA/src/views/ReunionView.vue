@@ -112,7 +112,7 @@ export default{
             position:absolute;
             left:80px;
             top:-5px;
-            font-size:20px;
+            font-size:13px;
         }
 
         .search_input{

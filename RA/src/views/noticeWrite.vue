@@ -77,7 +77,7 @@ a{color:black; text-decoration: none;}
 .save{
     width:800px;
     height:50px;
-    margin-top:582px;
+    margin-top:480px;
     background:#BEC1FF;
     color:#fff;
     border:1px solid #BEC1FF;

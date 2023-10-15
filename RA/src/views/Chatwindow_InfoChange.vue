@@ -81,7 +81,7 @@ a {
 .save {
     width: 800px;
     height: 50px;
-    margin-top: 500px;
+    margin-top: 410px;
     background: #BEC1FF;
     color: #fff;
     border: 1px solid #BEC1FF;
