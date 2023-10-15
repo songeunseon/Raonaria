@@ -7,7 +7,7 @@
 
 </template>
 <script>
-import MypageView from  "../views/MypageView.vue"
+import MypageView from "../views/MypageView.vue"
 export default{
     name:"Mypage_NoinfoBox",
     setup(){
