@@ -65,16 +65,6 @@ export default{
       <div id ="logotext">
         <img src="../assets/logotext.png">
       </div >
-        <div id ="listSearch">
-            <div id ="sh">
-                <!-- <div id="look">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-  </svg>
-                </div> -->
-                
-            </div >
-        </div >
         <Home_Easy/>
         <Home_Login/>
 
@@ -105,7 +95,7 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background : #9ED2BE;
+  background: radial-gradient(circle, #fff79a, #ffffff);
 }
 
 #box{
@@ -139,6 +129,7 @@ main{
 }
 #logoimg{
   width: 100px;
+
 }
 #logotext img{
   width: 300px;
@@ -171,7 +162,7 @@ b39283 코토리베이지
 */
 #menulist li{
     list-style: none;
-    background:#C8E4B2 ;
+    background:#FFD124;
     color: #fff;
     font-weight: 900;
     border-radius : 100px;
@@ -200,14 +191,17 @@ a{
     align-items : center;
     row-gap: 20px;
     background: #fff;
+    
 }
 
 #main{
+
   width: 500px;
   position: relative;
   top:-50px;
-  
-
+}
+#main div{
+  border-radius : 30px;
 }
 /* @keyframes flip {
   from{ transform: rotateY(0deg); }
@@ -216,6 +210,7 @@ a{
 .w-100{
   width: 500px;
   height: 800px;
+  border-radius : 30px;
   /* animation: flip 3s ease-in-out infinite; */
 
 }
@@ -248,6 +243,7 @@ a{
 }
 
 #footer{
+  border-radius: 10px;
   width: 1000px;
   margin: 0 auto;
   background: #fff;

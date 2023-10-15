@@ -59,10 +59,10 @@ export default{
     text-align: center;
 }
 .input{
-    width: 250px;
+    width: 220px;
     display: flex;
     align-items: center;
-    border-bottom : 3px solid #BEC1FF;
+    border-bottom : 3px solid #a9bb51;
     margin: 10px;
 }
 
@@ -72,13 +72,34 @@ export default{
     justify-content : space-around;
     border: 0;
 }
-#hjoin , #hlogin {
+#hjoin{
     margin-top : 5px;
     width : 100px;
     height : 40px;
-    border : 3px solid #BEC1FF;
-    border-radius : 5px;
-    background: 0;
+    border: 0;
+    border-radius : 30px;
+    background: #7bb1ff99;
+    color: #aaa;
+    cursor: pointer;
+}
+#hlogin {
+    margin-top : 5px;
+    border: 0;
+    width : 100px;
+    height : 40px;
+    border-radius : 30px;
+    background: #7bb1ff99;
+    color: #aaa;
+    cursor: pointer;
+}
+#hjoin:hover{
+    background: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+}
+#hlogin:hover {
+    background: #0d6efd;
+    color: #fff;
     cursor: pointer;
 }
 #sns{
