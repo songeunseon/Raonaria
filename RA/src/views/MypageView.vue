@@ -78,14 +78,6 @@ export default{
     margin:45px auto;
     gap:20px;
 }
-@media(max-width:490px){
-    .page_wrap{
-        width:650px;
-    }
-}
-@media(max-width:490px){
-    
-}
 .page_Zone{
     width:100%;
     display:flex;
@@ -94,4 +86,18 @@ export default{
     margin: 20px auto;
     height:620px;
 }
+@media(max-width:1194px){
+    .page_wrap{
+        width:calc(100% - 40px );
+    }
+}
+@media(max-width:490px){
+    .page_wrap{
+        flex-direction: column;
+    }
+    .page_Zone{
+        flex-direction: column;
+    }
+}
+
 </style>

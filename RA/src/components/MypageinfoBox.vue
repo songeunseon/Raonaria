@@ -5,24 +5,24 @@
                 <i class="bi bi-person-circle"></i>
                 <div class="name">김선향</div>
                 <div class="chat_alert">채팅방 알림</div>
-                <div id="chat_alert_box" v-if="!isApply">
-                    <div class="alert_box">
-                        <div class="circle"></div>
-                        <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
-                    </div>
-                    <div class="alert_box">
-                        <div class="circle"></div>
-                        <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
-                    </div>
-                    <div class="alert_box">
-                        <div class="circle"></div>
-                        <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
-                    </div>
-                </div>
-                <Mypage_NoinfoBox v-if="isApply" />
             </div>
+            <div id="chat_alert_box" v-if="!isApply">
+                <div class="alert_box">
+                    <div class="circle"></div>
+                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                </div>
+                <div class="alert_box">
+                    <div class="circle"></div>
+                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                </div>
+                <div class="alert_box">
+                    <div class="circle"></div>
+                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                </div>
+            </div>
+            <img src="../assets/childern.png" class="kids">
+            <Mypage_NoinfoBox v-if="isApply" />
             <!-- <div class="image"> -->
-                <img src="../assets/childern.png" class="kids">
             <!-- </div> -->
 
             <!-- <div class="add_info">로그인 성공 시 아이디를 화면에
@@ -63,14 +63,13 @@ export default {
 .page {
     width: fit-content;
     height: 620px;
-    /* border:1px solid black; */
     margin: 20px auto;
     display: flex;
 }
 
 .info {
-    width: 220px;
-    height: 520px;
+    max-width: 220px;
+    height:fit-content;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     background: #c1d7e5;
@@ -78,15 +77,6 @@ export default {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-}
-@media(max-width:490px){
-    .info{
-        width:250px;
-        height:84px;
-        margin-left:110px;
-        border-radius: 0;
-
-    }
 }
 
 .profile {
@@ -98,19 +88,8 @@ export default {
     /* justify-content:center; */
     align-items: center;
     border-radius: 100%;
-    margin: 10px 46px;
+    margin: 10px auto;
     border: 7px double white;
-}
-
-
-@media(max-width:490px){
-    .profile{
-        width:50px;
-        height:50px;
-        padding-left:5px;
-        border:none;
-        
-    }
 }
 
 
@@ -119,14 +98,6 @@ export default {
     padding: 12px 0;
     font-size: 40px;
 
-}
-
-@media(max-width:490px){
-    .profile i{
-        margin-bottom:10px;
-        padding:0px 0;
-        font-size:20px;
-    }
 }
 
 
@@ -139,19 +110,13 @@ export default {
     bottom: 12px;
 }
 
-@media(max-width:490px){
-.name{
-    font-size:10px;
-}
-    }
 
 
 
 .kids {
-    width: 228px;
+    /* width: 228px;
     position: relative;
-    right: 3px;
-    top: 121px;
+    right: 3px; */
 }
 
 .id {
@@ -220,36 +185,72 @@ export default {
     height: 15px;
     background: greenyellow;
     border-radius: 100%;
+    /* position:absolute; */
 }
 
 .textWrap {
     text-align: left;
     font-size: 10px;
-    padding-left: 10px;
-
+    width:calc(100% - 20px);
+    justify-self: end;
 }
 
 .alert_box {
     box-sizing: border-box;
-    width: 200px;
+    max-width: 200px;
     height: 50px;
     padding: 5px 10px;
-    margin:5px 0;
+    margin:5px auto;
     border: 1px solid #c1d7e5;
     font-size: 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0 10px;
     background: white;
     border-radius: 2px;
     /* cursor: pointer;} */
 }
 
+
+/* 모바일 버전 반응형 부분*/ 
 @media(max-width:490px){
-    .alert_box{
-        width:150px;
+    .page{
+        margin:0;
+        width:100%;
+        height:fit-content;
+    }
+    .info{
+        width:100%;
+        max-width:100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #chat_alert_box{
+        height:200px;
+        overflow-y: scroll;
+        left:0;
+        top:0;
+        gap:0 5px;
+        padding:10px;
+    }
+    .chat_alert{
+        display:none;
+    }
+    .kids{
+        display:none;
+    }
+    .profile{
+        width:80px;
+        height:80px;
+    }
+    .profile i{
+        padding:0;
+        padding-bottom:24px;
     }
 }
+
+/*---------------------------------*/
 
 
 .chat_alert {
@@ -257,4 +258,21 @@ export default {
     position: relative;
     padding-top:30px;
 }
+
+/*테블릿 반응형 부분 */
+@media(min-width:490px) and (max-width:1194px){
+    .page{
+        width:30%;
+    }
+    .info{
+      width: 100%;
+    }
+    #chat_alert_box{
+        width:100%
+    }
+    .alert_box{
+        width:90%;
+    }
+}
+/*------------------------------------ */
 </style>

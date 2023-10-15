@@ -31,7 +31,7 @@ export default{
     width:200px;
     height:50px;
     /* padding: 30px 10px; */
-    margin:30px 0;
+    margin:30px auto;
     border-bottom:3px solid #fff;
     font-size:15px;
     display:flex;

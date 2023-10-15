@@ -15,39 +15,32 @@
                     </div>  
                     <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
                     <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <div class="apply_line">OO 유치원</div>
+                        <input class="checkbox" type="checkbox">
+                    </div>  
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <div class="apply_line">OO 유치원</div>
+                        <input class="checkbox" type="checkbox">
+                    </div>  
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
+                </div>
+                <div class="apply_box">
+                    <div>
+                        <div class="apply_line">OO 유치원</div>
+                        <input class="checkbox" type="checkbox">
+                    </div>  
+                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
+                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>
                 </div> 
-                <!-- <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div> 
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div> 
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div> 
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
-                </div>
-                <div class="apply_box">
-                    <div>
-                        <input class="text" type="text">
-                        <input class="checkbox" type="checkbox">
-                    </div> 
-                    <div><input class="checkbox" type="checkbox"> 상담신청완료 </div>
-                    <div><input class="checkbox" type="checkbox"> 입학신청완료</div>   
-                </div> -->
+
             </div> 
         </div>
         
@@ -143,17 +136,21 @@ export default{
     align-items: center;
     justify-content: space-between;
     position:relative;
+    overflow:hidden;
     overflow-x:scroll;
-    width:645px;
-    top:12px;
-    left:62px;
+    top:35px;
     scroll-behavior: smooth;
+    max-width:645px;
+    height:150px;
+    margin:0 auto;
+    gap:15px;
 }
 
 .slider_wrap{
     display:flex;
-    position:relative;
+    position:absolute;
     column-gap:15px;
+    max-width:645px;
 }
 
 .bi-arrow-left-square, .bi-arrow-right-square{
@@ -254,7 +251,50 @@ background-color:hwb(203 56% 9%);
     padding:0 5px;
 }
 
-
-
+@media(max-width:490px){
+    .apply_header_question{
+        justify-content:center;
+        border:1px solid black;
+        margin-bottom:-5px;
+    }
+    .apply{font-size:15px;}
+    .apply_header_question > .cancel{
+        position:absolute;
+        z-index:30;
+        top:90px; right:0;
+    }
+    .slider_wrap{
+        column-gap: 0;
+        max-width:none;
+    }
+    .apply_bt{
+        display:none;
+    }
+    .apply_Zone{
+        height:103px;
+        top:0;
+    }
+    .apply_box{
+        border-radius: 0;
+        width:calc(100vw - 40px);
+        gap:5px;
+        align-items:start;
+        height:fit-content;
+    }
+    .apply_box div:first-child{
+        flex-direction:row;
+        gap:2.5px;
+    }
+    .apply_box div{
+        width:fit-content;
+        flex-direction:row-reverse;
+    }
+    .bi-arrow-left-square, .bi-arrow-right-square{
+        top:50px;
+    }
+    .apply_header{
+        margin: 35px auto;
+    }
+}
 
 </style>

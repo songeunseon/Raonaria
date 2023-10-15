@@ -92,5 +92,12 @@ tbody tr td input{
     transform: translate(-60%, 20%);
 }
 
+@media(max-width:490px){
+    table thead th{
+        font-size:12px;
+        font-weight:800;
+    }
+}
+
 
 </style>
