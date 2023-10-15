@@ -206,6 +206,7 @@ background-color:hwb(203 56% 9%);
     background:none;
     margin-top:1px;
     font-weight:900;
+    padding-left:15px;
 }
 
 .apply_bt{

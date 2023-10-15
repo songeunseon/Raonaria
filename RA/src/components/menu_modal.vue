@@ -88,7 +88,7 @@ a{color:black; text-decoration: none;}
 .menu_modal{
     position:fixed;
     top:14%;
-    left:1300px;
+    left:300px;
     /* transform: translate(100%, -20%);  */
     width:325px;
     height:198px;
@@ -153,13 +153,13 @@ font-weight:800;
 }
 
 @keyframes slideIn {
-    0%{left:3000px;  display:none;}
-    100%{left:50%;  display:block;}
+    0%{left:1000px; opacity: 0;  display:none;}
+    100%{left:840px; opacity: 1;  display:block;}
 }
 
 @keyframes slideOut{
-    0%{left:50%;  display:block;}
-    100%{left:3000px;  display:none;}
+    0%{left:840px; opacity: 1;  display:block;}
+    100%{left:1000px; opacity: 0;  display:none;}
 }
 
 

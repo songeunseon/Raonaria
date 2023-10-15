@@ -8,9 +8,6 @@
         <Mypage_Apply v-if="!isApply"/>
         <Mypage_NoApply v-if="isApply"/>
         <Mypage_Question/>
-        
-        
-        
     </div>
     <button style="position:fixed; top:10%; left:10%;" @click="test" >테스트</button>
 </div>

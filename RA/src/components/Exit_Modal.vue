@@ -55,9 +55,15 @@ export default{
 
 .ask{ font-weight:900;}
 
+.button_wrap{
+    display:flex;
+    column-gap: 15px;
+    justify-content: center;
+}
 .button_wrap button{
     border-radius: 10px;
     font-weight:900;
+    padding:5px 10px;
 }
 
 .button_wrap button{
