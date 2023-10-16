@@ -67,16 +67,28 @@
             <div class="user_name">김선향</div>
             <input class="user_check" type="checkbox">
         </div>
-        <button class="save">강퇴하기</button>
+        <button @click="banON()" class="save">강퇴하기</button>
     </div>
-</div>        
+    <Chatwindow_KickOut v-show="isBan"/>
+</div>
 </template>
 <script>
-import {inject} from 'vue'
+import {ref, provide} from 'vue'
+import Chatwindow_KickOut from '../components/chatwindow_KickOut.vue'
 export default{
     name:"kickOut",
+    components:{
+        Chatwindow_KickOut
+    },
     setup(){
-        
+        const isBan = ref(false);
+        provide('isBan', isBan);
+
+        const banON = () => isBan.value = true;
+
+        return{
+            isBan, banON
+        }
     }
 }
 </script>

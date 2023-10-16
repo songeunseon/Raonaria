@@ -10,7 +10,7 @@
         </div>
         <div class="button_wrap">
             <button @click="exitOpen()" class="modal_bt" value="예">취소</button>
-            <RouterLink to="/ReunionView">
+            <RouterLink to="/Reunion">
                 <button @click="exitOpen()" class="modal_bt" value="아니오">나가기</button>
             </RouterLink>
         </div>
