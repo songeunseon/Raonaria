@@ -115,10 +115,10 @@ main{
   background : #fff ;
   text-align: center;
   align-items: center;
-  /* border: solid #aaa; */
-  /* border-right: 0;
-    border-radius:30px 0 0 30px; */
-  /* padding-left: 10px; */
+  /* border: 5px solid #a9bb51;
+  border-right: 0;
+  border-radius:30px 0 0 30px;
+  padding-left: 10px; */
 }
 
 #logo{
@@ -193,10 +193,11 @@ a{
     flex-direction : column;
     align-items : center;
     row-gap: 20px;
-    background: #fff;
+    /* background:#fff;
+    border: 5px solid #a9bb51; */
     /* border: solid #aaa; */
-    /* border-left: 0; */
-    /* border-radius: 0 30px 30px 0; */
+    /* border-left: 0;
+    border-radius: 0 30px 30px 0; */
 }
 
 #main{
@@ -248,26 +249,34 @@ a{
 } */
 
 #footer{
-  border-radius: 10px;
   width: 1000px;
   margin: 0 auto;
   background: #fff;
   text-align: center;
   padding: 10px;
   margin-top: 60px;
-  /* border: solid #aaa; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 5px solid #a9bb51;
   border-bottom: 0;
-  border-radius:30px 30px 0 0  ;
+  border-radius:30px 30px 0 0  ; */
 }
 #haddr{
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 20px;
 }
 #haddr{
   column-gap: 50px;
 }
-
+#page{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 /* --------------------태블릿 버전------------------- */
 
 @media(min-width:490px) and (max-width:1194px){
