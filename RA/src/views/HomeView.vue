@@ -163,7 +163,8 @@ b39283 코토리베이지
 
 */
 #menulist li{
-  font-family: 'TheJamsil5Bold';
+  font-family: 'HakgyoansimSantteutdotumL';
+  font-weight: 700;
     list-style: none;
     background:#FFD124;
     color: black;

@@ -72,10 +72,11 @@ export default{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'SUITE-Regular';
 }
 
   #buttonbox{
-    max-width: 1000px;
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,10 +86,14 @@ export default{
   #comparison{
     width: 200px;
     height: 40px;
-    background: 0;
-    border: 3px solid #BEC1FF;
-    border-radius: 5px;
-    font-size: 15px;
+    border: 0;
+    background: #fcd03e99;
+    border-radius: 30px;
+    font-size: 20px;
+  }
+  #comparison:hover{
+    background: #FFD124;
+    color: #fff;
   }
   @media(max-width:490px){
     #comparison{

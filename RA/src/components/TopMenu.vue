@@ -61,7 +61,8 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     
   }
   #menuList li{
-    font-family: 'TheJamsil5Bold';
+    font-family: 'HakgyoansimSantteutdotumL';
+    font-weight: 700;
     color: #000;
     text-align: center;
     width: 200px;
