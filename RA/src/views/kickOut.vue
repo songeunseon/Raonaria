@@ -67,7 +67,7 @@
             <div class="user_name">김선향</div>
             <input class="user_check" type="checkbox">
         </div>
-        <button  @click="banOn()" class="save">강퇴하기</button>
+        <button class="save">강퇴하기</button>
     </div>
 </div>        
 </template>
@@ -76,8 +76,7 @@ import {inject} from 'vue'
 export default{
     name:"kickOut",
     setup(){
-        const banOn = inject('banOn');
-        return{banOn}
+       
     }
 }
 </script>

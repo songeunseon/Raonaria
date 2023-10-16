@@ -60,8 +60,8 @@ const router = createRouter({
       component:() => import('../views/kickOUt.vue')
     },
     {
-      path:'/ReunionView',
-      name:'ReunionView',
+      path:'/Reunion',
+      name:'Reunion',
       component:() => import('../views/ReunionView.vue')
     },
     {
