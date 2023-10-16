@@ -57,7 +57,7 @@ export default {
     cursor: pointer;
 }
 
-b {
+.word {
     font-size: 30px;
 }
 

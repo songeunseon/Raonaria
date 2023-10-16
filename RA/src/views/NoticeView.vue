@@ -95,7 +95,7 @@ const router = useRouter();
     #noticeTable{
         width: 800px;
         text-align: center;
-        border-bottom: 3px solid #aaa;
+        border-bottom: 3px double #aaa;
         margin: 30px auto;
     }
     @media(max-width:490px){

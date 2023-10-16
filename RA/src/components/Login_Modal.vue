@@ -48,7 +48,7 @@
 position:absolute;
 width:500px;
 height:350px;
-border: 5px solid #aaa;
+border: 5px solid #0d6efd;
 border-radius: 20px;
 background:white;
 z-index:100;
@@ -59,15 +59,16 @@ transform: translate(-50%, -50%);
 
 .modal_header{
     display:flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px auto;
+    column-gap: 130px;
     /* justify-content:space-between; */
-    border-bottom:3px solid #AAAAAA;
 }
 
 .modal_title{
-    width: 100%;
-    font-size:30px;
-    text-align: center;
-    margin-right: 60px;
+    font-size:25px;
+    font-weight: 700;
 }
 
 .Login_modal i{
@@ -87,16 +88,14 @@ transform: translate(-50%, -50%);
     width:250px;
     height:30px;
     display:flex;
-    border-bottom: 3px solid #BEC1FF;
-    text-align: center;
-
-    
+    border-bottom: 3px solid #FFD124;
+    text-align: start;
 }
 
 .input b{
+    width: 60px;
     font-size:20px;
-    padding-left:15px;
-    padding-bottom:10px;
+    padding: 5px 20px;
     font-weight:800;
 }
 
@@ -105,7 +104,8 @@ transform: translate(-50%, -50%);
 #hid, #hpw{
     outline:none;
     border:none;
-    text-align: center;
+    padding-left: 30px;
+    text-align: start;
     
     
 }
@@ -123,11 +123,15 @@ transform: translate(-50%, -50%);
 .sign_bt, .login_bt{
     width:80px;
     height:30px;
-    border:2px solid #BEC1FF;
-    border-radius: 5px;
+    border:0;
+    border-radius: 30px;
     /* margin-left:125px; */
-    background: 0;
+    background: #7bb1ff99;
     font-size:15px;
+}
+.sign_bt:hover, .login_bt:hover{
+    background: #0d6efd;
+    color: #fff;
 }
 .sns_line{
     display:flex;

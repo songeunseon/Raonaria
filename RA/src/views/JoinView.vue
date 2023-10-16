@@ -53,6 +53,9 @@ export default{
 </template>
 <style>
 *{font-family: 'SUITE-Regular';}
+    h1{
+        color: #FFD124;
+    }
     #joinmain{
         width: 1000px;
         margin: 10px auto;

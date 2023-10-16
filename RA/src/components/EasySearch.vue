@@ -66,11 +66,12 @@
 }
 #easyBody{
     width: 600px;
-    height: 500px;
+    height: 400px;
     z-index: 100;
     position: absolute;
-    background: #b0d0ff;
-    border-radius: 10px;
+    background: #ffffff;
+    border: 5px solid #a9bb51;
+    border-radius: 30px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -89,30 +90,37 @@
     justify-content: space-around;
 }
 .section{
-    width: 290px;
+    width: 250px;
     height: 400px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding: 10px;
 }
 .left{
     display: flex;
     flex-direction: column;
     text-align: left;
-    row-gap: 30px;
 }
 .left table tr td{
     font-weight: 700;
-    height: 60px;
+    height: 40px;
 
 }
 #easyCheck{
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+}
+#easyCheck div{
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 15px;
-    row-gap: 10px;
 } 
 .easyimg{
-
+    margin-top: 60px;
+    height: 250px;
     border: 1px solid #aaa;
 }
 @media(max-width:490px){
