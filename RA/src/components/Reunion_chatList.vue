@@ -86,7 +86,7 @@
 .list {
     width: 250px;
     height: 200px;
-    border: 2px solid #BEC1FF;
+    border: 2px solid #F94C10;
     /* display:flex; */
     border-radius: 8px;
 }
@@ -102,7 +102,7 @@
     width: 54px;
     height: 53px;
     border-radius: 50px;
-    border: 2px solid #BEC1FF;
+    border: 2px solid #F94C10;
     background: white;
     position: relative;
     left: 188px;
@@ -111,7 +111,7 @@
 }
 
 .position:hover {
-    background: #BEC1FF;
+    background: #F94C10;
     color: white;
 }
 </style>
