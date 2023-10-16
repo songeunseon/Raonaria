@@ -43,7 +43,10 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     <div><b>특수학급여부</b><input type="checkbox" name="point"></div>
                     <div><b>방과후돌봄</b><input type="checkbox" name="point"></div>
                 </div>
-                <div></div>
+                <div class="CP_Chart">
+                    <div></div>
+                    <div></div>
+                </div>
                 <div class="CpBt">
                     <button>상담신청</button>
                     <RouterLink to="/school"><button>입학신청</button></RouterLink>
@@ -83,7 +86,10 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     <div><b>특수학급여부</b><input type="checkbox" name="point"></div>
                     <div><b>방과후돌봄</b><input type="checkbox" name="point"></div>
                 </div>
-                <div></div>
+                <div class="CP_Chart">
+                    <div></div>
+                    <div></div>
+                </div>
                 <div class="CpBt">
                     <button>상담신청</button>
                     <RouterLink to="/school"><button>입학신청</button></RouterLink>
@@ -139,7 +145,6 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         width: 80%;
         text-align: center;
         border: 0;
-
         outline: none;
     }
     .map{
@@ -152,6 +157,17 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
     .point{
         display: flex;
         justify-content: space-around;
+    }
+    .point div{
+        display: flex;
+        column-gap: 5px;
+        align-items: center;
+    }
+    .CP_Chart{
+        width: 400px;
+        height: 200px;
+        margin: 10px auto;
+        border: 1px solid #0d6efd;
     }
     .CpBt{
         display: flex;
