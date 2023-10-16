@@ -8,17 +8,76 @@
                 </div>
         <div class="write_zone">
         <div class="user_list">
-            <div class="user_name">아이콘 이름</div>
+            <div class="user_name">김선향</div>
             <input class="user_check" type="checkbox">
         </div>
-        <router-link to="/chatWindow"><button class="save">강퇴하기</button></router-link>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <button  @click="banOn()" class="save">강퇴하기</button>
     </div>
 </div>        
 </template>
 <script>
+import {inject} from 'vue'
 export default{
     name:"kickOut",
     setup(){
+        const banOn = inject('banOn');
+        return{banOn}
     }
 }
 </script>
@@ -40,7 +99,7 @@ a{color:black; text-decoration: none;}
 
 .title{
     font-size:30px;
-    width:100%;
+    width:88%;
     border-bottom:3px solid #BEC1FF;
     text-align:center; 
 }
@@ -63,9 +122,8 @@ a{color:black; text-decoration: none;}
 }
 .user_list{
     width:600px;
-    height:60px;
-    border:0.5px solid grey;
-    padding:20px;
+    height:0px;
+    padding:10px;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -81,9 +139,9 @@ a{color:black; text-decoration: none;}
 }
 
 .save{
-    width:800px;
+    width:600px;
     height:50px;
-    margin-top:582px;
+    margin-top:auto;
     background:#BEC1FF;
     color:#fff;
     border:1px solid #BEC1FF;

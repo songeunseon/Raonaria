@@ -1,14 +1,18 @@
 <template>
-    <Chatwindow_Menubar/>
-    <div class="chat_layout">
-        <Chatwindow_ChatContent/>
-        <div class="content_wrap">
-            <Chatwindow_InfoExpress/>
-            <Chatwindow_Chatpartner/>
+    <div class="wrap">
+        <Chatwindow_Menubar/>
+        <div class="chat_layout">
+            <Chatwindow_ChatContent/>
+            <div class="content_wrap">
+                <Chatwindow_InfoExpress/>
+                <Chatwindow_Chatpartner/>
+            </div>
         </div>
+        <menu_modal v-show="isMenu"/>
+        <Exit_Modal v-if="isExit"/>
+        <chatwindow_KickOut/>
     </div>
-    <menu_modal v-show="isMenu"/>
-    <Exit_Modal v-if="isExit"/>
+
 
     
 
@@ -21,13 +25,14 @@ import Chatwindow_InfoExpress from '../components/Chatwindow_InfoExpress.vue'
 import Chatwindow_Chatpartner from '../components/Chatwindow_Chatpartner.vue'
 import menu_modal from '../components/menu_modal.vue'
 import Exit_Modal from '../components/Exit_Modal.vue'
+import chatwindow_KickOut from '../components/chatwindow_KickOut.vue'
 
 
 import {ref, provide} from 'vue';
 export  default{
     components:{
         menu_modal,Chatwindow_Menubar,Chatwindow_ChatContent,Chatwindow_InfoExpress,
-        Chatwindow_Chatpartner, Exit_Modal
+        Chatwindow_Chatpartner, Exit_Modal,chatwindow_KickOut
     },
     setup(){
         const isBan = ref(false);

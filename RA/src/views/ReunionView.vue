@@ -15,10 +15,10 @@
             </div>
         </div>
     </div>
-
     <login_Alert v-if="isAlert"/>
     <makeRoom v-if="isMakeRoom"/>
     <Reunion_chatList/>
+    
     
     
 
@@ -110,9 +110,9 @@ export default{
 
         .bi-search{
             position:absolute;
-            left:80px;
-            top:-5px;
-            font-size:13px;
+            left:70px;
+            top:1px;
+            font-size:10px;
         }
 
         .search_input{

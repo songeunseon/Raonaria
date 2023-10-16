@@ -39,6 +39,7 @@ export default {
     left: 55%;
     transform: translate(-50%);
     background: white;
+    z-index:200;
 }
 
 .title {
@@ -106,5 +107,32 @@ b {
 .fade-leave-to {
 
     margin-top: 1000px;
+}
+
+/*문의하기 미디어쿼리 부분 태블릿 형 */
+@media(max-width:1194px){
+    .wrap{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid lightblue;
+    border-radius: 20px;
+    gap: 10px;
+    align-items: center;
+    position: fixed;
+    top: 105px;
+    left: 55%;
+    transform: translate(-50%);
+    background: white;
+    z-index:200;
+    }
+
+    #ask_area{
+    width: 450px;
+    height: 450px;
+    padding: 20px 30px;
+    margin: 0 auto;
+    }
 }
 </style>
