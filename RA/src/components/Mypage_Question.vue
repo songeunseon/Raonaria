@@ -55,7 +55,7 @@ table{
     border:2px solid #d9d9d9;
     width:100%;
     height:180px;
-    margin:20px 0px;
+    /* margin:20px 0px; */
     border-collapse: collapse;
 }
 
@@ -97,11 +97,29 @@ tbody tr td input{
         font-size:12px;
         font-weight:800;
     }
+    .weather{
+    background:white;
 }
 
-    table{
-        margin:-13px 0px;
-    }
+tbody tr td input{
+    transform: translate(-50%, 20%);
+}
+
+tbody tr td{
+    background:#fff;
+}
+
+
+#allcheck{
+    transform: translate(0%, 5%);
+}
+}
+
+
+
+
+
+
 
 
 </style>

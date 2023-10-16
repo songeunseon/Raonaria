@@ -79,5 +79,40 @@ export default{
         top:55%;
         left:52%;
     }
+
+    .cancle_bt{
+    width:90px;
+    height:37px;
+    border:none;
+    background-color:#7bb1ff99;
+    color:black;
+    font-size:14px;
+}
+
+.cancle_bt:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+.check_bt{
+    width:90px;
+    height:37px;
+    border:none;
+    background-color:#7bb1ff99;
+    font-size:14px;
+    cursor:pointer;
+    color:black;
+
+}
+    .check_bt:hover{
+    background:#0d6efd;
+    color:white;
+}
+
+.words{
+    font-size:16px;
+}
+
+
 }
 </style>

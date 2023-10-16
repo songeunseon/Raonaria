@@ -30,7 +30,7 @@ export default {
     height: 600px;
     display: flex;
     flex-direction: column;
-    border: 5px solid lightblue;
+    border: 5px solid #112fd899;
     border-radius: 20px;
     gap: 10px;
     align-items: center;
@@ -79,7 +79,7 @@ b {
 .bi-send-fill{
     font-size: 40px;
     cursor: pointer;
-    color:#c1d7e5;
+    color:#112fd899;
 }
 
 .fade-enter-from {
@@ -116,7 +116,7 @@ b {
     height: 500px;
     display: flex;
     flex-direction: column;
-    border: 5px solid lightblue;
+    border: 5px solid #112fd899;
     border-radius: 20px;
     gap: 10px;
     align-items: center;
@@ -143,6 +143,7 @@ b {
     position: fixed;
     top: 105px;
     left: 50%;
+    border: 5px solid #112fd899;
     }
 
     #ask_area{

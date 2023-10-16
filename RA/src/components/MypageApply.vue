@@ -67,14 +67,22 @@ export default{
         const isForm = inject('isForm')
         const formOpen = inject('formOpen')
 
-         const slideRight = () => {
+        const slideRight = () => {
             const apply_Zone = document.querySelector(".apply_Zone");
-            apply_Zone.scrollLeft += 10000;
-         }
+            if( window.innerWidth <= 490 ){
+                apply_Zone.scrollLeft += 335.33;
+            }else{
+                apply_Zone.scrollLeft += 10000;
+            }
+        }
 
         const slideLeft = () => {
-             const apply_Zone = document.querySelector(".apply_Zone");
-            apply_Zone.scrollLeft -= 10000;
+            const apply_Zone = document.querySelector(".apply_Zone");
+            if(window.innerWidth <=490){
+                apply_Zone.scrollLeft  -= 335.33;
+            }else{
+                apply_Zone.scrollLeft -= 10000;
+            }
         }
 
         return{isCancel, cancelOpen, isForm, formOpen,isAsk, askOpen,
@@ -297,6 +305,7 @@ background-color:#38B6FF;
     }
     .apply_header{
         margin: 40px auto;
+        
     }
 
     .manager_bt{
@@ -311,6 +320,13 @@ background-color:#38B6FF;
     .cancel{
         font-size:12px;
         border:1px solid black;
+    }
+
+    .bi-arrow-left-circle , .bi-arrow-right-circle{
+    background:none;
+    position: absolute; top:35%;
+    font-size:25px; z-index:30;
+    width:25px; height:25px;
     }
 
 

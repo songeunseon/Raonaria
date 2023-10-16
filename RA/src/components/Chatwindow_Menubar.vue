@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="chat_name">
-            <router-link to="/ReunionView"><i class="bi bi-arrow-left-circle"></i></router-link>
+            <router-link to="/Reunion"><i class="bi bi-arrow-left-circle"></i></router-link>
             새싹반 유치원 채팅방
             <div class="icon">
                 <i @click="menuOpen()" class="bi bi-list"></i>

@@ -50,7 +50,7 @@ a {
 .bi-arrow-left-circle {
     position: absolute;
     font-size: 30px;
-    left: 30%;
+    left: 27%;
     top: 20px;
 }
 

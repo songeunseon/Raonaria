@@ -106,7 +106,7 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:108px auto 15px auto;
+    margin:122px auto 39px auto;
     position:relative;
     width:100%;
     height:0;
@@ -123,6 +123,24 @@ export default{
     height:30px;
     background:white;
     bottom:-18px;
+}
+
+@media(max-width:490px){
+    .apply_header{
+        margin:40px 0;
+    }
+
+    .manager_bt,.cancel{
+        font-size:12px;
+        border:1px solid black;
+    }
+
+    .question_zone{
+        font-size:15px;
+        
+    }
+
+
 }
 
 

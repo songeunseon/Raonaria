@@ -76,7 +76,7 @@ import {inject} from 'vue'
 export default{
     name:"kickOut",
     setup(){
-       
+        
     }
 }
 </script>
