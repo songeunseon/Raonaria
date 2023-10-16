@@ -9,15 +9,16 @@
             <div id="chat_alert_box" v-if="!isApply">
                 <div class="alert_box">
                     <div class="circle"></div>
-                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                    <div class="textWrap">서구 유치원 채팅방에
+                        <br> 활동 중 입니다.</div>
                 </div>
                 <div class="alert_box">
                     <div class="circle"></div>
-                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                    <div class="textWrap">서구 유치원 채팅방에<br> 활동 중 입니다.</div>
                 </div>
                 <div class="alert_box">
                     <div class="circle"></div>
-                    <div class="textWrap">서구 유치원 채팅방에 활동 중 입니다.</div>
+                    <div class="textWrap">서구 유치원 채팅방에<br> 활동 중 입니다.</div>
                 </div>
             </div>
             <Mypage_NoinfoBox v-if="isApply" />
@@ -190,7 +191,7 @@ export default {
 
 .textWrap {
     text-align: left;
-    font-size: 10px;
+    font-size: 15px;
     width:calc(100% - 20px);
     justify-self: end;
 }

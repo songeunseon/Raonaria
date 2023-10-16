@@ -5,7 +5,7 @@
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
-        <i @click="slideLeft()" class="bi bi-arrow-left-square"></i>
+        <i @click="slideLeft()" class="bi bi-arrow-left-circle"></i>
         <div class="apply_Zone">
             <div class="slider_wrap">
                 <div class="apply_box">
@@ -44,7 +44,7 @@
             </div> 
         </div>
         
-        <i @click="slideRight()" class="bi bi-arrow-right-square"></i>
+        <i  @click="slideRight()" class="bi bi-arrow-right-circle"></i>
         <div class="apply_header">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
@@ -153,7 +153,7 @@ export default{
     max-width:645px;
 }
 
-.bi-arrow-left-square, .bi-arrow-right-square{
+.bi-arrow-left-circle , .bi-arrow-right-circle{
     position: absolute; top:40%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
@@ -161,8 +161,8 @@ export default{
     cursor:pointer; border-radius: 5px;
 }
 .bi::before{position:absolute;}
-.bi-arrow-left-square{left:0;}
-.bi-arrow-right-square{right:0;} 
+.bi-arrow-left-circle{left:0;}
+.bi-arrow-right-circle{right:0;} 
 
 
 .apply_box{
