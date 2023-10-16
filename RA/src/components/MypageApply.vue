@@ -249,8 +249,9 @@ background-color:hwb(203 56% 9%);
     height:30px;
     background:white;
     padding:0 5px;
+    
 }
-
+/*마이페이지 모바일 버전 media query*/
 @media(max-width:490px){
     .apply_header_question{
         justify-content:center;
@@ -293,7 +294,7 @@ background-color:hwb(203 56% 9%);
         top:50px;
     }
     .apply_header{
-        margin: 35px auto;
+        margin: 49px auto;
     }
 }
 

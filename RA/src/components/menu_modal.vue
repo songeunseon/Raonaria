@@ -62,7 +62,6 @@ import {inject,watch,onMounted} from 'vue';
 export default{
     name: 'menu_modal', 
     setup(){
-        const banOn = inject('banOn');
 
         const isMenu = inject('isMenu');
         const menuOpen = inject('menuOpen')
