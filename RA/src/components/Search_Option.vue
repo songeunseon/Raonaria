@@ -67,7 +67,6 @@ const router = useRouter();
     width: 1000px;
     height: 300px;
     margin: 20px auto;
-    background: #F4F4FA;
     padding: 10px;
   }
   #searchInput{
@@ -75,7 +74,7 @@ const router = useRouter();
     height: 40px;
     font-size: 20px;
     margin: 10px auto;
-    border: 3px solid #60baaf;
+    border-bottom: 3px solid #FFD124;
     display: flex;
     align-items: center;
     column-gap: 50px;
@@ -87,10 +86,12 @@ const router = useRouter();
     height: 30px;
   }
   #searchText{
+    width: 100%;
     border: 0;
     outline: none;
     text-align: center;
-    padding-left: 50px;
+    display: flex;
+    align-items: center;
     background: 0;
   }
   #optionBox{
@@ -118,7 +119,7 @@ const router = useRouter();
   .optiontag{
     border: 0;
     background: 0;
-    border-bottom:2px solid #000;
+    border-bottom:2px solid #FFD124;
     padding: 5px;
     outline: none;
     width: 100px;

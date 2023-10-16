@@ -64,16 +64,18 @@ export default{
             <input type="checkbox">
           </div>
         </div>
-        <div id="infoBt">
-          <button @click="reqOpen()" class="req_bt">상담신청</button>
-          <RouterLink to="/school"><button>입학신청</button></RouterLink>
-        </div>
+        
       </div>
       <div id="map"></div>
     </div>
-    <div>
-      <!--차트-->
+    <div id="Chart">
+      <div></div>
+      <div></div>
     </div>
+    <div id="infoBt">
+          <button @click="reqOpen()" class="req_bt">상담신청</button>
+          <RouterLink to="/school"><button>입학신청</button></RouterLink>
+        </div>
   </div>
 </template>
 <style>
@@ -87,9 +89,7 @@ export default{
     margin: 20px auto;
     width: 85%;
     display: flex;
-    justify-content: space-around;
-    border: 1px solid #aaa;
-    border-radius: 5px;
+    justify-content: center;
     padding: 10px;
   }
   #infomation{
@@ -103,24 +103,36 @@ export default{
   #check{
     width: 400px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   #map{
     width: 400px;
-    height: 300px;
-    border: 1px solid #aaa;
+    height: 250px;
+    border: 1px solid #8c52ff;
     border-radius: 5px;
+  }
+  #Chart{
+    width: 800px;
+    height: 300px;
+    margin: 10px auto;
+    display: flex;
+    border:1px solid #8c52ff;
   }
   #infoBt{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 100px;
   }
   #infoBt button{
-    width: 150px;
+    width: 100px;
     height: 40px;
-    background: 0;
-    border: 3px solid #BEC1FF;
-    border-radius: 5px;
+    background:#7bb1ff99;
+    border:0;
+    border-radius: 30px;
+  }
+  #infoBt button:hover{
+    background: #0d6efd;
+    color: #fff;
   }
   @media(min-width:490px) and (max-width:1194px){
     #info{
@@ -159,6 +171,7 @@ export default{
     border: 1px solid #aaa;
     border-radius: 5px;
   }
+  
   #check{
     width: 100%;
     display: flex;
@@ -172,8 +185,8 @@ export default{
   #infoBt button{
     width: 60px;
     height: 25px;
-    background: 0;
-    border: 2px solid #BEC1FF;
+    background:#7bb1ff99;
+    border:0;
     border-radius: 5px;
     
   }

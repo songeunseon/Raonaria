@@ -28,7 +28,7 @@ const router = useRouter();
 
   }
   #resultTable tr td{
-    border-bottom:3px double #60baaf;
+    border-bottom:3px double #f35b56;
     color: #000;
   }
 

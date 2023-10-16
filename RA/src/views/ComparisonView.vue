@@ -107,8 +107,6 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         display: flex;
         flex-direction: column;
         row-gap: 20px;
-        border: 1px solid #aaa;
-        border-radius: 5px;
         padding: 10px;
     }
     .CpInfo{
@@ -116,18 +114,26 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        font-size: 20px;
+        justify-content: space-around;
+        font-size: 15px;
     }
-    .cpTable tr{
+    .CpInfo .cpTable tr{
         height: 40px;
+    }
+    .CpInfo .cpTable tr td{
+        width: 30px;
+        text-align: center;
     }
     .CpInput{
         width: 80%;
-        margin: 0 auto;
+        margin: 0px auto;
+        margin-top: 20px;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 20px;
-        border-bottom: 3px solid #BEC1FF;
+        border-bottom: 3px solid #FFD124;
     }
     .CpInput input{
         width: 80%;
@@ -149,15 +155,20 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
     }
     .CpBt{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
     .CpBt button{
-        width: 150px;
-        height: 50px;
-        font-size: 20px;
-        background: 0;
-        border: 3px solid #BEC1FF;
-        border-radius: 5px;
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        font-size: 15px;
+        background: #7bb1ff99;
+        border: 0;
+        border-radius: 100px;
+    }
+    .CpBt button:hover{
+        background: #0d6efd;
+        color: #fff;
     }
 
 </style>

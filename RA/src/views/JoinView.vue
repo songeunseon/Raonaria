@@ -17,17 +17,17 @@ export default{
 
     <div id="joinmain">
         <div id="title">
-            <h1>SIGN-UP</h1>
+            <h1>회원가입</h1>
         </div>
         <div id="prerequisite">
-            <div id="prertitle"><h3>필수 작성 항목</h3></div>
+            <div id="prertitle"><h4>필수 작성 항목</h4></div>
             <div id="id"><b>ID</b><input type="text"></div>
             <div id="pw"><b>PW</b><input type="password"></div>
             <div id="name"><b>이름</b><input type="text"></div>
             <div id="tel"><b>휴대전화번호</b><input type="tel"></div>
         </div>
         <div id="choice">
-            <div id="choicetitle"><h3>선택 작성 항목</h3></div>
+            <div id="choicetitle"><h4>선택 작성 항목</h4></div>
             <div id="addr"><b>자택주소</b><input type="text"></div>
             <div id="sonname"><b>자녀 이름</b><input type="text"></div>
             <div id="sonBday"><b>자녀 생년월일</b><input type="date"></div>
@@ -46,40 +46,69 @@ export default{
         </div>
         <div id="agree">
             <input type="checkbox" value="agree">
-            <h3>개인정보 활용 동의</h3>
+            <h5>개인정보 활용 동의</h5>
         </div>
         <input id="join" type="submit" value="JOIN">
     </div>
 </template>
 <style>
+*{font-family: 'SUITE-Regular';}
     #joinmain{
         width: 1000px;
         margin: 10px auto;
         text-align: center;
+        font-size: 13px;
     }
     #title{
         width: 100%;
         margin: 0 auto;
-        border-bottom: 3px solid #aaa;
     }
     #prerequisite, #choice, #affiliation, #agree{
-        width: 60%;
+        width: 55%;
         margin: 20px auto;
         border: 1px solid #aaa;
         border-radius: 5px;
     }
     #prertitle, #choicetitle{
         font-size: 20px;
-        height: 50px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: 3px solid #aaa;
 
     }
-    h3{        
+    h4{        
         margin-bottom: 0;
     }
+    .btn{
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        font-size: 13px;
+    }
+
+    #genderinput #genderM[type='radio']:checked + label {
+        background: #0d6efd;
+        color: #fff;
+    }
+    #genderinput #genderW[type='radio']:checked + label {
+        background: #f35b56;
+        color: #fff;
+    }
+    #genderinput #genderM[type='radio']:not(:checked) + label {
+        background: #fff;
+        color: #0d6efd;
+    }
+    #genderinput #genderW[type='radio']:not(:checked) + label {
+        background: #fff;
+        color: #f35b56;
+    }
+    
     #tel, #sonGender, #affiliation{
         height: 40px;
         display: flex;
@@ -96,7 +125,7 @@ export default{
         justify-content: space-between;
     }
     #id input, #pw input, #name input, #tel input, #addr input, #sonname input, #sonBday input, #affiliation input{
-        width: 400px;
+        width: 300px;
         border: 0;
         outline: none;
         text-align: start;
@@ -104,6 +133,8 @@ export default{
     }
     #genderinput{
         display: flex;
+        justify-content: center;
+        padding-right: 100px;
         width: 300px;
         column-gap: 50px;
     }
@@ -112,23 +143,27 @@ export default{
         align-items: center;
         justify-content: center;
     }
-    #agree h3{
+    #agree h5{
         margin: 5px;
     }
     #agree input{
-        width: 30px;
+        width: 20px;
         height: 30px;
         margin-right: 50px;
     }
     #join{
-        width: 40%;
+        width: 200px;
         height: 50px;
-        font-size: 30px;
+        font-size: 25px;
         text-align: center;
-        margin-top: 50px;
-        border-radius: 10px;
-        background: 0;
-        border: 3px solid #BEC1FF;
+        margin-top: 20px;
+        border-radius: 30px;
+        background: #fcd03e99;
+        border: 0;
+    }
+    #join:hover{
+        background: #fcd03e;
+        color: #fff;
     }
     @media(min-width:490px) and (max-width:1194px){
         b{
