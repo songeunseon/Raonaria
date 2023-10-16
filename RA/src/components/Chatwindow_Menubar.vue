@@ -68,7 +68,8 @@ input[type="checkbox"]{cursor:pointer;}
     padding:0 10px;
 }
 
-.bi{font-size:30px;}
+.bi{font-size:30px;
+}
 
 .icon {
     /* padding:0 20px; */
@@ -78,7 +79,7 @@ input[type="checkbox"]{cursor:pointer;}
     font-size: 20px;
     position: relative;
     font-size:30px;
-    color:#fff;
+    color:BLACK;
 }
 
 .ban_modal {

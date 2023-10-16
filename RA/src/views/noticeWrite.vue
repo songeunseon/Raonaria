@@ -46,7 +46,7 @@ a{color:black; text-decoration: none;}
 .bi-arrow-left-circle{
     position:absolute;
     font-size:30px;
-    left: 27%;
+    left: 30%;
     top:20px;
 }
 
