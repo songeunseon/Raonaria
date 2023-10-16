@@ -67,10 +67,9 @@
 #easyBody{
     width: 600px;
     height: 500px;
-    border: 1px solid #aaa;
     z-index: 100;
     position: absolute;
-    background: #ffffff;
+    background: #b0d0ff;
     border-radius: 10px;
     left: 50%;
     top: 50%;
