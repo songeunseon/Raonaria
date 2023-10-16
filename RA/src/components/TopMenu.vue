@@ -9,7 +9,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
 <template>
   <div id="menuBar">
     <div id="logo" >
-      <RouterLink to="/"><img src="../assets/toplogo.svg"></RouterLink>
+      <RouterLink to="/"><img src="../assets/logotext.png"></RouterLink>
     </div>
     <div id="menu">
       <ul id="menuList">
@@ -42,7 +42,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     align-items: end;
   }
   #menu{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
   }
   #menuList{
@@ -53,24 +53,22 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     /* justify-content: space-around; */
     font-size: 17px;
     align-items: end;
-  
-    
-    border-bottom: 3px solid #f9e6d6;
+    border-bottom: 3px solid #f35b56;
     text-decoration: none;
     
   }
   #menuList li{
-    color: #2669aa;
+    color: #000;
     text-align: center;
     font-weight: 900;
     width: 200px;
     line-height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 15px;
     transition: font-size 0.3s;
   }
   #menuList li:hover{
-    font-size: 20px;
+    font-size: 25px;
   }
   #menuList #mypage{
     border: 0;

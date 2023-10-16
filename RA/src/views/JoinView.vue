@@ -1,8 +1,20 @@
-<script setup>
+<script>
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
+import TopMenu_Login from '../components/TopMenu_Login.vue';
+const router = useRouter();
+
+export default{
+    components:{
+        TopMenu, TopMenu_Login
+    }
+
+}
 </script>
 <template>
+    <TopMenu />
+    <TopMenu_Login />
+
     <div id="joinmain">
         <div id="title">
             <h1>SIGN-UP</h1>

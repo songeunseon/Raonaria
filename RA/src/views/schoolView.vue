@@ -1,8 +1,21 @@
 <script>
+import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
+import TopMenu_Login from '../components/TopMenu_Login.vue';
+const router = useRouter();
+
+export default{
+    components:{
+        TopMenu, TopMenu_Login
+    }
+
+}
+
 </script>
 <template>
-    <TopMenu/>
+    <TopMenu />
+    <TopMenu_Login />
+
     <div id="schoolpage">
         <div id="schoolTitle">
             <h1>입학신청</h1>
@@ -80,6 +93,7 @@ import TopMenu from '../components/TopMenu.vue'
   <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
 </svg>
     </div>
+    <RouterView />
 </template>
 <style>
 

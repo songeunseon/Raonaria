@@ -12,5 +12,6 @@ import { RouterLink, RouterView } from "vue-router";
   
   *::-webkit-scrollbar{
   display: none;
-  }
+}
+body{background-image: url(../src/assets/bg2.svg)!important;}
 </style>
