@@ -72,7 +72,7 @@ export default {
     height:fit-content;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
-    background: #c1d7e5;
+    background: #FFD124;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,7 @@ export default {
     width: 120px;
     height: 120px;
     display: flex;
-    background: #c1d7e5;
+    background: #FFD124;
     flex-direction: column;
     /* justify-content:center; */
     align-items: center;

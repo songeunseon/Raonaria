@@ -46,22 +46,31 @@ export default{
     width:118px;
     height:37px;
     border:none;
-    background-color:#ffff;
+    background-color:#7bb1ff99;
     font-size:20px;
     cursor:pointer;
-    border:2px solid #AAAAAA;
-    color:#AAA;
+    color:black;
 
 }
+
+.check_bt:hover{
+    background:#0d6efd;
+    color:white;
+}
+
 
 .cancle_bt{
     width:118px;
     height:37px;
     border:none;
-    background-color:#AAAAAA;
-    color:#ffff
+    background-color:#7bb1ff99;
+    color:black;
 }
 
+.cancle_bt:hover{
+    background:#0d6efd;
+    color:white;
+}
 /*모바일 버전 미다어 쿼리 작성 */
 @media(max-width:490px){
     .wrap{

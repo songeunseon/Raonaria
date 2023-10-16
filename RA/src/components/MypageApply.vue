@@ -104,7 +104,7 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:122px auto 15px auto;
+    margin:122px auto 48px auto;
     position:relative;
     width:100%;
     height:0;
@@ -166,7 +166,7 @@ export default{
 
 
 .apply_box{
-background-color:hwb(203 56% 9%);
+background-color:#38B6FF;
     color:black;
     padding:10px;
     gap:13px;
@@ -181,6 +181,7 @@ background-color:hwb(203 56% 9%);
     height:150px;
     background:#60BAAF;
     margin-left:20px; */
+    color:white;
 
 }
 

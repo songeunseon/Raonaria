@@ -2,7 +2,7 @@
     <div class="wrap">
         <div class="title">
             <i @click="formOpen()" class="bi bi-x-circle"></i>
-            <b>문의</b>
+            <b class="word">문의</b>
         </div>
             <textarea id="ask_area" name="ask_area" rows="5" column="50"  placeholder="문의 내용을 입력해주세요"></textarea>
         <div class="send_wrap"></div>
@@ -147,6 +147,11 @@ b {
 
     #ask_area{
         width:270px;
+    }
+
+    .word{
+        font-size:18px;
+        padding-top:5px;
     }
 }
 </style>
