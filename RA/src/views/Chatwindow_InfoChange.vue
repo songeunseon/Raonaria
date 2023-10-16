@@ -43,7 +43,7 @@ a {
 .title {
     font-size: 30px;
     width: 100%;
-    border-bottom: 3px solid #BEC1FF;
+    border-bottom: 3px solid #f35b56;
     text-align: center;
 }
 
@@ -82,9 +82,9 @@ a {
     width: 800px;
     height: 50px;
     margin-top: 410px;
-    background: #BEC1FF;
+    background: #f35b56;
     color: #fff;
-    border: 1px solid #BEC1FF;
+    border: 1px solid #f35b56;
     border-radius: 5px;
 }
 </style>

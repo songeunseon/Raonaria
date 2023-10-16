@@ -67,6 +67,10 @@ serif * {
     font-family: 'Gamja Flower', cursive;
 }
 
+body{
+    overflow:hidden;
+}
+
 .chat_layout {
     display: flex;
     justify-content: space-between;

@@ -1,9 +1,9 @@
 <template>
     <div class="ban_modal">
-        <div   @click="banOff()" class="top_bar">
+        <!-- <div   @click="banOff()" class="top_bar">
             <span>강퇴관리</span>
             <i class="bi bi-chevron-compact-down"></i>
-        </div>
+        </div> -->
         <div class="modal_content">
             <div class="content_title">
                 정말 강퇴하시겠습니까?
@@ -37,17 +37,18 @@ export default{
 <style>
 .ban_modal {
     position: fixed;
-    top: 23%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
     width: 300px;
-    height: 260px;
+    height: 227px;
     background: white;
-    border: 1px solid black;
+    border: 2px solid #f35b56;
+    border-radius:10px;
     z-index: 10;
 }
 
-.top_bar {
+/* .top_bar {
     box-sizing: border-box;
     border-bottom: 1px solid black;
     width: 100%;
@@ -58,13 +59,13 @@ export default{
     justify-content: space-between;
     font-size: 18px;
     font-weight: 800;
-}
+} */
 
 .modal_content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 210px;
+    height: 230px;
     padding: 20px 0;
     box-sizing: border-box;
 }
@@ -93,6 +94,7 @@ export default{
     width: 110px;
     height: 40px;
     font-size: 18px;
-    background: #D9D9D9;
+    background: #f35b56;
+    color:#fff;
 }
 </style>

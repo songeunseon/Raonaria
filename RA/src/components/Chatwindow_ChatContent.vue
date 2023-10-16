@@ -99,6 +99,17 @@ export default {
 
 <style scoped>
 
+
+
+
+
+
+
+
+
+
+
+
 .chat_content_wrap{
     width:fit-content;
     height:fit-content;

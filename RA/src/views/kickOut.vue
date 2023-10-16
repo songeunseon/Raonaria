@@ -67,8 +67,28 @@
             <div class="user_name">김선향</div>
             <input class="user_check" type="checkbox">
         </div>
-        <button @click="banON()" class="save">강퇴하기</button>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
+        <div class="user_list">
+            <div class="user_name">김선향</div>
+            <input class="user_check" type="checkbox">
+        </div>
     </div>
+    <button @click="banON()" class="save">강퇴하기</button>
     <Chatwindow_KickOut v-show="isBan"/>
 </div>
 </template>
@@ -93,6 +113,9 @@ export default{
 }
 </script>
 <style scoped>
+body{
+    overflow-y: hidden;
+}
 a{color:black; text-decoration: none;}
 #wrap{
     width:800px;
@@ -111,7 +134,7 @@ a{color:black; text-decoration: none;}
 .title{
     font-size:30px;
     width:88%;
-    border-bottom:3px solid #BEC1FF;
+    border-bottom:3px solid #f35b56;
     text-align:center; 
 }
 
@@ -129,6 +152,10 @@ a{color:black; text-decoration: none;}
     align-items: center;
     row-gap:20px;
     margin-top:30px;
+    width:800px;
+    max-height:700px;
+    overflow-y:scroll;
+
 
 }
 .user_list{
@@ -152,10 +179,10 @@ a{color:black; text-decoration: none;}
 .save{
     width:600px;
     height:50px;
-    margin-top:auto;
-    background:#BEC1FF;
+    margin:10px 100px;
+    background:#f35b56;
     color:#fff;
-    border:1px solid #BEC1FF;
+    border:1px solid #f35b56;
     border-radius: 5px;
 }
 

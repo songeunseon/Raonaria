@@ -55,7 +55,7 @@ input[type="checkbox"]{cursor:pointer;}
     border: none;
     margin: 0 auto;
     font-size: 18px;
-    background-color: #F4F4FA;
+    background-color: #ef7e7a;
     margin:30px auto;
 }
 
@@ -78,7 +78,7 @@ input[type="checkbox"]{cursor:pointer;}
     font-size: 20px;
     position: relative;
     font-size:30px;
-    color:blueviolet;
+    color:#fff;
 }
 
 .ban_modal {
