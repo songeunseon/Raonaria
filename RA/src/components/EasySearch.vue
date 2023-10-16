@@ -66,7 +66,7 @@
 }
 #easyBody{
     width: 600px;
-    height: 400px;
+    height: 300px;
     z-index: 100;
     position: absolute;
     background: #ffffff;
@@ -89,12 +89,12 @@
     display: flex;
     justify-content: space-around;
 }
-.section{
-    width: 250px;
-    height: 400px;
-    margin: 40px auto;
-    padding: 10px;
+.left{
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
 }
+
 .left{
     display: flex;
     flex-direction: column;
@@ -107,20 +107,23 @@
 }
 #easyCheck{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 20px;
+    column-gap: 5px;
 }
 #easyCheck div{
-    width: 100px;
+    width: 120px;
     height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 13px;
+    
 } 
 .easyimg{
-    margin-top: 60px;
-    height: 250px;
+    width: 250px;
+    height: 200px;
+    margin: 20px auto;
     border: 1px solid #aaa;
 }
 @media(max-width:490px){

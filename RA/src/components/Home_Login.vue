@@ -63,7 +63,7 @@ export default{
     display: flex;
     align-items: center;
     border-bottom : 3px solid #a9bb51;
-    margin: 10px;
+    margin: 5px;
 }
 
 #bt {
