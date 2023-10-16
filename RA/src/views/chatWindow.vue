@@ -27,12 +27,6 @@ export default {
         Chatwindow_Chatpartner, Exit_Modal
     },
     setup() {
-        const isBan = ref(false);
-        provide('isBan', isBan)
-
-        const banOn = () => isBan.value = true;
-        provide('banOn', banOn);
-
         const banOff = () => isBan.value = false;
         provide('banoff', banOff);
 
@@ -55,7 +49,7 @@ export default {
         const checkOpen = () => isCheck.value = !isCheck.value;
 
         return {
-            isBan, banOn, banOff, isMenu, menuOpen, isDel, delOpen,
+          isMenu, menuOpen, isDel, delOpen,
             isExit, exitOpen, isCheck, checkOpen
         }
 
@@ -71,6 +65,10 @@ font-family:Noto Sans KR,
 sans-serif font-family:Roboto Slab,
 serif * {
     font-family: 'Gamja Flower', cursive;
+}
+
+body{
+    overflow:hidden;
 }
 
 .chat_layout {

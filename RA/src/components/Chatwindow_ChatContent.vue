@@ -99,6 +99,19 @@ export default {
 
 <style scoped>
 
+
+body{
+    overflow-y:hidden;
+}
+
+
+
+
+
+
+
+
+
 .chat_content_wrap{
     width:fit-content;
     height:fit-content;
@@ -138,14 +151,14 @@ export default {
     top: -20px;
     width: 150px;
     height: 40px;
-    background-color: #f4f4fa;
+    background-color: #ef7e7a;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 10px solid white;
     font-size: 11px;
-    color: #928F8F;
+    color: black;
 }
 
 .chat_window {
@@ -240,14 +253,14 @@ export default {
     resize:none;
 }
 .text_output{
-    width:90px;
-    height:30px;
+    width:150px;
+    height:48px;
     line-height: 30px;;
     font-size:20px;
-    color:#928F8F;
+    color:black;
     outline:none;
-    border:none;
-    background:none;
+    border:2px solid #ef7e7a;
+    background:#fff;
 }
 
 .word_write{
@@ -255,7 +268,7 @@ export default {
     flex-grow:1;
     outline:none;
     border:none;
-    background:#F4F4FA;
+    background:#ef7e7a;
     resize: none;
 }
 </style>

@@ -112,7 +112,7 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:122px auto 48px auto;
+    margin:107px auto 29px auto;
     position:relative;
     width:100%;
     height:0;
@@ -131,7 +131,7 @@ export default{
     /* position: absolute;
     right:5px; */
     font-size:15px;
-    border:3px solid #BEC1FF;
+    border:3px solid #0d6efd;
     border-radius: 5px;
     width:80px;
     height:30px;
@@ -242,7 +242,7 @@ background-color:#38B6FF;
 .question_bt{
     width:80px;
     height:30px;
-    border:3px solid #BEC1FF;
+    border:3px solid #0d6efd;
     background:white;
     /* position:relative;
     right:0; */
@@ -253,7 +253,7 @@ background-color:#38B6FF;
     /* position: absolute;
     left:1px; */
     font-size:15px;
-    border:3px solid #bec1ff;
+    border:3px solid #0d6efd;
     border-radius: 5px;
     height:30px;
     background:white;

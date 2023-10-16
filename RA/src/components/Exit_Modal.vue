@@ -10,7 +10,7 @@
         </div>
         <div class="button_wrap">
             <button @click="exitOpen()" class="modal_bt" value="예">취소</button>
-            <RouterLink to="/ReunionView">
+            <RouterLink to="/Reunion">
                 <button @click="exitOpen()" class="modal_bt" value="아니오">나가기</button>
             </RouterLink>
         </div>
@@ -68,12 +68,23 @@ export default{
 
 .button_wrap button{
     background:white;
-    border:1px solid #aaa;
+    border:2px solid #f35b56;
 }
 .button_wrap a button{
-    background:#545458;
+    background:#f35b56;
     border:none;
-    color:white;
+    color:black
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ;
 }
 
 </style>

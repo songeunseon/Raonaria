@@ -9,7 +9,7 @@
         <div class="write_zone">
         <textarea  row="5" clos="40" class="room_intro"
         placeholder="올리고 싶은 공지사항을 작성하세요."></textarea>
-        <router-link to="/chatWindow"><button class="save">저장</button></router-link>
+        <button class="save">저장</button>
     </div>
 </div>        
 </template>
@@ -39,14 +39,14 @@ a{color:black; text-decoration: none;}
 .title{
     font-size:30px;
     width:100%;
-    border-bottom:3px solid #BEC1FF;
+    border-bottom:3px solid #f35b56;
     text-align:center; 
 }
 
 .bi-arrow-left-circle{
     position:absolute;
     font-size:30px;
-    left: 27%;
+    left: 30%;
     top:20px;
 }
 
@@ -78,9 +78,9 @@ a{color:black; text-decoration: none;}
     width:800px;
     height:50px;
     margin-top:480px;
-    background:#BEC1FF;
+    background:#f35b56;
     color:#fff;
-    border:1px solid #BEC1FF;
+    border:1px solid #f35b56;
     border-radius: 5px;
 }
 

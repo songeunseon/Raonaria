@@ -94,7 +94,7 @@ export default{
             height:32px;
             border:none;
             outline: none;
-            border-bottom:3px solid #4849A1;
+            border-bottom:3px solid #f35b56;
             /* border-radius: 5px; */
             text-align:center;
             
