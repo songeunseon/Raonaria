@@ -71,4 +71,14 @@ export default{
     color:#ffff
 }
 
+/* 모바일 버전 media query*/
+@media(max-width:490px){
+    .wrap{
+        width:300px;
+        height:135px;
+        top:55%;
+        left:52%;
+    }
+}
+
 </style>

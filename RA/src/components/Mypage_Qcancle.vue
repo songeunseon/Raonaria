@@ -61,4 +61,14 @@ export default{
     background-color:#AAAAAA;
     color:#ffff
 }
+
+/*모바일 버전 미다어 쿼리 작성 */
+@media(max-width:490px){
+    .wrap{
+        width:300px;
+        height:135px;
+        top:55%;
+        left:52%;
+    }
+}
 </style>

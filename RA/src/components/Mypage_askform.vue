@@ -135,4 +135,18 @@ b {
     margin: 0 auto;
     }
 }
+
+/*모바일 버전 모달창 만들기 */
+@media(max-width:490px){
+    .wrap{
+    width:315px;
+    position: fixed;
+    top: 105px;
+    left: 50%;
+    }
+
+    #ask_area{
+        width:270px;
+    }
+}
 </style>
