@@ -1,21 +1,16 @@
 <template>
     <div class="wrap">
-        <Chatwindow_Menubar/>
+        <Chatwindow_Menubar />
         <div class="chat_layout">
-            <Chatwindow_ChatContent/>
+            <Chatwindow_ChatContent />
             <div class="content_wrap">
-                <Chatwindow_InfoExpress/>
-                <Chatwindow_Chatpartner/>
+                <Chatwindow_InfoExpress />
+                <Chatwindow_Chatpartner />
             </div>
         </div>
-        <menu_modal v-show="isMenu"/>
-        <Exit_Modal v-if="isExit"/>
-        <chatwindow_KickOut/>
+        <menu_modal v-show="isMenu" />
+        <Exit_Modal v-if="isExit" />
     </div>
-
-
-    
-
 </template>
 
 <script>
@@ -25,16 +20,13 @@ import Chatwindow_InfoExpress from '../components/Chatwindow_InfoExpress.vue'
 import Chatwindow_Chatpartner from '../components/Chatwindow_Chatpartner.vue'
 import menu_modal from '../components/menu_modal.vue'
 import Exit_Modal from '../components/Exit_Modal.vue'
-import Chatwindow_KickOut from '../components/Chatwindow_KickOut.vue'
-
-
-import {ref, provide} from 'vue';
-export  default{
-    components:{
-        menu_modal,Chatwindow_Menubar,Chatwindow_ChatContent,Chatwindow_InfoExpress,
-        Chatwindow_Chatpartner, Exit_Modal,Chatwindow_KickOut
+import { ref, provide } from 'vue';
+export default {
+    components: {
+        menu_modal, Chatwindow_Menubar, Chatwindow_ChatContent, Chatwindow_InfoExpress,
+        Chatwindow_Chatpartner, Exit_Modal
     },
-    setup(){
+    setup() {
         const isBan = ref(false);
         provide('isBan', isBan)
 
@@ -42,7 +34,7 @@ export  default{
         provide('banOn', banOn);
 
         const banOff = () => isBan.value = false;
-        provide('banoff',banOff);
+        provide('banoff', banOff);
 
         const isDel = ref(false);
         const delOpen = () => isDel.value = !isDel.value;
@@ -55,15 +47,18 @@ export  default{
 
         const isExit = ref(false);
         provide('isExit', isExit);
-        
+
         const exitOpen = () => isExit.value = !isExit.value;
         provide('exitOpen', exitOpen);
 
-        const isCheck =ref(false);
+        const isCheck = ref(false);
         const checkOpen = () => isCheck.value = !isCheck.value;
 
-        return {isBan, banOn, banOff, isMenu, menuOpen, isDel, delOpen,
-            isExit, exitOpen, isCheck, checkOpen}
+        return {
+            isBan, banOn, banOff, isMenu, menuOpen, isDel, delOpen,
+            isExit, exitOpen, isCheck, checkOpen
+        }
+
     }
 }
 </script>
@@ -71,19 +66,22 @@ export  default{
 <style scoped>
 @import url(../assets/chatWindow.css);
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Noto+Sans+KR:wght@100;300&family=Roboto+Slab:wght@300&display=swap');
-font-family:Noto Sans KR, sans-serif
-font-family:Roboto Slab, serif
-*{font-family: 'Gamja Flower', cursive;}
-.chat_layout{
-    display:flex;
+
+font-family:Noto Sans KR,
+sans-serif font-family:Roboto Slab,
+serif * {
+    font-family: 'Gamja Flower', cursive;
+}
+
+.chat_layout {
+    display: flex;
     justify-content: space-between;
-    width:1000px;
-    margin:50px auto;
+    width: 1000px;
+    margin: 50px auto;
 
 }
-.content_wrap{
-    height:fit-content;
+
+.content_wrap {
+    height: fit-content;
 }
-
-
 </style>

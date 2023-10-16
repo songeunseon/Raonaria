@@ -27,7 +27,7 @@
 <script>
 import chatWindow from '../views/chatWindow.vue';
 export default{
-    
+    name:'Chatwindow_Chatpartner'
 }
 </script>
 

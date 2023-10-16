@@ -77,7 +77,7 @@ export default{
 
 
 
-        return{ banOn, isMenu, menuOpen,watch,onMounted };
+        return{ isMenu, menuOpen };
     }
 }
 </script>
