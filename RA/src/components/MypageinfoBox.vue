@@ -107,7 +107,7 @@ export default {
     font-weight: 900;
     text-align: center;
     position: relative;
-    bottom: 12px;
+    top: -2px;
 }
 
 
@@ -243,12 +243,20 @@ export default {
     .profile{
         width:80px;
         height:80px;
+        margin:1px auto;
     }
     .profile i{
         padding:0;
         padding-bottom:24px;
     }
-}
+    
+    .name{
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    top: -2px;
+    }
+    }
 
 /*---------------------------------*/
 

@@ -78,7 +78,7 @@ export default{
         }
 
         return{isCancel, cancelOpen, isForm, formOpen,isAsk, askOpen,
-             slideRight, slideLeft}
+            slideRight, slideLeft}
     }
 }
 
@@ -255,14 +255,14 @@ background-color:hwb(203 56% 9%);
 @media(max-width:490px){
     .apply_header_question{
         justify-content:center;
-        border:1px solid black;
         margin-bottom:-5px;
     }
     .apply{font-size:15px;}
     .apply_header_question > .cancel{
         position:absolute;
         z-index:30;
-        top:90px; right:0;
+        top:-5px; 
+        right:0;
     }
     .slider_wrap{
         column-gap: 0;
@@ -279,8 +279,9 @@ background-color:hwb(203 56% 9%);
         border-radius: 0;
         width:calc(100vw - 40px);
         gap:5px;
-        align-items:start;
+        align-items:center;
         height:fit-content;
+        margin-top:18px;
     }
     .apply_box div:first-child{
         flex-direction:row;
@@ -291,11 +292,27 @@ background-color:hwb(203 56% 9%);
         flex-direction:row-reverse;
     }
     .bi-arrow-left-square, .bi-arrow-right-square{
-        top:50px;
+        top:65px;
     }
     .apply_header{
-        margin: 49px auto;
+        margin: 40px auto;
     }
+
+    .manager_bt{
+        font-size:12px;
+        border:1px solid black;
+    }
+
+    .question_zone{
+        font-size:15px;
+    }
+
+    .cancel{
+        font-size:12px;
+        border:1px solid black;
+    }
+
+
 }
 
 </style>

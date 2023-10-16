@@ -99,5 +99,9 @@ tbody tr td input{
     }
 }
 
+    table{
+        margin:-13px 0px;
+    }
+
 
 </style>
