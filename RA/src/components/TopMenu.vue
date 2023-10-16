@@ -1,4 +1,5 @@
 <script>
+
 import { RouterLink, RouterView, useRouter } from "vue-router";
 import {ref, provide} from 'vue'
 import HomeView from "../views/HomeView.vue"
@@ -20,16 +21,18 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       </ul>
     </div>
   </div>
-
+  
   <RouterView />
 </template>
 
 <style scoped>
+  
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
   #logo img{
     width: 200px;
   }
@@ -58,13 +61,13 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     
   }
   #menuList li{
+    font-family: 'TheJamsil5Bold';
     color: #000;
     text-align: center;
-    font-weight: 900;
     width: 200px;
     line-height: 30px;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 20px;
     transition: font-size 0.3s;
   }
   #menuList li:hover{

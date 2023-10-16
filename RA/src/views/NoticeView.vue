@@ -40,6 +40,7 @@ const router = useRouter();
 <style>
 
     *{
+        font-family: 'SUITE-Regular';
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -67,27 +68,29 @@ const router = useRouter();
         width: 120px;
         height: 40px;
         text-align: center;
+        border: 2px solid #f35b56;
+        outline: none;
     }
     #searchIp input{
         width: 450px;
         height: 40px;
         padding: 10px;
         border: 0;
+        border-bottom: 3px solid #f35b56;
+        background: 0;
         outline: none;
+        font-weight: 700;
     }
     #Bt{
         width: 120px;
         height: 40px;
+        border-radius: 30px;
         border: 0;
-        border-right: 3px solid #aaa;
-        border-bottom: 3px solid #aaa;
+        background: #f58e8a;
     }
     #Bt:hover{
-        width: 120px;
-        height: 40px;
-        border: 0;
-        border-left: 3px solid #aaa;
-        border-top: 3px solid #aaa;
+        color: #fff;
+        background: #f35b56;
     }
     #noticeTable{
         width: 800px;
