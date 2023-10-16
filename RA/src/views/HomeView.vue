@@ -77,7 +77,7 @@ export default{
         </div >
         <div id ="page"><a >이용약관 </a > | <a >개인정보 처리방침 </a > | <a >찾아오시는 길 </a > | <a >관리자 </a > | <a >사이트맵 </a ></div >
     </footer >
-    <TheWelcome />
+  
   </main>
 </template>
 
@@ -95,7 +95,7 @@ main{
   display: grid; 
   padding: 0;
   margin: 0;
-  background: radial-gradient(circle, #fff79a, #ffffff);
+
 }
 
 #box{
@@ -105,7 +105,7 @@ main{
     display : flex;
     margin-top : 70px;
     /* position: relative; */
-    
+
 }
 #header{
   width: 12.5%;
@@ -115,7 +115,9 @@ main{
   background : #fff ;
   text-align: center;
   align-items: center;
-
+  /* border: solid #aaa; */
+  /* border-right: 0;
+    border-radius:30px 0 0 30px; */
   /* padding-left: 10px; */
 }
 
@@ -191,7 +193,9 @@ a{
     align-items : center;
     row-gap: 20px;
     background: #fff;
-    
+    /* border: solid #aaa; */
+    /* border-left: 0; */
+    /* border-radius: 0 30px 30px 0; */
 }
 
 #main{
@@ -233,14 +237,14 @@ a{
   justify-content:center;
   border-bottom: 3px solid #aaa;
 }
-#school {
+/* #school {
     width : 340px;
     height : 55px;
     text-align : center;
     border : 3px solid #BEC1FF;
     border-radius : 5px;
     outline : none;
-}
+} */
 
 #footer{
   border-radius: 10px;
@@ -250,6 +254,9 @@ a{
   text-align: center;
   padding: 10px;
   margin-top: 60px;
+  /* border: solid #aaa; */
+  border-bottom: 0;
+  border-radius:30px 30px 0 0  ;
 }
 #haddr{
   display: flex;

@@ -45,10 +45,14 @@ export default{
   #mjoin, #mlogin{
     width: 100px;
     height: 40px;
-    background: 0;
-    border: 3px solid #BEC1FF;
-    border-radius: 5px;
+    border: 0;
+    background: #7bb1ff99;
+    border-radius : 30px;
     margin-left: 10px;
+}
+#mjoin:hover, #mlogin:hover{
+  background: #0d6efd;
+    color: #fff;
 }
 #CpText{
         width: 100%;
