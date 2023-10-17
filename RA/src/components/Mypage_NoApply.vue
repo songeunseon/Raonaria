@@ -41,6 +41,7 @@ export default{
     font-weight:900;
     padding:15px 0;
     background:#ddd;
+    border-radius:15px;
 
 }
 
@@ -85,11 +86,11 @@ export default{
     /* left:1px;
     bottom:-18px; */
     font-size:15px;
-    border:1px solid #0d6efd;
+    border:3px solid #0d6efd;
     background:#0d6efd;
     border-radius: 100px;
     height:30px;
-    /* padding:0px 5px; */
+    padding:0px 5px;
     color:white;
     font-weight:900;
 }

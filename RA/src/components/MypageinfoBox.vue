@@ -73,7 +73,7 @@ export default {
     height:fit-content;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
-    background:#38B6FF;
+    background:#a9bb51;
     border-radius: 25px 0px 0px 25px;
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ export default {
     width: 120px;
     height: 120px;
     display: flex;
-    background: #38B6FF;
+    background: #a9bb51;
     flex-direction: column;
     /* justify-content:center; */
     align-items: center;
@@ -185,7 +185,7 @@ export default {
 .circle {
     width: 15px;
     height: 15px;
-    background: greenyellow;
+    background: #ffd024ed;
     border-radius: 100%;
     /* position:absolute; */
 }
@@ -209,9 +209,10 @@ export default {
     align-items: center;
     justify-content: space-between;
     gap: 0 10px;
-    background: white;
-    border-radius: 2px;
+    /* background: white; */
+    border-bottom: 1px solid #fff;
     /* cursor: pointer;} */
+    color:#fff;
 }
 
 

@@ -179,7 +179,7 @@ export default{
 
 
 .apply_box{
-background-color:#38B6FF;
+background-color:#a9bb51;
     color:black;
     padding:0px 25px;
     gap:13px;
@@ -255,13 +255,17 @@ background-color:#38B6FF;
     font-size:15px;
     font-weight:900;
     color:white;
-    /* border:3px solid #0d6efd; */
+    border:3px solid #0d6efd;
     border-radius: 100px;
     height:30px;
     background:#0d6efd;
-    /* padding:0px 5px; */
-    border:1px solid #0d6efd;
+    padding:0px 5px;
+    /* border:1px solid #0d6efd; */
     overflow:hidden;
+}
+
+.ckeckbox{
+    border:#0d6efd;
 }
 
 /* 마이페이지 태블릿 버전 미디어 쿼리 */
