@@ -214,6 +214,19 @@ export default {
 }
 
 
+/* 정보알림창 태블릿 버전 반응형*/
+@media(min-width:490px) and (max-width:1194px){
+    .textWrap{
+        font-size:14px;
+    }
+}
+
+
+
+
+
+
+
 /* 모바일 버전 반응형 부분*/ 
 @media(max-width:490px){
     .page{
