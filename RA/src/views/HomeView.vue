@@ -112,7 +112,6 @@ main{
   margin : 0 auto;
   display : flex;
   flex-direction : column ;
-  background : #fff ;
   text-align: center;
   align-items: center;
   /* border: 5px solid #a9bb51;
@@ -251,7 +250,6 @@ a{
 #footer{
   width: 1000px;
   margin: 0 auto;
-  background: #fff;
   text-align: center;
   padding: 10px;
   margin-top: 60px;

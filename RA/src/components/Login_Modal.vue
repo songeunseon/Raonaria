@@ -13,10 +13,6 @@
         <button class="sign_bt">회원가입</button>
         <button class="login_bt">로그인</button>
     </div>
-    <div class="sns_line mb">
-        <img src="../assets/google.png" style="width: 50px;"  class="google">
-        <img src="../assets/kakao.png" style="width: 50px;" class="kakao">
-    </div>
     <footer class="mb">
         <div class="line2"></div>
         <div class="coment">
@@ -46,8 +42,8 @@
 <style scoped>
 .Login_modal{
 position:absolute;
-width:500px;
-height:350px;
+width:400px;
+height:250px;
 border: 5px solid #0d6efd;
 border-radius: 20px;
 background:white;
@@ -62,7 +58,7 @@ transform: translate(-50%, -50%);
     justify-content: start;
     align-items: center;
     margin: 10px auto;
-    column-gap: 130px;
+    column-gap: 90px;
     /* justify-content:space-between; */
 }
 

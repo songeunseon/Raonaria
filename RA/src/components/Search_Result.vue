@@ -48,6 +48,7 @@ export default{
   <div id="result">
       <table id="resultTable">
         <tr id="resultList">
+          <td class="checkres"><b>선택</b></td>
           <td class="name"><b>유치원명</b></td>
           <td class="address"><b>주소</b></td>
           <td class="establishmentType"><b>설립유형</b></td>
@@ -55,6 +56,7 @@ export default{
           <td class="time"><b>운영시간</b></td>
         </tr>
         <tr id="List" v-for="item in RAdata" :key="item.id">
+          <td class="checkres"><input type="checkbox"></td>
           <td class="name">{{ item.Column3 }}</td>
           <td class="address">{{ item.Column9 }}</td>
           <td class="establishmentType">{{ item.Column4 }}</td>
@@ -65,12 +67,25 @@ export default{
     </div>
   </template>
   
-<style>
+<style scoped>
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background:#f35b5699;
+    border: 2px solid #d9d9d9;
+  }
+::-webkit-scrollbar-thumb:hover {
+  background: #f35b56;
+}
   #result{
     width: 1000px;
-    font-size: 20px;
+    height: 500px;
+    font-size: 18px;
     text-align: center;
     margin: 0 auto;
+    overflow: hidden;
+    overflow-y: scroll;    
   }
   #resultTable{
     width: 1000px;
@@ -91,20 +106,23 @@ export default{
   #resultTable tr{
     height: 40px;
   }
+  .checkres{
+    width: 20px;
+  }
   .name{
-    width: 20%;
+    width: 100px;
   }
   .address{
-    width: 35%;
+    width: 150px;
   }
   .establishmentType{
-    width: 15%;
+    width: 100px;
   }
   .vehicleOperation{
-    width: 15%;
+    width: 100px;
   }
   .time{
-    width: 15%;
+    width: 100px;
   }
   @media(min-width:490px) and (max-width:1194px){
     #result,#resultTable{

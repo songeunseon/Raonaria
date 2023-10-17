@@ -47,10 +47,10 @@ export default{
   <TopMenu/>
   <TopMenu_Login/>
   <Search_Option />
-  <Search_Result />
   <div id="buttonbox">
     <RouterLink to="/comparison"><button id="comparison">유치원 비교하기</button></RouterLink> 
   </div>
+  <Search_Result />
   <Search_Chart />
   <consulting_Req v-show="isReq"/>
   <RouterView />
@@ -60,9 +60,7 @@ export default{
 
 <style>
 
-*::-webkit-scrollbar{
-  display: none;
-}
+
 *{
   padding: 0;
   margin: 0;
@@ -85,6 +83,7 @@ export default{
     background: #fcd03e99;
     border-radius: 30px;
     font-size: 20px;
+    margin: 20px;
   }
   #comparison:hover{
     background: #FFD124;
