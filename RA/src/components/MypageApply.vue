@@ -112,7 +112,7 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:107px auto 29px auto;
+    margin:184px auto 29px auto;
     position:relative;
     width:100%;
     height:0;

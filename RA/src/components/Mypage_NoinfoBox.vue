@@ -1,7 +1,13 @@
 <template>
+    <div id="window">
+
         <div id="alert_window">
             <div class="textWrap">활동 중인 채팅방이 없습니다.</div>
         </div>
+        <div id="alert_window">
+            <div class="textWrap">활동 중인 채팅방이 없습니다.</div>
+        </div>
+    </div>
         
 
 
