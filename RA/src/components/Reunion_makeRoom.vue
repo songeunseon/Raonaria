@@ -75,13 +75,10 @@ export default {
     width: 250px;
     height: 330px;
     background: white;
-    /* border:1px solid #f35b56; */
-    border-radius: 10px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* bottom:550px; */
     z-index: 20;
 }
 

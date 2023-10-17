@@ -74,10 +74,11 @@ export default {
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     background:#38B6FF;
-    border-radius: 5px;
+    border-radius: 25px 0px 0px 25px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    
 }
 
 .profile {

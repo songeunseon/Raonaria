@@ -86,6 +86,7 @@ export default{
     align-items:start ;
     margin: 20px auto;
     height:620px;
+   
 }
 @media(max-width:1194px){
     .page_wrap{

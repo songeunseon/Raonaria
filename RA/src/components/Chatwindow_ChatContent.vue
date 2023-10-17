@@ -159,21 +159,7 @@ export default {
     right:-30px;
 }
 
-.basic_info1 {
-    font-size: 18px;
-    margin-left: 100px;
-    border: none;
-    width: 100%;
-    padding: 2px 0;
-}
 
-.basic_info1 {
-    display: flex;
-}
-
-.basic_info1 i {
-    color: blue;
-}
 
 .Participant{
     font-weight:900;
@@ -253,8 +239,6 @@ export default {
     width:88.3%;
     height:48px;
     padding:13px 15px;
-    white-space:nowrap;
-    vertical-align: center;
     flex-grow:1;
     outline:none;
     border:none;

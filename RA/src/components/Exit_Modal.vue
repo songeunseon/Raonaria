@@ -39,7 +39,7 @@ export default{
     transform:translate(-50%);
     width:330px;
     padding:25px 0;
-    border-radius: 10px;;
+    /* border-radius: 10px;; */
     text-align:center;
     box-shadow:4px 4px 10px 1px rgba(0,0,0,0.2);
     background:white;
@@ -61,7 +61,7 @@ export default{
     justify-content: center;
 }
 .button_wrap button{
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-weight:900;
     padding:5px 10px;
 }
