@@ -31,8 +31,8 @@ export default{
             <button @click="login()" id ="hlogin">로그인 </button >
         </div>
         <div id="sns" class="login">
-            <img src="../assets/google.png" style="width: 50px;">
-            <img src="../assets/kakao.png" style="width: 50px;">
+            <img src="../assets/google.png" style="width: 30px;">
+            <img src="../assets/kakao.png" style="width: 30px;">
         </div>
         <p id="not" class="login">회원이 아닐시 일부 서비스를 이용하실수 없습니다. <br>서비스 이용 원할시 회원가입을 해주세요</p>
     </div >
@@ -103,10 +103,11 @@ export default{
     cursor: pointer;
 }
 #sns{
-    width: 150px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: 10px auto;
+    justify-content: end;
+    margin: 10px;
+    column-gap: 10px;
     cursor: pointer;
 }
 #not{

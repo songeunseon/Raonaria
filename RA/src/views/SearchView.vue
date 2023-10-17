@@ -60,9 +60,7 @@ export default{
 
 <style>
 
-*::-webkit-scrollbar{
-  display: none;
-}
+
 *{
   padding: 0;
   margin: 0;

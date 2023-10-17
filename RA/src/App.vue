@@ -25,21 +25,40 @@ export default{
 }
   /* @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100&display=swap'); */
 
-  *::-webkit-scrollbar{
-  display: none;
+*::-webkit-scrollbar {
+  width: 20px;
 }
 
-body{
+::-webkit-scrollbar-thumb {
+  background: #FFD12499;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFD124;
+}
+
+
+
+
+  body{
   background-image: url(../src/assets/bg2.svg)!important;
+  background-size: 100vw;
   }
   @media(min-width:490px) and (max-width:1194px){
     body{
     background-image: url(../src/assets/tapbg.svg) !important;
+    background-size: 100vw;
     }
   }
 @media(max-width:490px){
   body{
-    background-image:none !important;
+    background-image: none !important;
   }
   }
 </style>
