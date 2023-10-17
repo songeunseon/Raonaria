@@ -219,6 +219,7 @@ export default {
     .textWrap{
         font-size:14px;
     }
+
 }
 
 
@@ -255,13 +256,14 @@ export default {
         display:none;
     }
     .profile{
-        width:80px;
-        height:80px;
-        margin:1px auto;
+        width:50px;
+        height:50px;
+        margin:50px auto;
     }
     .profile i{
         padding:0;
         padding-bottom:24px;
+        font-size:25px;
     }
     
     .name{
@@ -269,6 +271,12 @@ export default {
     text-align: center;
     position: relative;
     top: -2px;
+    font-size:12px;
+    }
+
+    .textWrap{
+        font-size:12px;
+
     }
     }
 
