@@ -1,20 +1,20 @@
 <template>
 <div  class="make_room_modal">
-    <div class="room_title">방개설하기</div>
-    <i  @click="makeRoomOpen()" class="bi bi-x-circle" style="cursor:pointer"></i>
-    <div class="room_box">
-        <div class="chat_name">
-            <p>채팅방이름</p>
-            <input id="name" type="text">
+        <div class="room_title">방개설하기</div>
+        <i  @click="makeRoomOpen()" class="bi bi-x-circle" style="cursor:pointer"></i>
+        <div class="room_box">
+            <div class="chat_name">
+                <p>채팅방이름</p>
+                <input id="name" type="text">
+            </div>
+            <div class="chat_intro">
+                <p>채팅방 소개</p>
+                <input id="intro" type="text">
+            </div>
         </div>
-        <div class="chat_intro">
-            <p>채팅방 소개</p>
-            <input id="intro" type="text">
+        <div class="done_button">
+            <button @click='blankCheck()' class="done_bt" value="완료">완료</button>
         </div>
-    </div>
-    <div class="done_button">
-        <button @click='blankCheck()' class="done_bt" value="완료">완료</button>
-    </div>
 </div>
 
 
