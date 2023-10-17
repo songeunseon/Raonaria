@@ -134,13 +134,13 @@ export default{
     font-weight:900;
     color:white;
     /* border:3px solid #0d6efd; */
-    border-radius: 5px;
-    width:80px;
+    border-radius: 100px;
+    width:100px;
     height:30px;
     background:#0d6efd;
     bottom:0;
     outline:none;
-    border:none;
+    border:1px solid #0d6efd;
     overflow:hidden;
 }
 
@@ -256,11 +256,11 @@ background-color:#38B6FF;
     font-weight:900;
     color:white;
     /* border:3px solid #0d6efd; */
-    border-radius: 5px;
+    border-radius: 100px;
     height:30px;
     background:#0d6efd;
-    padding:0 5px;
-    border:none;
+    /* padding:0px 5px; */
+    border:1px solid #0d6efd;
     overflow:hidden;
 }
 

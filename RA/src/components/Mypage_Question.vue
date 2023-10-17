@@ -68,6 +68,8 @@ table thead th{
     font-size:15px;
     height:36px;
     text-align: center;
+    /* background:#38B6FF; */
+    
 }
 
 table thead th input{
