@@ -1,7 +1,6 @@
 <template>
 <TopMenu/>
 <TopMenu_Login/>
-    
 <div class="page_wrap">
     <Mypage_infoBox/>
     <div class="page_Zone">

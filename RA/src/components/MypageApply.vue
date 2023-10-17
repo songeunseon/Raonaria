@@ -131,12 +131,17 @@ export default{
     /* position: absolute;
     right:5px; */
     font-size:15px;
-    border:3px solid #0d6efd;
+    font-weight:900;
+    color:white;
+    /* border:3px solid #0d6efd; */
     border-radius: 5px;
     width:80px;
     height:30px;
-    background:white;
+    background:#0d6efd;
     bottom:0;
+    outline:none;
+    border:none;
+    overflow:hidden;
 }
 
 .apply_Zone{
@@ -149,7 +154,7 @@ export default{
     top:35px;
     scroll-behavior: smooth;
     max-width:645px;
-    height:150px;
+    height:165px;
     margin:0 auto;
     gap:15px;
 }
@@ -176,21 +181,16 @@ export default{
 .apply_box{
 background-color:#38B6FF;
     color:black;
-    padding:10px;
+    padding:0px 25px;
     gap:13px;
     display:flex;
     flex-direction: column;
     align-items:center;
-    width:185px;
+    /* width:185px; */
     height:150px;
     border-radius:20px; 
     justify-content:center;
-    /* width:700px;
-    height:150px;
-    background:#60BAAF;
-    margin-left:20px; */
     color:white;
-
 }
 
 
@@ -253,12 +253,15 @@ background-color:#38B6FF;
     /* position: absolute;
     left:1px; */
     font-size:15px;
-    border:3px solid #0d6efd;
+    font-weight:900;
+    color:white;
+    /* border:3px solid #0d6efd; */
     border-radius: 5px;
     height:30px;
-    background:white;
+    background:#0d6efd;
     padding:0 5px;
-    
+    border:none;
+    overflow:hidden;
 }
 
 /* 마이페이지 태블릿 버전 미디어 쿼리 */

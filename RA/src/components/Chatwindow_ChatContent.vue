@@ -6,61 +6,41 @@
                 <div class="chat_info">2023년 9월 17일</div>
             </div>
             <div class="basic_info">
-                <div class="Participant">김선향 여</div>
+                <div class="Participant">신선향 여</div>
                 <div class="comment">애들아 방가워 참외반 최고</div>
             </div>
             <div class="basic_info">
                 <div class="Participant1">
                     <i class="bi bi-award"></i>
-                    김선향 남
+                    전계림 남
                 </div>
                 <div class="comment">애들아 방가워</div>
             </div>
             <div>
             </div>
             <div class="basic_info">
-                <div class="Participant">김선향 여</div>
+                <div class="Participant">신선향 여</div>
                 <div class="comment">방가</div>
             </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 남</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
+            <div class="basic_info myChat">
+                <div class="Participant">김선향 여</div>
+                <div class="comment">이따가 뭐 먹으러 갈까</div>
+            </div>
+            <div class="basic_info myChat">
+                <div class="Participant">김선향 여</div>
+                <div class="comment">고기 먹고 싶은 사람 손!</div>
             </div>
             <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
+                <div class="Participant">송은선 여</div>
+                <div class="comment">손!11111111</div>
             </div>
             <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
+                <div class="Participant">신상수 남</div>
+                <div class="comment">좋은 데 알고 있는데 거기 갈까? 1인분에 15000원임</div>
             </div>
-            <div class="basic_info">
+            <div class="basic_info myChat">
                 <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
-            </div>
-            <div class="basic_info">
-                <div class="Participant">김선향 여</div>
-                <div class="comment">옛추억이 떠오르는 구나</div>
+                <div class="comment">응응!!! 이따 7시에 만나자!</div>
             </div>
             <div class="basic_info">
                 <div class="Participant">김선향 여</div>
@@ -123,6 +103,10 @@ body{
     height: 660px;
     overflow-y: scroll;
     /* display:flex;*/
+    background:#eb6c6840;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;   
 }
 
 #chat {
@@ -170,10 +154,22 @@ body{
     /* width:1000px;
     height:1000px; */
     font-size: 18px;
-    margin-left: 0px;
     border: none;
-    padding: 2px 0;
+    padding: 10px 20px;
+    background:white;
+    border-radius:10px;
+    margin:10px 73px;
+    width:fit-content;
+    align-self:start;
+}
 
+.myChat{
+    display:flex;
+    align-self:end;
+    flex-direction:column;
+    align-items:end;
+    position:relative;
+    right:-30px;
 }
 
 .basic_info1 {
@@ -246,8 +242,9 @@ body{
     flex-grow: 1;
     /* width:650px; */
     height: 50px;
+    padding: 10px;
     /* border-radius: px; */
-    padding-left:15px;
+    /* padding-left:15px; */
     font-size:20px;
     outline:none;
     border:none;
@@ -257,7 +254,7 @@ body{
 .text_output{
     width:150px;
     height:48px;
-    line-height: 30px;;
+    line-height: 30px;
     font-size:20px;
     color:black;
     outline:none;
@@ -267,10 +264,15 @@ body{
 
 .word_write{
     width:88.3%;
+    height:48px;
+    padding:13px 15px;
+    white-space:nowrap;
+    vertical-align: center;
     flex-grow:1;
     outline:none;
     border:none;
     background:#F6E6E6;
     resize: none;
+    overflow:hidden;
 }
 </style>

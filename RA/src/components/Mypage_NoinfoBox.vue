@@ -23,6 +23,16 @@ export default{
 
 </script>
 <style scoped>
+#window{
+    /* position:relative; top: 0px; */
+    margin-top:15px;
+    width:220px; height:185px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    overflow-y:scroll;
+    overflow:hidden;
+}
 .textWrap{
     text-align:center;
     font-size:12px;
@@ -34,10 +44,10 @@ export default{
 
 #alert_window{
     box-sizing: border-box;
-    width:200px;
+    width:193.23px;
     height:50px;
     /* padding: 30px 10px; */
-    margin:30px auto;
+    margin:0px auto;
     border-bottom:3px solid #fff;
     font-size:15px;
     display:flex;

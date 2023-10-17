@@ -57,6 +57,7 @@ table{
     height:180px;
     /* margin:20px 0px; */
     border-collapse: collapse;
+    background:white;
 }
 
 table thead th{

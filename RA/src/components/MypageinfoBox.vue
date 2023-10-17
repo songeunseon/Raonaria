@@ -90,7 +90,7 @@ export default {
     align-items: center;
     border-radius: 100%;
     margin: 10px auto;
-    border: 7px double white;
+    /* border: 7px double white; */
 }
 
 
