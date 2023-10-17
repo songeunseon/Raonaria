@@ -55,7 +55,7 @@ input[type="checkbox"]{cursor:pointer;}
     border: none;
     margin: 0 auto;
     font-size: 18px;
-    background-color: #ef7e7a;
+    background-color: #eb6c68;
     margin:30px auto;
 }
 

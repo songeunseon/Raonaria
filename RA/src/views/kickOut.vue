@@ -141,7 +141,7 @@ a{color:black; text-decoration: none;}
 .bi-arrow-left-circle{
     position:absolute;
     font-size:30px;
-    left:30%;
+    left:32%;
     top:20px;
 }
 

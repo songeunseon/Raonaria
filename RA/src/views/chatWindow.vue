@@ -1,5 +1,7 @@
 <template>
     <div class="wrap">
+        <TopMenu />
+        <TopMenu_Login/>
         <Chatwindow_Menubar />
         <div class="chat_layout">
             <Chatwindow_ChatContent />
@@ -14,6 +16,8 @@
 </template>
 
 <script>
+import TopMenu_Login from '../components/TopMenu_Login.vue';
+import TopMenu from '../components/TopMenu.vue'
 import Chatwindow_Menubar from '../components/Chatwindow_Menubar.vue'
 import Chatwindow_ChatContent from '../components/Chatwindow_ChatContent.vue'
 import Chatwindow_InfoExpress from '../components/Chatwindow_InfoExpress.vue'
@@ -24,7 +28,7 @@ import { ref, provide } from 'vue';
 export default {
     components: {
         menu_modal, Chatwindow_Menubar, Chatwindow_ChatContent, Chatwindow_InfoExpress,
-        Chatwindow_Chatpartner, Exit_Modal
+        Chatwindow_Chatpartner, Exit_Modal,TopMenu_Login,TopMenu
     },
     setup() {
         const banOff = () => isBan.value = false;

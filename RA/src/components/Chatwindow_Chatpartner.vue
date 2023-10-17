@@ -36,7 +36,7 @@ export default{
 .partner_wrap{
     width:200px;
     height:350px;
-    background:#e9a39f;
+    background:#F6E6E6;
     margin-top:30px;
     border-radius:10px;
 
@@ -44,7 +44,7 @@ export default{
 
 .info_line{
     width:180px;
-    border:1px solid #e9a39f;
+    border:1px solid #F6E6E6;
     margin:20px auto;
 }
 

@@ -71,7 +71,8 @@ export default{
     width:250px;
     height:330px;
     background:white;
-    border:1px solid black;
+    /* border:1px solid #f35b56; */
+    border-radius:10px;
     position:absolute;
     left:50%;
     top:50%;
@@ -83,7 +84,8 @@ export default{
 .room_title{
     width:100%;
     height:40px;
-    background:#d9d9d9;
+    background:#f35b56;
+    border-radius:3px;
     font-size:18px;
     text-align: center;
     line-height: 40px; 
@@ -125,6 +127,8 @@ export default{
     width:100px;
     height:30px;
     border:none;
+    background:#f35b56;
+    color:black;
 }
 
 #name{
@@ -132,6 +136,8 @@ export default{
     height:30px;
     margin-bottom:20px;
     border-bottom:none;
+    border:2px solid #f35b56;
+    background:white;
 }
 
 .input_check{
@@ -171,10 +177,17 @@ export default{
 
 .chat_intro{
     padding-top:10px;
+    border-bottom:none;
+   
 }
 
+#intro{
+    border:2px solid #f35b56;
+    background:white;
 
+}
 
+/* F6E6E6 */
 
 
 </style>

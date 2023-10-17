@@ -73,8 +73,8 @@ export default{
 #announcement{
     width:200px;
     height:350px;
-    border:1px solid #e9a39f;
-    background: #e9a39f;
+    border:1px solid #F6E6E6;
+    background: #F6E6E6;
     /* margin:-665px 745px; */
     border-radius: 10px;
     /* display:flex;  */

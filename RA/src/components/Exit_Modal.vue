@@ -67,24 +67,27 @@ export default{
 }
 
 .button_wrap button{
-    background:white;
+    background:#f28683;
+    border:2px solid #f28683;
+    color:black;
+}
+
+.button_wrap button:hover{
+    background:#f35b56;
     border:2px solid #f35b56;
+    color:#fff;
 }
 .button_wrap a button{
+    background:#f28683;
+    border:2px solid #f28683;
+    color:black;
+}
+
+.button_wrap a button:hover{
     background:#f35b56;
-    border:none;
-    color:black
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    ;
+    border:2px solid #f35b56;
+    color:#fff;
+
 }
 
 </style>

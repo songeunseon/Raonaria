@@ -151,7 +151,7 @@ body{
     top: -20px;
     width: 150px;
     height: 40px;
-    background-color: #ef7e7a;
+    background-color:#F6E6E6;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -238,6 +238,8 @@ body{
 .write_wrap{
     display:flex;
     align-items:center;
+    column-gap:10px;
+    margin-top:10px;
 }
 
 .text_input {
@@ -259,8 +261,8 @@ body{
     font-size:20px;
     color:black;
     outline:none;
-    border:2px solid #ef7e7a;
-    background:#fff;
+    border:2px solid #F6E6E6;
+    background:#F6E6E6;
 }
 
 .word_write{
@@ -268,7 +270,7 @@ body{
     flex-grow:1;
     outline:none;
     border:none;
-    background:#ef7e7a;
+    background:#F6E6E6;
     resize: none;
 }
 </style>
