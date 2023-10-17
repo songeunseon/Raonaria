@@ -260,6 +260,16 @@ background-color:#38B6FF;
     padding:0 5px;
     
 }
+
+/* 마이페이지 태블릿 버전 미디어 쿼리 */
+@media(min-width:490px) and (max-width:1194px){
+    .bi-arrow-left-circle , .bi-arrow-right-circle{
+        background:none;
+    }
+} 
+
+
+
 /*마이페이지 모바일 버전 media query*/
 @media(max-width:490px){
     .apply_header_question{

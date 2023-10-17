@@ -93,7 +93,7 @@ export default{
         height:400px;
         background: #fff;
         border-radius: 20px;
-        border: 5px solid #aaa;
+        border: 5px solid #FFD124;
     }
 
     .modal_header{
@@ -105,7 +105,7 @@ export default{
         column-gap:160px;
         padding: 5px 0 5px 20px;
         margin: 0 auto;
-        border-bottom: 3px solid #d9d9d9;
+        border-bottom: 3px solid #FFD124;
     }
     svg{
         width:25px;
@@ -152,7 +152,7 @@ export default{
     }
     .request{
         width: 150px;
-        border: 3px solid #BEC1FF;
+        border: 3px solid #FFD124;
         padding: 5px;
         border-radius: 5px;
         background: 0;
