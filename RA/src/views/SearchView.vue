@@ -7,14 +7,14 @@ import Search_Chart from '../components/Search_Chart.vue'
 
 const router = useRouter();
 
-//json파일 불러오기
 
 import Consulting_Req from '../components/Consulting_Req.vue'
 import { ref, provide } from "vue";
 import TopMenu_Login from '../components/TopMenu_Login.vue';
+
 export default{
   name:'SearchView',
-    components:
+  components:
     { Consulting_Req, TopMenu, TopMenu_Login, Search_Option, Search_Result, Search_Chart},
   setup(){
     const isReq = ref(false);
@@ -29,15 +29,10 @@ export default{
     provide('reqClose',reqClose);
 
 
-    // onMounted(()=>{
-    //   const req_bt = document.querySelector('.req_bt');
-    //   req_bt.addEventListener('click',function(){
-    //     req_open();
-    //   })
-    // })
+    
     
     return{
-      isReq, reqOpen, reqClose, showReq
+      isReq, reqOpen, reqClose, showReq,
     }
   }
 }

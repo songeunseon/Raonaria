@@ -23,50 +23,52 @@ export default{
         <table id="infoTable">
           <tr class="infoTr">
             <td>유치원명</td>
-            <td></td>
+            <td>하나유치원</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">개원일자</td>
-            <td></td>
+            <td>2000.05.25</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">원장명</td>
-            <td></td>
+            <td>김하나</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">주소</td>
-            <td></td>
+            <td>대전 서구 용문동</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">전화번호</td>
-            <td></td>
+            <td>042-271-3123</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">설립유형</td>
-            <td></td>
+            <td>국공립</td>
           </tr>
           <tr class="infoTr">
             <td class="infolist">운영시간</td>
-            <td></td>
+            <td>09:00~18:00</td>
           </tr>
         </table>
         <div id="check">
           <div>
             <b>차량운행여부</b>
-            <input type="checkbox">
+            <input type="checkbox" checked>
           </div>
           <div>
             <b>특수학급여부</b>
-            <input type="checkbox">
+            <input type="checkbox" checked>
           </div>
           <div>
             <b>방과후돌봄</b>
-            <input type="checkbox">
+            <input type="checkbox" >
           </div>
         </div>
         
       </div>
-      <div id="map"></div>
+      <div id="map">
+        <img id="ex_map" src="../assets/naver_map.png">
+      </div>
     </div>
     <div id="Chart">
       <div></div>
@@ -108,9 +110,11 @@ export default{
   #map{
     width: 400px;
     height: 250px;
-    border: 1px solid #8c52ff;
+    border: 1px solid #aaa;
     border-radius: 5px;
+    overflow: hidden;
   }
+  
   #Chart{
     width: 800px;
     height: 300px;

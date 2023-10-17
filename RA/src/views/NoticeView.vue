@@ -4,37 +4,76 @@ import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
 const router = useRouter();
 
+import { ref } from 'vue';
+
+const notice = {
+  title: '',
+  content: '',
+  user:'',
+};
+
+const notices = ref([]);
+
+const saveNotice = () => {
+  const newNotice = { ...notice };
+  notices.value.push(newNotice);
+
+  notice.title = '';
+  notice.content = '';
+  notice.user = '';
+};
+
+
 </script>
 
 <template>
-    <TopMenu/>
-    <TopMenu_Login/>
+    <TopMenu />
+    <TopMenu_Login />
     <div id="noticeBox">
-        <h1>공지사항</h1>
-        <div id="searchBox">
-            <div id="searchOp">
-                <select class="select" aria-label="Default select example">
-                    <option selected>구분</option>
-                    <option value="1">제목</option>
-                    <option value="2">등록일</option>
-                    <option value="3">작성자</option>
-                </select>
-            </div>
-            <div id="searchIp">
-                <input type="text" placeholder="검색어를 입력해주세요">
-            </div>
-            <button id="Bt">검색</button>
+      <h1>공지사항</h1>
+      <div id="searchBox">
+        <div id="searchOp">
+          <select class="select" aria-label="Default select example">
+            <option selected>구분</option>
+            <option value="1">제목</option>
+            <option value="2">등록일</option>
+            <option value="3">작성자</option>
+          </select>
         </div>
-        <table id="noticeTable">
-            <tr id="noticeTr">
-                <td class="noticeTd">순번</td>
-                <td class="noticeTd">제목</td>
-                <td class="noticeTd">등록일</td>
-                <td class="noticeTd">작성자</td>
-            </tr>
-        </table>
+        <div id="searchIp">
+          <input type="text" placeholder="검색어를 입력해주세요">
+        </div>
+        <button id="Bt">검색</button>
+      </div>
+      <table id="noticeTable">
+        <tr id="noticeTr">
+          <td class="noticeTd">순번</td>
+          <td class="noticeTd">제목</td>
+          <td class="noticeTd">등록일</td>
+          <td class="noticeTd">작성자</td>
+        </tr>
+        <tr v-for="(savedNotice, index) in notices" :key="index">
+          <td class="noticeTd">{{ index + 1 }}</td>
+          <td class="noticeTd">{{ savedNotice.title }}</td>
+          <td class="noticeTd">{{ new Date().toLocaleDateString() }}</td>
+          <td class="noticeTd">{{ savedNotice.user }}</td>
+        </tr>
+      </table>
+      <!-- 공지사항을 작성하고 저장할 양식을 추가합니다. -->
+      <form @submit.prevent="saveNotice">
+        <div id="writeNoticeForm">
+          <label for="title">제목</label>
+          <input type="text" id="title" v-model="notice.title" required>
+  
+          <label for="content">내용</label>
+          <textarea id="content" v-model="notice.content" required></textarea>
+  
+          <label for="user">작성자</label>
+          <input type="text" id="user" v-model="notice.user" required>
+          <button type="submit" id="saveButton">저장</button>
+        </div>
+      </form>
     </div>
-
 <RouterView />
 </template>
 <style>
@@ -97,6 +136,34 @@ const router = useRouter();
         text-align: center;
         border-bottom: 3px double #aaa;
         margin: 30px auto;
+    }
+    #writeNoticeForm{
+      width: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      border: 1px solid #aaa;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top:25%;
+      left: 10%;
+    }
+    #writeNoticeForm input,#writeNoticeForm textarea{
+      width: 350px;
+      height: 100px;
+    }
+    #saveButton{
+      width: 50px;
+      height: 50px;
+      border: 0;
+      background: #f58e8a;
+      margin: 10px;
+      border-radius: 100px;
+    }
+    #saveButton:hover{
+      background: #f35b56;
+      color:#fff;
     }
     @media(max-width:490px){
         #noticeBox{

@@ -19,27 +19,28 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
             </div>
             <div class="CpInfo">
                 <div class="map">
+                    <img id="ex_map" src="../assets/naver_map.png">
                 </div>
                 <table class="cpTable">
                     <tr>
                         <td class="cpName">유치원명</td>
-                        <td></td>
+                        <td>하나유치원</td>
                     </tr>
                     <tr>
                         <td class="cpAddr">주소</td>
-                        <td></td>
+                        <td>대전 서구 용문동</td>
                     </tr>
                     <tr>
                         <td class="cpET">설립유형</td>
-                        <td></td>
+                        <td>국공립</td>
                     </tr>
                     <tr>
                         <td class="cpTime">운영시간</td>
-                        <td></td>
+                        <td>09:00~18:00</td>
                     </tr>
                 </table>
                 <div class="point">
-                    <div><b>차량운행여부</b><input type="checkbox" name="point"></div>
+                    <div><b>차량운행여부</b><input type="checkbox" name="point" checked></div>
                     <div><b>특수학급여부</b><input type="checkbox" name="point"></div>
                     <div><b>방과후돌봄</b><input type="checkbox" name="point"></div>
                 </div>
@@ -62,29 +63,30 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
             </div>
             <div class="CpInfo">
                 <div class="map">
+                    <img id="ex_map" src="../assets/naver_map.png">
                 </div>
                 <table class="cpTable">
                     <tr>
                         <td class="cpName">유치원명</td>
-                        <td></td>
+                        <td>두울유치원</td>
                     </tr>
                     <tr>
                         <td class="cpAddr">주소</td>
-                        <td></td>
+                        <td>대전 서구 용문동</td>
                     </tr>
                     <tr>
                         <td class="cpET">설립유형</td>
-                        <td></td>
+                        <td>사립</td>
                     </tr>
                     <tr>
                         <td class="cpTime">운영시간</td>
-                        <td></td>
+                        <td>09:00~20:00</td>
                     </tr>
                 </table>
                 <div class="point">
-                    <div><b>차량운행여부</b><input type="checkbox" name="point"></div>
-                    <div><b>특수학급여부</b><input type="checkbox" name="point"></div>
-                    <div><b>방과후돌봄</b><input type="checkbox" name="point"></div>
+                    <div><b>차량운행여부</b><input type="checkbox" name="point" checked></div>
+                    <div><b>특수학급여부</b><input type="checkbox" name="point" checked></div>
+                    <div><b>방과후돌봄</b><input type="checkbox" name="point" checked></div>
                 </div>
                 <div class="CP_Chart">
                     <div></div>
@@ -153,6 +155,7 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         border: 1px solid #aaa;
         margin: 0 auto;
         border-radius: 5px;
+        overflow: hidden;
     }
     .point{
         display: flex;
