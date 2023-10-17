@@ -21,6 +21,7 @@ export default{
 }
 </script>
 <style scoped>
+*{font-family: 'SUITE-Regular';}
 a{color:black; text-decoration: none;}
 #wrap{
     width:800px;

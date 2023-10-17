@@ -31,7 +31,8 @@ export default{
 </div >
 <EasySearch v-if="isEasySearch"/>
 </template>
-<style>
+<style scoped>
+*{font-family: 'SUITE-Regular';}
 .Hbi-search{
   position: absolute;
   margin: 10px;

@@ -58,7 +58,7 @@ export default{
 
 
 
-<style>
+<style scoped>
 
 
 *{
