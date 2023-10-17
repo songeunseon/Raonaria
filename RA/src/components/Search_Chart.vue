@@ -199,5 +199,12 @@ export default{
     column-gap: 30px;
     margin: 10px;
   }
+  #Chart{
+    width: 350px;
+    height: 300px;
+    margin: 10px auto;
+    display: flex;
+    border:1px solid #8c52ff;
+  }
   }
 </style>

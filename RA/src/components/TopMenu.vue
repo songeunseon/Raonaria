@@ -120,7 +120,6 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     #menuList li{
       width: 50px;
       height: 30px;
-      border: 2px solid #BEC1FF;
       border-radius: 10px;
       font-size: 10px;
       display: flex;
@@ -132,8 +131,6 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       #menuList li:hover{
     font-size: 10px;
   }
-    #menuList #mypage{
-      border: 2px solid #BEC1FF;
-  }
+
   }
 </style>

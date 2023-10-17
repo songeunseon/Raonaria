@@ -65,7 +65,7 @@ const router = useRouter();
 <style>
   #SHbox{
     width: 1000px;
-    height: 300px;
+    height: 200px;
     margin: 20px auto;
     padding: 10px;
   }
@@ -96,7 +96,7 @@ const router = useRouter();
   }
   #optionBox{
     width: 80%;
-    height: 200px;
+    height: 100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;

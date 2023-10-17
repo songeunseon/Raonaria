@@ -157,7 +157,8 @@ export default{
     height: 55px;
     border-radius: 100px;
     font-size: 10px;
-
+    background: #0d6efd;
+    color: #fff;
 }
 #sns{
     justify-content: center;

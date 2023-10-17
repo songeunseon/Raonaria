@@ -85,7 +85,7 @@ const saveNotice = () => {
         box-sizing: border-box;
     }
     #noticeBox{
-        max-width: 1000px;
+        width: 1000px;
         margin: 20px auto;
         
     }
@@ -146,8 +146,8 @@ const saveNotice = () => {
       align-items: center;
       justify-content: center;
       position: absolute;
-      top:25%;
-      left: 10%;
+      top:30%;
+      left: 8%;
     }
     #writeNoticeForm input,#writeNoticeForm textarea{
       width: 350px;

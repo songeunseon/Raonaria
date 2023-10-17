@@ -32,4 +32,14 @@ export default{
 body{
   background-image: url(../src/assets/bg2.svg)!important;
   }
+  @media(min-width:490px) and (max-width:1194px){
+    body{
+    background-image: url(../src/assets/tapbg.svg) !important;
+    }
+  }
+@media(max-width:490px){
+  body{
+    background-image:none !important;
+  }
+  }
 </style>

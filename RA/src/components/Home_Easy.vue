@@ -22,7 +22,7 @@ export default{
 </script>
 <template>
 <div id="shbar">
-  <svg @click="easySearch()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi Hbi-search" viewBox="0 0 16 16">
+  <svg @click="easySearch()" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi Hbi-search" viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
   </svg>
 
@@ -46,7 +46,10 @@ export default{
     opacity: 0.5;
   }
 }
-
+#shbar svg{
+  width:30px;
+  height:30px;
+}
 #school {
   width : 340px;
   height : 55px;
@@ -60,30 +63,38 @@ export default{
 
 @media(min-width:490px) and (max-width:1194px){
   #shbar svg{
-    margin: 20px;
+    margin-top: 40px;
   }
   #school {
-    width : 80%;
-    height : 50px;
+    width : 340px;
+    height : 55px;
+    text-align : center;
+    border: 0;
+    border-bottom : 3px solid #a9bb51;
     outline : none;
+    margin: 0 auto;
+    margin-bottom: 140px;
+    margin-top: 30px;
 }
   }
   @media(max-width:490px){
-    #shbar{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
   #shbar svg{
-    width: 50px;
-    margin:0;
-  }
-  #school{
-    width: 250px;
-    height: 40px;
-    margin-top: 20px;
-  }
+  width:20px;
+  height:20px;
+}
+#school {
+  width : 300px;
+  height : 40px;
+  text-align : center;
+  border: 0;
+  border-bottom : 3px solid #a9bb51;
+  outline : none;
+  margin: 0 auto;
+  margin-bottom: 250px;
+  font-size: 15px;
+}
+
+
 }
 
 </style>
