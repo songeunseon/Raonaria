@@ -15,13 +15,9 @@ const notice = {
 const notices = ref([]);
 
 const saveNotice = () => {
-  // 새로운 공지사항 객체를 만듭니다.
   const newNotice = { ...notice };
-
-  // 이를 notices 배열에 추가합니다.
   notices.value.push(newNotice);
 
-  // 양식 필드를 지웁니다.
   notice.title = '';
   notice.content = '';
   notice.user = '';
@@ -66,13 +62,13 @@ const saveNotice = () => {
       <!-- 공지사항을 작성하고 저장할 양식을 추가합니다. -->
       <form @submit.prevent="saveNotice">
         <div id="writeNoticeForm">
-          <label for="title">제목:</label>
+          <label for="title">제목</label>
           <input type="text" id="title" v-model="notice.title" required>
   
-          <label for="content">내용:</label>
+          <label for="content">내용</label>
           <textarea id="content" v-model="notice.content" required></textarea>
   
-          <label for="user">작성자:</label>
+          <label for="user">작성자</label>
           <input type="text" id="user" v-model="notice.user" required>
           <button type="submit" id="saveButton">저장</button>
         </div>
@@ -140,6 +136,34 @@ const saveNotice = () => {
         text-align: center;
         border-bottom: 3px double #aaa;
         margin: 30px auto;
+    }
+    #writeNoticeForm{
+      width: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      border: 1px solid #aaa;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top:25%;
+      left: 10%;
+    }
+    #writeNoticeForm input,#writeNoticeForm textarea{
+      width: 350px;
+      height: 100px;
+    }
+    #saveButton{
+      width: 50px;
+      height: 50px;
+      border: 0;
+      background: #f58e8a;
+      margin: 10px;
+      border-radius: 100px;
+    }
+    #saveButton:hover{
+      background: #f35b56;
+      color:#fff;
     }
     @media(max-width:490px){
         #noticeBox{
