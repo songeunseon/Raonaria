@@ -220,9 +220,6 @@ export default {
         font-size:14px;
     }
 
-    .circle{
-        width:
-    }
 }
 
 
