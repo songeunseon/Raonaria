@@ -85,11 +85,18 @@ export default{
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
-    overflow-y: scroll;    
+    overflow-y: scroll;
+    border: 5px solid #d9d9d999;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-shadow: 5px 0 10px #aaa,
+                -5px 0 10px #aaa,
+                0 5px 10px #aaa,
+                0 -5px 10px #aaa;
   }
   #resultTable{
     width: 1000px;
-    margin: 20px auto;
+    margin: 0px auto;
 
   }
   #resultList td{

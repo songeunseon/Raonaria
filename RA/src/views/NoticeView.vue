@@ -45,6 +45,7 @@ const saveNotice = () => {
         </div>
         <button id="Bt">검색</button>
       </div>
+      
       <table id="noticeTable">
         <tr id="noticeTr">
           <td class="noticeTd">순번</td>
@@ -59,6 +60,7 @@ const saveNotice = () => {
           <td class="noticeTd">{{ savedNotice.user }}</td>
         </tr>
       </table>
+
       <!-- 공지사항을 작성 -->
       <form @submit.prevent="saveNotice">
         <div id="writeNoticeForm">
@@ -131,6 +133,7 @@ const saveNotice = () => {
         color: #fff;
         background: #f35b56;
     }
+
     #noticeTable{
         width: 800px;
         text-align: center;
