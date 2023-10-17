@@ -52,14 +52,14 @@ const saveNotice = () => {
           <td class="noticeTd">등록일</td>
           <td class="noticeTd">작성자</td>
         </tr>
-        <tr v-for="(savedNotice, index) in notices" :key="index">
+        <tr id="write" v-for="(savedNotice, index) in notices" :key="index">
           <td class="noticeTd">{{ index + 1 }}</td>
           <td class="noticeTd">{{ savedNotice.title }}</td>
           <td class="noticeTd">{{ new Date().toLocaleDateString() }}</td>
           <td class="noticeTd">{{ savedNotice.user }}</td>
         </tr>
       </table>
-      <!-- 공지사항을 작성하고 저장할 양식을 추가합니다. -->
+      <!-- 공지사항을 작성 -->
       <form @submit.prevent="saveNotice">
         <div id="writeNoticeForm">
           <label for="title">제목</label>
@@ -76,7 +76,7 @@ const saveNotice = () => {
     </div>
 <RouterView />
 </template>
-<style>
+<style scoped>
 
     *{
         font-family: 'SUITE-Regular';
@@ -137,6 +137,18 @@ const saveNotice = () => {
         border-bottom: 3px double #aaa;
         margin: 30px auto;
     }
+    #write .noticeTd:first-child, #noticeTr .noticeTd:first-child{
+      width: 50px;
+    }
+    #write .noticeTd:nth-child(2), #noticeTr .noticeTd:nth-child(2){
+      width: 400px;
+    }
+    #write .noticeTd:nth-child(3), #noticeTr .noticeTd:nth-child(3){
+      width: 150px;
+    }
+    #write .noticeTd:nth-child(4), #noticeTr .noticeTd:nth-child(4){
+      width: 150px;
+    }
     #writeNoticeForm{
       width: 400px;
       display: flex;
@@ -147,7 +159,7 @@ const saveNotice = () => {
       justify-content: center;
       position: absolute;
       top:30%;
-      left: 8%;
+      left: 0;
     }
     #writeNoticeForm input,#writeNoticeForm textarea{
       width: 350px;

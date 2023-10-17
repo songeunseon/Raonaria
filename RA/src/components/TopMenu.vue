@@ -26,11 +26,11 @@ import TopMenu_Login from "./TopMenu_Login.vue";
 </template>
 
 <style scoped>
-  
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'HakgyoansimSantteutdotumL';
   }
 
   #logo img{

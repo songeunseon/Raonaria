@@ -72,7 +72,7 @@ export default{
 /* @import url(../assets/MyPage.css); */
 
 
-
+*{font-family: 'SUITE-Regular';}
 .page_wrap{
     display:flex;
     width:1000px;

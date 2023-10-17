@@ -40,9 +40,14 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     </tr>
                 </table>
                 <div class="point">
-                    <div><b>차량운행여부</b><input type="checkbox" name="point" checked></div>
-                    <div><b>특수학급여부</b><input type="checkbox" name="point"></div>
-                    <div><b>방과후돌봄</b><input type="checkbox" name="point"></div>
+                    <input type="checkbox" class="btn-check" name="options-base" id="car1" autocomplete="off" checked>
+                    <label class="btn" for="car1">차량운행여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="special1" autocomplete="off" checked>
+                    <label class="btn" for="special1">특수학급여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="after1" autocomplete="off" checked>
+                    <label class="btn" for="after1">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
                     <div></div>
@@ -84,9 +89,14 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     </tr>
                 </table>
                 <div class="point">
-                    <div><b>차량운행여부</b><input type="checkbox" name="point" checked></div>
-                    <div><b>특수학급여부</b><input type="checkbox" name="point" checked></div>
-                    <div><b>방과후돌봄</b><input type="checkbox" name="point" checked></div>
+                    <input type="checkbox" class="btn-check" name="options-base" id="car2" autocomplete="off" checked>
+                    <label class="btn" for="car2">차량운행여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="special2" autocomplete="off" checked>
+                    <label class="btn" for="special2">특수학급여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="after2" autocomplete="off" checked>
+                    <label class="btn" for="after2">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
                     <div></div>
@@ -101,8 +111,8 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
     </div>
     <RouterView />
 </template>
-<style>
-
+<style scoped>
+    *{font-family: 'SUITE-Regular';}
     #CP{
         max-width: 1000px;
         display: flex;
@@ -161,11 +171,7 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         display: flex;
         justify-content: space-around;
     }
-    .point div{
-        display: flex;
-        column-gap: 5px;
-        align-items: center;
-    }
+    
     .CP_Chart{
         width: 400px;
         height: 200px;
@@ -189,5 +195,17 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         background: #0d6efd;
         color: #fff;
     }
-
+    .cpTable tr td:last-child{
+        font-weight: 700;
+    }
+    .point .btn-check[type='checkbox']:checked+label{
+    background: #FFD12499;
+    border: 0;
+    border-radius: 100px;
+    }
+    .point .btn-check[type='checkbox']:not(:checked)+label{
+        background: #fff;
+        border: 0;
+        border-radius: 100px;
+    }
 </style>

@@ -113,6 +113,7 @@ export default{
 }
 </script>
 <style scoped>
+*{font-family: 'SUITE-Regular';}
 body{
     overflow-y: hidden;
 }
