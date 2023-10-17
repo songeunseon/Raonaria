@@ -1,4 +1,5 @@
 <template>
+    <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: rgba(0, 0, 0, 0.5);"></div>
 <div class="Login_modal">
     <div class="modal_header mb" >
         <i  @click="loginOpen()" class="bi bi-x-circle" style="cursor: pointer;"></i>
@@ -44,7 +45,6 @@
 position:absolute;
 width:400px;
 height:250px;
-border: 5px solid #0d6efd;
 border-radius: 20px;
 background:white;
 z-index:100;
