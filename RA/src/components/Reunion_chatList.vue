@@ -113,7 +113,9 @@
 .word {
     position: relative;
     font-weight: 700;
-    padding-bottom:10px;
+    padding-bottom:13px;
+    font-size:18px;
+
 }
 
 .position {

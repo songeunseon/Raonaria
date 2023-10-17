@@ -36,7 +36,7 @@ export default{
 .partner_wrap{
     width:200px;
     height:350px;
-    background:#F6E6E6;
+    background:#F4F4FA;
     margin-top:30px;
     border-radius:10px;
 

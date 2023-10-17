@@ -79,19 +79,6 @@ export default {
 
 <style scoped>
 
-
-body{
-    overflow-y:hidden;
-}
-
-
-
-
-
-
-
-
-
 .chat_content_wrap{
     width:fit-content;
     height:fit-content;
@@ -103,7 +90,7 @@ body{
     height: 660px;
     overflow-y: scroll;
     /* display:flex;*/
-    background:#eb6c6840;
+    background:#F4F4FA;
     border-radius:10px;
     display:flex;
     flex-direction:column;   
@@ -124,7 +111,7 @@ body{
 
 .line1 {
     width: 100%;
-    background-color: #3E3F9C;
+    background-color: #f35b56;
     height: 1px;
 }
 
@@ -135,7 +122,7 @@ body{
     top: -20px;
     width: 150px;
     height: 40px;
-    background-color:#F6E6E6;
+    background-color:#F4F4FA;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -258,8 +245,8 @@ body{
     font-size:20px;
     color:black;
     outline:none;
-    border:2px solid #F6E6E6;
-    background:#F6E6E6;
+    border:2px solid #F4F4FA;
+    background:#F4F4FA;
 }
 
 .word_write{
@@ -271,7 +258,7 @@ body{
     flex-grow:1;
     outline:none;
     border:none;
-    background:#F6E6E6;
+    background:#F4F4FA;
     resize: none;
     overflow:hidden;
 }

@@ -73,7 +73,7 @@ export default {
     height:fit-content;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
-    background: #FFD124;
+    background:#38B6FF;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@ export default {
     width: 120px;
     height: 120px;
     display: flex;
-    background: #FFD124;
+    background: #38B6FF;
     flex-direction: column;
     /* justify-content:center; */
     align-items: center;
@@ -202,7 +202,7 @@ export default {
     height: 50px;
     padding: 5px 10px;
     margin:5px auto;
-    border: 1px solid #c1d7e5;
+    /* border: 1px solid #c1d7e5; */
     font-size: 15px;
     display: flex;
     align-items: center;
