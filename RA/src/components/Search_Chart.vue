@@ -51,18 +51,16 @@ export default{
           </tr>
         </table>
         <div id="check">
-          <div>
-            <b>차량운행여부</b>
-            <input type="checkbox" checked>
-          </div>
-          <div>
-            <b>특수학급여부</b>
-            <input type="checkbox" checked>
-          </div>
-          <div>
-            <b>방과후돌봄</b>
-            <input type="checkbox" >
-          </div>
+
+          <input type="checkbox" class="btn-check" name="options-base" id="car" autocomplete="off" checked>
+          <label class="btn" for="car">차량운행여부</label>
+          
+          <input type="checkbox" class="btn-check" name="options-base" id="special" autocomplete="off" checked>
+          <label class="btn" for="special">특수학급여부</label>
+          
+          <input type="checkbox" class="btn-check" name="options-base" id="after" autocomplete="off" checked>
+          <label class="btn" for="after">방과후돌봄</label>
+          
         </div>
         
       </div>
@@ -85,7 +83,7 @@ export default{
 
 #info{
     width: 1000px;
-    margin: 100px auto;
+    margin: 50px auto;
   }
   #harf{
     margin: 20px auto;
@@ -102,10 +100,27 @@ export default{
   #infoTable tr{
     height: 30px;
   }
+  .infoTr td:first-child{
+    padding-left: 20px;
+  }
+  .infoTr td:last-child{
+    text-align: center;
+    font-weight: 700;
+  }
   #check{
     width: 400px;
     display: flex;
     justify-content: space-around;
+  }
+  #check .btn-check[type='checkbox']:checked+label{
+    background: #FFD12499;
+    border: 0;
+    border-radius: 100px;
+  }
+  #check .btn-check[type='checkbox']:not(:checked)+label{
+    background: #fff;
+    border: 0;
+    border-radius: 100px;
   }
   #map{
     width: 400px;
@@ -175,12 +190,7 @@ export default{
     border: 1px solid #aaa;
     border-radius: 5px;
   }
-  
-  #check{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
+
   #check div{
     display: flex;
     align-items: center;
