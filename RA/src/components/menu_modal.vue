@@ -7,7 +7,7 @@
                 <!-- <i class="bi bi-chevron-compact-down"></i> -->
             </div>
             <div @click="toggleContent" class="title_change">
-                <i @click="toggleContent2" class="bi bi-arrow-right-square"></i>
+                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 정보변경
             </div>
             <div class="infoChange">
@@ -26,7 +26,7 @@
         </div>
         <div class="menu">
             <div @click="toggleContent" class="title_change">
-                <i @click="toggleContent2" class="bi bi-arrow-right-square"></i>
+                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 <span @click="toggleContent2">공지사항 작성하기</span>
             </div>
             <div class="infoChange">
@@ -43,7 +43,7 @@
         </div>
         <div class="menu">
             <div @click="toggleContent" class="title_change">
-                <i @click="toggleContent2" class="bi bi-arrow-right-square"></i>
+                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 <span @click="toggleContent2">강퇴관리</span>
             </div>
             <div class="infoChange">
@@ -128,10 +128,10 @@ a {
 }
 
 .menu_modal {
-    position: fixed;
-    top: 25.5%;
-    left: 658px;
-    /* transform: translate(100%, -20%);  */
+    position: absolute;
+    top: 180px;
+    left: 80%;
+    /* transform: translate(50%, 50%); */
     width: 325px;
     height: fit-content;
     background: white;
@@ -151,7 +151,7 @@ a {
     cursor: pointer;
 }
 
-.bi-arrow-right-square {
+.bi-chevron-down {
     position: relative;
     left: 280px;
     top: 0px;
@@ -179,6 +179,10 @@ a {
     text-align: left;
     border-bottom: 1px solid black;
     cursor:pointer;
+}
+
+span.show{
+    border:none;
 }
 
 

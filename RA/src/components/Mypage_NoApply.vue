@@ -85,11 +85,13 @@ export default{
     /* left:1px;
     bottom:-18px; */
     font-size:15px;
-    border:3px solid #0d6efd;
-    border-radius: 5px;
+    border:1px solid #0d6efd;
+    background:#0d6efd;
+    border-radius: 100px;
     height:30px;
-    background:white;
-    padding:0 5px;
+    /* padding:0px 5px; */
+    color:white;
+    font-weight:900;
 }
 
 .goapply{
@@ -119,11 +121,13 @@ export default{
     /* right:5px; */
     font-size:15px;
     border:3px solid #0d6efd;
-    border-radius: 5px;
-    width:80px;
+    border-radius: 100px;
+    width:100px;
     height:30px;
-    background:white;
+    background:#0d6efd;
     bottom:-18px;
+    color:white;
+    font-weight: 900;
 }
 
 @media(max-width:490px){
