@@ -165,13 +165,23 @@
     } 
     #easyCheck div{
         display: flex;
+        flex-direction: column-reverse;
         column-gap: 2px;
+        font-size: 10px;
     }
-    .section{
+    .left{
         width: 250px;
-        height: 200px;
+        height: 150px;
         margin: 10px auto;
         padding: 10px;
     }
+    .easyimg{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    margin: 0px auto;
+    border: 1px solid #aaa;
+    bottom: 0;
+}
 }
 </style>

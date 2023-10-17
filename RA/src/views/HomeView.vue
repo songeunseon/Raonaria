@@ -284,7 +284,7 @@ a{
   main{
     width: 100%;
     height: 100%;
-    background: #dbdbdb;
+    background: none;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -304,10 +304,16 @@ a{
   flex-direction: row;
   justify-content: space-around;
   padding-bottom: 5px;
+  background :none ;
+  margin-top: 120px ;
 }
 #logo img {
   width : 100px;
   }
+#logotext{
+  position: absolute;
+  top:0;
+}
 #logo{
   width: 100px;
   height: 100px;
@@ -372,18 +378,25 @@ a{
   margin: 0;
 }
 #logo img {
-  width : 200px;
+  position: absolute;
+  width : 100px;
   padding: 0;
+  left: 10px;
   }
-#logo{
-  width: 200px;
-  height: 200px;
+  #logotext img{
+    position: absolute;
+    width: 200px;
+    top:20px;
+    left: 120px;
+    
+  }
+  #logo{
+  width: 100px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: -30px;
-  padding: 0;
-  top:-30px
 }
 #menulist{
   width: 90%;
@@ -392,20 +405,25 @@ a{
   column-gap: 10px;
   z-index: 30px;
   position: absolute;
-  top:140px;
+  top:130px;
 }
 #menulist li{
   list-style: none;
-  border : 2px solid #BEC1FF;
   border-radius: 10px;
     width : 50px;
     height : 30px;
     text-align : center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size : 10px;
     padding-top: 5px;
     margin:0;
     color: black;
     cursor: pointer;
+  transform: none;
+}
+#menulist li{
   transform: none;
 }
 #mainbox {
@@ -437,16 +455,17 @@ a{
   bottom: 0;
   margin-top: 5px;
   font-size: 10px;
+  padding: 5px;
 }
 #sh, #listSearch{
   padding: 0;
-  margin-top: 5px;
+  margin-top: 0;
 }
 #sh{
   width: 80%;
   justify-content: start;
-  column-gap: 60px;
-  padding-bottom: 5px;
+  column-gap: 50px;
+  padding-bottom: 0;
 }
 }
 
