@@ -15,16 +15,16 @@
         <div class="done_button">
             <button @click='blankCheck()' class="done_bt" value="완료">완료</button>
         </div>
+        <div v-if="isAgainCheck" class="input_check">
+            <span>입력창을 다시 확인해주세요</span>
+            <div class="check_detail">입력창을 다 작성해야<br> 채팅방에 개설이 가능합니다.</div>
+            <div class="check_button">
+                <button @click="blankCheckClose()" class="check_bt" value="확인">확인</button>
+            </div>
+        </div>
 </div>
 
 
-<div v-if="isAgainCheck" class="input_check">
-    <span>입력창을 다시 확인해주세요</span>
-    <div class="check_detail">입력창을 다 작성해야<br> 채팅방에 개설이 가능합니다.</div>
-    <div class="check_button">
-        <button @click="blankCheckClose()" class="check_bt" value="확인">확인</button>
-    </div>
-</div>
 
 </template>
 
