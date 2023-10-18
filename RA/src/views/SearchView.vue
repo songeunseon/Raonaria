@@ -53,6 +53,7 @@ export default{
   <Search_Result />
   <Search_Chart />
   <consulting_Req v-show="isReq"/>
+  <div class="darkBg" v-show="isReq"></div>
   <RouterView />
 </template>
 
@@ -88,6 +89,11 @@ export default{
   #comparison:hover{
     background: #FFD124;
     color: #fff;
+  }
+  .darkBg{
+    width:100vw; height:100vh;
+    background:rgba(0, 0, 0, 0.4);
+    position:fixed; top:0; left:0;
   }
   @media(max-width:490px){
     #comparison{

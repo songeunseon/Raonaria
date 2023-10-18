@@ -60,8 +60,6 @@
     <div class="button_box">
         <button @click="reqOpen()" class="request">상담신청 완료</button>
     </div>
-
-    
 </div>
 
 
@@ -94,6 +92,7 @@ export default{
         background: #fff;
         border-radius: 20px;
         border: 5px solid #FFD124;
+        z-index:1;
     }
 
     .modal_header{
@@ -157,6 +156,8 @@ export default{
         border-radius: 5px;
         background: 0;
     }
+    .bi-x-circle{cursor:pointer;}
+    
     @media(max-width:490px){
         svg{
         width:20px;

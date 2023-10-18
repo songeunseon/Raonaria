@@ -80,13 +80,14 @@ export default {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .room_title {
     width: 100%;
     height: 40px;
     background: #f35b56;
-    border-radius: 3px;
     font-size: 18px;
     text-align: center;
     line-height: 40px;
@@ -128,7 +129,8 @@ export default {
 .done_bt {
     width: 100px;
     height: 30px;
-    border: none;
+    border-width:0px;
+    border-radius: 10px;
     background: #f35b56;
     color: black;
 }

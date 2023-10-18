@@ -30,8 +30,8 @@ export default{
 
 <style scoped>
 .wrap{
-    width:409px;
-    height:135px;
+    width: 390px;
+    height: 105px;
     border:1px solid black;
     display:flex;
     flex-direction: column;
@@ -45,6 +45,7 @@ export default{
     left:68%;
     transform: translate(-50%);
     z-index:120;
+    border-radius:10px;
 }
 .button_wrap{
     display:flex;
@@ -52,13 +53,14 @@ export default{
 }
 
 .check_bt{
-    width:118px;
+    width:100px;
     height:37px;
     border:none;
     background-color:#7bb1ff99;
     font-size:20px;
     cursor:pointer;
     color:black;
+    border-radius:10px;
 
 }
 
@@ -69,11 +71,13 @@ export default{
 
 
 .cancle_bt{
-    width:118px;
+    width:100px;
     height:37px;
     border:none;
     background-color:#7bb1ff99;
     color:black;
+    border-radius:10px;
+
 }
 
 .cancle_bt:hover{

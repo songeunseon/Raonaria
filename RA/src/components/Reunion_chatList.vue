@@ -86,6 +86,7 @@
     column-gap: 20px;
     row-gap: 20px;
     width: 800px;
+    margin-bottom:150px;
 }
 
 
