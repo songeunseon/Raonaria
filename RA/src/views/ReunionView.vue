@@ -65,7 +65,7 @@ export default {
 }
 
 #chat {
-    width: 800px;
+    width: 700px;
     margin: 20px auto;
 }
 
@@ -84,7 +84,7 @@ export default {
     /* position: relative; */
     display: flex;
     align-items: center;
-
+    justify-content: space-between;
 }
 
 .chat_add input {
@@ -92,11 +92,9 @@ export default {
     height: 32px;
     border: none;
     outline: none;
-    border-bottom: 3px solid #f35b56;
+    border-bottom: 2px solid #f35b56;
     /* border-radius: 5px; */
-    text-align: center;
-
-
+    padding:10px 0px 10px 30px;
 }
 
 .icon {
@@ -106,14 +104,15 @@ export default {
     /* left: 0px; */
     font-size: 25px;
     display: flex;
+    align-items: center;
 }
 
 .bi-search {
     position: absolute;
     /* left: 70px; */
     /* top: 1px; */
-    font-size: 10px;
-
+    width:20px;
+    height:20px;
 }
 
 .search_input {
