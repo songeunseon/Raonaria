@@ -7,6 +7,9 @@ import {Chart} from 'chart.js/auto'
 const router = useRouter();
 
 export default{
+    components:{
+        TopMenu, TopMenu_Login
+    },
   name:"Search_chart",
     setup() {
 onMounted(() => {
@@ -73,7 +76,7 @@ onMounted(() => {
 
         const ctx2 = document.getElementById('child');
         const label2 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data2 = [34,15,27,40,42];
+        const data2 = [22,14,21,10,19];
         const childColor = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
         new Chart(ctx2, {
                 type: 'pie',
@@ -99,7 +102,7 @@ onMounted(() => {
             });
         const ctx3 = document.getElementById('teacher2');
         const label3 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data3 = [23,17,20,13,10];
+        const data3 = [13,20,9,17,28];
         const avg3 = 15;
 
         new Chart(ctx3, {
@@ -160,7 +163,7 @@ onMounted(() => {
 
         const ctx4 = document.getElementById('child2');
         const label4 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data4 = [34,15,27,40,42];
+        const data4 = [23,17,20,13,10];
         const childColor2 = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
         new Chart(ctx4, {
                 type: 'pie',
