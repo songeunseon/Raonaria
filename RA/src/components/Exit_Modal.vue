@@ -70,6 +70,8 @@ export default{
     background:#f28683;
     border:2px solid #f28683;
     color:black;
+    border-radius:10px;
+
 }
 
 .button_wrap button:hover{
@@ -81,6 +83,7 @@ export default{
     background:#f28683;
     border:2px solid #f28683;
     color:black;
+    border-radius:10px;
 }
 
 .button_wrap a button:hover{

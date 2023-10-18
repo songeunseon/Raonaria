@@ -13,7 +13,7 @@
                     </svg>
                     <input type="text" class="search_input">
                 </div>
-                <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
+                <i @click="makeRoomOpen()" class="bi bi-plus-circle" style="cursor: pointer;"></i>
             </div>
         </div>
     </div>

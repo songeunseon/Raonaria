@@ -5,21 +5,13 @@
         <div class="room_manager1">
             <div class="icon4">
                 <i class="bi bi-award"></i>
-                <div class="name">김선향</div>
+                <div class="name">전계림</div>
             </div>
             </div>
+        <div class="name">송은선</div>
         <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
-        <div class="name">김선향</div>
+        <div class="name">신상수</div>
+        <div class="name">신선향</div>
     </div>
 </div>        
 </template>
