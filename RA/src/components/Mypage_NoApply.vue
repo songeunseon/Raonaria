@@ -92,7 +92,7 @@ export default{
     height:30px;
     padding:0px 10px;
     color:white;
-    font-weight:900;
+    font-weight:500;
 }
 
 .goapply{
@@ -128,7 +128,7 @@ export default{
     background:#0d6efd;
     bottom:-18px;
     color:white;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 @media(max-width:490px){
