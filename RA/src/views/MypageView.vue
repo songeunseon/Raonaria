@@ -85,7 +85,6 @@ export default{
     flex-direction: column;
     align-items:start ;
     margin: 20px auto;
-    height:620px;
    
 }
 @media(max-width:1194px){

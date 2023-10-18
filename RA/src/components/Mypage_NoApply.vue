@@ -28,21 +28,20 @@ export default{
 .empty_data{
     width:100%;
     /* margin:0px auto; */
-
 }
 
 .data_box{
-    width:100%;
+    width:100%; height:220px;
     display:flex;
     flex-direction:column;
-    justify-content:start;
+    justify-content:center;
     align-items:center;
     gap:0;
     font-weight:900;
     padding:15px 0;
     background:#ddd;
     border-radius:15px;
-
+    margin-bottom:30px;
 }
 
 .icon{
@@ -109,8 +108,7 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin:185px auto 29px auto;
-
+    margin-bottom:25px;
     position:relative;
     width:100%;
     height:0;

@@ -73,7 +73,9 @@ export default {
     height:fit-content;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
-    background:#a9bb51;
+    /* background:#547aa9;  */
+    background:#ffe850;
+    /* background:#B993D6; */
     border-radius: 25px 0px 0px 25px;
     display: flex;
     flex-direction: column;
@@ -85,7 +87,7 @@ export default {
     width: 120px;
     height: 120px;
     display: flex;
-    background: #a9bb51;
+    background: #fff;
     flex-direction: column;
     /* justify-content:center; */
     align-items: center;
@@ -210,9 +212,13 @@ export default {
     justify-content: space-between;
     gap: 0 10px;
     /* background: white; */
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff; */
     /* cursor: pointer;} */
-    color:#fff;
+    /* color:#fff; */
+    background:#ffffff;
+    border-radius: 20px;;
+    color:#000;
 }
 
 
@@ -242,6 +248,8 @@ export default {
         max-width:100%;
         flex-direction: row;
         justify-content: space-between;
+        overflow:hidden;
+        border-radius: 25px;
     }
     #chat_alert_box{
         height:200px;
@@ -250,6 +258,11 @@ export default {
         top:0;
         gap:0 5px;
         padding:10px;
+        border-radius: 25px;
+        background:#97c6ff;
+    }
+    #chat_alert_box::-webkit-scrollbar{
+        width:0px;
     }
     .chat_alert{
         display:none;
