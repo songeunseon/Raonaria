@@ -10,7 +10,7 @@
             <tr class="weather">
                 <td>YYYY.MM.DD</td>
                 <td>
-                    <i class="bi bi-check2-circle"></i>
+                    <!-- <i class="bi bi-check2-circle"></i> -->
                     동창회 이용은 어떻게 하면 되나요?
                 </td>
                 <td><input type="checkbox" name="check" class="checkBox"></td>
@@ -33,7 +33,7 @@
             <tr class="content">
                 <td>YYYY.MM.DD</td>
                 <td>
-                    <i class="bi bi-check2-circle"></i>
+                    <!-- <i class="bi bi-check2-circle"></i> -->
                     조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
                 <td><input type="checkbox" name="check" class="checkBox"></td>
             </tr>
@@ -104,7 +104,8 @@ table thead th{
     /* border:2px solid #d9d9d9; */
     /* border-bottom:3px solid #d9d9d9;*/
     border-collapse: collapse;
-    background:#ff8d45;
+    /* background:#48BDFF; */
+    background:#f08502;
     font-size:15px;
     height:36px;
     text-align: center;
@@ -113,10 +114,10 @@ table thead th{
     font-weight:900;
 }
 table thead th:first-child{
-    border-radius: 15px 0 0 0;
+    border-radius: 10px 0 0 0;
 }
 table thead th:last-child{
-    border-radius: 0 15px 0 0;
+    border-radius: 0 10px 0 0;
 }
 
 table thead th input{
@@ -131,7 +132,7 @@ table thead th:nth-child(2){width:70%;}
 table thead th:nth-child(3){width:10%;}
 tbody tr{position:relative;}
 tbody tr:nth-child(even){
-    background:rgba(255, 171, 103, 0.575);
+    background:#ffc14e;
 }
 .bi-check2-circle{
     color:#ff8d45;

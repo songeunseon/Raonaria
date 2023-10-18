@@ -204,7 +204,7 @@ export default {
     border-radius: 100px;
     width: 100px;
     height: 30px;
-    background: #ff5735;
+    background:#0d6efd ;
     bottom: 0;
     outline: none;
     border: none;
@@ -237,7 +237,7 @@ export default {
 .bi-arrow-left-circle,
 .bi-arrow-right-circle {
     position: absolute;
-    top: 25%;
+    top: 32%;
     font-size: 25px;
     z-index: 30;
     width: 25px;
@@ -262,7 +262,8 @@ export default {
 
 .apply_box {
     /* background-color:#a6cef2; */
-    background-color: #ff4b1ed0;
+    /* background-color: #3dabf0; 1번으로 쓸거 */
+    background-color: #618C03;
     color: black;
     padding: 0px 15px;
     gap: 13px;
@@ -362,8 +363,9 @@ input[class="topCheckbox"]+label {
     border: none;
     border-radius: 100px;
     height: 30px;
-    background: #ff5735; 
-    padding: 0px 10px;
+    background:#0d6efd ; 
+    /* background:#D93D04; */
+    padding: 0px 15px;
     /* border:1px solid #0d6efd; */
     overflow: hidden;
 }

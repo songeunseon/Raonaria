@@ -39,7 +39,7 @@ export default{
     gap:0;
     font-weight:900;
     padding:15px 0;
-    background:#ffe9ba;
+    background:#F2506E;
     border-radius:15px;
     margin-bottom:30px;
 }
@@ -89,8 +89,8 @@ export default{
     border: none;
     border-radius: 100px;
     height: 30px;
-    background: #ff5735; 
-    padding: 0px 10px;
+    background: #0d6efd; 
+    padding: 0px 15px;
     /* border:1px solid #0d6efd; */
     overflow: hidden;
 }
@@ -127,7 +127,7 @@ export default{
     border-radius: 100px;
     width: 100px;
     height: 30px;
-    background: #ff5735;
+    background: #0d6efd;
     bottom: 0;
     outline: none;
     border: none;
