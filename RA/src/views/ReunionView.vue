@@ -11,8 +11,8 @@
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
+                    <input type="text" class="search_input">
                 </div>
-                <input type="text" class="search_input">
                 <i @click="makeRoomOpen()" class="bi bi-plus-circle"></i>
             </div>
         </div>
@@ -80,8 +80,8 @@ export default {
 }
 
 .chat_add {
-    padding-top: 45px;
-    position: relative;
+    /* padding-top: 45px; */
+    /* position: relative; */
     display: flex;
     align-items: center;
 
@@ -100,17 +100,20 @@ export default {
 }
 
 .icon {
-    position: absolute;
-    top: 50px;
-    left: 0px;
+    margin: 20px auto;
+    /* position: absolute; */
+    /* top: 50px; */
+    /* left: 0px; */
     font-size: 25px;
+    display: flex;
 }
 
 .bi-search {
     position: absolute;
-    left: 70px;
-    top: 1px;
+    /* left: 70px; */
+    /* top: 1px; */
     font-size: 10px;
+
 }
 
 .search_input {
