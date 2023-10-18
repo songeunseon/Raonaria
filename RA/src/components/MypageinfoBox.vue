@@ -70,13 +70,13 @@ export default {
 
 .info {
     max-width: 220px;
-    height:fit-content;
+    height:100%;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     /* background:#547aa9;  */
     background:#ffe850;
     /* background:#B993D6; */
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px 25px 25px 25px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -187,7 +187,7 @@ export default {
 .circle {
     width: 15px;
     height: 15px;
-    background: #ffd024ed;
+    background: #ff6d24ed;
     border-radius: 100%;
     /* position:absolute; */
 }
@@ -259,7 +259,7 @@ export default {
         gap:0 5px;
         padding:10px;
         border-radius: 25px;
-        background:#97c6ff;
+        background:#ffe850;
     }
     #chat_alert_box::-webkit-scrollbar{
         width:0px;

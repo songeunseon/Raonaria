@@ -1,77 +1,66 @@
 <template>
-<table>
-    <thead>
-        <th>문의 날짜</th>
-        <th>문의 내용</th>
-        <th><input type="checkbox" id="allcheck" @change="allCheck"></th>
-    </thead>
-    <tbody>
-        <tr class="weather">
-            <td>YYYY.MM.DD</td>
-            <td>동창회 이용은 어떻게 하면 되나요?</td>
-            <td><input type="checkbox" name="check" class="checkBox"></td>
-        </tr>
-        <tr class="content">
-            <td>YYYY.MM.DD</td>
-            <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
-            <td><input type="checkbox" name="check" class="checkBox"></td>
-        </tr>
-        <tr class="check">
-            <td></td>
-            <td></td>
-            <td><input type="checkbox" name="check" class="checkBox"></td>
-        </tr>
-        <tr class="check">
-            <td></td>
-            <td></td>
-            <td><input type="checkbox" name="check" class="checkBox"></td>
-        </tr>
-    </tbody>
-</table>
-<div class="answer_wrap">
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 동창회 이용은 어떻게 하면 되나요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 동창회 이용은 어떻게 하면 되나요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 동창회 이용은 어떻게 하면 되나요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 동창회 이용은 어떻게 하면 되나요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
-    <div class="list">
-        <div class="aIcon">
-            <i class="bi bi-check-square"></i>답변완료
-        </div>
-        <div class="aDetail">re: 동창회 이용은 어떻게 하면 되나요?</div>
-        <div class="aDate">YYYY.MM.DD</div>
-    </div>
+<div class="table_wrap">
+    <table>
+        <thead>
+            <th>문의 날짜</th>
+            <th>문의 내용</th>
+            <th><input type="checkbox" id="allcheck" @change="allCheck"></th>
+        </thead>
+        <tbody>
+            <tr class="weather">
+                <td>YYYY.MM.DD</td>
+                <td>
+                    <i class="bi bi-check2-circle"></i>
+                    동창회 이용은 어떻게 하면 되나요?
+                </td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>
+                    <i class="bi bi-check2-circle"></i>
+                    조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+            <tr class="content">
+                <td>YYYY.MM.DD</td>
+                <td>조회하려는 유치원이 어느 지역인지 잘 모르는데 어떻게 하면 될까요?</td>
+                <td><input type="checkbox" name="check" class="checkBox"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<!-- <span><i class="bi bi-check-square"></i> 답변완료 |</span>  -->
 </template>
 
 <script>
@@ -95,25 +84,39 @@ export default{
 
 <style scoped>
 
+.table_wrap{
+    width:100%; height:298px;
+    overflow-y:scroll;
+}
+
 table{
-    border:2px solid #d9d9d9;
+    /* border:2px solid #d9d9d9; */
     width:100%;
-    /* height:180px; */
+    height:200px;
     /* margin:20px 0px; */
     border-collapse: collapse;
     background:white;
+    border:none;
+    /* box-shadow: 0px 5px 3px 0px rgba(128, 128, 128, 0.304); */
 }
 
 table thead th{
-    border:2px solid #d9d9d9;
-    border-bottom:3px solid #d9d9d9;
+    /* border:2px solid #d9d9d9; */
+    /* border-bottom:3px solid #d9d9d9;*/
     border-collapse: collapse;
-    background:#f5f5f5;
+    background:#ff8d45;
     font-size:15px;
     height:36px;
     text-align: center;
     /* background:#38B6FF; */
-    
+    color:white;
+    font-weight:900;
+}
+table thead th:first-child{
+    border-radius: 15px 0 0 0;
+}
+table thead th:last-child{
+    border-radius: 0 15px 0 0;
 }
 
 table thead th input{
@@ -126,14 +129,25 @@ table thead th input{
 table thead th:nth-child(1){width:20%;}
 table thead th:nth-child(2){width:70%;}
 table thead th:nth-child(3){width:10%;}
+tbody tr{position:relative;}
+tbody tr:nth-child(even){
+    background:rgba(255, 171, 103, 0.575);
+}
+.bi-check2-circle{
+    color:#ff8d45;
+    position:absolute; left:126px; top:0px;
+    font-size:25px;
+}
 
 tbody tr td{
-    border:2px solid #d9d9d9;
+    /* border:1px solid #d9d9d9; */
+    border-left:none; border-right:none;
     text-align:center;
     overflow:hidden;
+    padding: 5px 0;
 }
 tbody tr td:first-child{
-    font-size:50%;
+    font-size:70%;
 }
 tbody tr td:nth-child(2){
     padding-left:5px;
@@ -230,11 +244,16 @@ tbody tr td input{
 
 tbody tr td{
     background:#fff;
+    font-size:12px;
 }
 
 
 #allcheck{
     transform: translate(0%, 5%);
+}
+
+.checkBox{
+    
 }
 }
 

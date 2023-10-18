@@ -39,7 +39,7 @@ export default{
     gap:0;
     font-weight:900;
     padding:15px 0;
-    background:#ddd;
+    background:#ffe9ba;
     border-radius:15px;
     margin-bottom:30px;
 }
@@ -80,18 +80,19 @@ export default{
     border-radius: 3px;
 }
 
-.manager_bt{
-    /* position: absolute; */
-    /* left:1px;
-    bottom:-18px; */
-    font-size:15px;
-    border:3px solid #0d6efd;
-    background:#0d6efd;
+.manager_bt {
+    /* position: absolute;
+    left:1px; */
+    font-size: 15px;
+    font-weight: 900;
+    color: white;
+    border: none;
     border-radius: 100px;
-    height:30px;
-    padding:0px 10px;
-    color:white;
-    font-weight:500;
+    height: 30px;
+    background: #ff5735; 
+    padding: 0px 10px;
+    /* border:1px solid #0d6efd; */
+    overflow: hidden;
 }
 
 .goapply{
@@ -108,25 +109,29 @@ export default{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom:25px;
+    margin-top:60px;
+    margin-bottom:40px;
     position:relative;
     width:100%;
     height:0;
     /* padding:10px 0; */
 }
 
-.cancel{
-    /* position: absolute; */
-    /* right:5px; */
-    font-size:15px;
-    border:3px solid #0d6efd;
+.cancel {
+    /* position: absolute;
+    right:5px; */
+    font-size: 15px;
+    font-weight: 900;
+    color: white;
+    /* border:3px solid #0d6efd; */
     border-radius: 100px;
-    width:100px;
-    height:30px;
-    background:#0d6efd;
-    bottom:-18px;
-    color:white;
-    font-weight: 500;
+    width: 100px;
+    height: 30px;
+    background: #ff5735;
+    bottom: 0;
+    outline: none;
+    border: none;
+    overflow: hidden;
 }
 
 @media(max-width:490px){

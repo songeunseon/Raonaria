@@ -78,6 +78,7 @@ export default{
     width:1000px;
     margin:45px auto;
     gap:20px;
+    background:rgba(255, 255, 255, 0.663);
 }
 .page_Zone{
     width:100%;
@@ -85,7 +86,6 @@ export default{
     flex-direction: column;
     align-items:start ;
     margin: 20px auto;
-   
 }
 @media(max-width:1194px){
     .page_wrap{
