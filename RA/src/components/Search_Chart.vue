@@ -1,16 +1,109 @@
 <script>
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import {inject} from 'vue'
+import {onMounted} from 'vue'
+import {Chart} from 'chart.js/auto'
 const router = useRouter();
 export default{
   name:"Search_chart",
-  setup(){
+    setup() {
+      
     const isReq = inject('isReq');
     const reqOpen = inject('reqOpen');
 
+    onMounted(() => {
+        const ctx = document.getElementById('teacher');
+        const label = ['만1세','만2세','만3세','만4세','만5세'];
+        const data = [23,17,20,13,10];
+        const avg = 15;
+
+        new Chart(ctx, {
+            type:'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: '학급별 원아 수',
+                    data: data,
+                    borderWidth:1,
+                    borderColor: '#aaa',
+                    base: avg,
+                    borderRadius: 20,
+                    backgroundColor:avg_color(data, avg),
+                    
+                  }]
+                },
+                options: {
+        plugins: {
+            legend: {
+                labels: {
+                    generateLabels: (chart) => {
+                        const data = chart.data.datasets[0].data;
+                        const avg = 15;
+                        return [
+                            {
+                                datasetIndex: 0,
+                                text: '초과',
+                                fillStyle: '#88c8ff',
+                            },
+                            {
+                                datasetIndex: 0,
+                                text: '미달',
+                                fillStyle: '#e69696',
+                            }
+                        ];
+                    },
+                },
+            },
+            title:{
+                display:true,
+                text:"학급대비배치원생"
+            }
+          },
+          indexAxis:'y',
+        scales: {
+            x: {
+              min:5,max:30
+            },
+        
+    },
+  },
+        });
+        function avg_color(data, avg) {
+        return data.map(value => (value >= avg ? '#88c8ff' : '#e69696'));
+    }
+
+
+        const ctx2 = document.getElementById('child');
+        const label2 = ['만1세','만2세','만3세','만4세','만5세'];
+        const data2 = [34,15,27,40,42];
+        const childColor = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
+        new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    labels: label2,
+                    datasets: [{
+                        label: '재원중인 원아 수',
+                        data: data2,
+                        borderWidth: 5,
+                        borderColor: '#fff',
+                        pointBorderWidth: 0,
+                        backgroundColor: childColor,
+                    }]
+                },
+                options:{
+                  plugins:{
+                    title:{
+                      display:true,
+                      text:"해당 유치원 현 원아 수"
+                    }
+                  }
+                }
+            });
+    });
     return{isReq, reqOpen}
+    }
   }
-}
+  
 
 
 
@@ -69,8 +162,8 @@ export default{
       </div>
     </div>
     <div id="Chart">
-      <div></div>
-      <div></div>
+<canvas id="teacher" width="400" height="300"></canvas>
+<canvas id="child" width="400" height="300"></canvas>
     </div>
     <div id="infoBt">
           <button @click="reqOpen()" class="req_bt">상담신청</button>
@@ -135,7 +228,9 @@ export default{
     height: 300px;
     margin: 10px auto;
     display: flex;
-    border:1px solid #8c52ff;
+    padding-bottom: 10px;
+    border-bottom:3px solid #aaa;
+    justify-content: space-between;
   }
   #infoBt{
     display: flex;

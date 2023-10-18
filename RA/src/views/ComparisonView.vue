@@ -1,14 +1,197 @@
-<script setup>
+<script >
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
+import {onMounted} from 'vue'
+import {Chart} from 'chart.js/auto'
+const router = useRouter();
+
+export default{
+  name:"Search_chart",
+    setup() {
+onMounted(() => {
+        const ctx = document.getElementById('teacher');
+        const label = ['만1세','만2세','만3세','만4세','만5세'];
+        const data = [23,17,20,13,10];
+        const avg = 15;
+
+        new Chart(ctx, {
+            type:'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: '학급별 원아 수',
+                    data: data,
+                    borderWidth:1,
+                    borderColor: '#aaa',
+                    base: avg,
+                    borderRadius: 20,
+                    backgroundColor:avg_color(data, avg),
+                    
+                  }]
+                },
+                options: {
+        plugins: {
+            legend: {
+                labels: {
+                    generateLabels: (chart) => {
+                        const data = chart.data.datasets[0].data;
+                        const avg = 15;
+                        return [
+                            {
+                                datasetIndex: 0,
+                                text: '초과',
+                                fillStyle: '#88c8ff',
+                            },
+                            {
+                                datasetIndex: 0,
+                                text: '미달',
+                                fillStyle: '#e69696',
+                            }
+                        ];
+                    },
+                },
+            },
+            title:{
+                display:true,
+                text:"학급대비배치원생"
+            }
+          },
+          indexAxis:'y',
+        scales: {
+            x: {
+              min:5,max:30
+            },
+        
+    },
+  },
+        });
+        function avg_color(data, avg) {
+        return data.map(value => (value >= avg ? '#88c8ff' : '#e69696'));
+    }
 
 
+        const ctx2 = document.getElementById('child');
+        const label2 = ['만1세','만2세','만3세','만4세','만5세'];
+        const data2 = [34,15,27,40,42];
+        const childColor = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
+        new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    labels: label2,
+                    datasets: [{
+                        label: '재원중인 원아 수',
+                        data: data2,
+                        borderWidth: 3,
+                        borderColor: '#fff',
+                        pointBorderWidth: 0,
+                        backgroundColor: childColor,
+                    }]
+                },
+                options:{
+                  plugins:{
+                    title:{
+                      display:true,
+                      text:"해당 유치원 현 원아 수"
+                    }
+                  }
+                }
+            });
+        const ctx3 = document.getElementById('teacher2');
+        const label3 = ['만1세','만2세','만3세','만4세','만5세'];
+        const data3 = [23,17,20,13,10];
+        const avg3 = 15;
+
+        new Chart(ctx3, {
+            type:'bar',
+            data: {
+                labels: label3,
+                datasets: [{
+                    label: '학급별 원아 수',
+                    data: data3,
+                    borderWidth:1,
+                    borderColor: '#aaa',
+                    base: avg,
+                    borderRadius: 20,
+                    backgroundColor:avg_color(data3, avg3),
+                    
+                  }]
+                },
+                options: {
+        plugins: {
+            legend: {
+                labels: {
+                    generateLabels: (chart) => {
+                        const data3 = chart.data.datasets[0].data;
+                        const avg3 = 15;
+                        return [
+                            {
+                                datasetIndex: 0,
+                                text: '초과',
+                                fillStyle: '#88c8ff',
+                            },
+                            {
+                                datasetIndex: 0,
+                                text: '미달',
+                                fillStyle: '#e69696',
+                            }
+                        ];
+                    },
+                },
+            },
+            title:{
+                display:true,
+                text:"학급대비배치원생"
+            }
+          },
+          indexAxis:'y',
+        scales: {
+            x: {
+              min:5,max:30
+            },
+        
+    },
+  },
+        });
+        function avg_color(data3, avg3) {
+        return data3.map(value => (value >= avg3 ? '#88c8ff' : '#e69696'));
+    }
+
+
+        const ctx4 = document.getElementById('child2');
+        const label4 = ['만1세','만2세','만3세','만4세','만5세'];
+        const data4 = [34,15,27,40,42];
+        const childColor2 = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
+        new Chart(ctx4, {
+                type: 'pie',
+                data: {
+                    labels: label4,
+                    datasets: [{
+                        label: '재원중인 원아 수',
+                        data: data4,
+                        borderWidth: 3,
+                        borderColor: '#fff',
+                        pointBorderWidth: 0,
+                        backgroundColor: childColor2,
+                    }]
+                },
+                options:{
+                  plugins:{
+                    title:{
+                      display:true,
+                      text:"해당 유치원 현 원아 수"
+                    }
+                  }
+                }
+            });
+    });
+    }
+}
 </script>
 
 <template>
-    <TopMenu/>
-    <TopMenu_Login/>
+    <TopMenu />
+    <TopMenu_Login />
     <div id="CP">
         <div id="left">
             <div class="CpInput">
@@ -50,8 +233,8 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     <label class="btn" for="after1">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
-                    <div></div>
-                    <div></div>
+                    <canvas id="teacher" width="200" height="200"></canvas>
+                    <canvas id="child" width="200" height="200"></canvas>
                 </div>
                 <div class="CpBt">
                     <button>상담신청</button>
@@ -99,8 +282,8 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
                     <label class="btn" for="after2">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
-                    <div></div>
-                    <div></div>
+                    <canvas id="teacher2" width="200" height="200"></canvas>
+                    <canvas id="child2" width="200" height="200"></canvas>
                 </div>
                 <div class="CpBt">
                     <button>상담신청</button>
@@ -176,7 +359,8 @@ import TopMenu_Login from '../components/TopMenu_Login.vue';
         width: 400px;
         height: 200px;
         margin: 10px auto;
-        border: 1px solid #0d6efd;
+        display: flex;
+        justify-content: space-between;
     }
     .CpBt{
         display: flex;
