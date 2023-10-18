@@ -30,8 +30,8 @@ export default{
 
 <style scoped>
 .wrap{
-    width: 390px;
-    height: 105px;
+    width: 409px;
+    height: 135px;
     border:1px solid black;
     display:flex;
     flex-direction: column;
