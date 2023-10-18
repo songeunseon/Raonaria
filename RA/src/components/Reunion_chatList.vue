@@ -124,7 +124,7 @@
     border-radius: 50px;
     border: 2px solid #f35b56;
     background: white;
-    position: relative;
+    /* position: relative; */
     /* left: 188px;
     bottom: 40px; */
 

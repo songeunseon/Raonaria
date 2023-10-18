@@ -243,7 +243,7 @@ b{
     border-radius: 100px;
     width: 250px;
     height: 50px;
-    margin: 50px auto 0 auto;
+    margin: 20px auto 0 auto;
     text-align: center;
     display: flex;
     align-items: center;
