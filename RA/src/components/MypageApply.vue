@@ -167,7 +167,7 @@ export default{
 }
 
 .bi-arrow-left-circle , .bi-arrow-right-circle{
-    position: absolute; top:40%;
+    position: absolute; top:33%;
     font-size:25px; z-index:30;
     width:25px; height:25px;
     background: white; 
@@ -259,7 +259,7 @@ background-color:#a9bb51;
     border-radius: 100px;
     height:30px;
     background:#0d6efd;
-    padding:0px 5px;
+    padding:0px 10px;
     /* border:1px solid #0d6efd; */
     overflow:hidden;
 }

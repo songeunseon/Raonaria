@@ -90,7 +90,7 @@ export default{
     background:#0d6efd;
     border-radius: 100px;
     height:30px;
-    padding:0px 5px;
+    padding:0px 10px;
     color:white;
     font-weight:900;
 }
