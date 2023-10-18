@@ -1,21 +1,20 @@
 <template>
     <div style="width: 100%; height: 100%; position: fixed; left: 0; top: 0; background: rgba(0, 0, 0, 0.5);"></div>
 <div class="Login_modal">
-    <div class="modal_header mb" >
+    <div class="modal_header" >
         <i  @click="loginOpen()" class="bi bi-x-circle" style="cursor: pointer;"></i>
         <div class="modal_title">Sign_in</div>
         <div class="modal_line"></div>
     </div>
-    <div class="login mb">
+    <div class="login">
         <div class="input"><b>ID</b><input id ="hid" type ="text" ></div>
         <div class="input"><b>PW</b><input id ="hpw" type ="password"></div>
     </div>
-    <div class="login_button mb">
+    <div class="login_button">
         <button class="sign_bt">회원가입</button>
         <button class="login_bt">로그인</button>
     </div>
     <footer class="mb">
-        <div class="line2"></div>
         <div class="coment">
             회원이 아닐시 일부 서비스를 이용할실 수 없습니다.<br>
             서비스 이용 원할시 회원가입을 해주세요
@@ -146,11 +145,7 @@ transform: translate(-50%, -50%);
     margin-right:190px;
 } */
 
-.line2{
-    border-top:2px solid #AAAAAA;
-    width:60%;
-    margin: 10px auto;
-}
+
 
 .coment{
     width: 80%;
@@ -183,7 +178,7 @@ transform: translate(-50%, -50%);
     }
     .input{
         width: 200px;
-        border-bottom: 2px solid #BEC1FF;
+        border-bottom: 2px solid #7bb1ff99;
         border-radius: 0;
     }
     .input b{
@@ -206,21 +201,28 @@ transform: translate(-50%, -50%);
     height:50px;
     border-radius: 100px;
     font-size:10px;
+    background: #0d6efd;
+    color: #fff;
 }
 .sns_line{
     display:flex;
     justify-content: center;
     padding-top: 0;
     column-gap: 10px;
+    margin: 0px auto;
     
 }
-.line2{
-    width: 100%;
+.mb{
+    border-top: 2px solid #aaa;
+    padding-top: 5px;
+    margin-top: 5px;
 }
 .coment{
     width: 100%;
     padding: 0;
     font-size: 8px;
+    margin-top: 0;
+    font-weight: 100;
 }
 }
 
