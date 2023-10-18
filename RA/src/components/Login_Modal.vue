@@ -163,32 +163,18 @@ transform: translate(-50%, -50%);
 @media(max-width:490px){
     .Login_modal{
         width: 300px;
-        display: grid;
-        grid-template-columns: repeat(2,auto);
+        height: 250px;
         align-items: center;
         justify-content: center;
     }
-    .mb:nth-child(1){
-        grid-row: 1;
-        grid-column: 1/3;
-    }
-    .mb:nth-child(2){
-        grid-row: 2;
-    }
-    .mb:nth-child(3){
-        grid-row: 3;
-        grid-column: 1;
-
-    }
-    .mb:nth-child(4){
-        grid-row: 3;
-        grid-column: 2;
-    }
-    .mb:nth-child(5){
-        grid-row: 4;
-        grid-column: 1/3;
-        justify-content: center;
-    }
+    .modal_header{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10px auto;
+    column-gap: 50px;
+    /* justify-content:space-between; */
+}
     .modal_title{
         font-size: 20px;
         display: flex;
@@ -197,10 +183,11 @@ transform: translate(-50%, -50%);
     }
     .input{
         width: 200px;
-        border: 2px solid #BEC1FF;
-        border-radius: 5px;
+        border-bottom: 2px solid #BEC1FF;
+        border-radius: 0;
     }
     .input b{
+        width: 70px;
         font-size: 15px;
         padding:5px;
         font-weight:800;
@@ -209,14 +196,14 @@ transform: translate(-50%, -50%);
         width: 130px;
     display:flex;
     justify-content:center;
-    margin:5px;
+    margin:0 auto;
     column-gap: 10px;
+
     
 }
     .sign_bt, .login_bt{
     width:50px;
     height:50px;
-    border:2px solid #BEC1FF;
     border-radius: 100px;
     font-size:10px;
 }
@@ -231,7 +218,9 @@ transform: translate(-50%, -50%);
     width: 100%;
 }
 .coment{
-   width: 100%;
+    width: 100%;
+    padding: 0;
+    font-size: 8px;
 }
 }
 

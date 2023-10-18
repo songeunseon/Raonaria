@@ -62,7 +62,7 @@ const saveNotice = () => {
       </table>
 
       <!-- 공지사항을 작성 -->
-      <form @submit.prevent="saveNotice">
+      <form id="form" @submit.prevent="saveNotice">
         <div id="writeNoticeForm">
           <label for="title">제목</label>
           <input type="text" id="title" v-model="notice.title" required>
@@ -137,8 +137,17 @@ const saveNotice = () => {
     #noticeTable{
         width: 800px;
         text-align: center;
-        border-bottom: 3px double #aaa;
         margin: 30px auto;
+      }
+    #noticeTr{
+        border-bottom: 3px double #aaa;
+    }
+    #noticeTr td{
+      padding: 10px;
+    }
+    #write{
+      height: 30px;
+      border-bottom: 1px solid #aaa;
     }
     #write .noticeTd:first-child, #noticeTr .noticeTd:first-child{
       width: 50px;
@@ -152,6 +161,11 @@ const saveNotice = () => {
     #write .noticeTd:nth-child(4), #noticeTr .noticeTd:nth-child(4){
       width: 150px;
     }
+    #form{
+    position: fixed;
+    left: 0;
+    top:30%;
+    }
     #writeNoticeForm{
       width: 400px;
       display: flex;
@@ -160,9 +174,6 @@ const saveNotice = () => {
       border: 1px solid #aaa;
       align-items: center;
       justify-content: center;
-      position: absolute;
-      top:30%;
-      left: 0;
     }
     #writeNoticeForm input,#writeNoticeForm textarea{
       width: 350px;
@@ -181,44 +192,120 @@ const saveNotice = () => {
       color:#fff;
     }
     @media(max-width:490px){
-        #noticeBox{
-        width: 350px;
-        margin: 5px auto;
+      #noticeBox{
+        width: 300px;
+        margin: 0px auto;
+        
     }
     #noticeBox h1{
-        width: 350px;
-        padding: 10px;
+        width: 300px;
+        text-align: center;
+        padding: 10px 0px;
     }
     #searchBox{
-        width: 350px;
-        height: 50px;
+        width: 300px;
+        height: 40px;
         margin: 0 auto;
         display: flex;
         background: #F4F4FA;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        font-size: 10px;
+        font-size: 13px;
     }
     .select{
         width: 50px;
         height: 30px;
+        text-align: center;
+        border: 2px solid #f35b56;
+        outline: none;
     }
     #searchIp input{
         width: 200px;
         height: 30px;
         padding: 5px;
+        border: 0;
+        border-bottom: 2px solid #f35b56;
+        background: 0;
+        outline: none;
+        font-weight: 500;
     }
     #Bt{
-        width: 50px;
+        width: 30px;
         height: 30px;
-        border: 3px solid #aaa;
+        border-radius: 100px;
+        border: 0;
+        color: #fff;
+        background: #f35b56;
     }
+    #Bt:hover{
+        color: #fff;
+        background: #f35b56;
+    }
+
     #noticeTable{
-        width: 350px;
+      font-size: 13px;
+        width: 300px;
         text-align: center;
-        border-bottom: 3px solid #aaa;
-        margin: 30px auto;
-        font-size: 10px;
+        border-bottom: 2px solid #aaa;
+        margin: 10px auto;
+    }
+    #write .noticeTd:first-child, #noticeTr .noticeTd:first-child{
+      width: 50px;
+    }
+    #write .noticeTd:nth-child(2), #noticeTr .noticeTd:nth-child(2){
+      width: 200px;
+    }
+    #write .noticeTd:nth-child(3), #noticeTr .noticeTd:nth-child(3){
+      width: 100px;
+    }
+    #write .noticeTd:nth-child(4), #noticeTr .noticeTd:nth-child(4){
+      width: 50px;
+    }
+    #noticeTr{
+        border-bottom: 3px double #aaa;
+    }
+    #noticeTr td{
+      padding: 2px;
+    }
+    #write{
+      height: 30px;
+      border-bottom: 1px solid #aaa;
+    }
+    #form{
+    width: 300px;
+    height: 200px;
+    position: fixed;
+    left: 10%;
+    top:65%;
+    bottom: 0;
+    font-size: 13px;
+    }
+    #writeNoticeForm{
+      width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      border: 0;
+      background: #d9d9d9;
+      align-items: center;
+      justify-content: center;
+    }
+    #writeNoticeForm input,#writeNoticeForm textarea{
+      width: 250px;
+      height: 30px;
+    }
+    #saveButton{
+      width: 30px;
+      height: 30px;
+      border: 0;
+      background: #f58e8a;
+      margin: 10px;
+      border-radius: 100px;
+      font-size: 10px;
+    }
+    #saveButton:hover{
+      background: #f35b56;
+      color:#fff;
     }
     }
 </style>

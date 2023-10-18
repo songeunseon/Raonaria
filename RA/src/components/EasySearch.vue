@@ -47,9 +47,14 @@
                     </tr>
                 </table>
                 <div id="easyCheck">
-                    <div><b>차량운행여부</b><input type="checkbox"></div>
-                    <div><b>특수학급여부</b><input type="checkbox"></div>
-                    <div><b>방과 후 돌봄</b><input type="checkbox"></div>
+                    <input type="checkbox" class="btn-check" name="options-base" id="car" autocomplete="off" checked>
+                    <label class="btn" for="car">차량운행여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="special" autocomplete="off" checked>
+                    <label class="btn" for="special">특수학급여부</label>
+                    
+                    <input type="checkbox" class="btn-check" name="options-base" id="after" autocomplete="off" checked>
+                    <label class="btn" for="after">방과후돌봄</label>
                 </div>
             </div>
             <div class="section easyimg">
@@ -106,20 +111,23 @@
 
 }
 #easyCheck{
+    width: 300px;
     display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    column-gap: 5px;
+    justify-content: space-around;
 }
-#easyCheck div{
-    width: 120px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#easyCheck .btn-check[type='checkbox']:checked+label{
+    background: #FFD12499;
+    border: 0;
+    border-radius: 100px;
     font-size: 13px;
-    
-} 
+}
+#easyCheck .btn-check[type='checkbox']:not(:checked)+label{
+    background: #fff;
+    border: 0;
+    border-radius: 100px;
+    font-size: 13px;
+}
+
 .easyimg{
     width: 250px;
     height: 200px;
@@ -140,6 +148,7 @@
         column-gap: 100px;
     }
     #easyMain{
+        width: 340px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -156,30 +165,35 @@
 
     }
     #easyCheck{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 10px;
-        row-gap: 0px;
-    } 
-    #easyCheck div{
-        display: flex;
-        flex-direction: column-reverse;
-        column-gap: 2px;
-        font-size: 10px;
-    }
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+#easyCheck .btn-check[type='checkbox']:checked+label{
+    background: #FFD12499;
+    border: 0;
+    border-radius: 100px;
+    font-size: 10px;
+}
+#easyCheck .btn-check[type='checkbox']:not(:checked)+label{
+    background: #fff;
+    border: 0;
+    border-radius: 100px;
+    font-size: 10px;
+}
     .left{
         width: 250px;
         height: 150px;
-        margin: 10px auto;
+        margin: 0px auto;
         padding: 10px;
     }
     .easyimg{
-    position: absolute;
+    
     width: 250px;
     height: 150px;
     margin: 0px auto;
+    margin-top: 70px;
     border: 1px solid #aaa;
     bottom: 0;
 }

@@ -91,7 +91,7 @@ export default{
   border-bottom : 3px solid #a9bb51;
   outline : none;
   margin: 0 auto;
-  margin-bottom: 250px;
+  margin-bottom: 50px;
   font-size: 15px;
 }
 

@@ -416,7 +416,7 @@ a{
     justify-content: center;
     align-items: center;
     font-size : 10px;
-    padding-top: 5px;
+    padding-top: 0;
     margin:0;
     color: black;
     cursor: pointer;
