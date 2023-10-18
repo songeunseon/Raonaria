@@ -35,7 +35,7 @@ export default{
 }
 .textWrap{
     text-align:center;
-    font-size:12px;
+    font-size:15px;
     /* padding:8px 15px; */
     padding-bottom:8px;
     padding-left:20px;
