@@ -131,7 +131,7 @@ export default{
     /* position: absolute;
     right:5px; */
     font-size:15px;
-    font-weight:900;
+    font-weight:500;
     color:white;
     /* border:3px solid #0d6efd; */
     border-radius: 100px;
@@ -179,7 +179,7 @@ export default{
 
 
 .apply_box{
-background-color:#a9bb51;
+background-color:#9bcd4d;
     color:black;
     padding:0px 25px;
     gap:13px;
@@ -253,7 +253,7 @@ background-color:#a9bb51;
     /* position: absolute;
     left:1px; */
     font-size:15px;
-    font-weight:900;
+    font-weight:500;
     color:white;
     border:3px solid #0d6efd;
     border-radius: 100px;
