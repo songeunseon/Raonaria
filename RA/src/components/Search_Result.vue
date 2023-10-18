@@ -33,12 +33,19 @@
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 const router = useRouter();
 import data from '@/assets/일반현황.json';
+import data2 from '@/assets/통학차량.json';
 import { ref, onMounted } from 'vue';
 
-const RAdata= data;
+const RAdata= {...data};
+const Rdata={...data2};
 export default{
     data(){
-        return {  RAdata,};
+      var i=0;
+      for(var d in RAdata){
+        RAdata[i]["row6"]=Rdata[i].row6;
+        i++;
+      }
+        return {  RAdata,Rdata,};
     },
     name:'Search_Result',
 };
@@ -57,10 +64,10 @@ export default{
         </tr>
         <tr id="List" v-for="item in RAdata" :key="item.id">
           <td class="checkres"><input type="checkbox"></td>
-          <td class="name">{{ item.Column3 }}</td>
+          <td class="name">{{ item.Column2 }}</td>
           <td class="address">{{ item.Column9 }}</td>
           <td class="establishmentType">{{ item.Column4 }}</td>
-          <td class="vehicleOperation">{{ item.Column6 }}</td>
+          <td class="vehicleOperation">{{ item.row6}}</td>
           <td class="time">{{ item.Column12 }}</td>
         </tr>
       </table>
@@ -111,22 +118,23 @@ export default{
     background: #f58e8a99;
   }
   #resultTable tr{
+    width: 800px;
     height: 40px;
   }
   .checkres{
     width: 20px;
   }
   .name{
-    width: 100px;
+    width: 80px;
   }
   .address{
     width: 150px;
   }
   .establishmentType{
-    width: 100px;
+    width: 50px;
   }
   .vehicleOperation{
-    width: 100px;
+    width: 50px;
   }
   .time{
     width: 100px;
