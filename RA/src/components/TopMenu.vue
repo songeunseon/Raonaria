@@ -101,6 +101,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       margin: 0 auto;
 
     }
+    
     #menuBar{
       width: 350px;
       display: flex;
@@ -108,28 +109,28 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       margin: 0 auto;
     }
     #menuList{
-    width: 50%;
+      width: 100%;
     height: 50px;
     display: flex;
-    font-size: 10px;
-    align-items: end;
-    border-bottom: 0;
-    column-gap: 10px;
+    list-style: none;
+    font-size: 17px;
+    align-items: none;
+    border-bottom: 2px solid #f35b56;
+    text-decoration: none;
+  }
+  #menuList li{
+    font-family: 'HakgyoansimSantteutdotumL';
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    width: 70px;
+    line-height: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
     transition: none;
   }
-    #menuList li{
-      width: 50px;
-      height: 30px;
-      border-radius: 10px;
-      font-size: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: none;
-      column-gap: 5px;
-    }
       #menuList li:hover{
-    font-size: 10px;
+    font-size: 13px;
   }
 
   }

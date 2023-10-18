@@ -61,8 +61,9 @@ export default{
         bottom: 0;
         text-align: center;
         padding: 10px 0;
-        border-bottom: 3px solid #aaa;
         z-index: 1020;
+        background: #aaa;
+        color:#fff
     }
   @media(min-width:490px) and (max-width:1194px){
     #TopMenuBt{
@@ -95,7 +96,7 @@ export default{
     font-size: 10px;
 }
 #CpText{
-        width: 100%;
+        width: 400px;
         margin: 0 auto;
         position: fixed;
         bottom: 0;

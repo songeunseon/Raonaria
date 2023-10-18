@@ -184,6 +184,25 @@ export default{
     justify-content: space-around;
     padding: 0 20px 0 20px;
   }
+  #check{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    margin: 10px auto;
+  }
+  #check .btn-check[type='checkbox']:checked+label{
+    background: #FFD12499;
+    border: 0;
+    border-radius: 100px;
+    font-size: 10px;
+  }
+  #check .btn-check[type='checkbox']:not(:checked)+label{
+    background: #fff;
+    border: 0;
+    border-radius: 100px;
+    font-size: 10px;
+  }
   #map{
     width: 100%;
     height: 300px;
@@ -211,7 +230,7 @@ export default{
   }
   #Chart{
     width: 350px;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
     display: flex;
     border:1px solid #8c52ff;

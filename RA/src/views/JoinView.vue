@@ -20,14 +20,14 @@ export default{
             <h1>회원가입</h1>
         </div>
         <div id="prerequisite">
-            <div id="prertitle"><h4>필수 작성 항목</h4></div>
+            <div id="prertitle"><b>필수 작성 항목</b></div>
             <div id="id"><b>ID</b><input type="text"></div>
             <div id="pw"><b>PW</b><input type="password"></div>
             <div id="name"><b>이름</b><input type="text"></div>
             <div id="tel"><b>휴대전화번호</b><input type="tel"></div>
         </div>
         <div id="choice">
-            <div id="choicetitle"><h4>선택 작성 항목</h4></div>
+            <div id="choicetitle"><b>선택 작성 항목</b></div>
             <div id="addr"><b>자택주소</b><input type="text"></div>
             <div id="sonname"><b>자녀 이름</b><input type="text"></div>
             <div id="sonBday"><b>자녀 생년월일</b><input type="date"></div>
@@ -46,12 +46,12 @@ export default{
         </div>
         <div id="agree">
             <input type="checkbox" value="agree">
-            <h5>개인정보 활용 동의</h5>
+            <b>개인정보 활용 동의</b>
         </div>
         <input id="join" type="submit" value="JOIN">
     </div>
 </template>
-<style>
+<style scoped>
 *{font-family: 'SUITE-Regular';}
     h1{
         color: #FFD124;
@@ -77,6 +77,7 @@ export default{
         height: 40px;
         display: flex;
         align-items: center;
+        text-align: center;
         justify-content: center;
         border-bottom: 3px solid #aaa;
 
@@ -187,9 +188,6 @@ export default{
         h1{
             font-size: 20px;
         }
-        h3{
-            font-size: 12px;
-        }
         #prerequisite, #choice, #affiliation, #agree{
             width: 300px;
             margin: 10px auto;
@@ -204,6 +202,10 @@ export default{
             align-items: center;
             justify-content: center;
             border-bottom: 2px solid #aaa;
+            
+        }
+        #prertitle b, #choicetitle b{
+            text-align: center;
         }
         #tel, #sonGender, #affiliation{
             height: 30px;
@@ -222,22 +224,54 @@ export default{
         #genderinput{
             width: 150px;
             display: flex;
+            justify-content: start;
             column-gap: 20px;
+            padding-right: 0;
         }
         /* #genderinput{
         width: 200px;
         column-gap: 50px;
         font-size: 12px;
     } */
-        .btn{
-            font-size: 10px;
-            padding: 5px;
-            border-radius: 100px;
+    .btn{
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        font-size: 10px;
+    }
 
-        }
+    #genderinput #genderM[type='radio']:checked + label {
+        background: #0d6efd;
+        color: #fff;
+        
+    }
+    #genderinput #genderW[type='radio']:checked + label {
+        background: #f35b56;
+        color: #fff;
+    }
+    #genderinput #genderM[type='radio']:not(:checked) + label {
+        background: #fff;
+        color: #0d6efd;
+    }
+    #genderinput #genderW[type='radio']:not(:checked) + label {
+        background: #fff;
+        color: #f35b56;
+    }
+    #btn-check{
+        width: 50px;
+        height: 30px;
+    }
         #agree input{
-            width: 20px;
-            margin-right: 20px;
+            width: 15px;
+            margin-right: 10px;
+            
+        }
+        #agree b{
+            text-align: center;
         }
         #join{
             width: 100px;
@@ -245,9 +279,10 @@ export default{
             font-size: 20px;
             text-align: center;
             margin-top: 20px;
-            border-radius: 10px;
-            background: 0;
-            border: 3px solid #BEC1FF;
+            border-radius: 100px;
+            background: #0d6efd;
+            color: #fff;
+            border:0;
         }
     }
 

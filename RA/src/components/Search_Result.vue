@@ -137,9 +137,53 @@ export default{
     }
   }
   @media(max-width:490px){
+    ::-webkit-scrollbar{
+  display: none;
+}
+  #result{
+    height: 300px;
+    margin: 0 auto;
+  }
     #result,#resultTable{
-      width: 100%;
+      width: 350px;
       font-size: 10px;
+      padding: 0;
+
+
     }
+    #resultList td{
+    border-bottom:3px double #f35b56;
+    color: #000;
+    
+  }
+  #List td{
+    border-bottom: 1px solid #aaa;
+    font-size: 7px;
+    
+  }
+  #List td:nth-child(even){
+    background: #f58e8a99;
+  }
+  #resultTable tr{
+    height: 30px;
+  }
+  .checkres{
+    display: none;
+  }
+  .name{
+    width: 40px;
+  }
+  .address{
+    width: 80px;
+  }
+  .establishmentType{
+    width: 40px;
+  }
+  .vehicleOperation{
+    width: 40px;
+  }
+  .time{
+    width: 80px;
+  }
   }
 </style>

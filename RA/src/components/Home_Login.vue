@@ -106,45 +106,22 @@ export default{
 }
 @media(max-width:490px){
     .input{
-        width: 150px;
+        width: 200px;
         text-align: center;
         font-size : 13px;
     }
     #signin{
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }   
-    .login:nth-child(1){
-        grid-row: 1;
-        grid-column: 1/3;
-        justify-self: center;
-    }
-    .login:nth-child(2){
-        grid-row: 2;
-        grid-column: 1/3;
-        justify-self: center;
-    }
-    .login:nth-child(3){
-        grid-row: 3;
-        grid-column: 2;
-    }
-    .login:nth-child(4){
-        grid-row: 3;
-    }
-    .login:nth-child(5){
-        grid-row: 4;
-        grid-column: 1/3;
-    }
 #bt{
     margin: 10px 0;
     justify-content: center;
     column-gap: 20px;
 }
 #hjoin , #hlogin{
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 100px;
     font-size: 10px;
     background: #0d6efd;

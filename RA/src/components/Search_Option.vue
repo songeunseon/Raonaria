@@ -139,16 +139,16 @@ const router = useRouter();
   @media(max-width:490px){
     #SHbox{
       width: 100%;
-      height: 200px;  
+      height: 120px;  
     }
     .bi-search{
     width: 20px;
     height: 20px;
   }
     #searchInput{
-      width: 350px;
+      width: 200px;
     height: 30px;
-      font-size: 15px;
+      font-size: 13px;
     align-items: center;
     column-gap: 30px;
     padding: 5px;
@@ -166,7 +166,7 @@ const router = useRouter();
     }
     #optionBox{
     width: 100%;
-    height: 200px;
+    height: 100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
