@@ -87,6 +87,7 @@ export default{
 .table_wrap{
     width:100%; height:298px;
     overflow-y:scroll;
+    overflow-y: hidden;
 }
 
 table{
