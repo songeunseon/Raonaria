@@ -7,12 +7,12 @@
         <div class="modal_line"></div>
     </div>
     <div class="login">
-        <div class="input"><b>ID</b><input id ="hid" type ="text" ></div>
-        <div class="input"><b>PW</b><input id ="hpw" type ="password"></div>
+        <div class="input"><b>ID</b><input id ="hid" type ="text" v-model="email" placeholder="email@email.com" required></div>
+        <div class="input"><b>PW</b><input id ="hpw" type ="password" v-model="password" placeholder="password" required></div>
     </div>
     <div class="login_button">
-        <button class="sign_bt">회원가입</button>
-        <button class="login_bt">로그인</button>
+        <button class="sign_bt"><RouterLink to="/join">회원가입</RouterLink></button>
+        <button class="login_bt" v-on:click="login">로그인</button>
     </div>
     <footer class="mb">
         <div class="coment">
@@ -25,8 +25,13 @@
 </template>
 
 <script>
-
+import {RouterLink, useRouter} from 'vue-router'
  import {inject} from 'vue';
+ import firebase from 'firebase'
+ const router = useRouter();
+
+ const sessionStorage = window.sessionStorage;
+
  export default{
     name:'Login_Modal',
     setup(){
@@ -35,11 +40,29 @@
         return{
             isLoginModal, loginOpen
         }
-    }
+    },
+    data() {
+        return{email:'',password:'' }
+    },
+    methods: {
+        login(){
+            firebase.auth().signInWithEmailAndPassword(this.email,this.password).
+            then((user) => { 
+                    sessionStorage.setItem('user_id',user.user.email);
+                    this.$router.go();
+                }).catch((err)=>{
+                    alert('에러 :'+err.message)
+                })
+            }
+        }
  }
 </script>
 
 <style scoped>
+a{
+        color: #000;
+        text-decoration: none;
+    }
 .Login_modal{
 position:absolute;
 width:400px;
@@ -115,7 +138,7 @@ transform: translate(-50%, -50%);
     
 }
 
-.sign_bt, .login_bt{
+.sign_bt, .login_bt, .logout_bt{
     width:80px;
     height:30px;
     border:0;

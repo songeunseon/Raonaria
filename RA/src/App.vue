@@ -1,9 +1,19 @@
 
 <script>
 import { RouterLink, RouterView } from "vue-router";
+const sessionStorage=window.sessionStorage;
+const uid=sessionStorage.getItem('user_id')
 import {ref, provide} from 'vue'
 export default{
-  
+  name:'App',
+  data(){  return {uid}  },
+  methods:{
+    logout(){
+      if(uid!==null){
+        sessionStorage.removeItem('user_id')
+      }
+    }
+  }
 }
 </script>
 

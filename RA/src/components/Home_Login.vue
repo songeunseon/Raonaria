@@ -1,11 +1,20 @@
 <script>
 import TheWelcome from '../components/TheWelcome.vue'
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView,useRouter } from "vue-router";
 import  EasySearch from '../components/EasySearch.vue';
 import {ref, provide} from 'vue'
+import firebase from 'firebase'
+const router = useRouter();
 
+const sessionStorage = window.sessionStorage;
+const uid = sessionStorage.getItem('user_id');
+
+const u="aaa";
 export default{
   components:{EasySearch},
+  data() {
+            return{email:'',password:'',uid }
+        },
   setup(){
     const isEasySearch = ref(false);
     const easySearch = () => {
@@ -17,21 +26,42 @@ export default{
     return{
       isEasySearch, easySearch
     }
-  }
+  },
+  methods: {
+        login(){
+            firebase.auth().signInWithEmailAndPassword(this.email,this.password).
+            then((user) => { 
+                    sessionStorage.setItem('user_id',user.user.email);
+                    this.$router.go();
+                }).catch((err)=>{
+                    alert('에러 :'+err.message)
+                })
+            },
+        logout(){
+        if( uid!==null){
+          sessionStorage.removeItem('user_id');
+          this.$router.go();
+        }
+      }
+    },
 }
 </script>
 
 <template>
 
-    <div id ="signin">
-        <div class="input login"><b>ID</b><input id ="hid" type ="text" placeholder ="abc@gmail.com"></div>
-        <div class="input login"><b>PW</b><input id ="hpw" type ="password"></div>
+    <div id ="signin" v-if="uid==null">
+        <div class="input login"><b>ID</b><input v-model="email" id ="hid" type ="text" placeholder ="abc@gmail.com"></div>
+        <div class="input login"><b>PW</b><input v-model="password" id ="hpw" type ="password"></div>
         <div id ="bt" class="login">
             <RouterLink to="/join"><button id ="hjoin">회원가입 </button ></RouterLink>
-            <button @click="login()" id ="hlogin">로그인 </button >
+            <button v-on:click="login" id ="hlogin">로그인 </button >
         </div>
         <p id="not" class="login">회원이 아닐시 일부 서비스를 이용하실수 없습니다. <br>서비스 이용 원할시 회원가입을 해주세요</p>
     </div >
+    <div v-if="uid!=null">
+        {{uid}}<br>
+        <button v-on:click="logout" v-if="uid!==null" class="hlogout">Logout</button>
+    </div>
 <EasySearch v-if="isEasySearch"/>
 </template>
 
@@ -78,7 +108,7 @@ export default{
     color: #aaa;
     cursor: pointer;
 }
-#hlogin {
+#hlogin, .hlogout {
     margin-top : 5px;
     border: 0;
     width : 100px;
@@ -93,7 +123,7 @@ export default{
     color: #fff;
     cursor: pointer;
 }
-#hlogin:hover {
+#hlogin:hover,.hlogout:hover {
     background: #0d6efd;
     color: #fff;
     cursor: pointer;

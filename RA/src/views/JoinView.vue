@@ -2,12 +2,66 @@
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
+import firebase from 'firebase'
 const router = useRouter();
 
 export default{
     components:{
         TopMenu, TopMenu_Login
-    }
+    },
+    name: 'Join',
+        data() {
+            return {
+                valid:{
+                    email:false,
+                    password:false
+                },
+                emailHasError: false,
+                passwordHasError: false,
+                email:'',password:''
+             }
+        },
+        methods: {
+            join(){
+                firebase.auth().createUserWithEmailAndPassword(this.email,this.password).then(
+                    function(user){
+                        alert('회원가입완료')
+                    },
+                    function(err){
+                        alert('에러 : '+err.message)
+                    }
+                )
+            },
+            checkEmail() {
+            // 이메일 형식 검사
+                const validateEmail = /^[A-Za-z0-9_\\.\\-]+@[A-Za-z0-9\\-]+\.[A-Za-z0-9\\-]+/
+
+                if (!validateEmail.test(this.email) || !this.email) {
+                    this.valid.email = true
+                    this.emailHasError = true
+                    return
+                } this.valid.email = false
+                    this.emailHasError = false
+            },
+            checkPassword() {
+            // 비밀번호 형식 검사(영문, 숫자, 특수문자)
+                const validatePassword = /^(?=.*[a-zA-z])(?=.*[0-9]).{8,16}$/
+                if (!validatePassword.test(this.password) || !this.password) {
+                    this.valid.password = true
+                    this.passwordHasError = true
+                    return
+                } this.valid.password = false
+                    this.passwordHasError = false
+            },
+        },
+        watch: {
+            'email': function() {
+            this.checkEmail()
+            },
+            'password': function() {
+            this.checkPassword()
+            },
+        },
 
 }
 </script>
@@ -21,10 +75,20 @@ export default{
         </div>
         <div id="prerequisite">
             <div id="prertitle"><b>필수 작성 항목</b></div>
-            <div id="id"><b>ID</b><input type="text"></div>
-            <div id="pw"><b>PW</b><input type="password"></div>
-            <div id="name"><b>이름</b><input type="text"></div>
-            <div id="tel"><b>휴대전화번호</b><input type="tel"></div>
+            <div id="id"><b>ID</b>
+                <input type="text" v-model="email" placeholder="email@email.com" :class="{ 'input-danger': emailHasError }" required>
+                <p v-show="valid.email" class="input-error">
+                    이메일주소를 정확히입력하세요
+                </p>
+            </div>
+            <div id="pw"><b>PW</b>
+                <input type="password" v-model="password" placeholder="영문,숫자 조합으로 8자리 이상 조합" :class="{ 'input-danger': passwordHasError }" required>
+                <p v-show="valid.password" class="input-error">
+                비밀번호를 올바르게 입력하세요
+                </p>
+            </div>
+            <div id="name"><b>이름</b><input type="text" required></div>
+            <div id="tel"><b>휴대전화번호</b><input type="tel" required></div>
         </div>
         <div id="choice">
             <div id="choicetitle"><b>선택 작성 항목</b></div>
@@ -48,11 +112,22 @@ export default{
             <input type="checkbox" value="agree">
             <b>개인정보 활용 동의</b>
         </div>
-        <input id="join" type="submit" value="JOIN">
+        <button id="join" v-on:click="join" type="submit"><RouterLink to="/">JOIN</RouterLink></button>
     </div>
 </template>
 <style scoped>
 *{font-family: 'SUITE-Regular';}
+
+.input-error {
+    line-height: 16px;
+    font-size: 11px;
+    color: red;
+  }
+  .input-danger {
+    border-bottom: 1px solid red !important;
+  }
+
+
     h1{
         color: #FFD124;
     }
@@ -164,6 +239,11 @@ export default{
         border-radius: 30px;
         background: #fcd03e99;
         border: 0;
+        
+    }
+    a{
+        color: #000;
+        text-decoration: none;
     }
     #join:hover{
         background: #fcd03e;

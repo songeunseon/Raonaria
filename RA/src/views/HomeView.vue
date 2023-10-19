@@ -6,6 +6,8 @@ import {ref, provide} from 'vue'
 import Home_Login from '../components/Home_Login.vue';
 import Home_Easy from '../components/Home_Easy.vue';
 
+const sessionStorage = window.sessionStorage;
+const uid = sessionStorage.getItem('user_id');
 
 export default{
   components:{ EasySearch,Home_Easy, Home_Login },
@@ -20,7 +22,17 @@ export default{
     return{
       isEasySearch, easySearch
     }
+  },
+  data(){
+    return {uid}
+  },
+  watch:{
+    uid(nvalue,ovalue){
+      console.log(ovalue);
+      console.log(nvalue);
+    }
   }
+
 }
 </script>
 <template>
@@ -67,7 +79,7 @@ export default{
       </div >
         <Home_Easy/>
         <Home_Login/>
-
+      
     </search >
     </div >
     <footer id ="footer">
