@@ -1,6 +1,7 @@
 <template>
+    
     <div id="window">
-
+        <div class="chat_alert">채팅방 알림</div>
         <div id="alert_window">
             <div class="textWrap">활동 중인 채팅방이 없습니다.</div>
         </div>
@@ -25,8 +26,8 @@ export default{
 <style scoped>
 #window{
     /* position:relative; top: 0px; */
-    margin-top:15px;
-    width:220px; height:185px;
+    margin-top:25px;
+    width:220px; height:208px;
     display:flex;
     flex-direction: column;
     gap:10px;
@@ -57,6 +58,12 @@ export default{
     border-radius: 2px;
 
     /* cursor: pointer;} */
+}
+
+.chat_alert {
+    font-size: 15px;
+    position: relative;
+    text-align: center;
 }
 
 

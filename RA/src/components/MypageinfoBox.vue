@@ -4,9 +4,9 @@
             <div class="profile">
                 <i class="bi bi-person-circle"></i>
                 <div class="name">김선향</div>
-                <div class="chat_alert">채팅방 알림</div>
             </div>
             <div id="chat_alert_box" v-if="!isApply">
+                <div class="chat_alert">채팅방 알림</div>
                 <div class="alert_box">
                     <div class="circle"></div>
                     <div class="textWrap">서구 유치원 채팅방에
@@ -74,13 +74,13 @@ export default {
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     /* background:#547aa9;  */
-    /* background:#ffe850; */
-    background:#FFEB00;
+    background:#ffe850;
+    /* background:#FFf; */
     /* background:#B993D6; */
     border-radius: 25px 25px 25px 25px;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    /* row-gap: 20px; */
     
 }
 
@@ -90,6 +90,8 @@ export default {
     display: flex;
     background: #fff;
     flex-direction: column;
+    justify-content: center;
+    row-gap:15px;
     /* justify-content:center; */
     align-items: center;
     border-radius: 100%;
@@ -100,9 +102,10 @@ export default {
 
 .profile i {
     font-size: 50px;
-    padding: 12px 0;
     font-size: 40px;
-
+    height:40px;
+    /* position:relative;
+    top:15px; */
 }
 
 
@@ -112,16 +115,13 @@ export default {
     font-weight: 900;
     text-align: center;
     position: relative;
-    top: -2px;
 }
 
 
 
 
 .kids {
-    /* width: 228px;
-    position: relative;
-    right: 3px; */
+    
 }
 
 .id {
@@ -180,10 +180,14 @@ export default {
     /* background:#F1EFEF; */
     /* margin:60px 0; */
     position: relative;
-    top: 15px;
-    left: 3px;
+    top: 25px;
 
 }
+.chat_alert {
+    font-size: 15px;
+    position: relative;
+}
+
 
 .circle {
     width: 15px;
@@ -299,11 +303,6 @@ export default {
 /*---------------------------------*/
 
 
-.chat_alert {
-    font-size: 15px;
-    position: relative;
-    padding-top:30px;
-}
 
 /*테블릿 반응형 부분 */
 @media(min-width:490px) and (max-width:1194px){
