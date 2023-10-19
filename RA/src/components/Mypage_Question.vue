@@ -85,15 +85,15 @@ export default{
 <style scoped>
 
 .table_wrap{
-    width:100%; height:298px;
+    width:100%; height:290px;
     overflow-y:scroll;
     overflow-y: hidden;
+    border-bottom:1px solid #d9d9d9;
 }
 
 table{
-    /* border:2px solid #d9d9d9; */
+    border:2px solid #d9d9d9;
     width:100%;
-    height:200px;
     /* margin:20px 0px; */
     border-collapse: collapse;
     background:white;
@@ -102,11 +102,11 @@ table{
 }
 
 table thead th{
-    /* border:2px solid #d9d9d9; */
+    border:2px solid #d9d9d9;
     /* border-bottom:3px solid #d9d9d9;*/
     border-collapse: collapse;
-    /* background:#48BDFF; */
-    background:#f08502;
+    background:#ff9148;
+    /* background:#fff; */
     font-size:15px;
     height:36px;
     text-align: center;
@@ -115,10 +115,10 @@ table thead th{
     font-weight:900;
 }
 table thead th:first-child{
-    border-radius: 10px 0 0 0;
+    /* border-radius: 10px 0 0 0; */
 }
 table thead th:last-child{
-    border-radius: 0 10px 0 0;
+    /* border-radius: 0 10px 0 0; */
 }
 
 table thead th input{
@@ -132,9 +132,9 @@ table thead th:nth-child(1){width:20%;}
 table thead th:nth-child(2){width:70%;}
 table thead th:nth-child(3){width:10%;}
 tbody tr{position:relative;}
-tbody tr:nth-child(even){
+/* tbody tr:nth-child(even){
     background:#ffc14e;
-}
+} */
 .bi-check2-circle{
     color:#ff8d45;
     position:absolute; left:126px; top:0px;
@@ -142,8 +142,7 @@ tbody tr:nth-child(even){
 }
 
 tbody tr td{
-    /* border:1px solid #d9d9d9; */
-    border-left:none; border-right:none;
+    border:1px solid #d9d9d9;
     text-align:center;
     overflow:hidden;
     padding: 5px 0;

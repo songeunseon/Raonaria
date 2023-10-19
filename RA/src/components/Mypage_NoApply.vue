@@ -31,7 +31,7 @@ export default{
 }
 
 .data_box{
-    width:100%; height:220px;
+    width:100%; height:230px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -87,9 +87,10 @@ export default{
     font-weight: 900;
     color: white;
     border: none;
-    border-radius: 100px;
+    border-radius: 10px;
     height: 30px;
-    background: #0d6efd; 
+    background:#1856b3ab ;
+    /* background:#D93D04; */
     padding: 0px 15px;
     /* border:1px solid #0d6efd; */
     overflow: hidden;
@@ -124,10 +125,10 @@ export default{
     font-weight: 900;
     color: white;
     /* border:3px solid #0d6efd; */
-    border-radius: 100px;
+    border-radius: 10px;
     width: 100px;
     height: 30px;
-    background: #0d6efd;
+    background:#1856b3ab ;
     bottom: 0;
     outline: none;
     border: none;
