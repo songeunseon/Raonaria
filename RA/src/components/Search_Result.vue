@@ -36,7 +36,7 @@ import data from '@/assets/일반현황.json';
 import data2 from '@/assets/통학차량.json';
 import { ref, onMounted } from 'vue';
 
-const RAdata= {...data};
+const RAdata= data;
 const Rdata={...data2};
 export default{
     data(){
@@ -48,6 +48,72 @@ export default{
         return {  RAdata,Rdata,};
     },
     name:'Search_Result',
+    props:["keyword","selectOp"],
+    methods:{
+      searchGroup(){
+        const len = this.RAdata.length;
+        for(let i=0; i<len;i++){
+          if(this.RAdata[i].Column3.includes(this.keyword) == false ){
+            document.querySelectorAll(".dataList")[i].style.display="none";
+          }else{
+            document.querySelectorAll(".dataList")[i].style.display="table-row";
+          }
+          
+        }
+      },
+      searchSelect(){
+        const len = this.RAdata.length;
+        console.log(this.selectOp.location);
+        
+        for(let i=0; i<len;i++){
+          var isOption=true;
+          if(this.selectOp.location!=''){
+            isOption=this.RAdata[i].Column9.includes(this.selectOp.location);
+            console.log("location");
+          }
+          if(this.selectOp.operation!=''){
+            isOption=this.RAdata[i].row6===this.selectOp.operation && isOption;
+            console.log(isOption);
+          }
+          if(this.selectOp.est!=''){
+            if(this.selectOp.est==='국립/공립')
+              isOption=this.RAdata[i].Column4.includes('공립')&& isOption;
+            if(this.selectOp.est==='사립')
+              isOption=this.RAdata[i].Column4.includes(this.selectOp.est)&& isOption;
+          }
+          if(this.selectOp.uclass!=''){
+            if(this.selectOp.uclass==3)
+              isOption=this.RAdata[i].Column13 > 0 && isOption;
+            if(this.selectOp.uclass==4)
+              isOption=this.RAdata[i].Column14 > 0 && isOption;
+            if(this.selectOp.uclass==5)
+              isOption=this.RAdata[i].Column15 > 0 && isOption;
+
+          }
+          
+          if(isOption){
+            document.querySelectorAll(".dataList")[i].style.display="table-row";
+          }else{
+            document.querySelectorAll(".dataList")[i].style.display="none";
+             
+          }
+          // && this.RAdata[i].row6.includes(this.selectOp.operation) == false 
+          // && this.RAdata[i].Column9.includes(this.selectOp.location) == false 
+          // && this.RAdata[i].Column9.includes(this.selectOp.location) == false 
+        }
+      },
+    },
+    watch:{
+      keyword(){
+        this.searchGroup();
+      },
+      selectOp:{
+        handler(){
+        this.searchSelect();
+        },
+        deep:true,
+      },
+    }
 };
 
 </script>
@@ -62,9 +128,9 @@ export default{
           <td class="vehicleOperation"><b>차량운행</b></td>
           <td class="time"><b>운영시간</b></td>
         </tr>
-        <tr id="List" v-for="item in RAdata" :key="item.id">
+        <tr id="List" class="dataList" v-for="item in RAdata" :key="item.id">
           <td class="checkres"><input type="checkbox"></td>
-          <td class="name">{{ item.Column2 }}</td>
+          <td class="name">{{ item.Column3 }}</td>
           <td class="address">{{ item.Column9 }}</td>
           <td class="establishmentType">{{ item.Column4 }}</td>
           <td class="vehicleOperation">{{ item.row6}}</td>
