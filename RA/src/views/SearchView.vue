@@ -21,7 +21,7 @@ export default{
     },
   methods:{
     search(data){
-      //console.log(data);
+      console.log(data);
       this.keyword=data;
     },
     searchOption(data){
