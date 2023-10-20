@@ -299,6 +299,11 @@ onMounted(() => {
 </template>
 <style scoped>
     *{font-family: 'SUITE-Regular';}
+    
+    #teacher, #child, #teacher2, #child2{
+        width: 200px;
+        height: 200px;
+    }
     #CP{
         max-width: 1000px;
         display: flex;
