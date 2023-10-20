@@ -162,8 +162,12 @@ export default{
       </div>
     </div>
     <div id="Chart">
-<canvas id="teacher" width="400" height="300"></canvas>
-<canvas id="child" width="400" height="300"></canvas>
+      <div class="teacherWrap">
+        <canvas id="teacher" width="400" height="300"></canvas>
+      </div>
+      <div class="childWrap">
+        <canvas id="child" width="400" height="300"></canvas>
+      </div>
     </div>
     <div id="infoBt">
           <button @click="reqOpen()" class="req_bt">상담신청</button>
@@ -173,7 +177,12 @@ export default{
 </template>
 <style >
 
+.teacherWrap, .childWrap{width:50%;}
 
+#teacher, #child{
+  width: 400px;
+  height: 300px;
+}
 #info{
     width: 1000px;
     margin: 50px auto;
