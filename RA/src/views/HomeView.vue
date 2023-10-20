@@ -117,6 +117,9 @@ main{
     height : 700px;
     display : flex;
     margin-top : 70px;
+    background: #fff;
+    border-radius: 30px;
+    border: 1px solid #d9d9d9;
     /* position: relative; */
 
 }
@@ -127,9 +130,9 @@ main{
   flex-direction : column ;
   text-align: center;
   align-items: center;
+  /* border-radius:30px 0 0 30px; */
   /* border: 5px solid #a9bb51;
   border-right: 0;
-  border-radius:30px 0 0 30px;
   padding-left: 10px; */
 }
 

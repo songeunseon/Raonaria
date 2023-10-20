@@ -1,5 +1,8 @@
 <script>
     import {inject} from 'vue';
+    import data from '@/assets/일반현황.json';
+
+    const RAdata= data;
 
     export default{
         name:'EasySearch',
@@ -13,6 +16,35 @@
             return{
                 isEasySearch, easySearch, CloseEasySearch
             }
+        },
+        methods:{
+            search(event){
+            this.$emit('sendKeyword',event.target.value);
+            }
+        },
+        data(){
+            return{
+            searchKeyword: '',
+            };
+        },
+        name:'EasySearch',
+        props:["keyword"],
+        methods:{
+            search_Group(){
+                const len = this.RAdata.length;
+                for(let i=0; i<len;i++){
+                if(this.RAdata[i].Column3.includes(this.keyword) == false ){
+                    document.querySelectorAll(".left")[i].style.display="none";
+                }else{
+                    document.querySelectorAll(".left")[i].style.display="table-row";
+                }
+                }
+            },
+        },
+        watch:{
+            keyword(){
+                this.search_Group();
+            },
         }
     }
 
@@ -27,23 +59,23 @@
             <h3>간단조회</h3>
         </div>
         <div id="easyMain">
-            <div class="section left">
+            <div class="section left" v-for="item in RAdata" :key="item.id">
                 <table>
                     <tr>
                         <td>유치원명</td>
-                        <td></td>
+                        <td>{{ item.Column3  }}</td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td></td>
+                        <td>{{ item.Column9 }}</td>
                     </tr>
                     <tr>
                         <td>설립유형</td>
-                        <td></td>
+                        <td>{{ item.Column4 }}</td>
                     </tr>
                     <tr>
                         <td>운영시간</td>
-                        <td></td>
+                        <td>{{ item.Column12 }}</td>
                     </tr>
                 </table>
                 <div id="easyCheck">
