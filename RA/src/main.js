@@ -5,7 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
-import firebase from 'firebase'
+import firebase from 'firebase/app'
 import VueSession from 'vue-session/index'
 
 var sesstionOptions={
