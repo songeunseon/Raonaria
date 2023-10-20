@@ -16,6 +16,18 @@ export default{
   name:'SearchView',
   components:
     { Consulting_Req, TopMenu, TopMenu_Login, Search_Option, Search_Result, Search_Chart},
+  data:function(){
+      return{ keyword:"",selectOp:''}
+    },
+  methods:{
+    search(data){
+      //console.log(data);
+      this.keyword=data;
+    },
+    searchOption(data){
+      this.selectOp=data;
+    }
+  },
   setup(){
     const isReq = ref(false);
     const reqOpen = () => isReq.value = !isReq.value;
@@ -46,11 +58,11 @@ export default{
 <template>
   <TopMenu/>
   <TopMenu_Login/>
-  <Search_Option />
+  <Search_Option @sendKeyword="search" @sendOption="searchOption"/>
   <div id="buttonbox">
     <RouterLink to="/comparison"><button id="comparison">유치원 비교하기</button></RouterLink> 
   </div>
-  <Search_Result />
+  <Search_Result v-bind:keyword="keyword" v-bind:selectOp="selectOp" />
   <Search_Chart />
   <consulting_Req v-show="isReq"/>
   <div class="darkBg" v-show="isReq"></div>
