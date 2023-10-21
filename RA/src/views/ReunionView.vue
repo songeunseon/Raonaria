@@ -94,10 +94,10 @@ export default {
     outline: none;
     border-bottom: 2px solid #0d6efd;
     /* border-radius: 5px; */
-    padding:10px 0px 10px 30px;
 }
 
 .icon {
+    height: 50px;
     margin: 20px auto;
     /* position: absolute; */
     /* top: 50px; */
@@ -109,14 +109,20 @@ export default {
 
 .bi-search {
     position: absolute;
+    margin: 10px;
     /* left: 70px; */
     /* top: 1px; */
     width:20px;
     height:20px;
+
 }
 
 .search_input {
     margin: 0 auto;
+    padding: 5px;
+    outline: none;
+    text-align: center;
+
 }
 
 

@@ -83,9 +83,9 @@ a {
     width: 800px;
     height: 50px;
     margin-top: 410px;
-    background: #f35b56;
+    background: #0d6efd;
     color: #fff;
-    border: 1px solid #f35b56;
+    border: 1px solid #0d6efd;
     border-radius: 5px;
 }
 </style>
