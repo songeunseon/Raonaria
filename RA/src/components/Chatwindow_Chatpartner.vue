@@ -26,39 +26,40 @@ export default{
 <style scoped>
 
 .partner_wrap{
-    width:200px;
-    height:350px;
+    width:150px;
+    height:230px;
     background:#F4F4FA;
     margin-top:30px;
     border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 
 }
 
 .info_line{
-    width:180px;
+    width:130px;
     border:1px solid #F6E6E6;
     margin:20px auto;
 }
 
 .chat_partner{
     text-align: center;
-    width:180px;
+    width:130px;
     padding-top:10px;
     font-size:18px;
-    padding-left:15px;
 }
 
 .info_box2{
-    width:170px;
+    width:130px;
     max-height:290px;
     display:flex;
     flex-direction: column;
     background:#fff;
-    margin-left:15px;
-    margin-bottom:15px;
     text-align:center;
     overflow-y:scroll;
-    border-radius:10px;
+    font-size: 13px;
     
 
     

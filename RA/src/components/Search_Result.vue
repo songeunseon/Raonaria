@@ -163,6 +163,7 @@ export default{
     border: 5px solid #d9d9d999;
     border-radius: 5px;
     padding: 0 10px;
+    background: #fff;
     box-shadow: 5px 0 10px #aaa,
                 -5px 0 10px #aaa,
                 0 5px 10px #aaa,

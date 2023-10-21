@@ -92,7 +92,7 @@ export default {
     height: 32px;
     border: none;
     outline: none;
-    border-bottom: 2px solid #f35b56;
+    border-bottom: 2px solid #0d6efd;
     /* border-radius: 5px; */
     padding:10px 0px 10px 30px;
 }

@@ -43,7 +43,7 @@ export default{
     width: 300px;
     height: 227px;
     background: white;
-    border: 2px solid #f35b56;
+    border: 2px solid #0d6efd;
     border-radius:10px;
     z-index: 10;
 }
@@ -94,7 +94,7 @@ export default{
     width: 110px;
     height: 40px;
     font-size: 18px;
-    background: #f35b56;
+    background: #0d6efd;
     color:#fff;
 }
 </style>

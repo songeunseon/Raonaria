@@ -77,9 +77,10 @@ body{
 
 .chat_layout {
     display: flex;
-    justify-content: space-between;
-    width: 1000px;
-    margin: 50px auto;
+    justify-content: center;
+    column-gap: 10px;
+    width: 900px;
+    margin: 20px auto;
 
 }
 

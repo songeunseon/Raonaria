@@ -186,6 +186,8 @@ export default{
 #info{
     width: 1000px;
     margin: 50px auto;
+    background: #fff;
+    border-radius: 30px;
   }
   #harf{
     margin: 20px auto;

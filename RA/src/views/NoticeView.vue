@@ -53,16 +53,35 @@ const saveNotice = () => {
           <td class="noticeTd">등록일</td>
           <td class="noticeTd">작성자</td>
         </tr>
-        <tr id="write" v-for="(savedNotice, index) in notices" :key="index">
+        <tr id="write">
+          <td class="noticeTd">3</td>
+          <td class="noticeTd">문의사항관련 안내입니다</td>
+          <td class="noticeTd">2023.10.12</td>
+          <td class="noticeTd">라온아리아</td>
+        </tr>
+        <tr id="write">
+          <td class="noticeTd">2</td>
+          <td class="noticeTd">라온아리아를 이용해주셔서 감사합니다</td>
+          <td class="noticeTd">2023.10.11</td>
+          <td class="noticeTd">라온아리아</td>
+        </tr>
+        <tr id="write">
+          <td class="noticeTd">1</td>
+          <td class="noticeTd">공지사항 테스트 입니다</td>
+          <td class="noticeTd">2023.10.10</td>
+          <td class="noticeTd">라온아리아</td>
+        </tr>
+        
+        <!-- <tr id="write" v-for="(savedNotice, index) in notices" :key="index">
           <td class="noticeTd">{{ index + 1 }}</td>
           <td class="noticeTd">{{ savedNotice.title }}</td>
           <td class="noticeTd">{{ new Date().toLocaleDateString() }}</td>
           <td class="noticeTd">{{ savedNotice.user }}</td>
-        </tr>
+        </tr> -->
       </table>
 
       <!-- 공지사항을 작성 -->
-      <form id="form" @submit.prevent="saveNotice">
+      <form id="form" @submit.prevent="saveNotice" style="display: none;">
         <div id="writeNoticeForm">
           <label for="title">제목</label>
           <input type="text" id="title" v-model="notice.title" required>
