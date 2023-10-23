@@ -1,0 +1,241 @@
+
+
+#chat_room{
+    width:1000px;
+    height:800px;
+    margin:60px auto;
+    /* border:1px solid black; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .menu_modal{
+    position:fixed;
+    top:31.2%;
+    left:55%;
+    transform: translate(-50%, -23%);
+    width:325px;
+    height:700px;
+    background:white;
+    border:1px solid black;
+    overflow-y:scroll;
+} */
+
+/* .menu{
+    width:300px;
+    height:fit-content;
+}
+
+.menu_bar{
+    width:300px;
+    border-bottom: 1px solid black;
+    padding:10px 0;
+    
+}
+
+.menu_bar span{
+   margin-left:100px;
+   font-weight:800;
+}
+
+.menu_bar i{
+    padding-left:30px;
+}
+
+.title_change{
+    margin:5px 120px;
+    font-size:15px;
+}
+
+.content_change{
+    padding:0 30px;
+}
+
+.content_change input{
+    border:none;
+    border-bottom: 1px solid black;
+    margin:10px 0;
+    padding:5px 3px;
+}
+
+.save_bt{
+    padding:10px 100px;
+}
+
+.save{
+ width:100%;
+ height:25px;
+ border:none;
+ font-weight:800;
+ background:#D9D9D9;
+}
+
+.notice{
+    border:none;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+    padding:10px 0;
+    
+
+}
+
+.notice span{
+    margin-left:80px;
+    font-weight:800;
+}
+
+.notice i{
+    padding-left:10px;
+}
+
+.notice_write input{
+    width:250px;
+    border:none;
+    margin-top:25px;
+    padding-left:50px;
+}
+
+.notice_info_bt{
+    padding:10px 90px;
+}
+
+.notice_info{
+    width:100px;
+    height:25px; 
+    margin:10px 10px;
+    font-weight:800;
+    border:none;
+    background:#d9d9d9;
+
+}
+
+.kick_out{
+    font-weight: 900;
+    font-size:18px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    text-align: center;
+    padding:10px;
+}
+
+.Participants_list{
+    text-align: center;
+    font-weight:900;
+    padding-top:5px;
+}
+
+.chat_box{
+    width:200px;
+    margin:10px auto;
+    background:#d9d9d9;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manager{
+    position:relative;
+    top:-2px;
+    left:9px;
+}
+
+.chat_box{
+    display:flex;
+    flex-direction: column;
+}
+
+.check_name{
+    display:flex;
+    align-self: end;
+    margin-right:50px;
+    padding:5px 0px;
+    gap:10px;
+}
+
+.kick_out_bt{
+    padding:10px 90px;
+}
+
+.exit_modal{
+    position:fixed;
+    top:23%;
+    left:50%;
+    transform: translate(-50%, -23%);
+    width:300px;
+    background:white;
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    padding:35px 0;
+    border: 1px solid black;
+}
+
+.exit_title{
+    font-size:20px;
+    font-weight:900;
+    text-align: center;
+}
+
+.warning_window{
+    font-size:18px;
+    text-align: center;
+}
+
+.delete_title{
+    width:165px;
+    height:25px;
+    border:1px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+  
+}
+
+.check_del{
+    width:165px;
+    border:1px solid black;
+    position:absolute;
+    background: white;
+    margin-top:10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 0;
+}
+
+.inform_delete{
+    font-size:15px;
+    text-align:center;
+}
+
+.inform_detail_delete{
+    font-size:10px;
+    padding:10px 10px;
+    font-weight:900;
+}
+
+.delete_button{
+    display: flex;
+    gap:5px;
+}
+
+.notice_del_bt{
+    width:68px;
+    height:23px;
+    border:none;
+    background: #d9d9d9;
+} */
+
