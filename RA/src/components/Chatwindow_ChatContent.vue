@@ -85,13 +85,12 @@ export default {
 }
 
 .chat_wrap {
-    width: 770px;
+    width: 700px;
     /* padding:50px 0; */
-    height: 660px;
+    height: 500px;
     overflow-y: scroll;
     /* display:flex;*/
-    background:#F4F4FA;
-    border-radius:10px;
+    background:#e1ebf9;
     display:flex;
     flex-direction:column;   
 }
@@ -111,23 +110,25 @@ export default {
 
 .line1 {
     width: 100%;
-    background-color: #f35b56;
+    top:20px;
+    border-bottom: 2px dashed #0d6efd;
     height: 1px;
+    position: relative;
 }
 
 .chat_info {
     position: relative;
     left: 50%;
     transform: translate(-50%);
-    top: -20px;
+    top: 0px;
     width: 150px;
     height: 40px;
-    background-color:#F4F4FA;
+    background:#fff;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 10px solid white;
+    border: 10px solid #fff;
     font-size: 11px;
     color: black;
 }
@@ -205,8 +206,10 @@ export default {
 }
 
 .write_wrap{
+    width: 690px;
     display:flex;
     align-items:center;
+    justify-content: space-between;
     column-gap:10px;
     margin-top:10px;
 }
@@ -225,25 +228,31 @@ export default {
     resize:none;
 }
 .text_output{
-    width:150px;
-    height:48px;
+    width:90px;
+    height:40px;
     line-height: 30px;
     font-size:20px;
     color:black;
     outline:none;
-    border:2px solid #F4F4FA;
-    background:#F4F4FA;
+    border:2px solid #0d6efd;
+    background:#fff;
+    border-radius: 100px;
+}
+.text_output:hover{
+    background: #0d6efd;
+    color: #fff;
 }
 
 .word_write{
-    width:88.3%;
+    width:590px;
     height:48px;
     padding:13px 15px;
     flex-grow:1;
     outline:none;
-    border:none;
-    background:#F4F4FA;
+    border: 0;
+    border-bottom:2px solid #0d6efd;
     resize: none;
     overflow:hidden;
+
 }
 </style>

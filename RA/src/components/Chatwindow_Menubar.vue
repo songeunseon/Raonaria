@@ -47,7 +47,7 @@ export default {
 } */
 a{color:black;}
 input[type="checkbox"]{cursor:pointer;}
-.bi{cursor:pointer;}
+.bi{cursor:pointer; color: #fff;}
 
 .header {
     width: 1000px;
@@ -55,8 +55,10 @@ input[type="checkbox"]{cursor:pointer;}
     border: none;
     margin: 0 auto;
     font-size: 18px;
-    background-color: #eb6c68;
+    background-color: #0d6efd;
+    border-radius: 100px;
     margin:30px auto;
+    color: #fff;
 }
 
 .chat_name {

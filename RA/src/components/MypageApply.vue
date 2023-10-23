@@ -364,7 +364,7 @@ export default {
     font-size:22px;
     color:#1d4236;
     padding:0;
-    background:#8dcdbb;
+    background:#a9bb51;
     width:100%;
     height:36%;
 }

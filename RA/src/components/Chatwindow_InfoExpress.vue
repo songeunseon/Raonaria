@@ -71,14 +71,17 @@ export default{
 <style>
 
 #announcement{
-    width:200px;
-    height:350px;
+    width:150px;
+    height:300px;
     border:1px solid #F4F4FA;
     background: #F4F4FA;
     /* margin:-665px 745px; */
     border-radius: 10px;
     /* display:flex;  */
     position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main_title1{
@@ -88,18 +91,15 @@ export default{
 }
 
 .info_box{
-    width:170px;
-    max-height:290px;
+    width:130px;
+    max-height:240px;
     background:white;
-    margin-left:15px;
-    margin-bottom:15px;
-    border-radius: 10px;
     overflow-y: scroll;
     text-align:center;
-    padding:10px 0;
     display:flex;
     flex-direction: column;
     align-items:center;
+    font-size: 13px;
 }
 
 .info{

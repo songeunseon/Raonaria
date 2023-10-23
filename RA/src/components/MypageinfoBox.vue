@@ -74,7 +74,7 @@ export default {
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     /* background:#547aa9;  */
-    background:#ffe850;
+    background:#b0d0ff;
     /* background:#FFf; */
     /* background:#B993D6; */
     border-radius: 25px 25px 25px 25px;

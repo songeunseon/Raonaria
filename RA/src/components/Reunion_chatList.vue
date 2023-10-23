@@ -95,7 +95,7 @@
     background:white;
     width: 250px;
     height: 200px;
-    border: 2px solid #f35b56;
+    border: 2px solid #0d6efd99;
     display:flex;
     flex-direction: column; justify-content: space-between;
     border-radius: 8px;
@@ -123,7 +123,7 @@
     width: 54px;
     height: 53px;
     border-radius: 50px;
-    border: 2px solid #f35b56;
+    border: 2px solid #0d6efd;
     background: white;
     /* position: relative; */
     /* left: 188px;
@@ -132,7 +132,7 @@
 }
 
 .position:hover {
-    background: #f35b56;
+    background: #0d6efd;
     color: white;
 }
 </style>

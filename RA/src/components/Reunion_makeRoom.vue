@@ -87,10 +87,11 @@ export default {
 .room_title {
     width: 100%;
     height: 40px;
-    background: #f35b56;
+    background: #0d6efd;
     font-size: 18px;
     text-align: center;
     line-height: 40px;
+    color: #fff;
 }
 
 .room_box {
@@ -114,34 +115,44 @@ export default {
     position: absolute;
     top: 9px;
     left: 15px;
+    color: #fff;
 }
 
 
 #intro {
     width: 150px;
     height: 30px;
+    outline: none;
 }
 
 .done_button {
-    margin: 30px 80px;
+    width: 250px;
+    display: flex;
+
 }
 
 .done_bt {
+    margin: 0 auto;
     width: 100px;
     height: 30px;
-    border-width:0px;
-    border-radius: 10px;
-    background: #f35b56;
-    color: black;
+    border:0;
+    border-radius: 100px;
+    background: #b0d0ff;
+    color: #000;
+}
+.done_bt:hover{
+    background: #0d6efd;
+    color: #fff;
+    
 }
 
 #name {
     width: 150px;
     height: 30px;
     margin-bottom: 20px;
-    border-bottom: none;
-    border: 2px solid #f35b56;
+    border: 2px solid #0d6efd;
     background: white;
+    outline: none;
 }
 
 .input_check {
@@ -186,7 +197,7 @@ export default {
 }
 
 #intro {
-    border: 2px solid #f35b56;
+    border: 2px solid #0d6efd;
     background: white;
 
 }

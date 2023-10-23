@@ -4,6 +4,10 @@ import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import  EasySearch from '../components/EasySearch.vue';
 import {ref, provide} from 'vue'
 
+
+
+
+
 export default{
   components:{EasySearch},
   setup(){
@@ -17,8 +21,10 @@ export default{
     return{
       isEasySearch, easySearch
     }
-  }
+  },
+  
 }
+
 </script>
 <template>
 <div id="shbar">
@@ -26,7 +32,7 @@ export default{
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
   </svg>
 
-  <input id ="school" type ="text" placeholder ="유치원 이름을 입력하세요">
+  <input id ="school" v-model="searchKeyword" @input="search($event)" type ="text" placeholder ="유치원 이름을 입력하세요">
   
 </div >
 <EasySearch v-if="isEasySearch"/>

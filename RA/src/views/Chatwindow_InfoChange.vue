@@ -44,7 +44,7 @@ a {
 .title {
     font-size: 30px;
     width: 100%;
-    border-bottom: 3px solid #f35b56;
+    border-bottom: 3px solid #0d6efd;
     text-align: center;
 }
 
@@ -83,9 +83,9 @@ a {
     width: 800px;
     height: 50px;
     margin-top: 410px;
-    background: #f35b56;
+    background: #0d6efd;
     color: #fff;
-    border: 1px solid #f35b56;
+    border: 1px solid #0d6efd;
     border-radius: 5px;
 }
 </style>
