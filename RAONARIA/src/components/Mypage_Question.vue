@@ -119,14 +119,14 @@ table thead th:last-child{
 table thead th input{
     width:20px;
     height:20px;
-    position:relative;
-    top:3px;
+    /* position:relative;
+    top:3px; */
 }
 
 table thead th:nth-child(1){width:20%;}
 table thead th:nth-child(2){width:70%;}
 table thead th:nth-child(3){width:10%;}
-tbody tr{position:relative;}
+/* tbody tr{position:relative;} */
 /* tbody tr:nth-child(even){
     background:#ffc14e;
 } */

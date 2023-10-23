@@ -228,7 +228,7 @@ export default {
 <style scoped>
 .right_wrap {
     width: 750px;
-    position: relative;
+    /* position: relative; */
 }
 
 .apply_header_question {
@@ -236,8 +236,9 @@ export default {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    bottom: 5px;
+    /* position: relative;
+    bottom: 5px; */
+    
 
 }
 
@@ -246,7 +247,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    position: relative;
+    /* position: relative; */
     width: 100%;
     margin-top:25px;
     padding-top:25px;
@@ -283,7 +284,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
     overflow-x: scroll;
     /* top:35px; */
@@ -297,14 +298,14 @@ export default {
 
 .slider_wrap {
     display: flex;
-    position: absolute;
+    /* position: relative; */
     column-gap: 15px;
 }
 
 .bi-arrow-left-circle,
 .bi-arrow-right-circle {
-    position: absolute;
-    top: 32%;
+    /* position: absolute;
+    top: 32%; */
     font-size: 25px;
     z-index: 30;
     width: 25px;
@@ -408,6 +409,7 @@ input[class="topCheckbox"]+label {
     width: 15px;
     height: 15px;
     border: 2px solid white;
+    opacity: .5;
 }
 
 
@@ -454,9 +456,10 @@ input[class="topCheckbox"]+label {
     border: #0d6efd;
 }
 
-.form-check-label{
-
-}
+.form-check-input:disabled {
+    pointer-events: none;
+    filter: none;
+    opacity: 0.1;}
 
 /* 마이페이지 태블릿 버전 미디어 쿼리 */
 @media(min-width:490px) and (max-width:1194px) {
