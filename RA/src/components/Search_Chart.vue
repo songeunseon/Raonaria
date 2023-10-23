@@ -177,7 +177,7 @@ export default{
 </template>
 <style >
 
-.teacherWrap, .childWrap{width:50%;}
+.teacherWrap, .childWrap{width:50%; background: #fff;}
 
 #teacher, #child{
   width: 400px;

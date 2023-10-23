@@ -210,5 +210,5 @@ export default{
     font-size: 10px;
   }
   }
->>>>>>> c71bf11e24d93be3e7ce5f90947edc51b7afdde3
+
 </style>
