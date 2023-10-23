@@ -5,165 +5,166 @@
             <div class="apply">신청내역</div>
             <button @click="cancelOpen()" class="cancel">신청취소</button>
         </div>
-        <i @click="slideLeft()" class="bi bi-arrow-left-circle"></i>
-        <div class="apply_Zone">
-            <div class="slider_wrap">
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
+        <div class="apply_Zone_Wrapper">
+            <i @click="slideLeft()" class="bi bi-arrow-left-circle"></i>
+            <div class="apply_Zone">
+                <div class="slider_wrap">
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
+                        </div>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
-                        </div>
-                    </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
+                        </div>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
-                        </div>
-                    </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
+                        </div>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
-                        </div>
-                    </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
+                        </div>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                    <div class="apply_box">
+                        <div class="titleWrap">
+                            <div class="apply_line">OO 유치원</div>
+                            <div class="">
+                                <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
+                                <label class="form-check-label" for="inlineCheckbox1"></label>
+                            </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="apply_box">
-                    <div class="titleWrap">
-                        <div class="apply_line">OO 유치원</div>
-                        <div class="">
-                            <input class="form-check-input topCheckbox" type="checkbox" id="inlineCheckbox1">
-                            <label class="form-check-label" for="inlineCheckbox1"></label>
-                        </div>
-                    </div>
-                    <div class="contentWrap">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
-                            <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                        <div class="contentWrap">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3">상담신청완료</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input botCheckbox" type="checkbox" id="inlineCheckbox3" disabled>
+                                <label class="form-check-label" for="inlineCheckbox3"> 입학신청완료</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <i @click="slideRight()" class="bi bi-arrow-right-circle"></i>
         </div>
-
-        <i @click="slideRight()" class="bi bi-arrow-right-circle"></i>
         <div class="apply_header">
             <button @click="formOpen()" class="manager_bt">관리자 문의하기</button>
             <div class="question_zone">나의문의</div>
@@ -280,6 +281,11 @@ export default {
     overflow: hidden;
 }
 
+.apply_Zone_Wrapper{
+    display:flex; justify-content: space-between;
+    align-items:center;
+}
+
 .apply_Zone {
     display: flex;
     align-items: center;
@@ -310,13 +316,13 @@ export default {
     z-index: 30;
     width: 25px;
     height: 25px;
-    background: white;
+    /* background: white; */
     cursor: pointer;
     border-radius: 5px;
 }
 
 .bi::before {
-    position: absolute;
+    /* position: absolute; */
 }
 
 .bi-arrow-left-circle {

@@ -8,7 +8,7 @@
             <Mypage_NoApply v-if="isApply"/>
             <Mypage_Question/>
         </div>
-        <button style="position:fixed; top:10%; left:10%;" @click="test" >테스트</button>
+        <!-- <button style="position:fixed; top:10%; left:10%;" @click="test" >테스트</button> -->
     </div>
     <Mypage_Cancel v-if="isCancel"/>
     <Mypage_Qcancle v-if="isAsk"/>
