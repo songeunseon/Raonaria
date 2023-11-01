@@ -63,14 +63,14 @@ export default {
 <style scoped>
 .page {
     width: fit-content;
-    height: 620px;
+    height: 500px;
     margin: 20px auto;
     display: flex;
 }
 
 .info {
     max-width: 220px;
-    height:100%;
+    height: 500px;
     /* border: 1px solid black; */
     /* margin-left:-200px; */
     /* background:#547aa9;  */
@@ -121,7 +121,8 @@ export default {
 
 
 .kids {
-    
+    position: relative;
+    top: -50px;
 }
 
 .id {
@@ -251,6 +252,7 @@ export default {
     .info{
         width:100%;
         max-width:100%;
+        height: 100%;
         flex-direction: row;
         justify-content: space-between;
         overflow:hidden;
@@ -263,7 +265,7 @@ export default {
         top:0;
         gap:0 5px;
         padding:10px;
-        border-radius: 25px;
+        border-radius: 0 25px 25px 0;
         background:#ffe850;
     }
     #chat_alert_box::-webkit-scrollbar{
@@ -276,8 +278,8 @@ export default {
         display:none;
     }
     .profile{
-        width:50px;
-        height:50px;
+        width:100px;
+        height:100px;
         margin:50px auto;
     }
     .profile i{

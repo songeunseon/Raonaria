@@ -94,6 +94,10 @@ import TopMenu_Login from "./TopMenu_Login.vue";
     }
   }
   @media(max-width:490px){
+    #menu{
+      margin: 0 auto;
+      width: 100%;
+    }
     #logo img{
     width: 200px;
   }
@@ -112,6 +116,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       width: 100%;
     height: 50px;
     display: flex;
+    justify-content: space-between;
     list-style: none;
     font-size: 17px;
     align-items: none;

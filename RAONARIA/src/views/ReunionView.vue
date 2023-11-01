@@ -131,4 +131,73 @@ export default {
 
     font-size: 28px;
 }
+@media (max-width:490px){
+    #chat {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.chat_box {
+    margin: 0px;
+}
+
+.chat_room {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.chat_add {
+    /* padding-top: 45px; */
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat_add input {
+    width: 300px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #0d6efd;
+    /* border-radius: 5px; */
+}
+
+.icon {
+    height: 50px;
+    margin: 20px auto;
+    /* position: absolute; */
+    /* top: 50px; */
+    /* left: 0px; */
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.bi-search {
+    position: absolute;
+    margin: 0px;
+    /* left: 70px; */
+    /* top: 1px; */
+    width:20px;
+    height:20px;
+
+}
+
+.search_input {
+    margin: 0 auto;
+    padding: 5px;
+    outline: none;
+    text-align: center;
+
+}
+
+
+
+.chat_add .bi-plus-circle {
+
+    font-size: 28px;
+}
+}
 </style>

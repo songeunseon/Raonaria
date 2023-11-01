@@ -1,8 +1,8 @@
 <script>
     import {inject} from 'vue';
-    import data from '@/assets/일반현황.json';
+    // import data from '@/assets/일반현황.json';
 
-    const RAdata= data;
+    // const RAdata= data;
 
     export default{
         name:'EasySearch',
@@ -17,35 +17,35 @@
                 isEasySearch, easySearch, CloseEasySearch
             }
         },
-        methods:{
-            search(event){
-            this.$emit('sendKeyword',event.target.value);
-            }
-        },
-        data(){
-            return{
-            searchKeyword: '',
-            };
-        },
-        name:'EasySearch',
-        props:["keyword"],
-        methods:{
-            search_Group(){
-                const len = this.RAdata.length;
-                for(let i=0; i<len;i++){
-                if(this.RAdata[i].Column3.includes(this.keyword) == false ){
-                    document.querySelectorAll(".left")[i].style.display="none";
-                }else{
-                    document.querySelectorAll(".left")[i].style.display="table-row";
-                }
-                }
-            },
-        },
-        watch:{
-            keyword(){
-                this.search_Group();
-            },
-        }
+        // methods:{
+        //     search(event){
+        //     this.$emit('sendKeyword',event.target.value);
+        //     }
+        // },
+        // data(){
+        //     return{
+        //     searchKeyword: '',
+        //     };
+        // },
+        // name:'EasySearch',
+        // props:["keyword"],
+        // methods:{
+        //     search_Group(){
+        //         const len = this.RAdata.length;
+        //         for(let i=0; i<len;i++){
+        //         if(this.RAdata[i].Column3.includes(this.keyword) == false ){
+        //             document.querySelectorAll(".left")[i].style.display="none";
+        //         }else{
+        //             document.querySelectorAll(".left")[i].style.display="table-row";
+        //         }
+        //         }
+        //     },
+        // },
+        // watch:{
+        //     keyword(){
+        //         this.search_Group();
+        //     },
+        // }
     }
 
 </script>
@@ -59,26 +59,26 @@
             <h3>간단조회</h3>
         </div>
         <div id="easyMain">
-            <div class="section left" v-for="item in RAdata" :key="item.id">
+            <div class="section left">
                 <table>
                     <tr>
                         <td>유치원명</td>
-                        <td>{{ item.Column3  }}</td>
+                        <td>하나유치원</td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td>{{ item.Column9 }}</td>
+                        <td>대전</td>
                     </tr>
                     <tr>
                         <td>설립유형</td>
-                        <td>{{ item.Column4 }}</td>
+                        <td>사립</td>
                     </tr>
                     <tr>
                         <td>운영시간</td>
-                        <td>{{ item.Column12 }}</td>
+                        <td>09:00~18:00</td>
                     </tr>
                 </table>
-                <div id="easyCheck">
+                <!-- <div id="easyCheck">
                     <input type="checkbox" class="btn-check" name="options-base" id="car" autocomplete="off" checked>
                     <label class="btn" for="car">차량운행여부</label>
                     
@@ -87,10 +87,10 @@
                     
                     <input type="checkbox" class="btn-check" name="options-base" id="after" autocomplete="off" checked>
                     <label class="btn" for="after">방과후돌봄</label>
-                </div>
+                </div> -->
             </div>
             <div class="section easyimg">
-                <!---->
+                <img src="../assets/naver_map.png">
             </div>
         </div>
     </div>
@@ -165,6 +165,10 @@
     height: 200px;
     margin: 20px auto;
     border: 1px solid #aaa;
+    overflow: hidden;
+}
+.easyimg img{
+    height: 200px;
 }
 @media(max-width:490px){
     #easyBody{

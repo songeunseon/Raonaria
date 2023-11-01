@@ -87,4 +87,22 @@ body{
 .content_wrap {
     height: fit-content;
 }
+@media (max-width:490px){
+    .content_wrap {
+    display: flex;
+    width: 400px;
+    column-gap: 20px;
+    justify-content: center;
+    margin: 10px 0;
+}
+.chat_layout {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    column-gap: 10px;
+    width: 400px;
+    margin: 20px auto;
+
+}
+}
 </style>

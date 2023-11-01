@@ -80,6 +80,63 @@ export default{
     right:3px;
 }
 
+@media (max-width:490px){
+    .partner_wrap{
+    width:150px;
+    height:150px;
+    background:#F4F4FA;
+    margin-top:0px;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.info_line{
+    width:130px;
+    border:1px solid #F6E6E6;
+    margin:20px auto;
+}
+
+.chat_partner{
+    text-align: center;
+    width:130px;
+    padding-top:10px;
+    font-size:18px;
+}
+
+.info_box2{
+    width:130px;
+    max-height:290px;
+    display:flex;
+    flex-direction: column;
+    background:#fff;
+    text-align:center;
+    overflow-y:scroll;
+    font-size: 13px;
+    
+
+    
+}
+
+.room_manager1{
+    display:flex;
+    justify-content:center;
+    
+}
+
+.icon4{
+    display:flex;
+    padding-right:11px;
+}
+
+.bi-award{
+    right:3px;
+}
+
+}
 
 
 

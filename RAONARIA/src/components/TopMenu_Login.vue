@@ -101,6 +101,16 @@ export default{
     }
   }
   @media(max-width:490px){
+    .loginAfter{
+      width: 100%;
+      height: 100px;
+    }
+    #TopMenuBt,.loginAfter{
+    width: 400px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+  }
     #TopMenuBt{
       width: 350px;
       height: 80px;

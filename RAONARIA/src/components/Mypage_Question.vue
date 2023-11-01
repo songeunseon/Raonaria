@@ -7,11 +7,6 @@
             <th><input type="checkbox" id="allcheck" @change="allCheck"></th>
         </thead>
         <tbody>
-            <tr class="weather">
-                <td></td>
-                <td></td>
-                <td><input type="checkbox" name="check" class="checkBox"></td>
-            </tr>
             <tr class="content">
                 <td></td>
                 <td></td>
@@ -32,26 +27,7 @@
                 <td></td>
                 <td><input type="checkbox" name="check" class="checkBox"></td>
             </tr>
-            <tr class="content">
-                <td></td>
-                <td></td>
-                <td><input type="checkbox" name="check" class="checkBox"></td>
-            </tr>
-            <tr class="content">
-                <td></td>
-                <td></td>
-                <td><input type="checkbox" name="check" class="checkBox"></td>
-            </tr>
-            <tr class="content">
-                <td></td>
-                <td></td>
-                <td><input type="checkbox" name="check" class="checkBox"></td>
-            </tr>
-            <tr class="content">
-                <td></td>
-                <td></td>
-                <td><input type="checkbox" name="check" class="checkBox"></td>
-            </tr>
+        
         </tbody>
     </table>
 </div>
@@ -80,7 +56,8 @@ export default{
 <style scoped>
 
 .table_wrap{
-    width:100%; height:290px;
+    width:100%;
+    height: 150px;
     overflow-y:scroll;
     overflow-y: hidden;
     border-bottom:1px solid #d9d9d9;
@@ -232,17 +209,20 @@ tbody tr td input{
         font-size:12px;
         font-weight:800;
     }
-    .weather{
-    background:white;
+    .content td:last-child{
+        width: 10%;
+        text-align: center;
 }
 
 tbody tr td input{
-    transform: translate(-50%, 20%);
+    /* transform: translate(-50%, 20%); */
+
 }
 
 tbody tr td{
     background:#fff;
     font-size:12px;
+    text-align: center;
 }
 
 

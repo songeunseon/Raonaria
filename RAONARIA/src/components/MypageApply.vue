@@ -244,6 +244,7 @@ export default {
 }
 
 .apply_header {
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -321,9 +322,9 @@ export default {
     border-radius: 5px;
 }
 
-.bi::before {
-    /* position: absolute; */
-}
+/* .bi::before {
+    position: absolute;
+} */
 
 .bi-arrow-left-circle {
     left: 0;
@@ -480,19 +481,43 @@ input[class="topCheckbox"]+label {
 
 /*마이페이지 모바일 버전 media query*/
 @media(max-width:490px) {
+    .right_wrap {
+    width: 400px;
+    /* position: relative; */
+}
+    .apply_Zone_Wrapper{
+    display:flex; justify-content: space-between;
+    align-items:center;
+    width: 400px;
+}
     .apply_header_question {
         justify-content: center;
         margin-bottom: -5px;
+        width: 400px;
     }
 
     .apply {
         font-size: 15px;
     }
-
+    .apply_Zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* position: relative; */
+    overflow: hidden;
+    overflow-x: scroll;
+    /* top:35px; */
+    scroll-behavior: smooth;
+    width: 400px;
+    height: 185px;
+    margin: 10px auto;
+    padding-bottom:15px;
+    gap: 15px;
+}
     .apply_header_question>.cancel {
-        position: absolute;
+        position: relative;
         z-index: 30;
-        top: -5px;
+        top: 0px;
         right: 0;
     }
 
@@ -508,11 +533,12 @@ input[class="topCheckbox"]+label {
     .apply_Zone {
         height: 103px;
         top: 0;
+        width: 400px;
     }
 
     .apply_box {
         border-radius: 0;
-        width: calc(100vw - 40px);
+        width:250px;
         gap: 5px;
         align-items: center;
         height: fit-content;
@@ -536,6 +562,7 @@ input[class="topCheckbox"]+label {
 
     .apply_header {
         margin: 40px auto;
+        width: 400px;
 
     }
 
@@ -555,13 +582,7 @@ input[class="topCheckbox"]+label {
 
     .bi-arrow-left-circle,
     .bi-arrow-right-circle {
-        background: none;
-        position: absolute;
-        top: 35%;
-        font-size: 25px;
-        z-index: 30;
-        width: 25px;
-        height: 25px;
+        display: none;
     }
 
 

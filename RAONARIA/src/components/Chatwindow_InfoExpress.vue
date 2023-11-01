@@ -136,4 +136,30 @@ export default{
     border-radius: 5px;
     background:#d9d9d9;
 }
+@media (max-width:490px){
+    #announcement{
+    width:150px;
+    height:150px;
+    border:1px solid #F4F4FA;
+    background: #F4F4FA;
+    /* margin:-665px 745px; */
+    border-radius: 10px;
+    /* display:flex;  */
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info_box{
+    width:130px;
+    max-height:100px;
+    background:white;
+    overflow-y: scroll;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    font-size: 13px;
+}
+}
 </style>
