@@ -2,7 +2,7 @@
 import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
-import firebase from 'firebase'
+import { auth } from '@/main.js'
 const router = useRouter();
 
 export default{

@@ -62,6 +62,7 @@ export default{
   body{
   background-image: url(../src/assets/bg2.svg)!important;
   background-size: 100vw;
+  overflow: hidden;
   }
   @media(min-width:490px) and (max-width:1194px){
     body{

@@ -3,7 +3,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 import { RouterLink, RouterView,useRouter } from "vue-router";
 import  EasySearch from '../components/EasySearch.vue';
 import {ref, provide} from 'vue'
-import firebase from 'firebase'
+import { auth } from '@/main.js'
 const router = useRouter();
 
 const sessionStorage = window.sessionStorage;

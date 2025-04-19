@@ -27,7 +27,7 @@
 <script>
 import {RouterLink, useRouter} from 'vue-router'
  import {inject} from 'vue';
- import firebase from 'firebase'
+ import { auth } from '@/main.js'
  const router = useRouter();
 
  const sessionStorage = window.sessionStorage;
