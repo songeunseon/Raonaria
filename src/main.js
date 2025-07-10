@@ -60,7 +60,7 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig)
 const auth = getAuth(firebaseApp)
-export { auth }
+export { firebaseApp, auth }
 
 const app = createApp(App)
 app.use(SessionPlugin, { persist: true }) 
