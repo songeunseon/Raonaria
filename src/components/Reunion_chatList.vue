@@ -1,80 +1,36 @@
 <template>
     <div id="chat_info">
-
-        <div class="list">
-            <div class="title">
-                <div class="master">방장 : 김선향</div>
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-            <div class="title">
-                <div class="word">서구 유치원<br>새싹반 유치원 채팅방</div>
-            </div>
+        <div v-if="chatStore.rooms.length === 0" class="empty_rooms">
+            개설된 채팅방이 없습니다.
         </div>
-
-        <div class="list">
+        <div class="list" v-for="room in chatStore.rooms" :key="room.id">
             <div class="title">
-                <div class="master">방장 : 송은선</div>
-                <RouterLink to="/chatWindow">
+                <div class="master">방장 : {{ room.masterName }}</div>
+                <RouterLink :to="'/chat-window/' + room.id">
                     <input type="button" value="입장" class="position">
                 </RouterLink>
             </div>
             <div class="title">
-                <div class="word">동구 유치원<br>열매반 유치원 채팅방</div>
+                <div class="word">{{ room.name }}</div>
             </div>
-        </div>
-
-        <div class="list">
-            <div class="title">
-                <div class="master">방장 : 송은선</div>
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-            <div class="title">
-                <div class="word">중구 유치원<br>참외반 유치원 채팅방</div>
-            </div>
-        </div>
-
-        <div class="list">
-            <div class="title">
-                <div class="master">방장 : 전계림</div>
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-            <div class="title">
-                <div class="word">유성구 유치원<br>딸기반 유치원 채팅방</div>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="master">방장 : 신상수</div>
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-            <div class="title">
-                <div class="word">동구 유치원<br>예쁜나 유치원 채팅방</div>
-            </div>
-        </div>
-        <div class="list">
-            <div class="title">
-                <div class="master">방장 : 김선향</div>
-                <RouterLink to="/chatWindow">
-                    <input type="button" value="입장" class="position">
-                </RouterLink>
-            </div>
-            <div class="title">
-                <div class="word">중구 유치원<br>수박반 유치원 채팅방</div>
-            </div>
+            <div class="room_desc" v-if="room.description">{{ room.description }}</div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { useChatStore } from '@/stores/chat';
+import { onMounted, onUnmounted } from 'vue';
 
+const chatStore = useChatStore();
+
+onMounted(() => {
+    chatStore.subscribeRooms();
+});
+
+onUnmounted(() => {
+    chatStore.unsubscribeRooms();
+});
 </script>
 
 
@@ -89,7 +45,13 @@
     margin-bottom:150px;
 }
 
-
+.empty_rooms {
+    width: 100%;
+    text-align: center;
+    color: #888;
+    padding: 50px 0;
+    font-size: 18px;
+}
 
 .list {
     background:white;
@@ -116,7 +78,14 @@
     font-weight: 700;
     padding-bottom:13px;
     font-size:18px;
+}
 
+.room_desc {
+    font-size: 13px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .position {
@@ -125,17 +94,14 @@
     border-radius: 50px;
     border: 2px solid #0d6efd;
     background: white;
-    /* position: relative; */
-    /* left: 188px;
-    bottom: 40px; */
-
+    cursor: pointer;
 }
 
 .position:hover {
     background: #0d6efd;
     color: white;
 }
-@media (max-width:490px){
+@media (max-width:576px){
     #chat_info {
     margin: 0 auto;
     display: flex;
@@ -146,8 +112,6 @@
     margin-bottom:150px;
     justify-content: center;
 }
-
-
 
 .list {
     background:white;
@@ -160,11 +124,6 @@
     padding:10px;
 }
 
-.title{
-    display:flex; align-items: center;
-    justify-content: space-between;
-}
-
 .master{
     font-size:10px;
 }
@@ -174,24 +133,8 @@
     font-weight: 700;
     padding-bottom:13px;
     font-size:15px;
-
 }
 
-.position {
-    width: 54px;
-    height: 53px;
-    border-radius: 50px;
-    border: 2px solid #0d6efd;
-    background: white;
-    /* position: relative; */
-    /* left: 188px;
-    bottom: 40px; */
-
-}
-
-.position:hover {
-    background: #0d6efd;
-    color: white;
-}
+.room_desc { display: none; }
 }
 </style>

@@ -2,25 +2,21 @@
     <div id="announcement">
             <div class="main_title1">공지사항</div>
             <div class="info_box">
-                    <span class="info">오고싶은 사람은 와라</span>
-                    <span v-if="!isDel" @click="delOpen()" class="info">30000원</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                    <span class="info">회식때 고기먹자</span>
-                <div v-if="isDel" @click="checkOpen()" class="delete_title">
+                <template v-if="chatStore.roomNotices.length > 0">
+                    <span
+                        v-for="notice in chatStore.roomNotices"
+                        :key="notice.id"
+                        class="info"
+                        @click="selectNotice(notice)"
+                    >{{ notice.content }}</span>
+                </template>
+                <span v-else class="info" style="color:#888;">공지 없음</span>
+
+                <div v-if="isDel && selectedNotice" @click="checkOpen()" class="delete_title">
                     삭제하기
-                <i class="bi bi-trash"></i>
+                    <i class="bi bi-trash"></i>
                 </div>
-                <div  v-if="isCheck" class="check_del">
+                <div v-if="isCheck" class="check_del">
                     <div class="inform_delete">
                         공지사항 삭제
                     </div>
@@ -28,43 +24,51 @@
                         모든 사람이 볼 수 없게 됩니다.
                     </div>
                     <div class="delete_button">
-                        <button  @click="delCancel()" class="notice_del_bt" value="아니오">아니오</button>
-                        <button  v-on:click="eraseNotice()" class="notice_del_bt" value="삭제">삭제</button>
+                        <button @click="delCancel()" class="notice_del_bt" value="아니오">아니오</button>
+                        <button @click="eraseNotice()" class="notice_del_bt" value="삭제">삭제</button>
                     </div>
                 </div>
             </div>
-    </div> 
+    </div>
 </template>
 
 <script>
-import chatWindowVue from '../views/chatWindow.vue';
-import {ref, onMounted} from 'vue';
-export default{
-    name: 'Chatwindow_InfoExpress',
-    setup(){
-        const isDel = ref(false);
-        const delOpen = () => isDel.value = !isDel.value;
+import { ref, inject } from 'vue';
 
-        const isCheck =ref(false);
+export default {
+    name: 'Chatwindow_InfoExpress',
+    setup() {
+        const chatStore = inject('chatStore')
+        const roomId = inject('roomId')
+
+        const isDel = ref(false);
+        const selectedNotice = ref(null);
+
+        const isCheck = ref(false);
         const checkOpen = () => isCheck.value = !isCheck.value;
 
+        const selectNotice = (notice) => {
+            selectedNotice.value = notice;
+            isDel.value = true;
+        }
+
         const delCancel = () => {
-            isCheck.value = !isCheck.value;
-            isDel.value = !isDel.value;
+            isCheck.value = false;
+            isDel.value = false;
+            selectedNotice.value = null;
         }
 
-        const eraseNotice = () => {
-            const delete_title = document.querySelector(".delete_title");
-            const check_del = document.querySelector(".check_del");
-            delete_title.remove();
-            check_del.remove();
+        const eraseNotice = async () => {
+            if (selectedNotice.value) {
+                await chatStore.deleteRoomNotice(roomId, selectedNotice.value.id)
+                isCheck.value = false;
+                isDel.value = false;
+                selectedNotice.value = null;
+            }
         }
 
-
-        return {isDel, delOpen, isCheck, checkOpen, delCancel, eraseNotice}
+        return { chatStore, isDel, isCheck, checkOpen, delCancel, eraseNotice, selectedNotice, selectNotice }
     }
-
-    
 }
 </script>
 
@@ -75,9 +79,7 @@ export default{
     height:300px;
     border:1px solid #F4F4FA;
     background: #F4F4FA;
-    /* margin:-665px 745px; */
     border-radius: 10px;
-    /* display:flex;  */
     position:relative;
     display: flex;
     flex-direction: column;
@@ -106,11 +108,10 @@ export default{
     cursor: pointer;
 }
 
-
-
 .delete_title{
     display:flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .check_del{
@@ -135,31 +136,15 @@ export default{
     border:none;
     border-radius: 5px;
     background:#d9d9d9;
+    cursor: pointer;
 }
-@media (max-width:490px){
+@media (max-width:576px){
     #announcement{
     width:150px;
     height:150px;
-    border:1px solid #F4F4FA;
-    background: #F4F4FA;
-    /* margin:-665px 745px; */
-    border-radius: 10px;
-    /* display:flex;  */
-    position:relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .info_box{
-    width:130px;
     max-height:100px;
-    background:white;
-    overflow-y: scroll;
-    text-align:center;
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    font-size: 13px;
 }
 }
 </style>

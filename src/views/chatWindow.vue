@@ -24,13 +24,31 @@ import Chatwindow_InfoExpress from '../components/Chatwindow_InfoExpress.vue'
 import Chatwindow_Chatpartner from '../components/Chatwindow_Chatpartner.vue'
 import menu_modal from '../components/menu_modal.vue'
 import Exit_Modal from '../components/Exit_Modal.vue'
-import { ref, provide } from 'vue';
+import { ref, provide, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
+import { useChatStore } from '@/stores/chat';
+import { useAuthStore } from '@/stores/auth';
+
 export default {
     components: {
         menu_modal, Chatwindow_Menubar, Chatwindow_ChatContent, Chatwindow_InfoExpress,
-        Chatwindow_Chatpartner, Exit_Modal,TopMenu_Login,TopMenu
+        Chatwindow_Chatpartner, Exit_Modal, TopMenu_Login, TopMenu
     },
-    setup() {
+    props: {
+        roomId: { type: String, required: true }
+    },
+    setup(props) {
+        const route = useRoute()
+        const chatStore = useChatStore()
+        const authStore = useAuthStore()
+        const currentRoomId = props.roomId || route.params.roomId
+
+        provide('roomId', currentRoomId)
+        provide('chatStore', chatStore)
+        provide('authStore', authStore)
+
+        const isBan = ref(false);
+        provide('isBan', isBan);
         const banOff = () => isBan.value = false;
         provide('banoff', banOff);
 
@@ -52,11 +70,26 @@ export default {
         const isCheck = ref(false);
         const checkOpen = () => isCheck.value = !isCheck.value;
 
+        onMounted(async () => {
+            await chatStore.loadRoom(currentRoomId)
+            chatStore.subscribeMessages(currentRoomId)
+            chatStore.subscribeMembers(currentRoomId)
+            chatStore.subscribeRoomNotices(currentRoomId)
+
+            if (authStore.isLoggedIn) {
+                await chatStore.joinRoom(currentRoomId, authStore.userId, authStore.userName)
+            }
+        })
+
+        onUnmounted(() => {
+            chatStore.unsubscribeMessages()
+            chatStore.unsubscribeMembers()
+        })
+
         return {
-          isMenu, menuOpen, isDel, delOpen,
+            isMenu, menuOpen, isDel, delOpen,
             isExit, exitOpen, isCheck, checkOpen
         }
-
     }
 }
 </script>
@@ -65,9 +98,7 @@ export default {
 @import url(../assets/chatWindow.css);
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Noto+Sans+KR:wght@100;300&family=Roboto+Slab:wght@300&display=swap');
 
-font-family:Noto Sans KR,
-sans-serif font-family:Roboto Slab,
-serif * {
+* {
     font-family: 'Gamja Flower', cursive;
 }
 
@@ -81,13 +112,12 @@ body{
     column-gap: 10px;
     width: 900px;
     margin: 20px auto;
-
 }
 
 .content_wrap {
     height: fit-content;
 }
-@media (max-width:490px){
+@media (max-width:576px){
     .content_wrap {
     display: flex;
     width: 400px;
@@ -102,7 +132,6 @@ body{
     column-gap: 10px;
     width: 400px;
     margin: 20px auto;
-
 }
 }
 </style>

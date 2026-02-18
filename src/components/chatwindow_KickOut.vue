@@ -1,9 +1,5 @@
 <template>
     <div class="ban_modal">
-        <!-- <div   @click="banOff()" class="top_bar">
-            <span>강퇴관리</span>
-            <i class="bi bi-chevron-compact-down"></i>
-        </div> -->
         <div class="modal_content">
             <div class="content_title">
                 정말 강퇴하시겠습니까?
@@ -13,24 +9,39 @@
                 채팅방에 다시 들어올 수 없습니다.
             </div>
             <div class="button_wrap">
-                <button @click="banOff()" class="modal_bt" value="예">예</button>
-                <button @click="banOff()"  class="modal_bt" value="아니오">아니오</button>
+                <button @click="confirmKick()" class="modal_bt" value="예">예</button>
+                <button @click="banOff()" class="modal_bt" value="아니오">아니오</button>
             </div>
         </div>
     </div>
 </template>
 <script>
-import {inject} from 'vue'
-export default{
-    name:"kickOut",
-    setup(){
+import { inject } from 'vue'
+
+export default {
+    name: "kickOutModal",
+    setup() {
         const isBan = inject('isBan');
+        const kickTargets = inject('kickTargets');
+        const roomId = inject('roomId');
+        const chatStore = inject('chatStore');
 
         const banOff = () => isBan.value = false;
 
-        return{
-            banOff
+        const confirmKick = async () => {
+            try {
+                for (const memberDocId of kickTargets.value) {
+                    await chatStore.kickMember(roomId, memberDocId);
+                }
+                kickTargets.value = [];
+                isBan.value = false;
+                alert('강퇴 처리되었습니다');
+            } catch (err) {
+                alert('강퇴 오류: ' + err.message);
+            }
         }
+
+        return { banOff, confirmKick }
     }
 }
 </script>
@@ -39,7 +50,7 @@ export default{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 300px;
     height: 227px;
     background: white;
@@ -47,19 +58,6 @@ export default{
     border-radius:10px;
     z-index: 10;
 }
-
-/* .top_bar {
-    box-sizing: border-box;
-    border-bottom: 1px solid black;
-    width: 100%;
-    height: 50px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 18px;
-    font-weight: 800;
-} */
 
 .modal_content {
     display: flex;
@@ -96,5 +94,6 @@ export default{
     font-size: 18px;
     background: #0d6efd;
     color:#fff;
+    cursor: pointer;
 }
 </style>

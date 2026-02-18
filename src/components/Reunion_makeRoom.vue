@@ -6,15 +6,15 @@
         <div class="room_box">
             <div class="chat_name">
                 <p>채팅방이름</p>
-                <input id="name" type="text">
+                <input v-model="roomName" type="text" placeholder="채팅방 이름 입력">
             </div>
             <div class="chat_intro">
                 <p>채팅방 소개</p>
-                <input id="intro" type="text">
+                <input v-model="roomDesc" type="text" placeholder="소개글 입력">
             </div>
         </div>
         <div class="done_button">
-            <button @click='blankCheck()' class="done_bt" value="완료">완료</button>
+            <button @click='createRoom()' class="done_bt" value="완료">완료</button>
         </div>
         <div v-if="isAgainCheck" class="input_check">
             <span>입력창을 다시 확인해주세요</span>
@@ -25,40 +25,58 @@
         </div>
     </div>
     <div @click="makeRoomOpen()"
-                    style="position:fixed;width:100vw; top:0;
-                    height:100vh; opacity:1; background:rgba(0,0,0,0.4);
+                    style="position:fixed; left:0; top:0; width:100vw;
+                    height:100vh; background:rgba(0,0,0,0.4);
                     z-index:10;">
     </div>
 </template>
 
 <script>
-import { ref, inject, onMounted } from 'vue';
+import { ref, inject } from 'vue';
+import { useChatStore } from '@/stores/chat';
+import { useAuthStore } from '@/stores/auth';
+
 export default {
     name: 'makeRoom',
     setup() {
+        const chatStore = useChatStore()
+        const authStore = useAuthStore()
         const isMakeRoom = inject("isMakeRoom")
-        const done = () => isMakeRoom.value = false;
+        const makeRoomOpen = inject('makeRoomOpen');
 
+        const roomName = ref('')
+        const roomDesc = ref('')
         const isAgainCheck = ref(false);
 
-        const blankCheck = () => {
-            const name = document.getElementById('name');
-            const intro = document.getElementById('intro');
-            if (name.value == '' || intro.value == '') {
+        const createRoom = async () => {
+            if (!roomName.value.trim() || !roomDesc.value.trim()) {
                 isAgainCheck.value = true;
-            } else {
-                isAgainCheck.value = false;
+                return;
+            }
+            if (!authStore.isLoggedIn) {
+                alert('로그인 후 이용하세요');
+                return;
+            }
+            try {
+                await chatStore.createRoom(
+                    roomName.value.trim(),
+                    roomDesc.value.trim(),
+                    authStore.userId,
+                    authStore.userName
+                )
+                roomName.value = ''
+                roomDesc.value = ''
+                makeRoomOpen()
+            } catch (err) {
+                alert('방 생성 중 오류: ' + err.message)
             }
         }
 
         const blankCheckClose = () => isAgainCheck.value = false;
 
-        const makeRoomOpen = inject('makeRoomOpen');
-
-
-
         return {
-            isMakeRoom, done, isAgainCheck, blankCheck, blankCheckClose, makeRoomOpen
+            isMakeRoom, roomName, roomDesc, isAgainCheck,
+            createRoom, blankCheckClose, makeRoomOpen
         }
     }
 }
@@ -105,10 +123,11 @@ export default {
 
 .room_box input {
     width: 150px;
-    height: 20px;
-    background: #d9d9d9;
-    border: none;
-
+    height: 30px;
+    border: 2px solid #0d6efd;
+    background: white;
+    outline: none;
+    padding: 0 5px;
 }
 
 .bi-x-circle {
@@ -118,17 +137,13 @@ export default {
     color: #fff;
 }
 
-
-#intro {
-    width: 150px;
-    height: 30px;
-    outline: none;
+.chat_intro {
+    padding-top: 10px;
 }
 
 .done_button {
     width: 250px;
     display: flex;
-
 }
 
 .done_bt {
@@ -139,20 +154,11 @@ export default {
     border-radius: 100px;
     background: #b0d0ff;
     color: #000;
+    cursor: pointer;
 }
 .done_bt:hover{
     background: #0d6efd;
     color: #fff;
-    
-}
-
-#name {
-    width: 150px;
-    height: 30px;
-    margin-bottom: 20px;
-    border: 2px solid #0d6efd;
-    background: white;
-    outline: none;
 }
 
 .input_check {
@@ -188,19 +194,6 @@ export default {
     width: 110px;
     height: 40px;
     background: #d9d9d9;
+    cursor: pointer;
 }
-
-.chat_intro {
-    padding-top: 10px;
-    border-bottom: none;
-
-}
-
-#intro {
-    border: 2px solid #0d6efd;
-    background: white;
-
-}
-
-/* F6E6E6 */
 </style>

@@ -1,122 +1,78 @@
 <template>
     <div id="wrap">
             <div class="title_head">
-                <router-link to="/chatWindow">
+                <router-link :to="'/chat-window/' + roomId">
                     <i class="bi bi-arrow-left-circle"></i>
                 </router-link>
                     <div class="title">강퇴 관리</div>
                 </div>
         <div class="write_zone">
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
-        <div class="user_list">
-            <div class="user_name">김선향</div>
-            <input class="user_check" type="checkbox">
-        </div>
+            <div v-for="member in nonMasterMembers" :key="member.id" class="user_list">
+                <div class="user_name">{{ member.userName }}</div>
+                <input class="user_check" type="checkbox" v-model="kickTargets" :value="member.id">
+            </div>
+            <div v-if="nonMasterMembers.length === 0" class="user_list">
+                <div class="user_name" style="color:#888;">강퇴할 멤버가 없습니다</div>
+            </div>
     </div>
     <button @click="banON()" class="save">강퇴하기</button>
     <Chatwindow_KickOut v-show="isBan"/>
 </div>
 </template>
 <script>
-import {ref, provide} from 'vue'
+import { ref, provide, computed, onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useChatStore } from '@/stores/chat'
 import Chatwindow_KickOut from '../components/chatwindow_KickOut.vue'
-export default{
-    name:"kickOut",
-    components:{
-        Chatwindow_KickOut
+
+export default {
+    name: "kickOut",
+    components: { Chatwindow_KickOut },
+    props: {
+        roomId: { type: String, required: true }
     },
-    setup(){
+    setup(props) {
+        const route = useRoute()
+        const chatStore = useChatStore()
+        const currentRoomId = props.roomId || route.params.roomId
+
         const isBan = ref(false);
         provide('isBan', isBan);
 
-        const banON = () => isBan.value = true;
+        const kickTargets = ref([]);
+        provide('kickTargets', kickTargets);
+        provide('roomId', currentRoomId);
+        provide('chatStore', chatStore);
 
-        return{
-            isBan, banON
+        const nonMasterMembers = computed(() => {
+            return chatStore.members.filter(m => m.userId !== chatStore.currentRoom?.masterId)
+        });
+
+        const banON = () => {
+            if (kickTargets.value.length === 0) {
+                alert('강퇴할 멤버를 선택하세요');
+                return;
+            }
+            isBan.value = true;
+        }
+
+        onMounted(() => {
+            chatStore.loadRoom(currentRoomId);
+            chatStore.subscribeMembers(currentRoomId);
+        });
+
+        onUnmounted(() => {
+            chatStore.unsubscribeMembers();
+        });
+
+        return {
+            isBan, banON, nonMasterMembers, kickTargets, roomId: currentRoomId
         }
     }
 }
 </script>
 <style scoped>
 *{font-family: 'SUITE-Regular';}
-body{
-    overflow-y: hidden;
-}
 a{color:black; text-decoration: none;}
 #wrap{
     width:800px;
@@ -128,15 +84,13 @@ a{color:black; text-decoration: none;}
     display:flex;
     justify-content:center;
     align-items:center;
-    
-
 }
 
 .title{
     font-size:30px;
     width:88%;
     border-bottom:3px solid #f35b56;
-    text-align:center; 
+    text-align:center;
 }
 
 .bi-arrow-left-circle{
@@ -156,8 +110,6 @@ a{color:black; text-decoration: none;}
     width:800px;
     max-height:700px;
     overflow-y:scroll;
-
-
 }
 .user_list{
     width:600px;
@@ -185,8 +137,6 @@ a{color:black; text-decoration: none;}
     color:#fff;
     border:1px solid #f35b56;
     border-radius: 5px;
+    cursor: pointer;
 }
-
-
-
 </style>
