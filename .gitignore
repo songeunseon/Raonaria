@@ -17,6 +17,9 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+# Firebase cache
+.firebase
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,3 +29,8 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# Large binary files
+*.exe
+*.msi
+*.xlsx
