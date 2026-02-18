@@ -45,25 +45,22 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/main.css'
 
-import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+// Firebase는 src/utils/firebase.js에서 중앙 관리
+import { auth } from '@/utils/firebase'
+import { useAuthStore } from '@/stores/auth'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyArLnvWnqoqIudLo-Djk4cANVsyxBBRq44",
-  authDomain: "raonaria-fb5a3.firebaseapp.com",
-  projectId: "raonaria-fb5a3",
-  storageBucket: "raonaria-fb5a3.appspot.com",
-  messagingSenderId: "342530775386",
-  appId: "1:342530775386:web:f7b125161129af263ffb63",
-  measurementId: "G-GNPSR4XXC7"
-}
-
-const firebaseApp = initializeApp(firebaseConfig)
-const auth = getAuth(firebaseApp)
-export { firebaseApp, auth }
+// 하위 호환을 위해 re-export
+export { auth }
+export { firebaseApp, db } from '@/utils/firebase'
 
 const app = createApp(App)
-app.use(SessionPlugin, { persist: true }) 
-app.use(createPinia())
+const pinia = createPinia()
+app.use(SessionPlugin, { persist: true })
+app.use(pinia)
 app.use(router)
-app.mount('#app')
+
+// Auth 상태 초기화 후 마운트
+const authStore = useAuthStore()
+authStore.init().then(() => {
+  app.mount('#app')
+})
