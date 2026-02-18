@@ -1,52 +1,45 @@
 <script>
-import { RouterLink, RouterView, useRouter } from "vue-router";
-import  Login_Modal from '../components/Login_Modal.vue';
-import {ref, provide} from 'vue'
-import HomeView from "../views/HomeView.vue"
-
-const sessionStorage = window.sessionStorage;
-const uid = sessionStorage.getItem('user_id');
+import { RouterLink } from "vue-router";
+import Login_Modal from '../components/Login_Modal.vue';
+import { ref, provide } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
 export default{
-  components:{Login_Modal},
+  components:{ Login_Modal },
   setup(){
+    const authStore = useAuthStore()
+
     const isLoginModal = ref(false);
     const loginOpen = () => {
       isLoginModal.value = !isLoginModal.value;
     }
-    
+
     provide('isLoginModal', isLoginModal);
     provide('loginOpen', loginOpen);
 
-    return{
-      isLoginModal, loginOpen
+    const logout = async () => {
+      await authStore.logout()
     }
 
-  },
-  data(){return{uid}},
-  methods: {
-  logout(){
-        if( uid!==null){
-          sessionStorage.removeItem('user_id');
-          this.$router.go();
-        }
-      }
+    return {
+      isLoginModal, loginOpen, authStore, logout
+    }
   }
 }
 </script>
 
 <template>
-<div id="TopMenuBt" v-if="uid==null">
+<div id="TopMenuBt" v-if="!authStore.isLoggedIn">
     <RouterLink to="/join"><button id ="mjoin">회원가입 </button></RouterLink>
     <button @click="loginOpen()" id ="mlogin">로그인 </button>
   </div>
   <Login_Modal v-if="isLoginModal"/>
-  <div id="CpText" v-if="uid==null"> 
+  <div id="CpText" v-if="!authStore.isLoggedIn">
         <b>로그인을 하시면 상담신청과 입학신청을 이용하실 수 있습니다</b>
     </div>
-<div v-if="uid!=null" class="loginAfter">
-    {{uid}}
-      <button v-on:click="logout" v-if="uid!==null" class="logout_bt">Logout</button>
+<div v-if="authStore.isLoggedIn" class="loginAfter">
+    {{ authStore.userEmail }}
+      <button @click="logout" class="logout_bt">Logout</button>
 </div>
 </template>
 <style>
@@ -74,7 +67,7 @@ export default{
     color: #fff;
 }
 #CpText{
-        width: 100%;
+        width: 1000px;
         margin: 0 auto;
         position: fixed;
         bottom: 0;
@@ -85,7 +78,7 @@ export default{
         color:#fff;
         font-weight: 100;
     }
-  @media(min-width:490px) and (max-width:1194px){
+  @media(min-width:577px) and (max-width:992px){
     #TopMenuBt{
       width: 90%;
     }
@@ -100,7 +93,7 @@ export default{
         z-index: 1020;
     }
   }
-  @media(max-width:490px){
+  @media(max-width:576px){
     .loginAfter{
       width: 100%;
       height: 100px;

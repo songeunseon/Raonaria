@@ -1,9 +1,9 @@
 <script>
-import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import {RouterLink} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
-import { auth } from '@/main.js'
-const router = useRouter();
+import { auth } from '@/utils/firebase'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 export default{
     components:{
@@ -23,11 +23,12 @@ export default{
         },
         methods: {
             join(){
-                firebase.auth().createUserWithEmailAndPassword(this.email,this.password).then(
-                    function(user){
+                createUserWithEmailAndPassword(auth, this.email, this.password).then(
+                    () => {
                         alert('회원가입완료')
+                        this.$router.push('/')
                     },
-                    function(err){
+                    (err) => {
                         alert('에러 : '+err.message)
                     }
                 )
@@ -100,7 +101,7 @@ export default{
                 <div id="genderinput">
                     <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" checked>
                         <label class="btn" for="genderM">남아</label>
-                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off" checked>
+                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off">
                         <label class="btn" for="genderW">여아</label>
                 </div>
             </div>
@@ -112,7 +113,7 @@ export default{
             <input type="checkbox" value="agree">
             <b>개인정보 활용 동의</b>
         </div>
-        <button id="join" v-on:click="join" type="submit"><RouterLink to="/">JOIN</RouterLink></button>
+        <button id="join" v-on:click="join" type="submit">JOIN</button>
     </div>
 </template>
 <style scoped>
@@ -249,13 +250,13 @@ export default{
         background: #fcd03e;
         color: #fff;
     }
-    @media(min-width:490px) and (max-width:1194px){
+    @media(min-width:577px) and (max-width:992px){
         b{
             width: 150px;
             text-align: left;
         }
     }
-    @media(max-width:490px){
+    @media(max-width:576px){
         b{
             width: 200px;
             text-align: left;

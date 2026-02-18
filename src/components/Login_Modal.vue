@@ -25,37 +25,33 @@
 </template>
 
 <script>
-import {RouterLink, useRouter} from 'vue-router'
- import {inject} from 'vue';
- import { auth } from '@/main.js'
- const router = useRouter();
+import { RouterLink, useRouter } from 'vue-router'
+import { ref, inject } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
- const sessionStorage = window.sessionStorage;
+export default {
+  name: 'Login_Modal',
+  setup() {
+    const isLoginModal = inject('isLoginModal')
+    const loginOpen = inject('loginOpen')
+    const router = useRouter()
+    const authStore = useAuthStore()
 
- export default{
-    name:'Login_Modal',
-    setup(){
-        const isLoginModal = inject('isLoginModal');
-        const loginOpen = inject('loginOpen');
-        return{
-            isLoginModal, loginOpen
-        }
-    },
-    data() {
-        return{email:'',password:'' }
-    },
-    methods: {
-        login(){
-            firebase.auth().signInWithEmailAndPassword(this.email,this.password).
-            then((user) => { 
-                    sessionStorage.setItem('user_id',user.user.email);
-                    this.$router.go();
-                }).catch((err)=>{
-                    alert('에러 :'+err.message)
-                })
-            }
-        }
- }
+    const email = ref('')
+    const password = ref('')
+
+    const login = async () => {
+      try {
+        await authStore.login(email.value, password.value)
+        loginOpen()
+      } catch (err) {
+        alert('에러: ' + err.message)
+      }
+    }
+
+    return { isLoginModal, loginOpen, email, password, login }
+  }
+}
 </script>
 
 <style scoped>
@@ -178,7 +174,7 @@ transform: translate(-50%, -50%);
     margin:0 auto;
     font-weight: 800;
 }
-@media(max-width:490px){
+@media(max-width:576px){
     .Login_modal{
         width: 300px;
         height: 250px;

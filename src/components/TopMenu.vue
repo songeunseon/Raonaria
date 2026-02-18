@@ -80,7 +80,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
   a{
     text-decoration: none;
   }
-  @media(min-width:490px) and (max-width:1194px){
+  @media(min-width:577px) and (max-width:992px){
     #menuList{
       transition: none;
     }
@@ -93,7 +93,7 @@ import TopMenu_Login from "./TopMenu_Login.vue";
       justify-content: center;
     }
   }
-  @media(max-width:490px){
+  @media(max-width:576px){
     #menu{
       margin: 0 auto;
       width: 100%;

@@ -4,10 +4,9 @@
             <i @click="menuOpen()" class="bi bi-chevron-left"></i>
             <div class="menu_bar">
                 <span>채팅방 관리</span>
-                <!-- <i class="bi bi-chevron-compact-down"></i> -->
             </div>
             <div @click="toggleContent" class="title_change">
-                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
+                <i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 정보변경
             </div>
             <div class="infoChange">
@@ -16,17 +15,15 @@
                     <div class="title">정보변경</div>
                 </div>
                 <div class="write_zone">
-                    <input type="text" class="chat_name" placeholder="유치원 이름">
-                    <textarea row="5" clos="40" class="room_intro" placeholder="채팅방 소개"></textarea>
-                    <button class="save">저장</button>
+                    <input v-model="editName" type="text" class="chat_name" placeholder="유치원 이름">
+                    <textarea v-model="editDesc" rows="5" cols="40" class="room_intro" placeholder="채팅방 소개"></textarea>
+                    <button @click="saveRoomInfo" class="save">저장</button>
                 </div>
-            </div>
-            <div class="content_change">
             </div>
         </div>
         <div class="menu">
             <div @click="toggleContent" class="title_change">
-                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
+                <i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 <span @click="toggleContent2">공지사항 작성하기</span>
             </div>
             <div class="infoChange">
@@ -35,15 +32,15 @@
                     <div class="title">공지사항 관리</div>
                 </div>
                 <div class="write_zone">
-                    <textarea row="5" clos="40" class="room_intro"
+                    <textarea v-model="noticeContent" rows="5" cols="40" class="room_intro"
                     placeholder="올리고 싶은 공지사항을 작성하세요."></textarea>
-                    <button class="save">저장</button>
+                    <button @click="saveNotice" class="save">저장</button>
                 </div>
             </div>
         </div>
         <div class="menu">
             <div @click="toggleContent" class="title_change">
-                <i i @click="toggleContent2" class="bi bi-chevron-down"></i>
+                <i @click="toggleContent2" class="bi bi-chevron-down"></i>
                 <span @click="toggleContent2">강퇴관리</span>
             </div>
             <div class="infoChange">
@@ -51,48 +48,51 @@
                 <i @click="closeContent" class="bi bi-arrow-left-circle"></i>
                 <div class="title">강퇴 관리</div>
             </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
+            <div v-for="member in nonMasterMembers" :key="member.id" class="user_list">
+                <div class="user_name">{{ member.userName }}</div>
+                <input class="user_check" type="checkbox" v-model="kickTargets" :value="member.id">
             </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
+            <div v-if="nonMasterMembers.length === 0" class="user_list">
+                <div class="user_name" style="color:#888;">강퇴할 멤버가 없습니다</div>
             </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
-            </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
-            </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
-            </div>
-            <div class="user_list">
-                <div class="user_name">김선향</div>
-                <input class="user_check" type="checkbox">
-            </div>
-            <button class="save">저장</button>
+            <button @click="handleKick" class="save">강퇴하기</button>
         </div>
         </div>
     </div>
 </template>
 
 <script>
-import { inject, watch, onMounted } from 'vue';
+import { inject, watch, onMounted, ref, computed } from 'vue';
+import { useChatStore } from '@/stores/chat';
+
 export default {
     name: 'menu_modal',
     setup() {
-
         const isMenu = inject('isMenu');
-        const menuOpen = inject('menuOpen')
+        const menuOpen = inject('menuOpen');
+        const roomId = inject('roomId');
+        const chatStore = useChatStore();
+
+        const editName = ref('');
+        const editDesc = ref('');
+        const noticeContent = ref('');
+        const kickTargets = ref([]);
+
+        const nonMasterMembers = computed(() => {
+            return chatStore.members.filter(m => m.userId !== chatStore.currentRoom?.masterId)
+        });
+
+        // 채팅방 정보가 로드되면 이름/소개 채우기
+        watch(() => chatStore.currentRoom, (room) => {
+            if (room) {
+                editName.value = room.name || '';
+                editDesc.value = room.description || '';
+            }
+        }, { immediate: true });
 
         onMounted(() => {
             const menu_modal = document.querySelector('.menu_modal');
-            watch(isMenu, (newVal, oldVal) => {
+            watch(isMenu, () => {
                 menu_modal.classList.toggle('slideIn');
                 menu_modal.classList.toggle('slideOut');
             })
@@ -100,23 +100,48 @@ export default {
 
         const toggleContent = (event) => {
             const t = event.target.nextSibling;
-            t.classList.toggle('show');
+            if (t) t.classList.toggle('show');
         }
-
         const toggleContent2 = (event) => {
             const t = event.target.parentNode.nextSibling;
-            t.classList.toggle('show');
+            if (t) t.classList.toggle('show');
         }
-
         const closeContent = (event) => {
             const t = event.target.parentNode.parentNode;
             t.classList.remove('show');
         }
 
+        const saveRoomInfo = async () => {
+            if (!editName.value.trim()) return;
+            await chatStore.updateRoomInfo(roomId, {
+                name: editName.value.trim(),
+                description: editDesc.value.trim()
+            });
+            alert('저장되었습니다');
+        }
 
+        const saveNotice = async () => {
+            if (!noticeContent.value.trim()) return;
+            await chatStore.addRoomNotice(roomId, noticeContent.value.trim());
+            noticeContent.value = '';
+            alert('공지사항이 등록되었습니다');
+        }
 
+        const handleKick = async () => {
+            if (kickTargets.value.length === 0) return;
+            if (!confirm('선택한 멤버를 강퇴하시겠습니까?')) return;
+            for (const memberDocId of kickTargets.value) {
+                await chatStore.kickMember(roomId, memberDocId);
+            }
+            kickTargets.value = [];
+            alert('강퇴 처리되었습니다');
+        }
 
-        return { isMenu, menuOpen, toggleContent, toggleContent2, closeContent };
+        return {
+            isMenu, menuOpen, toggleContent, toggleContent2, closeContent,
+            editName, editDesc, noticeContent, kickTargets,
+            nonMasterMembers, saveRoomInfo, saveNotice, handleKick
+        };
     }
 }
 </script>
@@ -131,12 +156,10 @@ a {
     position: absolute;
     top: 230px;
     left: 61%;
-    /* transform: translate(50%, 50%); */
     width: 325px;
     height: fit-content;
     background: white;
     border: 1px solid black;
-    /* display:none; */
 }
 
 .menu {
@@ -161,16 +184,11 @@ a {
     width: 325px;
     border-bottom: 1px solid black;
     padding: 10px 0;
-
 }
 
 .menu_bar span {
     margin-left: 125px;
     font-weight: 800;
-}
-
-.menu_bar i {
-    padding-left: 30px;
 }
 
 .title_change {
@@ -181,18 +199,6 @@ a {
     cursor:pointer;
 }
 
-span.show{
-    border:none;
-}
-
-
-
-
-
-
-
-/* .menu_modal{display:none;} */
-
 .slideIn {
     animation: slideIn 0.5s ease-in-out forwards;
 }
@@ -202,151 +208,31 @@ span.show{
 }
 
 @keyframes slideIn {
-    0% {
-        opacity: 0;
-        display: none;
-    }
-
-    100% {
-        opacity: 1;
-        display: block;
-    }
+    0% { opacity: 0; display: none; }
+    100% { opacity: 1; display: block; }
 }
 
 @keyframes slideOut {
-    0% {
-        opacity: 1;
-        display: block;
-    }
-
-    100% {
-        opacity: 0;
-        display: none;
-    }
-}
-
-
-
-.save_bt {
-    padding: 10px 100px;
+    0% { opacity: 1; display: block; }
+    100% { opacity: 0; display: none; }
 }
 
 .save {
-    width: 100px;
-    height: 25px;
+    width:100%; height:40px;
+    position:relative;
+    margin:0;
+    background:#eb6c68;
+    color:white;
     border: none;
-    font-weight: 800;
-    background: #D9D9D9;
-    margin: 0 10px;
+    cursor: pointer;
 }
-
-.kick {
-    width: 100px;
-    height: 25px;
-    border: none;
-    font-weight: 800;
-    background: #D9D9D9;
-    margin: 0 25px;
-}
-
-.notice {
-    border: none;
-    border-bottom: 1px solid black;
-    padding: 15px 1px;
-    text-align: left;
-    font-size: 15px;
-}
-
-.notice span {
-    /* margin-left:97px;
-    font-weight:800; */
-    text-align: left;
-}
-
-.notice i {
-    padding-left: 10px;
-}
-
-.notice_write input {
-    width: 220px;
-    border: none;
-    outline: none;
-    margin-top: 25px;
-    margin-left: 50px;
-    text-align: left;
-}
-
-.notice_info_bt {
-    padding: 10px 90px;
-}
-
-.notice_info {
-    width: 100px;
-    height: 25px;
-    margin: 10px 20px;
-    font-weight: 800;
-    border: none;
-    background: #d9d9d9;
-
-}
-
-.kick_out {
-    /* font-weight: 900; */
-    font-size: 15px;
-    /* border-bottom: 1px solid black;
-    border-top: 1px solid black; */
-    text-align: left;
-    padding: 10px 10px;
-}
-
-.Participants_list {
-    text-align: center;
-    font-weight: 900;
-    padding-top: 5px;
-}
-
-.chat_box {
-    width: 200px;
-    margin: 10px auto;
-    background: #d9d9d9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.manager {
-    position: relative;
-    top: -2px;
-    left: 9px;
-}
-
-.chat_box {
-    display: flex;
-    flex-direction: column;
-}
-
-.check_name {
-    display: flex;
-    align-self: end;
-    margin-right: 50px;
-    padding: 5px 0px;
-    gap: 10px;
-}
-
-.kick_out_bt {
-    padding: 10px 90px;
-}
-
-
 
 .infoChange{
     position:relative;
     left:-1px;
-    height:fit-content;
-    background:white;
     height:0px;
     overflow:hidden;
+    background:white;
 }
 .title_head{
     display:flex;
@@ -354,7 +240,6 @@ span.show{
     align-items: center;
     padding:10px 10px;
     font-size:20px;
-    /* height:30px; */
 }
 .title_head .bi{
     position:absolute;
@@ -375,15 +260,7 @@ textarea{
     display:flex;
     justify-content:space-around;
     border-top: 1px solid black;
-    /* border-bottom: 1px solid black; */
     padding:5px 0;
-}
-.save{
-    width:100%; height:40px;
-    position:relative;
-    margin:0;
-    background:#eb6c68;
-    color:white;
 }
 
 .bi-arrow-left-circle{
@@ -395,5 +272,4 @@ textarea{
     border:1px solid black;
     border-top:transparent;
 }
-
 </style>

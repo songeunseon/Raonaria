@@ -1,39 +1,27 @@
 <script>
-import { RouterLink, useRouter } from "vue-router";
+import { RouterLink } from "vue-router";
 import { ref, provide } from 'vue';
 import EasySearch from '../components/EasySearch.vue';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseApp } from "@/main.js";
+import { useAuthStore } from '@/stores/auth';
 
 export default {
   components: { EasySearch },
   setup() {
+    const authStore = useAuthStore();
     const email = ref('');
     const password = ref('');
-    const uid = ref(sessionStorage.getItem('user_id'));
     const isEasySearch = ref(false);
-    const router = useRouter();
 
-    const login = () => {
-      const auth = getAuth(firebaseApp);
-      signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          sessionStorage.setItem('user_id', user.email);
-          uid.value = user.email;
-          router.go(); // 새로고침 효과
-        })
-        .catch((err) => {
-          alert('에러 :' + err.message);
-        });
+    const login = async () => {
+      try {
+        await authStore.login(email.value, password.value);
+      } catch (err) {
+        alert('에러 :' + err.message);
+      }
     };
 
-    const logout = () => {
-      if (uid.value !== null) {
-        sessionStorage.removeItem('user_id');
-        uid.value = null;
-        router.go();
-      }
+    const logout = async () => {
+      await authStore.logout();
     };
 
     const easySearch = () => {
@@ -46,7 +34,7 @@ export default {
     return {
       email,
       password,
-      uid,
+      authStore,
       login,
       logout,
       isEasySearch,
@@ -56,7 +44,7 @@ export default {
 </script>
 
 <template>
-  <div id="signin" v-if="uid == null">
+  <div id="signin" v-if="!authStore.isLoggedIn">
     <div class="input login">
       <b>ID</b><input v-model="email" id="hid" type="text" placeholder="abc@gmail.com">
     </div>
@@ -74,7 +62,7 @@ export default {
   </div>
 
   <div v-else>
-    {{ uid }}<br>
+    {{ authStore.userEmail }}<br>
     <button @click="logout" class="hlogout">Logout</button>
   </div>
 
@@ -146,7 +134,7 @@ export default {
   border-top: 3px solid #aaa;
   padding: 5px;
 }
-@media(max-width: 490px) {
+@media(max-width: 576px) {
   .input {
     width: 200px;
     text-align: center;
