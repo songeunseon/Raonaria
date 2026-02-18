@@ -34,3 +34,6 @@ coverage
 *.exe
 *.msi
 *.xlsx
+
+# Claude Code
+.claude/
