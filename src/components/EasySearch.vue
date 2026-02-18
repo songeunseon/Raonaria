@@ -1,51 +1,24 @@
 <script>
-    import {inject} from 'vue';
-    // import data from '@/assets/일반현황.json';
+    import { inject, computed } from 'vue';
+    import { useKindergartenStore } from '@/stores/kindergarten'
 
-    // const RAdata= data;
-
-    export default{
+    export default {
         name:'EasySearch',
         setup(){
             const isEasySearch = inject('isEasySearch');
             const easySearch = inject('easySearch');
-            // const isCloseEasySearch = ref(false);
+            const kindergartenStore = useKindergartenStore();
+
             const CloseEasySearch = () => {
-                    isEasySearch.value = false;
-    }
-            return{
-                isEasySearch, easySearch, CloseEasySearch
+                isEasySearch.value = false;
+            }
+
+            const kinder = computed(() => kindergartenStore.selectedKinder)
+
+            return {
+                isEasySearch, easySearch, CloseEasySearch, kinder
             }
         },
-        // methods:{
-        //     search(event){
-        //     this.$emit('sendKeyword',event.target.value);
-        //     }
-        // },
-        // data(){
-        //     return{
-        //     searchKeyword: '',
-        //     };
-        // },
-        // name:'EasySearch',
-        // props:["keyword"],
-        // methods:{
-        //     search_Group(){
-        //         const len = this.RAdata.length;
-        //         for(let i=0; i<len;i++){
-        //         if(this.RAdata[i].Column3.includes(this.keyword) == false ){
-        //             document.querySelectorAll(".left")[i].style.display="none";
-        //         }else{
-        //             document.querySelectorAll(".left")[i].style.display="table-row";
-        //         }
-        //         }
-        //     },
-        // },
-        // watch:{
-        //     keyword(){
-        //         this.search_Group();
-        //     },
-        // }
     }
 
 </script>
@@ -63,31 +36,21 @@
                 <table>
                     <tr>
                         <td>유치원명</td>
-                        <td>하나유치원</td>
+                        <td>{{ kinder?.name || '-' }}</td>
                     </tr>
                     <tr>
                         <td>주소</td>
-                        <td>대전</td>
+                        <td>{{ kinder?.address || '-' }}</td>
                     </tr>
                     <tr>
                         <td>설립유형</td>
-                        <td>사립</td>
+                        <td>{{ kinder?.establishmentType || '-' }}</td>
                     </tr>
                     <tr>
                         <td>운영시간</td>
-                        <td>09:00~18:00</td>
+                        <td>{{ kinder?.operatingHours || '-' }}</td>
                     </tr>
                 </table>
-                <!-- <div id="easyCheck">
-                    <input type="checkbox" class="btn-check" name="options-base" id="car" autocomplete="off" checked>
-                    <label class="btn" for="car">차량운행여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="special" autocomplete="off" checked>
-                    <label class="btn" for="special">특수학급여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="after" autocomplete="off" checked>
-                    <label class="btn" for="after">방과후돌봄</label>
-                </div> -->
             </div>
             <div class="section easyimg">
                 <img src="../assets/naver_map.png">
@@ -95,7 +58,7 @@
         </div>
     </div>
 </template>
-<style>
+<style scoped>
 *{
     padding: 0;
     margin: 0;
@@ -105,7 +68,7 @@
     width: 600px;
     height: 300px;
     z-index: 100;
-    position: absolute;
+    position: fixed;
     background: #ffffff;
     border: 5px solid #a9bb51;
     border-radius: 30px;
@@ -142,24 +105,6 @@
     height: 40px;
 
 }
-#easyCheck{
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
-}
-#easyCheck .btn-check[type='checkbox']:checked+label{
-    background: #FFD12499;
-    border: 0;
-    border-radius: 100px;
-    font-size: 13px;
-}
-#easyCheck .btn-check[type='checkbox']:not(:checked)+label{
-    background: #fff;
-    border: 0;
-    border-radius: 100px;
-    font-size: 13px;
-}
-
 .easyimg{
     width: 250px;
     height: 200px;
@@ -170,7 +115,7 @@
 .easyimg img{
     height: 200px;
 }
-@media(max-width:490px){
+@media(max-width:576px){
     #easyBody{
         width: 350px;
         height: 500px;
@@ -200,24 +145,6 @@
         height: 40px;
 
     }
-    #easyCheck{
-    width: 240px;
-    display: flex;
-    justify-content: center;
-    column-gap: 10px;
-}
-#easyCheck .btn-check[type='checkbox']:checked+label{
-    background: #FFD12499;
-    border: 0;
-    border-radius: 100px;
-    font-size: 10px;
-}
-#easyCheck .btn-check[type='checkbox']:not(:checked)+label{
-    background: #fff;
-    border: 0;
-    border-radius: 100px;
-    font-size: 10px;
-}
     .left{
         width: 250px;
         height: 150px;
@@ -225,7 +152,7 @@
         padding: 10px;
     }
     .easyimg{
-    
+
     width: 250px;
     height: 150px;
     margin: 0px auto;

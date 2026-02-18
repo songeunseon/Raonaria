@@ -4,21 +4,46 @@
             <i @click="formOpen()" class="bi bi-x-circle"></i>
             <b class="word">문의</b>
         </div>
-            <textarea id="ask_area" name="ask_area" rows="5" column="50"  placeholder="문의 내용을 입력해주세요"></textarea>
+            <textarea id="ask_area" name="ask_area" rows="5" column="50" v-model="inquiryContent" placeholder="문의 내용을 입력해주세요"></textarea>
         <div class="send_wrap"></div>
-        <i class="bi bi-send-fill"></i>
+        <i class="bi bi-send-fill" @click="submitInquiry()"></i>
     </div>
 
 </template>
 
 <script>
-import { inject} from 'vue';
+import { inject, ref } from 'vue';
+import { useAuthStore } from '@/stores/auth'
+
 export default {
     name: 'ask_form',
     setup() {
         const isForm = inject('isForm');
         const formOpen = inject('formOpen');
-        return { isForm, formOpen }
+        const mypageStore = inject('mypageStore');
+        const authStore = useAuthStore();
+        const inquiryContent = ref('');
+
+        const submitInquiry = async () => {
+            if (!inquiryContent.value.trim()) {
+                alert('문의 내용을 입력해주세요');
+                return;
+            }
+            if (!authStore.isLoggedIn) {
+                alert('로그인이 필요합니다');
+                return;
+            }
+            try {
+                await mypageStore.addInquiry(authStore.userId, inquiryContent.value.trim());
+                alert('문의가 접수되었습니다');
+                inquiryContent.value = '';
+                formOpen();
+            } catch (err) {
+                alert('문의 접수 실패: ' + err.message);
+            }
+        }
+
+        return { isForm, formOpen, inquiryContent, submitInquiry }
     }
 }
 
@@ -68,14 +93,6 @@ export default {
     margin: 0 auto;
 }
 
-/* .send_wrap {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .bi-send-fill{
     font-size: 40px;
     cursor: pointer;
@@ -94,9 +111,7 @@ export default {
     margin-top: 0px;
 }
 
-
 .fade-leave-from {
-
     margin-top: 0px;
 }
 
@@ -105,12 +120,10 @@ export default {
 }
 
 .fade-leave-to {
-
     margin-top: 1000px;
 }
 
-/*문의하기 미디어쿼리 부분 태블릿 형 */
-@media(max-width:1194px){
+@media(max-width:992px){
     .wrap{
     width: 500px;
     height: 500px;
@@ -136,8 +149,7 @@ export default {
     }
 }
 
-/*모바일 버전 모달창 만들기 */
-@media(max-width:490px){
+@media(max-width:576px){
     .wrap{
     width:315px;
     position: fixed;

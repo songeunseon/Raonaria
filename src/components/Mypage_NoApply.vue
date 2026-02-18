@@ -135,7 +135,7 @@ export default{
     overflow: hidden;
 }
 
-@media(max-width:490px){
+@media(max-width:576px){
     .apply_header{
         margin:40px 0;
     }

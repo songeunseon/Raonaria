@@ -159,7 +159,7 @@ export default{
   option{
     text-align: left;
   }
-  @media(min-width:490px) and (max-width:1194px){
+  @media(min-width:577px) and (max-width:992px){
     #SHbox{
       width: 100%; 
  
@@ -168,7 +168,7 @@ export default{
       font-size: 10px;
     }
   }
-  @media(max-width:490px){
+  @media(max-width:576px){
     #SHbox{
       width: 100%;
       height: 120px;  

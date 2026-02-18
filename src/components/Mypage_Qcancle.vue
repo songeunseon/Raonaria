@@ -1,21 +1,37 @@
 <template>
     <div v-if="isAsk" class="wrap">
-        <div class="words">정말 문의을 취소하시겠습니까?</div>
+        <div class="words">정말 문의를 취소하시겠습니까?</div>
         <div class="button_wrap">
-            <button class="check_bt">확인</button>
+            <button @click="confirmCancel()" class="check_bt">확인</button>
             <button @click='askOpen()' class="cancle_bt" value="취소">취소</button>
         </div>
     </div>
 </template>
 <script>
-import{ref,inject} from 'vue';
-export default{
-    name:"Mypage_Qcancle",
-    setup(){
-        const isAsk =inject('isAsk');
-        const askOpen = inject('askOpen');
+import { inject } from 'vue';
 
-        return{isAsk, askOpen}
+export default {
+    name: "Mypage_Qcancle",
+    setup() {
+        const isAsk = inject('isAsk');
+        const askOpen = inject('askOpen');
+        const mypageStore = inject('mypageStore');
+        const selectedInquiries = inject('selectedInquiries');
+
+        const confirmCancel = async () => {
+            try {
+                for (const inquiryId of selectedInquiries.value) {
+                    await mypageStore.cancelInquiry(inquiryId);
+                }
+                alert('문의가 취소되었습니다');
+                selectedInquiries.value = [];
+                askOpen();
+            } catch (err) {
+                alert('취소 실패: ' + err.message);
+            }
+        }
+
+        return { isAsk, askOpen, confirmCancel }
     }
 }
 </script>
@@ -74,8 +90,7 @@ export default{
     background:#0d6efd;
     color:white;
 }
-/*모바일 버전 미다어 쿼리 작성 */
-@media(max-width:490px){
+@media(max-width:576px){
     .wrap{
         width:300px;
         height:135px;

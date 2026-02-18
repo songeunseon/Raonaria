@@ -1,193 +1,141 @@
-<script >
-import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+<script>
+import {RouterLink, RouterView} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
-import {onMounted} from 'vue'
-import {Chart} from 'chart.js/auto'
-const router = useRouter();
+import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
+import { Chart } from 'chart.js/auto'
+import { useKindergartenStore } from '@/stores/kindergarten'
 
-export default{
-    components:{
+export default {
+    components: {
         TopMenu, TopMenu_Login
     },
-  name:"Search_chart",
+    name: "ComparisonView",
     setup() {
-onMounted(() => {
-        const ctx = document.getElementById('teacher');
-        const label = ['만1세','만2세','만3세','만4세','만5세'];
-        const data = [23,17,20,13,10];
-        const avg = 15;
+        const kindergartenStore = useKindergartenStore()
+        const searchLeft = ref('')
+        const searchRight = ref('')
+        const leftKinder = ref(null)
+        const rightKinder = ref(null)
 
-        new Chart(ctx, {
-            type:'bar',
-            data: {
-                labels: label,
-                datasets: [{
-                    label: '학급별 원아 수',
-                    data: data,
-                    borderWidth:1,
-                    borderColor: '#aaa',
-                    base: avg,
-                    borderRadius: 20,
-                    backgroundColor:avg_color(data, avg),
-                    
-                  }]
-                },
-                options: {
-        plugins: {
-            legend: {
-                labels: {
-                    generateLabels: (chart) => {
-                        const data = chart.data.datasets[0].data;
-                        const avg = 15;
-                        return [
-                            {
-                                datasetIndex: 0,
-                                text: '초과',
-                                fillStyle: '#88c8ff',
-                            },
-                            {
-                                datasetIndex: 0,
-                                text: '미달',
-                                fillStyle: '#e69696',
-                            }
-                        ];
-                    },
-                },
-            },
-            title:{
-                display:true,
-                text:"학급대비배치원생"
+        let charts = []
+
+        const destroyCharts = () => {
+            charts.forEach(c => c.destroy())
+            charts = []
+        }
+
+        const searchKinder = (keyword, side) => {
+            if (!keyword) return
+            const found = kindergartenStore.kindergartens.find(k =>
+                k.name?.includes(keyword)
+            )
+            if (found) {
+                if (side === 'left') leftKinder.value = found
+                else rightKinder.value = found
+            } else {
+                alert('유치원을 찾을 수 없습니다')
             }
-          },
-          indexAxis:'y',
-        scales: {
-            x: {
-              min:5,max:30
-            },
-        
-    },
-  },
-        });
-        function avg_color(data, avg) {
-        return data.map(value => (value >= avg ? '#88c8ff' : '#e69696'));
-    }
+        }
 
+        const avg_color = (data, avg) => {
+            return data.map(value => (value >= avg ? '#88c8ff' : '#e69696'))
+        }
 
-        const ctx2 = document.getElementById('child');
-        const label2 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data2 = [22,14,21,10,19];
-        const childColor = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
-        new Chart(ctx2, {
-                type: 'pie',
-                data: {
-                    labels: label2,
-                    datasets: [{
-                        label: '재원중인 원아 수',
-                        data: data2,
-                        borderWidth: 3,
-                        borderColor: '#fff',
-                        pointBorderWidth: 0,
-                        backgroundColor: childColor,
-                    }]
-                },
-                options:{
-                  plugins:{
-                    title:{
-                      display:true,
-                      text:"해당 유치원 현 원아 수"
+        const renderCharts = () => {
+            destroyCharts()
+
+            nextTick(() => {
+                // Left charts
+                if (leftKinder.value) {
+                    const k = leftKinder.value
+                    const data = [
+                        Number(k.age3Students) || 0,
+                        Number(k.age4Students) || 0,
+                        Number(k.age5Students) || 0,
+                        Number(k.mixedStudents) || 0,
+                        Number(k.specialStudents) || 0
+                    ]
+                    const avg = Math.round(data.reduce((a, b) => a + b, 0) / data.length)
+                    const labels = ['만3세','만4세','만5세','혼합','특수']
+
+                    const ctx = document.getElementById('teacher')
+                    if (ctx) {
+                        charts.push(new Chart(ctx, {
+                            type: 'bar',
+                            data: { labels, datasets: [{ label: '학급별 원아 수', data, borderWidth:1, borderColor:'#aaa', base:avg, borderRadius:20, backgroundColor:avg_color(data, avg) }] },
+                            options: { plugins: { legend: { labels: { generateLabels: () => [{ datasetIndex:0, text:'초과', fillStyle:'#88c8ff' }, { datasetIndex:0, text:'미달', fillStyle:'#e69696' }] } }, title: { display:true, text:"학급대비배치원생" } }, indexAxis:'y', scales: { x: { min:0, max:Math.max(...data, avg)+10 } } }
+                        }))
                     }
-                  }
+                    const ctx2 = document.getElementById('child')
+                    if (ctx2) {
+                        charts.push(new Chart(ctx2, {
+                            type: 'pie',
+                            data: { labels, datasets: [{ label: '재원중인 원아 수', data, borderWidth:3, borderColor:'#fff', backgroundColor:["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"] }] },
+                            options: { plugins: { title: { display:true, text:"해당 유치원 현 원아 수" } } }
+                        }))
+                    }
                 }
-            });
-        const ctx3 = document.getElementById('teacher2');
-        const label3 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data3 = [13,20,9,17,28];
-        const avg3 = 15;
 
-        new Chart(ctx3, {
-            type:'bar',
-            data: {
-                labels: label3,
-                datasets: [{
-                    label: '학급별 원아 수',
-                    data: data3,
-                    borderWidth:1,
-                    borderColor: '#aaa',
-                    base: avg,
-                    borderRadius: 20,
-                    backgroundColor:avg_color(data3, avg3),
-                    
-                  }]
-                },
-                options: {
-        plugins: {
-            legend: {
-                labels: {
-                    generateLabels: (chart) => {
-                        const data3 = chart.data.datasets[0].data;
-                        const avg3 = 15;
-                        return [
-                            {
-                                datasetIndex: 0,
-                                text: '초과',
-                                fillStyle: '#88c8ff',
-                            },
-                            {
-                                datasetIndex: 0,
-                                text: '미달',
-                                fillStyle: '#e69696',
-                            }
-                        ];
-                    },
-                },
-            },
-            title:{
-                display:true,
-                text:"학급대비배치원생"
+                // Right charts
+                if (rightKinder.value) {
+                    const k = rightKinder.value
+                    const data = [
+                        Number(k.age3Students) || 0,
+                        Number(k.age4Students) || 0,
+                        Number(k.age5Students) || 0,
+                        Number(k.mixedStudents) || 0,
+                        Number(k.specialStudents) || 0
+                    ]
+                    const avg = Math.round(data.reduce((a, b) => a + b, 0) / data.length)
+                    const labels = ['만3세','만4세','만5세','혼합','특수']
+
+                    const ctx3 = document.getElementById('teacher2')
+                    if (ctx3) {
+                        charts.push(new Chart(ctx3, {
+                            type: 'bar',
+                            data: { labels, datasets: [{ label: '학급별 원아 수', data, borderWidth:1, borderColor:'#aaa', base:avg, borderRadius:20, backgroundColor:avg_color(data, avg) }] },
+                            options: { plugins: { legend: { labels: { generateLabels: () => [{ datasetIndex:0, text:'초과', fillStyle:'#88c8ff' }, { datasetIndex:0, text:'미달', fillStyle:'#e69696' }] } }, title: { display:true, text:"학급대비배치원생" } }, indexAxis:'y', scales: { x: { min:0, max:Math.max(...data, avg)+10 } } }
+                        }))
+                    }
+                    const ctx4 = document.getElementById('child2')
+                    if (ctx4) {
+                        charts.push(new Chart(ctx4, {
+                            type: 'pie',
+                            data: { labels, datasets: [{ label: '재원중인 원아 수', data, borderWidth:3, borderColor:'#fff', backgroundColor:["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"] }] },
+                            options: { plugins: { title: { display:true, text:"해당 유치원 현 원아 수" } } }
+                        }))
+                    }
+                }
+            })
+        }
+
+        onMounted(() => {
+            // JSON 데이터는 스토어 생성 시 이미 로드됨
+            // If comparison list has items from SearchView, pre-fill
+            if (kindergartenStore.comparisonList.length >= 1) {
+                leftKinder.value = kindergartenStore.comparisonList[0]
+                searchLeft.value = leftKinder.value.name
             }
-          },
-          indexAxis:'y',
-        scales: {
-            x: {
-              min:5,max:30
-            },
-        
-    },
-  },
-        });
-        function avg_color(data3, avg3) {
-        return data3.map(value => (value >= avg3 ? '#88c8ff' : '#e69696'));
-    }
+            if (kindergartenStore.comparisonList.length >= 2) {
+                rightKinder.value = kindergartenStore.comparisonList[1]
+                searchRight.value = rightKinder.value.name
+            }
+            renderCharts()
+        })
 
+        onUnmounted(() => {
+            destroyCharts()
+        })
 
-        const ctx4 = document.getElementById('child2');
-        const label4 = ['만1세','만2세','만3세','만4세','만5세'];
-        const data4 = [23,17,20,13,10];
-        const childColor2 = ["#f35b56","#38b6ff","#8c52ff","#fcd03f","pink"];
-        new Chart(ctx4, {
-                type: 'pie',
-                data: {
-                    labels: label4,
-                    datasets: [{
-                        label: '재원중인 원아 수',
-                        data: data4,
-                        borderWidth: 3,
-                        borderColor: '#fff',
-                        pointBorderWidth: 0,
-                        backgroundColor: childColor2,
-                    }]
-                },
-                options:{
-                  plugins:{
-                    title:{
-                      display:true,
-                      text:"해당 유치원 현 원아 수"
-                    }
-                  }
-                }
-            });
-    });
+        watch([leftKinder, rightKinder], () => {
+            renderCharts()
+        })
+
+        return {
+            kindergartenStore, searchLeft, searchRight,
+            leftKinder, rightKinder, searchKinder
+        }
     }
 }
 </script>
@@ -201,38 +149,40 @@ onMounted(() => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
-                <input type="text" placeholder="유치원 이름 검색">
+                <input type="text" v-model="searchLeft" @keyup.enter="searchKinder(searchLeft, 'left')" placeholder="유치원 이름 검색">
             </div>
             <div class="CpInfo">
                 <div class="map">
                     <img id="ex_map" src="../assets/naver_map.png">
                 </div>
                 <table class="cpTable">
-                    <tr>
-                        <td class="cpName">유치원명</td>
-                        <td>하나유치원</td>
-                    </tr>
-                    <tr>
-                        <td class="cpAddr">주소</td>
-                        <td>대전 서구 용문동</td>
-                    </tr>
-                    <tr>
-                        <td class="cpET">설립유형</td>
-                        <td>국공립</td>
-                    </tr>
-                    <tr>
-                        <td class="cpTime">운영시간</td>
-                        <td>09:00~18:00</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td class="cpName">유치원명</td>
+                            <td>{{ leftKinder?.name || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpAddr">주소</td>
+                            <td>{{ leftKinder?.address || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpET">설립유형</td>
+                            <td>{{ leftKinder?.establishmentType || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpTime">운영시간</td>
+                            <td>{{ leftKinder?.operatingHours || '-' }}</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div class="point">
-                    <input type="checkbox" class="btn-check" name="options-base" id="car1" autocomplete="off" checked>
+                    <input type="checkbox" class="btn-check" name="options-base" id="car1" autocomplete="off" :checked="leftKinder?.vehicleOperation === '운영'" disabled>
                     <label class="btn" for="car1">차량운행여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="special1" autocomplete="off" checked>
+
+                    <input type="checkbox" class="btn-check" name="options-base" id="special1" autocomplete="off" :checked="Number(leftKinder?.specialClasses) > 0" disabled>
                     <label class="btn" for="special1">특수학급여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="after1" autocomplete="off" checked>
+
+                    <input type="checkbox" class="btn-check" name="options-base" id="after1" autocomplete="off" checked disabled>
                     <label class="btn" for="after1">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
@@ -248,40 +198,42 @@ onMounted(() => {
         <div id="right">
             <div class="CpInput">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-  </svg>
-                <input type="text" placeholder="유치원 이름 검색">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <input type="text" v-model="searchRight" @keyup.enter="searchKinder(searchRight, 'right')" placeholder="유치원 이름 검색">
             </div>
             <div class="CpInfo">
                 <div class="map">
                     <img id="ex_map" src="../assets/naver_map.png">
                 </div>
                 <table class="cpTable">
-                    <tr>
-                        <td class="cpName">유치원명</td>
-                        <td>두울유치원</td>
-                    </tr>
-                    <tr>
-                        <td class="cpAddr">주소</td>
-                        <td>대전 서구 용문동</td>
-                    </tr>
-                    <tr>
-                        <td class="cpET">설립유형</td>
-                        <td>사립</td>
-                    </tr>
-                    <tr>
-                        <td class="cpTime">운영시간</td>
-                        <td>09:00~20:00</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td class="cpName">유치원명</td>
+                            <td>{{ rightKinder?.name || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpAddr">주소</td>
+                            <td>{{ rightKinder?.address || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpET">설립유형</td>
+                            <td>{{ rightKinder?.establishmentType || '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cpTime">운영시간</td>
+                            <td>{{ rightKinder?.operatingHours || '-' }}</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div class="point">
-                    <input type="checkbox" class="btn-check" name="options-base" id="car2" autocomplete="off" checked>
+                    <input type="checkbox" class="btn-check" name="options-base" id="car2" autocomplete="off" :checked="rightKinder?.vehicleOperation === '운영'" disabled>
                     <label class="btn" for="car2">차량운행여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="special2" autocomplete="off" checked>
+
+                    <input type="checkbox" class="btn-check" name="options-base" id="special2" autocomplete="off" :checked="Number(rightKinder?.specialClasses) > 0" disabled>
                     <label class="btn" for="special2">특수학급여부</label>
-                    
-                    <input type="checkbox" class="btn-check" name="options-base" id="after2" autocomplete="off" checked>
+
+                    <input type="checkbox" class="btn-check" name="options-base" id="after2" autocomplete="off" checked disabled>
                     <label class="btn" for="after2">방과후돌봄</label>
                 </div>
                 <div class="CP_Chart">
@@ -299,7 +251,7 @@ onMounted(() => {
 </template>
 <style scoped>
     *{font-family: 'SUITE-Regular';}
-    
+
     #teacher, #child, #teacher2, #child2{
         width: 200px;
         height: 200px;
@@ -362,7 +314,7 @@ onMounted(() => {
         display: flex;
         justify-content: space-around;
     }
-    
+
     .CP_Chart{
         width: 400px;
         height: 200px;
@@ -382,6 +334,7 @@ onMounted(() => {
         background: #7bb1ff99;
         border: 0;
         border-radius: 100px;
+        cursor: pointer;
     }
     .CpBt button:hover{
         background: #0d6efd;

@@ -1,14 +1,77 @@
 <script>
-import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import {RouterLink, RouterView} from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
-const router = useRouter();
+import { ref } from 'vue'
+import { useAuthStore } from '@/stores/auth'
+import { useMypageStore } from '@/stores/mypage'
+import { useKindergartenStore } from '@/stores/kindergarten'
+import { useRouter } from 'vue-router'
 
-export default{
-    components:{
+export default {
+    components: {
         TopMenu, TopMenu_Login
-    }
+    },
+    setup() {
+        const authStore = useAuthStore()
+        const mypageStore = useMypageStore()
+        const kindergartenStore = useKindergartenStore()
+        const router = useRouter()
 
+        const childName = ref('')
+        const childGender = ref('남아')
+        const primaryName = ref('')
+        const primaryPhone = ref('')
+        const secondaryName = ref('')
+        const secondaryPhone = ref('')
+        const allergies = ref(false)
+        const disease = ref(false)
+        const specialClass = ref(false)
+        const nothing = ref(false)
+        const memo = ref('')
+
+        const kindergartenName = ref(kindergartenStore.selectedKinder?.name || '')
+
+        const submitEnrollment = async () => {
+            if (!authStore.isLoggedIn) {
+                alert('로그인이 필요합니다')
+                return
+            }
+            if (!childName.value || !primaryName.value || !primaryPhone.value) {
+                alert('필수 항목을 입력해주세요')
+                return
+            }
+            try {
+                await mypageStore.addApplication({
+                    userId: authStore.userId,
+                    kindergartenName: kindergartenName.value || '미지정',
+                    consultStatus: false,
+                    enrollStatus: true,
+                    childName: childName.value,
+                    childGender: childGender.value,
+                    primaryName: primaryName.value,
+                    primaryPhone: primaryPhone.value,
+                    secondaryName: secondaryName.value,
+                    secondaryPhone: secondaryPhone.value,
+                    allergies: allergies.value,
+                    disease: disease.value,
+                    specialClass: specialClass.value,
+                    memo: memo.value
+                })
+                alert('입학신청이 완료되었습니다')
+                router.push('/mypage')
+            } catch (err) {
+                alert('입학신청 실패: ' + err.message)
+            }
+        }
+
+        return {
+            childName, childGender, primaryName, primaryPhone,
+            secondaryName, secondaryPhone, allergies, disease,
+            specialClass, nothing, memo, kindergartenName,
+            submitEnrollment
+        }
+    }
 }
 
 </script>
@@ -25,49 +88,49 @@ export default{
                 <div class="schoolBox">
                     <div class="boxlist">
                         <b>자녀 이름</b>
-                        <input type="text">
+                        <input type="text" v-model="childName">
                     </div>
                     <div id="songender">
                         <b>자녀 성별</b>
-                        <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" checked>
+                        <input type="radio" class="btn-check" name="options-base" id="genderM" autocomplete="off" value="남아" v-model="childGender">
                         <label class="gd" for="genderM">남아</label>
-                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off" checked>
+                        <input type="radio" class="btn-check" name="options-base" id="genderW" autocomplete="off" value="여아" v-model="childGender">
                         <label class="gd" for="genderW">여아</label>
                     </div>
                 </div>
                 <div class="schoolBox">
                     <div class="boxlist">
                         <b>주 양육자 이름</b>
-                        <input type="text">
+                        <input type="text" v-model="primaryName">
                     </div>
                     <div>
                         <b>주 양육자 전화번호</b>
-                        <input type="number">
+                        <input type="number" v-model="primaryPhone">
                     </div>
                 </div>
                 <div class="schoolBox">
                     <div class="boxlist">
                         <b>부 양육자 이름</b>
-                        <input type="text">
+                        <input type="text" v-model="secondaryName">
                     </div>
                     <div>
                         <b>부 양육자 전화번호</b>
-                        <input type="number">
+                        <input type="number" v-model="secondaryPhone">
                     </div>
                 </div>
                 </div>
             <div  id="imgBox">
-                <div id="image">    
+                <div id="image">
                 <!--사진첨부-->
                 </div>
                 <div id="imgicon">
-                    <svg @click="photo()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
                     <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                     </svg>
                 </div>
             </div>
-            
+
         </div>
         <div id="son">
             <div id="sonTitle">
@@ -77,22 +140,22 @@ export default{
                 </svg>
             </div>
             <div id="soncheck">
-                <input type="checkbox" class="btn-check" id="allergy" checked autocomplete="off">
+                <input type="checkbox" class="btn-check" id="allergy" v-model="allergies" autocomplete="off">
                 <label class="btn" for="allergy">알러지 주의</label>
-                <input type="checkbox" class="btn-check" id="disease" checked autocomplete="off">
+                <input type="checkbox" class="btn-check" id="disease" v-model="disease" autocomplete="off">
                 <label class="btn" for="disease">선천적 질병</label>
-                <input type="checkbox" class="btn-check" id="special" checked autocomplete="off">
+                <input type="checkbox" class="btn-check" id="special" v-model="specialClass" autocomplete="off">
                 <label class="btn" for="special">특별학급 희망</label>
-                <input type="checkbox" class="btn-check" id="nothing" checked autocomplete="off">
+                <input type="checkbox" class="btn-check" id="nothing" v-model="nothing" autocomplete="off">
                 <label class="btn" for="nothing">없음</label>
             </div>
             <div id="sontext">
-                <textarea id="textarea" rows="5" cols="50" placeholder="전달사항을 입력해주세요"></textarea>
+                <textarea id="textarea" rows="5" cols="50" v-model="memo" placeholder="전달사항을 입력해주세요"></textarea>
             </div>
         </div>
     </div>
-    <div id="send">
-        <input type="submit" value="입학신청서 제출">
+    <div id="send" @click="submitEnrollment()" style="cursor:pointer;">
+        <input type="button" value="입학신청서 제출">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
         </svg>
@@ -135,7 +198,7 @@ b{
     border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 15px;
-    
+
 }
 .schoolBox div{
     padding: 5px;
@@ -259,9 +322,9 @@ b{
     background: 0;
     padding: 0;
     margin: 0;
-    
+    cursor: pointer;
 }
-@media(min-width:490px) and (max-width:1194px){
+@media(min-width:577px) and (max-width:992px){
     #sontext{
         width: 100%;
         text-align: center;
@@ -275,7 +338,7 @@ b{
     }
 
 }
-@media(max-width:490px){
+@media(max-width:576px){
     h1{
         font-size: 20px;
     }
@@ -309,7 +372,7 @@ b{
     border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 12px;
-    
+
 }
 .schoolBox div{
     padding: 5px;
@@ -403,7 +466,7 @@ b{
     border: 0;
     font-size: 15px;
     background: 0;
-    
+
 }
 }
 </style>

@@ -1,29 +1,54 @@
 <script setup>
-import {RouterLink, RouterView, useRoute, useRouter} from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'
 import TopMenu from '../components/TopMenu.vue'
 import TopMenu_Login from '../components/TopMenu_Login.vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useNoticeStore } from '@/stores/notice';
+import { useAuthStore } from '@/stores/auth';
+
 const router = useRouter();
+const noticeStore = useNoticeStore();
+const authStore = useAuthStore();
 
-import { ref } from 'vue';
+const searchKeyword = ref('');
+const searchCategory = ref('제목');
+const showWriteForm = ref(false);
 
-const notice = {
-  title: '',
-  content: '',
-  user:'',
+const newNotice = ref({ title: '', content: '' });
+
+const filteredNotices = computed(() => {
+  if (!searchKeyword.value) return noticeStore.notices;
+  const kw = searchKeyword.value.toLowerCase();
+  return noticeStore.notices.filter(n => {
+    if (searchCategory.value === '제목') return n.title?.toLowerCase().includes(kw);
+    if (searchCategory.value === '작성자') return n.author?.toLowerCase().includes(kw);
+    return n.title?.toLowerCase().includes(kw);
+  });
+});
+
+const formatDate = (timestamp) => {
+  if (!timestamp) return '';
+  const d = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+  return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
 };
 
-const notices = ref([]);
-
-const saveNotice = () => {
-  const newNotice = { ...notice };
-  notices.value.push(newNotice);
-
-  notice.title = '';
-  notice.content = '';
-  notice.user = '';
+const saveNotice = async () => {
+  if (!newNotice.value.title || !newNotice.value.content) {
+    alert('제목과 내용을 입력해주세요');
+    return;
+  }
+  await noticeStore.addNotice(
+    newNotice.value.title,
+    newNotice.value.content,
+    authStore.userName || '관리자',
+    authStore.userId
+  );
+  newNotice.value = { title: '', content: '' };
+  showWriteForm.value = false;
 };
 
-
+onMounted(() => { noticeStore.subscribe(); });
+onUnmounted(() => { noticeStore.unsubscribe(); });
 </script>
 
 <template>
@@ -33,19 +58,31 @@ const saveNotice = () => {
       <h1>공지사항</h1>
       <div id="searchBox">
         <div id="searchOp">
-          <select class="select" aria-label="Default select example">
-            <option selected>구분</option>
-            <option value="1">제목</option>
-            <option value="2">등록일</option>
-            <option value="3">작성자</option>
+          <select v-model="searchCategory" class="select">
+            <option>제목</option>
+            <option>작성자</option>
           </select>
         </div>
         <div id="searchIp">
-          <input type="text" placeholder="검색어를 입력해주세요">
+          <input v-model="searchKeyword" type="text" placeholder="검색어를 입력해주세요">
         </div>
         <button id="Bt">검색</button>
       </div>
-      
+
+      <div v-if="authStore.isLoggedIn" style="text-align:right; margin: 10px 100px;">
+        <button @click="showWriteForm = !showWriteForm" style="padding:8px 16px; background:#0d6efd; color:#fff; border:0; border-radius:5px; cursor:pointer;">
+          {{ showWriteForm ? '닫기' : '글쓰기' }}
+        </button>
+      </div>
+
+      <div v-if="showWriteForm" id="writeNoticeForm">
+        <label for="title">제목</label>
+        <input type="text" id="title" v-model="newNotice.title" placeholder="제목을 입력하세요" required>
+        <label for="content">내용</label>
+        <textarea id="content" v-model="newNotice.content" placeholder="내용을 입력하세요" required></textarea>
+        <button @click="saveNotice" id="saveButton">저장</button>
+      </div>
+
       <table id="noticeTable">
         <tr id="noticeTr">
           <td class="noticeTd">순번</td>
@@ -53,46 +90,16 @@ const saveNotice = () => {
           <td class="noticeTd">등록일</td>
           <td class="noticeTd">작성자</td>
         </tr>
-        <tr class="write">
-          <td class="noticeTd">3</td>
-          <td class="noticeTd">라온아리아 이용문의</td>
-          <td class="noticeTd">2023.10.20</td>
-          <td class="noticeTd">라온아리아</td>
+        <tr class="write" v-for="(notice, index) in filteredNotices" :key="notice.id">
+          <td class="noticeTd">{{ filteredNotices.length - index }}</td>
+          <td class="noticeTd">{{ notice.title }}</td>
+          <td class="noticeTd">{{ formatDate(notice.createdAt) }}</td>
+          <td class="noticeTd">{{ notice.author }}</td>
         </tr>
-        <tr class="write">
-          <td class="noticeTd">2</td>
-          <td class="noticeTd">라온아리아 공지사항입니다</td>
-          <td class="noticeTd">2023.10.15</td>
-          <td class="noticeTd">라온아리아</td>
+        <tr v-if="filteredNotices.length === 0" class="write">
+          <td class="noticeTd" colspan="4" style="color:#888;">공지사항이 없습니다</td>
         </tr>
-        <tr class="write">
-          <td class="noticeTd">1</td>
-          <td class="noticeTd">공지사항 테스트입니다</td>
-          <td class="noticeTd">2023.10.11</td>
-          <td class="noticeTd">라온아리아</td>
-        </tr>
-        <!-- <tr id="write" v-for="(savedNotice, index) in notices" :key="index">
-          <td class="noticeTd">{{ index + 1 }}</td>
-          <td class="noticeTd">{{ savedNotice.title }}</td>
-          <td class="noticeTd">{{ new Date().toLocaleDateString() }}</td>
-          <td class="noticeTd">{{ savedNotice.user }}</td>
-        </tr> -->
       </table>
-
-      <!-- 공지사항을 작성 -->
-      <form id="form" @submit.prevent="saveNotice" style="display: none;">
-        <div id="writeNoticeForm">
-          <label for="title">제목</label>
-          <input type="text" id="title" v-model="notice.title" required>
-  
-          <label for="content">내용</label>
-          <textarea id="content" v-model="notice.content" required></textarea>
-  
-          <label for="user">작성자</label>
-          <input type="text" id="user" v-model="notice.user" required>
-          <button type="submit" id="saveButton">저장</button>
-        </div>
-      </form>
     </div>
 <RouterView />
 </template>
@@ -107,7 +114,6 @@ const saveNotice = () => {
     #noticeBox{
         width: 1000px;
         margin: 20px auto;
-        
     }
     #noticeBox h1{
         width: 100%;
@@ -146,6 +152,7 @@ const saveNotice = () => {
         border-radius: 30px;
         border: 0;
         background: #f58e8a;
+        cursor: pointer;
     }
     #Bt:hover{
         color: #fff;
@@ -179,41 +186,56 @@ const saveNotice = () => {
     .write .noticeTd:nth-child(4), #noticeTr .noticeTd:nth-child(4){
       width: 150px;
     }
-    #form{
-    position: fixed;
-    left: 0;
-    top:30%;
-    }
     #writeNoticeForm{
-      width: 400px;
+      width: 800px;
+      margin: 10px auto;
       display: flex;
       flex-wrap: wrap;
-      column-gap: 30px;
+      column-gap: 10px;
+      row-gap: 10px;
       border: 1px solid #aaa;
+      padding: 20px;
       align-items: center;
       justify-content: center;
+      background: #F4F4FA;
+      border-radius: 8px;
     }
-    #writeNoticeForm input,#writeNoticeForm textarea{
-      width: 350px;
+    #writeNoticeForm input{
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+    #writeNoticeForm textarea{
+      width: 100%;
       height: 100px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      outline: none;
+      resize: vertical;
+    }
+    #writeNoticeForm label{
+      width: 100%;
+      font-weight: 700;
     }
     #saveButton{
-      width: 50px;
-      height: 50px;
+      width: 100px;
+      height: 40px;
       border: 0;
       background: #f58e8a;
-      margin: 10px;
-      border-radius: 100px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
     }
     #saveButton:hover{
       background: #f35b56;
       color:#fff;
     }
-    @media(max-width:490px){
+    @media(max-width:576px){
       #noticeBox{
         width: 300px;
         margin: 0px auto;
-        
     }
     #noticeBox h1{
         width: 300px;
@@ -223,52 +245,30 @@ const saveNotice = () => {
     #searchBox{
         width: 300px;
         height: 40px;
-        margin: 0 auto;
-        display: flex;
-        background: #F4F4FA;
-        justify-content: space-around;
-        align-items: center;
         font-size: 13px;
     }
     .select{
         width: 50px;
         height: 30px;
-        text-align: center;
-        border: 2px solid #f35b56;
-        outline: none;
     }
     #searchIp input{
         width: 200px;
         height: 30px;
         padding: 5px;
-        border: 0;
         border-bottom: 2px solid #f35b56;
-        background: 0;
-        outline: none;
-        font-weight: 500;
     }
     #Bt{
         width: 30px;
         height: 30px;
         border-radius: 100px;
-        border: 0;
         color: #fff;
         background: #f35b56;
     }
-    #Bt:hover{
-        color: #fff;
-        background: #f35b56;
-    }
-
     #noticeTable{
       font-size: 13px;
         width: 300px;
-        text-align: center;
         border-bottom: 2px solid #aaa;
         margin: 10px auto;
-    }
-    .write .noticeTd:first-child, #noticeTr .noticeTd:first-child{
-      width: 50px;
     }
     .write .noticeTd:nth-child(2), #noticeTr .noticeTd:nth-child(2){
       width: 200px;
@@ -279,51 +279,7 @@ const saveNotice = () => {
     .write .noticeTd:nth-child(4), #noticeTr .noticeTd:nth-child(4){
       width: 50px;
     }
-    #noticeTr{
-        border-bottom: 3px double #aaa;
-    }
-    #noticeTr td{
-      padding: 2px;
-    }
-    .write{
-      height: 30px;
-      border-bottom: 1px solid #aaa;
-    }
-    #form{
-    width: 300px;
-    height: 200px;
-    position: fixed;
-    left: 10%;
-    top:65%;
-    bottom: 0;
-    font-size: 13px;
-    }
-    #writeNoticeForm{
-      width: 300px;
-      display: flex;
-      flex-wrap: wrap;
-      column-gap: 30px;
-      border: 0;
-      background: #d9d9d9;
-      align-items: center;
-      justify-content: center;
-    }
-    #writeNoticeForm input,#writeNoticeForm textarea{
-      width: 250px;
-      height: 30px;
-    }
-    #saveButton{
-      width: 30px;
-      height: 30px;
-      border: 0;
-      background: #f58e8a;
-      margin: 10px;
-      border-radius: 100px;
-      font-size: 10px;
-    }
-    #saveButton:hover{
-      background: #f35b56;
-      color:#fff;
-    }
+    #noticeTr td{ padding: 2px; }
+    #writeNoticeForm{ width: 300px; }
     }
 </style>

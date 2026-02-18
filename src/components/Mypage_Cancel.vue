@@ -2,29 +2,38 @@
     <div v-if="isCancel" class="wrap">
         <div class="words">정말 신청을 취소하시겠습니까?</div>
         <div class="button_wrap">
-            <button class="check_bt">확인</button>
+            <button @click="confirmCancel()" class="check_bt">확인</button>
             <button @click='cancelOpen()' class="cancle_bt" value="취소">취소</button>
         </div>
     </div>
 </template>
 
 <script>
-import {ref, inject} from 'vue';
-export default{
-    name:'Mypage_Cancel',
-    setup(){
-        // const CheckCancle = ref(true);
-        // const CheckAgain = () => CheckCancle.value = !CheckCancle;
+import { inject } from 'vue';
 
+export default {
+    name: 'Mypage_Cancel',
+    setup() {
         const isCancel = inject('isCancel');
         const cancelOpen = inject('cancelOpen');
+        const mypageStore = inject('mypageStore');
+        const selectedApps = inject('selectedApps');
 
-        return{
-            isCancel, cancelOpen
+        const confirmCancel = async () => {
+            try {
+                for (const appId of selectedApps.value) {
+                    await mypageStore.cancelApplication(appId);
+                }
+                alert('신청이 취소되었습니다');
+                selectedApps.value = [];
+                cancelOpen();
+            } catch (err) {
+                alert('취소 실패: ' + err.message);
+            }
         }
+
+        return { isCancel, cancelOpen, confirmCancel }
     }
-
-
 }
 </script>
 
@@ -85,8 +94,7 @@ export default{
     color:white;
 }
 
-/* 모바일 버전 media query*/
-@media(max-width:490px){
+@media(max-width:576px){
     .wrap{
         width:300px;
         height:135px;
