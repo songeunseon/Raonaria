@@ -64,13 +64,13 @@ export default{
   background-size: 100vw;
   overflow: hidden;
   }
-  @media(min-width:490px) and (max-width:1194px){
+  @media(min-width:577px) and (max-width:992px){
     body{
     background-image: url(../src/assets/tapbg.svg) !important;
     background-size: 100vw;
     }
   }
-@media(max-width:490px){
+@media(max-width:576px){
   body{
     background-image: none !important;
   }
