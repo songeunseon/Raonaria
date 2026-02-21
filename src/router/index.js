@@ -12,7 +12,7 @@ const routes = [
   { path: '/chat-window/:roomId', name: 'chatWindow', component: () => import('@/views/chatWindow.vue'), props: true },
   { path: '/info-change', name: 'infoChange', component: () => import('@/views/Chatwindow_InfoChange.vue') },
   { path: '/notice-write', name: 'noticeWrite', component: () => import('@/views/noticeWrite.vue') },
-  { path: '/kick-out/:roomId', name: 'kickOut', component: () => import('@/views/kickOUt.vue'), props: true },
+  { path: '/kick-out/:roomId', name: 'kickOut', component: () => import('@/views/kickOut.vue'), props: true },
   { path: '/school', name: 'school', component: () => import('@/views/schoolView.vue') },
   { path: '/comparison', name: 'comparison', component: () => import('@/views/ComparisonView.vue') },
 
